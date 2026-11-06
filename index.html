@@ -10,15 +10,15 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-.banner{position:fixed;top:0;left:0;right:0;z-index:1000;background:#2dd4bf;color:#06202a;font-weight:700;font-size:14px;padding:10px 16px;text-align:center}
+.banner{position:fixed;top:0;left:0;right:0;z-index:1000;background:#2dd4bf;color:#06202a;font-weight:700;font-size:14px;line-height:38px;height:38px;padding:0 16px;text-align:center;white-space:nowrap;overflow:hidden}
 .banner a{font-weight:800;text-decoration:underline}
-.top{position:fixed;top:38px;left:0;right:0;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(7,24,38,.85);backdrop-filter:blur(10px);z-index:999}
-.logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px;white-space:nowrap}
-.top nav{font-size:14px;white-space:nowrap;overflow-x:auto}
-.top nav a{margin:0 10px;opacity:.85}
-.top nav a.clients-link{color:#5eead4;font-weight:800;opacity:1;border:1px solid #5eead4;border-radius:999px;padding:6px 12px}
+.top{position:fixed;top:38px;left:0;right:0;min-height:58px;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(7,24,38,.95);z-index:999}
+.logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px;white-space:nowrap;line-height:1}
+.top nav{font-size:14px;display:flex;align-items:center;gap:4px;overflow-x:auto;white-space:nowrap;line-height:1}
+.top nav a{margin:0 8px;opacity:.85;display:inline-block;padding:8px 2px}
+.top nav a.clients-link{background:#2dd4bf;color:#06202a;font-weight:800;opacity:1;border-radius:999px;padding:9px 16px;margin:0 6px}
 .top nav a.work-link{color:#fef3c7;font-weight:800;opacity:1}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:150px 20px 60px;background:radial-gradient(circle at 50% 20%,#0e3a42, #071826 65%)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:160px 20px 60px;background:radial-gradient(circle at 50% 20%,#0e3a42, #071826 65%)}
 h1{font-family:Georgia,serif;font-size:clamp(64px,14vw,150px);font-weight:400;letter-spacing:6px;color:#fef3c7;line-height:1}
 .hero p.tag{color:#5eead4;letter-spacing:4px;margin:14px 0;font-size:13px}
 .skills{max-width:900px;line-height:2;color:#cbd5e1;font-size:15px;margin:10px auto 30px}
@@ -80,12 +80,12 @@ h2{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fef3c7;margin
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 .marquee{display:flex;gap:16px;animation:scroll 30s linear infinite}
 @keyframes scroll{to{transform:translateX(-50%)}}
-@media(max-width:640px){.cards{flex-direction:column}.case-grid{flex-direction:column}#map{height:340px}.banner{font-size:12px}.top{padding:12px 12px}.top nav{font-size:12px}.top nav a{margin:0 6px}.logo{font-size:19px}}
+@media(max-width:640px){.cards{flex-direction:column}.case-grid{flex-direction:column}#map{height:340px}.banner{font-size:12px}.top{padding:10px 12px}.top nav{font-size:12px}.top nav a{margin:0 5px}.top nav a.clients-link{padding:8px 12px}.logo{font-size:19px}}
 </style>
 </head>
 <body>
-<div class="banner">📁 13 Real Clients • Pakistan, UAE, Africa, UK, US • <a href="clients.html">View All Clients →</a></div>
-<header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a class="work-link" href="#work">Work</a><a href="#skills">Skills</a><a class="clients-link" href="clients.html">📁 Clients</a><a href="#certs">Certifications</a><a href="#contact">Contact</a></nav></header>
+<div class="banner">13 Real Clients • Pakistan, UAE, Africa, UK, US • <a href="clients.html">View All Clients →</a></div>
+<header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a class="work-link" href="#work">Work</a><a href="#skills">Skills</a><a class="clients-link" href="clients.html">Clients</a><a href="#certs">Certifications</a><a href="#contact">Contact</a></nav></header>
 
 <section class="hero" style="opacity:1;transform:none">
 <h1>TASEEN</h1>
@@ -96,7 +96,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 <a class="btn btn-mark" href="#marketing">🎯 MARKETING</a>
 <a class="btn btn-data" href="clients.html">📁 CLIENTS</a>
 </div>
-<p style="margin-top:18px;color:#cbd5e1">Work section below, plus 13 real clients, with Before / After proof. <a href="#work" style="color:#fef3c7;font-weight:700">See Work ↓</a> &nbsp;•&nbsp; <a href="clients.html" style="color:#5eead4;font-weight:700">See Clients →</a></p>
+<p style="margin-top:18px;color:#cbd5e1">Work section below, plus 13 real clients. <a href="#work" style="color:#fef3c7;font-weight:700">See Work ↓</a> &nbsp;•&nbsp; <a href="clients.html" style="color:#5eead4;font-weight:700">See Clients →</a></p>
 <div class="scroll-hint">↓ Scroll to explore ↓</div>
 </section>
 
@@ -129,27 +129,9 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 
 <section><h2>Case Examples</h2><p class="sub">Real results from data-driven campaigns, explore featured case studies • SAMPLE</p>
 <div class="case-grid">
-<a class="case-card" href="case-study-1.html">
-<span class="sample">SAMPLE</span>
-<h3>E-commerce Growth</h3>
-<p>Scaled online store revenue with optimized funnel and retention.</p>
-<div class="case-metrics"><div><b>+142%</b><span>Revenue</span></div><div><b>3.8%</b><span>Conversion</span></div><div><b>-61%</b><span>CPA</span></div></div>
-<span class="case-link">View Case Study →</span>
-</a>
-<a class="case-card" href="case-study-2.html">
-<span class="sample">SAMPLE</span>
-<h3>Lead Generation</h3>
-<p>Increased qualified leads via targeted campaigns and landing pages.</p>
-<div class="case-metrics"><div><b>+98%</b><span>Leads</span></div><div><b>4.2%</b><span>CTR</span></div><div><b>-22%</b><span>CPL</span></div></div>
-<span class="case-link">View Case Study →</span>
-</a>
-<a class="case-card" href="case-study-3.html">
-<span class="sample">SAMPLE</span>
-<h3>Brand Awareness</h3>
-<p>Elevated brand reach and engagement across social channels.</p>
-<div class="case-metrics"><div><b>+210%</b><span>Impressions</span></div><div><b>1.8M</b><span>Reach</span></div><div><b>34%</b><span>Engagement</span></div></div>
-<span class="case-link">View Case Study →</span>
-</a>
+<a class="case-card" href="case-study-1.html"><span class="sample">SAMPLE</span><h3>E-commerce Growth</h3><p>Scaled online store revenue with optimized funnel and retention.</p><div class="case-metrics"><div><b>+142%</b><span>Revenue</span></div><div><b>3.8%</b><span>Conversion</span></div><div><b>-61%</b><span>CPA</span></div></div><span class="case-link">View Case Study →</span></a>
+<a class="case-card" href="case-study-2.html"><span class="sample">SAMPLE</span><h3>Lead Generation</h3><p>Increased qualified leads via targeted campaigns and landing pages.</p><div class="case-metrics"><div><b>+98%</b><span>Leads</span></div><div><b>4.2%</b><span>CTR</span></div><div><b>-22%</b><span>CPL</span></div></div><span class="case-link">View Case Study →</span></a>
+<a class="case-card" href="case-study-3.html"><span class="sample">SAMPLE</span><h3>Brand Awareness</h3><p>Elevated brand reach and engagement across social channels.</p><div class="case-metrics"><div><b>+210%</b><span>Impressions</span></div><div><b>1.8M</b><span>Reach</span></div><div><b>34%</b><span>Engagement</span></div></div><span class="case-link">View Case Study →</span></a>
 </div></section>
 
 <section id="marketing"><h2>Best Content</h2><p class="sub">Images + Reels • SAMPLE, replace with your real posts</p>
@@ -159,21 +141,15 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 <div class="card"><span class="sample">IMAGE • SAMPLE</span><h3>Dashboard Guide Image</h3><p>Static image • Blog cover</p></div>
 </div></section>
 
-<section id="clients"><h2>Clients Served</h2><p class="sub">Tap a flag pin on the map, it opens Clients filtered to that location • 13 real clients • Filter by location and service on the Clients page</p>
+<section id="clients"><h2>Clients Served</h2><p class="sub">Tap a flag pin on the map, it opens Clients filtered to that location • 13 real clients • See names, folders, and proof on the Clients page</p>
 <div id="map"></div>
 <p style="margin-top:14px;color:#94a3b8;font-size:13px">Drag to move • Pinch / + / - to zoom • Tap a flag to see country, then View Clients</p>
 <div class="country-grid">
-<div class="country home"><span class="flag">🇵🇰</span><b>Pakistan</b><span>5 Clients • BJ Productions, AFX Training Hub, Berlitz, Aqtiv Water, Agrilift</span><br><p style="margin-top:10px"><a href="clients.html?location=pakistan" style="color:#5eead4;font-weight:700">View Pakistan Clients →</a></p></div>
-<div class="country"><span class="flag">🇦🇪</span><b>UAE</b><span>1 Client • Sarah AI</span><br><p style="margin-top:10px"><a href="clients.html?location=uae" style="color:#5eead4;font-weight:700">View UAE Clients →</a></p></div>
-<div class="country"><span class="flag">🌍</span><b>Africa / Caribbean</b><span>4 Clients • IIB West Africa (CVE), IIB East Africa (Djibouti), IIB Caribbean, Afrifiber</span><br><p style="margin-top:10px"><a href="clients.html?location=africa" style="color:#5eead4;font-weight:700">View Africa Clients →</a></p></div>
-<div class="country"><span class="flag">🇬🇧</span><b>United Kingdom</b><span>2 Clients • Model ML, Voitech</span><br><p style="margin-top:10px"><a href="clients.html?location=uk" style="color:#5eead4;font-weight:700">View UK Clients →</a></p></div>
-<div class="country"><span class="flag">🇺🇸</span><b>United States</b><span>1 Client • Invaar Studios</span><br><p style="margin-top:10px"><a href="clients.html?location=us" style="color:#5eead4;font-weight:700">View US Clients →</a></p></div>
-</div>
-<div style="background:#0b2a35;border:1px solid #2dd4bf;border-radius:16px;padding:24px;margin-top:24px;text-align:left">
-<span class="sample">PROOF • REAL CLIENT</span>
-<h3 style="font-size:24px;margin:8px 0">Aqtiv Water, Before / After</h3>
-<p style="color:#cbd5e1;line-height:1.7">Instagram: 5 posts, 21 followers → 96 posts, 360 followers. LinkedIn: 47 followers, Mega Arena Launch Event 04.10.25. Full 3-page PDF in the Aqtiv folder.</p>
-<p style="margin-top:12px"><a href="clients.html" style="color:#5eead4;font-weight:700">Open Aqtiv Water Folder →</a> &nbsp;•&nbsp; <a href="Aqtiv-after.pdf" target="_blank" rel="noopener" style="color:#5eead4;font-weight:700">View Aqtiv PDF →</a></p>
+<div class="country home"><span class="flag">🇵🇰</span><b>Pakistan</b><span>5 Clients</span><br><p style="margin-top:10px"><a href="clients.html?location=pakistan" style="color:#5eead4;font-weight:700">View Pakistan Clients →</a></p></div>
+<div class="country"><span class="flag">🇦🇪</span><b>UAE</b><span>1 Client</span><br><p style="margin-top:10px"><a href="clients.html?location=uae" style="color:#5eead4;font-weight:700">View UAE Clients →</a></p></div>
+<div class="country"><span class="flag">🌍</span><b>Africa / Caribbean</b><span>4 Clients</span><br><p style="margin-top:10px"><a href="clients.html?location=africa" style="color:#5eead4;font-weight:700">View Africa Clients →</a></p></div>
+<div class="country"><span class="flag">🇬🇧</span><b>United Kingdom</b><span>2 Clients</span><br><p style="margin-top:10px"><a href="clients.html?location=uk" style="color:#5eead4;font-weight:700">View UK Clients →</a></p></div>
+<div class="country"><span class="flag">🇺🇸</span><b>United States</b><span>1 Client</span><br><p style="margin-top:10px"><a href="clients.html?location=us" style="color:#5eead4;font-weight:700">View US Clients →</a></p></div>
 </div>
 <p style="margin-top:24px"><a class="btn btn-data" href="clients.html">📁 View All 13 Clients →</a></p>
 <p style="margin-top:14px;color:#cbd5e1;line-height:1.7">Based in Karachi, Pakistan, serving clients in <b style="color:#5eead4">Pakistan, UAE, Africa, UK, and US</b>, across time zones, in English, with data + marketing in one place.</p>
@@ -210,13 +186,13 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 var map=L.map('map',{scrollWheelZoom:false}).setView([28,20],2);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:18}).addTo(map);
 function pin(flag,home){return L.divIcon({className:'',html:'<div class="flag-pin '+(home?'flag-pin-home':'')+'">'+flag+'</div>',iconSize:[40,40],iconAnchor:[20,20]});}
-L.marker([24.86,67.01],{icon:pin('🇵🇰',true)}).addTo(map).bindPopup('<b>🇵🇰 Pakistan</b><br>5 Clients: BJ Productions, AFX Training Hub, Berlitz, Aqtiv Water, Agrilift<br><a href="clients.html?location=pakistan">View Clients →</a>');
-L.marker([25.20,55.27],{icon:pin('🇦🇪')}).addTo(map).bindPopup('<b>🇦🇪 UAE</b><br>1 Client: Sarah AI<br><a href="clients.html?location=uae">View Clients →</a>');
-L.marker([40.71,-74.00],{icon:pin('🇺🇸')}).addTo(map).bindPopup('<b>🇺🇸 United States</b><br>1 Client: Invaar Studios<br><a href="clients.html?location=us">View Clients →</a>');
-L.marker([51.50,-0.12],{icon:pin('🇬🇧')}).addTo(map).bindPopup('<b>🇬🇧 United Kingdom</b><br>2 Clients: Model ML, Voitech<br><a href="clients.html?location=uk">View Clients →</a>');
+L.marker([24.86,67.01],{icon:pin('🇵🇰',true)}).addTo(map).bindPopup('<b>🇵🇰 Pakistan</b><br>5 Clients<br><a href="clients.html?location=pakistan">View Clients →</a>');
+L.marker([25.20,55.27],{icon:pin('🇦🇪')}).addTo(map).bindPopup('<b>🇦🇪 UAE</b><br>1 Client<br><a href="clients.html?location=uae">View Clients →</a>');
+L.marker([40.71,-74.00],{icon:pin('🇺🇸')}).addTo(map).bindPopup('<b>🇺🇸 United States</b><br>1 Client<br><a href="clients.html?location=us">View Clients →</a>');
+L.marker([51.50,-0.12],{icon:pin('🇬🇧')}).addTo(map).bindPopup('<b>🇬🇧 United Kingdom</b><br>2 Clients<br><a href="clients.html?location=uk">View Clients →</a>');
 L.marker([28.61,77.20],{icon:pin('🇮🇳')}).addTo(map).bindPopup('<b>🇮🇳 India</b><br>Serving India clients<br><a href="clients.html?location=india">View Clients →</a>');
-L.marker([6.52,3.37],{icon:pin('🌍')}).addTo(map).bindPopup('<b>🌍 Africa • Nigeria / West Africa</b><br>IIB West Africa (CVE), Afrifiber<br><a href="clients.html?location=africa">View Clients →</a>');
-L.marker([-1.29,36.82],{icon:pin('🌍')}).addTo(map).bindPopup('<b>🌍 Africa • Kenya / East Africa</b><br>IIB East Africa (Djibouti)<br><a href="clients.html?location=africa">View Clients →</a>');
+L.marker([6.52,3.37],{icon:pin('🌍')}).addTo(map).bindPopup('<b>🌍 Africa • West Africa</b><br>Clients in Africa<br><a href="clients.html?location=africa">View Clients →</a>');
+L.marker([-1.29,36.82],{icon:pin('🌍')}).addTo(map).bindPopup('<b>🌍 Africa • East Africa</b><br>Clients in Africa<br><a href="clients.html?location=africa">View Clients →</a>');
 map.on('click',function(){map.scrollWheelZoom.enable();});
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');
 e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');
