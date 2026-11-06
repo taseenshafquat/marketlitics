@@ -28,7 +28,6 @@ h1{font-family:Georgia,serif;font-size:clamp(64px,14vw,150px);font-weight:400;le
 .btn-mark{background:transparent;color:#fff}
 .btn:hover,.btn:active{transform:translateY(-4px) scale(1.04);box-shadow:0 12px 35px rgba(45,212,191,.45)}
 .show-cert{display:inline-block;margin-top:12px;padding:10px 18px;border-radius:999px;background:#2dd4bf;color:#06202a;font-weight:700;font-size:14px}
-.show-cert:hover{transform:translateY(-2px)}
 .scroll-hint{margin-top:44px;opacity:.7;animation:bounce 1.6s infinite}
 @keyframes bounce{50%{transform:translateY(8px)}}
 section{max-width:900px;margin:0 auto;padding:90px 20px;opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
@@ -37,7 +36,6 @@ h2{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fef3c7;margin
 .sub{color:#94a3b8;margin-bottom:30px}
 .cards{display:flex;gap:16px;overflow:hidden;justify-content:center}
 .card{min-width:250px;flex:1;background:#0b2a35;border:1px solid #164e5e;border-radius:16px;padding:22px;text-align:left}
-.card b{color:#5eead4}
 .sample{display:inline-block;background:#2dd4bf;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px;margin-bottom:10px}
 .badge-done{display:inline-block;background:#2dd4bf;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px;margin-bottom:10px}
 .badge-progress{display:inline-block;background:#fef3c7;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px;margin-bottom:10px}
@@ -50,7 +48,6 @@ h2{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fef3c7;margin
 .fill{height:100%;width:0;background:linear-gradient(90deg,#2dd4bf,#fef3c7);border-radius:99px;transition:width .8s ease}
 .case-grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
 .case-card{flex:1;min-width:250px;background:#0b2a35;border:1px solid #164e5e;border-radius:16px;padding:26px;text-align:left;display:block}
-.case-card:hover{transform:translateY(-5px);border-color:#2dd4bf;box-shadow:0 14px 35px rgba(45,212,191,.25)}
 .case-card h3{font-size:24px;margin:10px 0;color:#fff}
 .case-card p{color:#cbd5e1;line-height:1.7}
 .case-metrics{display:flex;gap:12px;margin:18px 0;text-align:center}
@@ -62,17 +59,17 @@ h2{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fef3c7;margin
 .leaflet-tile{filter:invert(92%) hue-rotate(185deg) brightness(.88) contrast(.92)}
 .flag-pin{font-size:32px;line-height:1;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));text-align:center}
 .flag-pin-home{font-size:42px}
+.text-pin{background:#2dd4bf;color:#06202a;font-weight:800;font-size:13px;letter-spacing:1px;line-height:30px;text-align:center;border-radius:999px;border:2px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.5);white-space:nowrap;padding:0 8px}
 .leaflet-popup-content{color:#071826;font-family:Arial,sans-serif;text-align:center}
 .country-grid{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:24px}
 .country{flex:1;min-width:150px;background:#0b2a35;border:1px solid #164e5e;border-radius:16px;padding:24px 14px}
-.country:hover{transform:translateY(-4px);border-color:#2dd4bf}
 .country .flag{font-size:38px;display:block;margin-bottom:10px}
 .country b{font-size:18px;color:#fff;display:block}
 .country span{color:#94a3b8;font-size:13px}
 .country.home{border-color:#2dd4bf;background:#0e3a42}
+.africa-label{font-size:13px;letter-spacing:4px;color:#5eead4;font-weight:800;display:block;margin-bottom:10px}
 .cert-grid{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 .cert{flex:1;min-width:260px;background:#0b2a35;border:1px solid #164e5e;border-radius:16px;padding:24px;text-align:left}
-.cert:hover{transform:translateY(-4px);border-color:#2dd4bf}
 .cert b{font-size:17px;line-height:1.4;display:block;margin-bottom:6px}
 .cert p{color:#94a3b8;line-height:1.6}
 .cert a{color:#5eead4;font-weight:700}
@@ -80,123 +77,46 @@ h2{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fef3c7;margin
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 .marquee{display:flex;gap:16px;animation:scroll 30s linear infinite}
 @keyframes scroll{to{transform:translateX(-50%)}}
-@media(max-width:640px){.cards{flex-direction:column}.case-grid{flex-direction:column}#map{height:340px}.banner{font-size:12px}.top{padding:10px 12px}.top nav{font-size:12px}.top nav a{margin:0 5px}.top nav a.clients-link{padding:8px 12px}.logo{font-size:19px}}
+@media(max-width:640px){.cards{flex-direction:column}.case-grid{flex-direction:column}#map{height:340px}.banner{font-size:12px}.top{padding:10px 12px}.top nav{font-size:12px}.logo{font-size:19px}}
 </style>
 </head>
 <body>
-<div class="banner">13 Real Clients • Pakistan, UAE, Africa, UK, US • <a href="clients.html">View All Clients →</a></div>
+<div class="banner">11 Real Clients • Pakistan, UAE, Africa, UK, US • <a href="clients.html">View All Clients →</a></div>
 <header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a class="work-link" href="#work">Work</a><a href="#skills">Skills</a><a class="clients-link" href="clients.html">Clients</a><a href="#certs">Certifications</a><a href="#contact">Contact</a></nav></header>
-
 <section class="hero" style="opacity:1;transform:none">
 <h1>TASEEN</h1>
 <p class="tag">MARKETLITICS &nbsp;•&nbsp; KARACHI, PAKISTAN</p>
 <p class="skills">Data Analyst | Marketing | Paid Ads | SEO | Content Strategy | Copywriting | Storytelling | Social Media | Power BI | Python | SQL | Tableau | Salesforce | SAS | Google Tag Manager | GA4</p>
-<div class="btns">
-<a class="btn btn-data" href="#data">📊 DATA</a>
-<a class="btn btn-mark" href="#marketing">🎯 MARKETING</a>
-<a class="btn btn-data" href="clients.html">📁 CLIENTS</a>
-</div>
-<p style="margin-top:18px;color:#cbd5e1">Work section below, plus 13 real clients. <a href="#work" style="color:#fef3c7;font-weight:700">See Work ↓</a> &nbsp;•&nbsp; <a href="clients.html" style="color:#5eead4;font-weight:700">See Clients →</a></p>
+<div class="btns"><a class="btn btn-data" href="#data">📊 DATA</a><a class="btn btn-mark" href="#marketing">🎯 MARKETING</a><a class="btn btn-data" href="clients.html">📁 CLIENTS</a></div>
+<p style="margin-top:18px;color:#cbd5e1">Work section below, plus 11 real clients. <a href="#work" style="color:#fef3c7;font-weight:700">See Work ↓</a> &nbsp;•&nbsp; <a href="clients.html" style="color:#5eead4;font-weight:700">See Clients →</a></p>
 <div class="scroll-hint">↓ Scroll to explore ↓</div>
 </section>
-
-<section id="work"><h2>Featured Campaigns</h2><p class="sub">Auto-scroll showcase • SAMPLE</p>
-<div style="overflow:hidden"><div class="marquee">
-<div class="card"><span class="sample">SAMPLE</span><h3>Q4 Product Launch</h3><p>CTR +28% • ROAS 4.2x</p></div>
-<div class="card"><span class="sample">SAMPLE</span><h3>Brand Awareness Push</h3><p>1.2M Impressions • 9.3% Engagement</p></div>
-<div class="card"><span class="sample">SAMPLE</span><h3>Lead Gen Campaign</h3><p>640 Leads • CPL -22%</p></div>
-<div class="card"><span class="sample">SAMPLE</span><h3>Q4 Product Launch</h3><p>CTR +28% • ROAS 4.2x</p></div>
-</div></div></section>
-
-<section><h2>Top Dashboards</h2><p class="sub">Analytics & performance dashboards • SAMPLE</p>
-<div class="cards"><div class="card"><span class="sample">SAMPLE</span><h3>Performance Overview</h3><p>Sessions 124k ↑ 12% • Conversions 2.8k ↑ 18%</p></div>
-<div class="card"><span class="sample">SAMPLE</span><h3>Paid Ads Dashboard</h3><p>Facebook • Google • TikTok • LinkedIn</p></div></div></section>
-
-<section id="data"><h2>Ad Budget • ROAS • ROI</h2><p class="sub">Total across campaigns • SAMPLE, replace with your real totals</p>
-<div class="stats">
-<div class="stat"><div class="big"><span class="count" data-to="128">0</span>K</div><p>Ad Spend Managed</p></div>
-<div class="stat"><div class="big"><span class="count" data-to="42">0</span>/10 x</div><p>ROAS</p></div>
-<div class="stat"><div class="big"><span class="count" data-to="318">0</span>%</div><p>ROI</p></div>
-</div></section>
-
-<section id="skills"><h2>Skills Proficiency</h2><p class="sub">Bars fill when you scroll here • SAMPLE %, send me your real %</p>
-<div class="bar-row"><span><b>Python</b><b>90%</b></span><div class="bar"><div class="fill" data-w="90"></div></div></div>
-<div class="bar-row"><span><b>SQL</b><b>88%</b></span><div class="bar"><div class="fill" data-w="88"></div></div></div>
-<div class="bar-row"><span><b>Power BI</b><b>92%</b></span><div class="bar"><div class="fill" data-w="92"></div></div></div>
-<div class="bar-row"><span><b>SEO</b><b>85%</b></span><div class="bar"><div class="fill" data-w="85"></div></div></div>
-<div class="bar-row"><span><b>Paid Ads</b><b>90%</b></span><div class="bar"><div class="fill" data-w="90"></div></div></div>
-</section>
-
-<section><h2>Case Examples</h2><p class="sub">Real results from data-driven campaigns, explore featured case studies • SAMPLE</p>
-<div class="case-grid">
-<a class="case-card" href="case-study-1.html"><span class="sample">SAMPLE</span><h3>E-commerce Growth</h3><p>Scaled online store revenue with optimized funnel and retention.</p><div class="case-metrics"><div><b>+142%</b><span>Revenue</span></div><div><b>3.8%</b><span>Conversion</span></div><div><b>-61%</b><span>CPA</span></div></div><span class="case-link">View Case Study →</span></a>
-<a class="case-card" href="case-study-2.html"><span class="sample">SAMPLE</span><h3>Lead Generation</h3><p>Increased qualified leads via targeted campaigns and landing pages.</p><div class="case-metrics"><div><b>+98%</b><span>Leads</span></div><div><b>4.2%</b><span>CTR</span></div><div><b>-22%</b><span>CPL</span></div></div><span class="case-link">View Case Study →</span></a>
-<a class="case-card" href="case-study-3.html"><span class="sample">SAMPLE</span><h3>Brand Awareness</h3><p>Elevated brand reach and engagement across social channels.</p><div class="case-metrics"><div><b>+210%</b><span>Impressions</span></div><div><b>1.8M</b><span>Reach</span></div><div><b>34%</b><span>Engagement</span></div></div><span class="case-link">View Case Study →</span></a>
-</div></section>
-
-<section id="marketing"><h2>Best Content</h2><p class="sub">Images + Reels • SAMPLE, replace with your real posts</p>
-<div class="cards">
-<div class="card"><span class="sample">IMAGE • SAMPLE</span><h3>SEO Framework Carousel</h3><p>Image carousel • Swipe 5 slides</p></div>
-<div class="card"><span class="sample">REEL • SAMPLE</span><h3>Storytelling Hook Reel</h3><p>▶ 410k Views • Vertical video</p></div>
-<div class="card"><span class="sample">IMAGE • SAMPLE</span><h3>Dashboard Guide Image</h3><p>Static image • Blog cover</p></div>
-</div></section>
-
-<section id="clients"><h2>Clients Served</h2><p class="sub">Tap a flag pin on the map, it opens Clients filtered to that location • 13 real clients • See names, folders, and proof on the Clients page</p>
-<div id="map"></div>
-<p style="margin-top:14px;color:#94a3b8;font-size:13px">Drag to move • Pinch / + / - to zoom • Tap a flag to see country, then View Clients</p>
-<div class="country-grid">
-<div class="country home"><span class="flag">🇵🇰</span><b>Pakistan</b><span>5 Clients</span><br><p style="margin-top:10px"><a href="clients.html?location=pakistan" style="color:#5eead4;font-weight:700">View Pakistan Clients →</a></p></div>
-<div class="country"><span class="flag">🇦🇪</span><b>UAE</b><span>1 Client</span><br><p style="margin-top:10px"><a href="clients.html?location=uae" style="color:#5eead4;font-weight:700">View UAE Clients →</a></p></div>
-<div class="country"><span class="flag">🌍</span><b>Africa / Caribbean</b><span>4 Clients</span><br><p style="margin-top:10px"><a href="clients.html?location=africa" style="color:#5eead4;font-weight:700">View Africa Clients →</a></p></div>
-<div class="country"><span class="flag">🇬🇧</span><b>United Kingdom</b><span>2 Clients</span><br><p style="margin-top:10px"><a href="clients.html?location=uk" style="color:#5eead4;font-weight:700">View UK Clients →</a></p></div>
-<div class="country"><span class="flag">🇺🇸</span><b>United States</b><span>1 Client</span><br><p style="margin-top:10px"><a href="clients.html?location=us" style="color:#5eead4;font-weight:700">View US Clients →</a></p></div>
-</div>
-<p style="margin-top:24px"><a class="btn btn-data" href="clients.html">📁 View All 13 Clients →</a></p>
-<p style="margin-top:14px;color:#cbd5e1;line-height:1.7">Based in Karachi, Pakistan, serving clients in <b style="color:#5eead4">Pakistan, UAE, Africa, UK, and US</b>, across time zones, in English, with data + marketing in one place.</p>
-</section>
-
-<section id="certs"><h2>Certifications</h2><p class="sub">15 total • 11 completed, 4 in progress • Tap Show Certificate, opens PNG / PDF in a new tab</p>
-<div class="cert-grid">
-<div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>Data Analytics &amp; Business Intelligence</b><p>DigiSkills • Dec 2025 - Mar 2026 • ID: YUM3YUUMK</p><p><a class="show-cert" href="DSTP_Certificate_YUM3YUUMK.pdf" target="_blank" rel="noopener">Show Certificate →</a></p><p><a href="https://www.linkedin.com/in/taseen-shafquat" target="_blank" rel="noopener">View on LinkedIn →</a></p></div>
-<div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>Artificial Intelligence Using Python</b><p>DigiSkills • Apr 2026 - Jul 2026 • ID: DFHJDWMK5</p><p><a class="show-cert" href="DSTP_Certificate_DFHJDWMK5.pdf" target="_blank" rel="noopener">Show Certificate →</a></p><p><a href="https://www.linkedin.com/in/taseen-shafquat" target="_blank" rel="noopener">View on LinkedIn →</a></p></div>
-<div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>Digital Marketing</b><p>DigiSkills • Apr 2026 - Jul 2026 • ID: Y46FSVQMK</p><p><a class="show-cert" href="DSTP_Certificate_Y46FSVQMK.pdf" target="_blank" rel="noopener">Show Certificate →</a></p><p><a href="https://www.linkedin.com/in/taseen-shafquat" target="_blank" rel="noopener">View on LinkedIn →</a></p></div>
-<div class="cert"><span class="badge-done">COMPLETED</span><b>E-Commerce Management</b><p>DigiSkills • Apr 2026 - Jul 2026 • ID: YETHEHTMK</p><p><a class="show-cert" href="DSTP_Certificate_YETHEHTMK.pdf" target="_blank" rel="noopener">Show Certificate →</a></p><p>Verify at digiskills.pk/verify</p></div>
-<div class="cert"><span class="badge-done">COMPLETED</span><b>Startup Strategies and Entrepreneurship</b><p>DigiSkills • Dec 2025 - Mar 2026 • ID: GUUS8B7MK</p><p><a class="show-cert" href="DSTP_Certificate_GUUS8B7MK.pdf" target="_blank" rel="noopener">Show Certificate →</a></p><p>Verify at digiskills.pk/verify</p></div>
-<div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>SEO</b><p>DigiSkills • Jul 2026 - Oct 2026</p><p><a class="show-cert" href="DSTP_Certificate_SEO.pdf" target="_blank" rel="noopener">Show Certificate →</a></p><p><a href="https://www.linkedin.com/in/taseen-shafquat" target="_blank" rel="noopener">View on LinkedIn →</a></p></div>
-<div class="cert"><span class="badge-done">COMPLETED • HUBSPOT CERTIFIED</span><b>Digital Marketing Certified</b><p>HubSpot Academy • Valid: Oct 20, 2026 - Nov 18, 2028</p><p>Certification code: 7ccb65f7da9a493586d15c69dbb8102a</p><p><a class="show-cert" href="hubspot-digital-marketing.png" target="_blank" rel="noopener">Show Certificate →</a></p></div>
-<div class="cert"><span class="badge-done">COMPLETED</span><b>Generative AI Mastermind</b><p>Outskill • Certificate of Completion • Signed: Vaibhav Sisinty, Founder, Outskill</p><p><a class="show-cert" href="outskill-generative-ai.png" target="_blank" rel="noopener">Show Certificate →</a></p></div>
-<div class="cert"><span class="badge-done">PARTICIPATION</span><b>SEO &amp; Google Business Masterclass</b><p>Adil Siddiqui, in partnership with Latitude • Organiser: Nadia Shams • Jun - Jul 2026</p><p><a class="show-cert" href="Taseen_Participation_Certificate.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div>
-<div class="cert"><span class="badge-done">COMPLETED • YOU HAVE THIS</span><b>Digital Marketing and Personal Branding</b><p>IUCore • Jul 2025 - Sep 2025</p><p><a class="show-cert" href="iucore-certificate.png" target="_blank" rel="noopener">Show Certificate →</a></p></div>
-<div class="cert"><span class="badge-done">COMPLETED • YOU HAVE THIS</span><b>Microsoft Excel, Beginner to Advanced</b><p>Youth Parliament • 2019</p><p><a class="show-cert" href="youth-parliament-excel.png" target="_blank" rel="noopener">Show Certificate →</a></p></div>
-<div class="cert"><span class="badge-progress">IN PROGRESS • AUG - NOV 2026</span><b>Certified Visualization Expert</b><p>KarachiDoTAI / NUST • Aug 2026 - Nov 2026</p><p>In progress, no certificate yet</p></div>
-<div class="cert"><span class="badge-progress">IN PROGRESS • STARTING OCT 2026</span><b>Google Ads</b><p>Google • Starting Oct 2026</p><p>In progress, no certificate yet</p></div>
-<div class="cert"><span class="badge-progress">IN PROGRESS • STARTING OCT 2026</span><b>Google Analytics</b><p>Google • Starting Oct 2026</p><p>In progress, no certificate yet</p></div>
-<div class="cert"><span class="badge-progress">IN PROGRESS • STARTING OCT 2026</span><b>Meta Blueprint, Digital Marketing Associate</b><p>Meta • Starting Oct 2026</p><p>In progress, no certificate yet</p></div>
-</div></section>
-
-<section><h2>Latest Blogs</h2><p class="sub">SAMPLE titles</p>
-<div class="cards"><div class="card"><span class="sample">SAMPLE</span><h3>How to Build a GA4 Reporting Stack with Python</h3></div>
-<div class="card"><span class="sample">SAMPLE</span><h3>SEO vs Paid Ads: When to Double Down</h3></div>
-<div class="card"><span class="sample">SAMPLE</span><h3>Storytelling for Brand Growth in 2026</h3></div></div></section>
-
+<section id="work"><h2>Featured Campaigns</h2><p class="sub">Auto-scroll showcase • SAMPLE</p><div style="overflow:hidden"><div class="marquee"><div class="card"><span class="sample">SAMPLE</span><h3>Q4 Product Launch</h3><p>CTR +28% • ROAS 4.2x</p></div><div class="card"><span class="sample">SAMPLE</span><h3>Brand Awareness Push</h3><p>1.2M Impressions • 9.3% Engagement</p></div><div class="card"><span class="sample">SAMPLE</span><h3>Lead Gen Campaign</h3><p>640 Leads • CPL -22%</p></div><div class="card"><span class="sample">SAMPLE</span><h3>Q4 Product Launch</h3><p>CTR +28% • ROAS 4.2x</p></div></div></div></section>
+<section><h2>Top Dashboards</h2><p class="sub">Analytics &amp; performance dashboards • SAMPLE</p><div class="cards"><div class="card"><span class="sample">SAMPLE</span><h3>Performance Overview</h3><p>Sessions 124k ↑ 12% • Conversions 2.8k ↑ 18%</p></div><div class="card"><span class="sample">SAMPLE</span><h3>Paid Ads Dashboard</h3><p>Facebook • Google • TikTok • LinkedIn</p></div></div></section>
+<section id="data"><h2>Ad Budget • ROAS • ROI</h2><p class="sub">Total across campaigns • SAMPLE</p><div class="stats"><div class="stat"><div class="big"><span class="count" data-to="128">0</span>K</div><p>Ad Spend Managed</p></div><div class="stat"><div class="big"><span class="count" data-to="42">0</span>/10 x</div><p>ROAS</p></div><div class="stat"><div class="big"><span class="count" data-to="318">0</span>%</div><p>ROI</p></div></div></section>
+<section id="skills"><h2>Skills Proficiency</h2><p class="sub">Bars fill when you scroll here • SAMPLE %</p><div class="bar-row"><span><b>Python</b><b>90%</b></span><div class="bar"><div class="fill" data-w="90"></div></div></div><div class="bar-row"><span><b>SQL</b><b>88%</b></span><div class="bar"><div class="fill" data-w="88"></div></div></div><div class="bar-row"><span><b>Power BI</b><b>92%</b></span><div class="bar"><div class="fill" data-w="92"></div></div></div><div class="bar-row"><span><b>SEO</b><b>85%</b></span><div class="bar"><div class="fill" data-w="85"></div></div></div><div class="bar-row"><span><b>Paid Ads</b><b>90%</b></span><div class="bar"><div class="fill" data-w="90"></div></div></div></section>
+<section><h2>Case Examples</h2><p class="sub">SAMPLE</p><div class="case-grid"><a class="case-card" href="case-study-1.html"><span class="sample">SAMPLE</span><h3>E-commerce Growth</h3><p>Scaled online store revenue with optimized funnel and retention.</p><div class="case-metrics"><div><b>+142%</b><span>Revenue</span></div><div><b>3.8%</b><span>Conversion</span></div><div><b>-61%</b><span>CPA</span></div></div><span class="case-link">View Case Study →</span></a><a class="case-card" href="case-study-2.html"><span class="sample">SAMPLE</span><h3>Lead Generation</h3><p>Increased qualified leads via targeted campaigns and landing pages.</p><div class="case-metrics"><div><b>+98%</b><span>Leads</span></div><div><b>4.2%</b><span>CTR</span></div><div><b>-22%</b><span>CPL</span></div></div><span class="case-link">View Case Study →</span></a><a class="case-card" href="case-study-3.html"><span class="sample">SAMPLE</span><h3>Brand Awareness</h3><p>Elevated brand reach and engagement across social channels.</p><div class="case-metrics"><div><b>+210%</b><span>Impressions</span></div><div><b>1.8M</b><span>Reach</span></div><div><b>34%</b><span>Engagement</span></div></div><span class="case-link">View Case Study →</span></a></div></section>
+<section id="marketing"><h2>Best Content</h2><p class="sub">Images + Reels • SAMPLE</p><div class="cards"><div class="card"><span class="sample">IMAGE • SAMPLE</span><h3>SEO Framework Carousel</h3><p>Image carousel • Swipe 5 slides</p></div><div class="card"><span class="sample">REEL • SAMPLE</span><h3>Storytelling Hook Reel</h3><p>▶ 410k Views • Vertical video</p></div><div class="card"><span class="sample">IMAGE • SAMPLE</span><h3>Dashboard Guide Image</h3><p>Static image • Blog cover</p></div></div></section>
+<section id="clients"><h2>Clients Served</h2><p class="sub">Tap a pin on the map, it opens Clients filtered to that location • 11 real clients • See names, folders, and proof on the Clients page</p><div id="map"></div><p style="margin-top:14px;color:#94a3b8;font-size:13px">Drag to move • Pinch / + / - to zoom • Tap WA, EA, or CAR to see Africa, then View Clients</p><div class="country-grid"><div class="country home"><span class="flag">🇵🇰</span><b>Pakistan</b><span>5 Clients</span><br><p style="margin-top:10px"><a href="clients.html?location=pakistan" style="color:#5eead4;font-weight:700">View Pakistan Clients →</a></p></div><div class="country"><span class="flag">🇦🇪</span><b>UAE</b><span>1 Client</span><br><p style="margin-top:10px"><a href="clients.html?location=uae" style="color:#5eead4;font-weight:700">View UAE Clients →</a></p></div><div class="country"><span class="africa-label">AFRICA</span><b>Africa</b><span>2 Clients</span><br><p style="margin-top:10px"><a href="clients.html?location=africa" style="color:#5eead4;font-weight:700">View Africa Clients →</a></p></div><div class="country"><span class="flag">🇬🇧</span><b>United Kingdom</b><span>2 Clients</span><br><p style="margin-top:10px"><a href="clients.html?location=uk" style="color:#5eead4;font-weight:700">View UK Clients →</a></p></div><div class="country"><span class="flag">🇺🇸</span><b>United States</b><span>1 Client</span><br><p style="margin-top:10px"><a href="clients.html?location=us" style="color:#5eead4;font-weight:700">View US Clients →</a></p></div></div><p style="margin-top:24px"><a class="btn btn-data" href="clients.html">📁 View All 11 Clients →</a></p><p style="margin-top:14px;color:#cbd5e1;line-height:1.7">Based in Karachi, Pakistan, serving clients in <b style="color:#5eead4">Pakistan, UAE, Africa, UK, and US</b>, across time zones, in English, with data + marketing in one place.</p></section>
+<section id="certs"><h2>Certifications</h2><p class="sub">15 total • 11 completed, 4 in progress • Tap Show Certificate, opens PNG / PDF in a new tab</p><div class="cert-grid"><div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>Data Analytics &amp; Business Intelligence</b><p>DigiSkills • Dec 2025 - Mar 2026 • ID: YUM3YUUMK</p><p><a class="show-cert" href="DSTP_Certificate_YUM3YUUMK.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>Artificial Intelligence Using Python</b><p>DigiSkills • Apr 2026 - Jul 2026 • ID: DFHJDWMK5</p><p><a class="show-cert" href="DSTP_Certificate_DFHJDWMK5.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>Digital Marketing</b><p>DigiSkills • Apr 2026 - Jul 2026 • ID: Y46FSVQMK</p><p><a class="show-cert" href="DSTP_Certificate_Y46FSVQMK.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED</span><b>E-Commerce Management</b><p>DigiSkills • Apr 2026 - Jul 2026 • ID: YETHEHTMK</p><p><a class="show-cert" href="DSTP_Certificate_YETHEHTMK.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED</span><b>Startup Strategies and Entrepreneurship</b><p>DigiSkills • Dec 2025 - Mar 2026 • ID: GUUS8B7MK</p><p><a class="show-cert" href="DSTP_Certificate_GUUS8B7MK.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>SEO</b><p>DigiSkills • Jul 2026 - Oct 2026</p><p><a class="show-cert" href="DSTP_Certificate_SEO.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED • HUBSPOT CERTIFIED</span><b>Digital Marketing Certified</b><p>HubSpot Academy • Valid: Oct 20, 2026 - Nov 18, 2028</p><p><a class="show-cert" href="hubspot-digital-marketing.png" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED</span><b>Generative AI Mastermind</b><p>Outskill • Signed: Vaibhav Sisinty, Founder, Outskill</p><p><a class="show-cert" href="outskill-generative-ai.png" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">PARTICIPATION</span><b>SEO &amp; Google Business Masterclass</b><p>Adil Siddiqui, in partnership with Latitude • Jun - Jul 2026</p><p><a class="show-cert" href="Taseen_Participation_Certificate.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED</span><b>Digital Marketing and Personal Branding</b><p>IUCore • Jul 2025 - Sep 2025</p><p><a class="show-cert" href="iucore-certificate.png" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED</span><b>Microsoft Excel, Beginner to Advanced</b><p>Youth Parliament • 2019</p><p><a class="show-cert" href="youth-parliament-excel.png" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-progress">IN PROGRESS • AUG - NOV 2026</span><b>Certified Visualization Expert</b><p>KarachiDoTAI / NUST • Aug 2026 - Nov 2026</p></div><div class="cert"><span class="badge-progress">IN PROGRESS</span><b>Google Ads</b><p>Google • Starting Oct 2026</p></div><div class="cert"><span class="badge-progress">IN PROGRESS</span><b>Google Analytics</b><p>Google • Starting Oct 2026</p></div><div class="cert"><span class="badge-progress">IN PROGRESS</span><b>Meta Blueprint, Digital Marketing Associate</b><p>Meta • Starting Oct 2026</p></div></div></section>
+<section><h2>Latest Blogs</h2><p class="sub">SAMPLE titles</p><div class="cards"><div class="card"><span class="sample">SAMPLE</span><h3>How to Build a GA4 Reporting Stack with Python</h3></div><div class="card"><span class="sample">SAMPLE</span><h3>SEO vs Paid Ads: When to Double Down</h3></div><div class="card"><span class="sample">SAMPLE</span><h3>Storytelling for Brand Growth in 2026</h3></div></div></section>
 <footer id="contact"><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p>hello@marketlitics.com • <a href="https://www.linkedin.com/in/taseen-shafquat" target="_blank" rel="noopener" style="color:#5eead4;font-weight:700">LinkedIn</a> • Instagram • GitHub</p><p style="margin-top:10px"><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a> <a class="btn btn-data" href="clients.html">📁 Clients →</a> <a class="btn btn-mark" href="#work">Work ↑</a></p></footer>
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 var map=L.map('map',{scrollWheelZoom:false}).setView([28,20],2);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:18}).addTo(map);
 function pin(flag,home){return L.divIcon({className:'',html:'<div class="flag-pin '+(home?'flag-pin-home':'')+'">'+flag+'</div>',iconSize:[40,40],iconAnchor:[20,20]});}
+function textPin(label){return L.divIcon({className:'',html:'<div class="text-pin">'+label+'</div>',iconSize:[52,30],iconAnchor:[26,15]});}
 L.marker([24.86,67.01],{icon:pin('🇵🇰',true)}).addTo(map).bindPopup('<b>🇵🇰 Pakistan</b><br>5 Clients<br><a href="clients.html?location=pakistan">View Clients →</a>');
 L.marker([25.20,55.27],{icon:pin('🇦🇪')}).addTo(map).bindPopup('<b>🇦🇪 UAE</b><br>1 Client<br><a href="clients.html?location=uae">View Clients →</a>');
 L.marker([40.71,-74.00],{icon:pin('🇺🇸')}).addTo(map).bindPopup('<b>🇺🇸 United States</b><br>1 Client<br><a href="clients.html?location=us">View Clients →</a>');
 L.marker([51.50,-0.12],{icon:pin('🇬🇧')}).addTo(map).bindPopup('<b>🇬🇧 United Kingdom</b><br>2 Clients<br><a href="clients.html?location=uk">View Clients →</a>');
 L.marker([28.61,77.20],{icon:pin('🇮🇳')}).addTo(map).bindPopup('<b>🇮🇳 India</b><br>Serving India clients<br><a href="clients.html?location=india">View Clients →</a>');
-L.marker([6.52,3.37],{icon:pin('🌍')}).addTo(map).bindPopup('<b>🌍 Africa • West Africa</b><br>Clients in Africa<br><a href="clients.html?location=africa">View Clients →</a>');
-L.marker([-1.29,36.82],{icon:pin('🌍')}).addTo(map).bindPopup('<b>🌍 Africa • East Africa</b><br>Clients in Africa<br><a href="clients.html?location=africa">View Clients →</a>');
+L.marker([6.52,3.37],{icon:textPin('WA')}).addTo(map).bindPopup('<b>WA • Africa</b><br>IIB Group, Africa<br><a href="clients.html?location=africa">View Clients →</a>');
+L.marker([-1.29,36.82],{icon:textPin('EA')}).addTo(map).bindPopup('<b>EA • Africa</b><br>IIB Group, Africa<br><a href="clients.html?location=africa">View Clients →</a>');
+L.marker([18.22,-66.59],{icon:textPin('CAR')}).addTo(map).bindPopup('<b>CAR • Africa</b><br>IIB Group, Africa<br><a href="clients.html?location=africa">View Clients →</a>');
 map.on('click',function(){map.scrollWheelZoom.enable();});
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');
-e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');
-e.target.querySelectorAll('.count').forEach(c=>{let t=+c.dataset.to,n=0;let i=setInterval(()=>{n+=Math.ceil(t/40);if(n>=t){n=t;clearInterval(i)}c.textContent=n},25)})}})},{threshold:.25});
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');e.target.querySelectorAll('.count').forEach(c=>{let t=+c.dataset.to,n=0;let i=setInterval(()=>{n+=Math.ceil(t/40);if(n>=t){n=t;clearInterval(i)}c.textContent=n},25)})}})},{threshold:.25});
 document.querySelectorAll('section').forEach(s=>io.observe(s));
 </script>
 </body>
