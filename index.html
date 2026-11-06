@@ -33,6 +33,8 @@ h2{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fef3c7;margin
 .card{min-width:250px;flex:1;background:#0b2a35;border:1px solid #164e5e;border-radius:16px;padding:22px;text-align:left}
 .card b{color:#5eead4}
 .sample{display:inline-block;background:#2dd4bf;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px;margin-bottom:10px}
+.badge-done{display:inline-block;background:#2dd4bf;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px;margin-bottom:10px}
+.badge-progress{display:inline-block;background:#fef3c7;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px;margin-bottom:10px}
 .big{font-size:42px;color:#5eead4;font-weight:700}
 .stats{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 .stat{flex:1;min-width:200px;background:#0b2a35;border-radius:16px;padding:26px}
@@ -63,8 +65,11 @@ h2{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fef3c7;margin
 .country span{color:#94a3b8;font-size:13px}
 .country.home{border-color:#2dd4bf;background:#0e3a42}
 .cert-grid{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-.cert{flex:1;min-width:200px;background:#0b2a35;border:1px solid #164e5e;border-radius:16px;padding:24px}
+.cert{flex:1;min-width:260px;background:#0b2a35;border:1px solid #164e5e;border-radius:16px;padding:24px;text-align:left}
 .cert:hover{transform:translateY(-4px);border-color:#2dd4bf}
+.cert b{font-size:17px;line-height:1.4;display:block;margin-bottom:6px}
+.cert p{color:#94a3b8;line-height:1.6}
+.cert a{color:#5eead4;font-weight:700}
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 .marquee{display:flex;gap:16px;animation:scroll 30s linear infinite}
 @keyframes scroll{to{transform:translateX(-50%)}}
@@ -157,19 +162,31 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 <p style="margin-top:22px;color:#cbd5e1;line-height:1.7">Based in Karachi, Pakistan, serving clients in the <b style="color:#5eead4">US, UK, India, and Africa</b>, across time zones, in English, with data + marketing in one place.</p>
 </section>
 
-<section id="certs"><h2>Certifications</h2><p class="sub">Verified skills, not just claims • Add your real certificates here</p>
+<section id="certs"><h2>Certifications</h2><p class="sub">15 certifications • 5 DigiSkills PDFs verified • DigiSkills certificates also on LinkedIn • 3 in progress from Oct 2026</p>
 <div class="cert-grid">
-<div class="cert"><b>Google Analytics 4</b><p>Google • 2025 • SAMPLE</p><p><a href="#">View Certificate →</a></p></div>
-<div class="cert"><b>Meta Certified Media Buying</b><p>Meta • 2025 • SAMPLE</p><p><a href="#">View Certificate →</a></p></div>
-<div class="cert"><b>Power BI</b><p>Microsoft • 2025 • SAMPLE</p><p><a href="#">View Certificate →</a></p></div>
-</div><p style="margin-top:16px;color:#94a3b8">No fake badges. Only add a certificate if you can show the PDF / link.</p></section>
+<div class="cert"><span class="badge-done">COMPLETED • PDF VERIFIED</span><b>Data Analytics &amp; Business Intelligence</b><p>DigiSkills • Dec 2025 - Mar 2026 • ID: YUM3YUUMK</p><p><a href="DSTP_Certificate_YUM3YUUMK.pdf" target="_blank">View Certificate (PDF) →</a> • <a href="https://www.linkedin.com/in/taseen-shafquat" target="_blank">LinkedIn →</a></p></div>
+<div class="cert"><span class="badge-done">COMPLETED • PDF VERIFIED</span><b>Artificial Intelligence Using Python</b><p>DigiSkills • Apr 2026 - Jul 2026 • ID: DFHJDWMK5</p><p><a href="DSTP_Certificate_DFHJDWMK5.pdf" target="_blank">View Certificate (PDF) →</a> • <a href="https://www.linkedin.com/in/taseen-shafquat" target="_blank">LinkedIn →</a></p></div>
+<div class="cert"><span class="badge-done">COMPLETED • PDF VERIFIED</span><b>Digital Marketing</b><p>DigiSkills • Apr 2026 - Jul 2026 • ID: Y46FSVQMK</p><p><a href="DSTP_Certificate_Y46FSVQMK.pdf" target="_blank">View Certificate (PDF) →</a> • <a href="https://www.linkedin.com/in/taseen-shafquat" target="_blank">LinkedIn →</a></p></div>
+<div class="cert"><span class="badge-done">COMPLETED • PDF VERIFIED</span><b>E-Commerce Management</b><p>DigiSkills • Apr 2026 - Jul 2026 • ID: YETHEHTMK</p><p><a href="DSTP_Certificate_YETHEHTMK.pdf" target="_blank">View Certificate (PDF) →</a></p></div>
+<div class="cert"><span class="badge-done">COMPLETED • PDF VERIFIED</span><b>Startup Strategies and Entrepreneurship</b><p>DigiSkills • Dec 2025 - Mar 2026 • ID: GUUS8B7MK</p><p><a href="DSTP_Certificate_GUUS8B7MK.pdf" target="_blank">View Certificate (PDF) →</a></p></div>
+<div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>SEO</b><p>DigiSkills • Jul 2026 - Oct 2026</p><p><a href="https://www.linkedin.com/in/taseen-shafquat" target="_blank">View on LinkedIn →</a></p></div>
+<div class="cert"><span class="badge-done">COMPLETED</span><b>Certified Visualization Expert</b><p>KarachiDoTAI / NUST • Aug 2026 - Nov 2026</p><p><a href="#">View Certificate →</a></p></div>
+<div class="cert"><span class="badge-done">COMPLETED</span><b>SEO Masterclass</b><p>Latitude • Jun 2026 - Jul 2026</p><p><a href="#">View Certificate →</a></p></div>
+<div class="cert"><span class="badge-done">COMPLETED</span><b>Digital and Content Marketing</b><p>HubSpot • Jul 2026 - Oct 2026</p><p><a href="#">View Certificate →</a></p></div>
+<div class="cert"><span class="badge-done">COMPLETED</span><b>Digital Marketing and Personal Branding</b><p>IUCore • Jul 2025 - Sep 2025</p><p><a href="#">View Certificate →</a></p></div>
+<div class="cert"><span class="badge-done">COMPLETED</span><b>WordPress Website Development</b><p>2019</p><p><a href="#">View Certificate →</a></p></div>
+<div class="cert"><span class="badge-done">COMPLETED</span><b>Microsoft Excel, Beginner to Advanced</b><p>Youth Parliament • 2019</p><p><a href="#">View Certificate →</a></p></div>
+<div class="cert"><span class="badge-progress">IN PROGRESS • STARTING OCT 2026</span><b>Google Ads</b><p>Google • Starting Oct 2026</p><p>In progress, certificate on completion</p></div>
+<div class="cert"><span class="badge-progress">IN PROGRESS • STARTING OCT 2026</span><b>Google Analytics</b><p>Google • Starting Oct 2026</p><p>In progress, certificate on completion</p></div>
+<div class="cert"><span class="badge-progress">IN PROGRESS • STARTING OCT 2026</span><b>Meta Blueprint, Digital Marketing Associate</b><p>Meta • Starting Oct 2026</p><p>In progress, certificate on completion</p></div>
+</div><p style="margin-top:16px;color:#94a3b8">DigiSkills PDFs can be verified at digiskills.pk/verify using the Certificate ID shown. Send any other certificate PDFs, and I will link them the same way.</p></section>
 
 <section><h2>Latest Blogs</h2><p class="sub">SAMPLE titles</p>
 <div class="cards"><div class="card"><span class="sample">SAMPLE</span><h3>How to Build a GA4 Reporting Stack with Python</h3></div>
 <div class="card"><span class="sample">SAMPLE</span><h3>SEO vs Paid Ads: When to Double Down</h3></div>
 <div class="card"><span class="sample">SAMPLE</span><h3>Storytelling for Brand Growth in 2026</h3></div></div></section>
 
-<footer id="contact"><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p>hello@marketlitics.com • LinkedIn • Instagram • GitHub</p><p style="margin-top:10px"><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a></p></footer>
+<footer id="contact"><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p>hello@marketlitics.com • <a href="https://www.linkedin.com/in/taseen-shafquat" target="_blank" style="color:#5eead4;font-weight:700">LinkedIn</a> • Instagram • GitHub</p><p style="margin-top:10px"><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a></p></footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
