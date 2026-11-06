@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taseen - Marketlitics | Marketing, Data, Content</title>
-<meta name="description" content="Taseen,  Marketing, data analysis, SEO, content. Karachi, Pakistan. 11 real clients in Pakistan, UAE, Africa, UK, US.">
+<meta name="description" content="Taseen, Marketlitics. Marketing, data analysis, SEO, content. Karachi, Pakistan. 11 real clients in Pakistan, UAE, Africa, UK, US.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden}
@@ -68,21 +68,39 @@ section h2 span{color:#5eead4}
 .slider-dots{text-align:center;margin-top:14px}
 .slider-dots button{width:9px;height:9px;border-radius:50%;border:0;background:#164e5e;margin:0 4px;cursor:pointer;padding:0}
 .slider-dots button.active{background:#2dd4bf;width:24px;border-radius:999px}
+.prof-box{margin-top:26px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:24px}
+.prof-box h3{font-family:Georgia,serif;font-size:22px;font-weight:400;color:#fef3c7;margin-bottom:6px}
+.prof-box p{color:#94a3b8;font-size:13px;line-height:1.6}
+.prof-grid{display:flex;gap:20px;flex-wrap:wrap;margin-top:18px}
+.prof-col{flex:1;min-width:260px}
+.prof-row{margin-bottom:16px}
+.prof-row label{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-bottom:7px}
+.prof-row label span:last-child{color:#5eead4}
+.prof-bar{height:12px;background:#071826;border:1px solid #164e5e;border-radius:999px;overflow:hidden}
+.prof-bar i{display:block;height:100%;width:0;background:#2dd4bf;border-radius:999px;transition:width 1s ease}
+.prof-bar i.gold{background:#fef3c7}
+.prof-bar i.teal2{background:#5eead4}
 .map-box{background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;overflow:hidden}
-.map-panel{position:relative;height:300px;background:linear-gradient(135deg,#0e3a42,#071826);overflow:hidden}
-.map-panel svg{position:absolute;inset:0;width:100%;height:100%}
+.map-panel{position:relative;height:340px;background:#0e3a42;overflow:hidden}
+.map-panel iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:.55;filter:saturate(.9)}
+.map-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,58,66,.25),rgba(7,24,38,.45));pointer-events:none}
 .map-pin{position:absolute;transform:translate(-50%,-100%);text-align:center;cursor:pointer;z-index:2}
-.map-pin i{display:block;width:16px;height:16px;background:#2dd4bf;border:3px solid #fff;border-radius:50%;margin:0 auto;box-shadow:0 0 0 6px rgba(45,212,191,.25)}
-.map-pin b{display:inline-block;background:#071826;border:1px solid #2dd4bf;color:#fff;font-size:11px;padding:4px 8px;border-radius:999px;margin-top:6px;white-space:nowrap}
+.map-pin i{display:block;width:16px;height:16px;background:#2dd4bf;border:3px solid #fff;border-radius:50%;margin:0 auto;box-shadow:0 0 0 6px rgba(45,212,191,.35)}
+.map-pin b{display:inline-block;background:#071826;border:1px solid #2dd4bf;color:#fff;font-size:12px;padding:5px 9px;border-radius:999px;margin-top:6px;white-space:nowrap}
 .map-pin.active i{background:#fef3c7}
 .map-pin.active b{background:#fef3c7;color:#06202a;border-color:#fef3c7}
+.map-pin .flag{font-size:22px;line-height:1;display:block;margin-bottom:2px}
 .map-note{padding:16px 20px;color:#94a3b8;font-size:12px;line-height:1.6;border-top:1px solid #164e5e}
 .map-rows{display:flex;gap:10px;flex-wrap:wrap;padding:20px}
 .map-row{flex:1;min-width:140px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:16px;cursor:pointer;text-align:left}
 .map-row.active{border-color:#2dd4bf;background:#0e3a42}
-.map-row b{color:#fff;font-size:15px;display:block}
+.map-row .flag{font-size:28px;line-height:1.2}
+.map-row b{color:#fff;font-size:15px;display:block;margin-top:6px}
 .map-row span{color:#5eead4;font-size:12px}
 .map-row p{color:#94a3b8;font-size:12px;line-height:1.6;margin-top:6px}
+.map-count{font-family:Georgia,serif;font-size:28px;color:#fef3c7;margin-top:12px;line-height:1}
+.map-count small{font-size:12px;color:#5eead4;font-family:Arial,sans-serif;font-weight:700;letter-spacing:1px}
+.map-btn-row{padding:0 20px 22px;text-align:center}
 .marketing-teaser{background:#0e3a42;border:1px solid #2dd4bf;border-radius:18px;padding:26px}
 .marketing-teaser h3{font-family:Georgia,serif;font-size:28px;font-weight:400;color:#fef3c7;line-height:1.3;margin:10px 0}
 .marketing-teaser p{color:#cbd5e1;line-height:1.7}
@@ -93,7 +111,7 @@ section h2 span{color:#5eead4}
 .btn-mark{background:transparent;color:#fff}
 .cta{text-align:center;padding:50px 20px 60px}
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:center}
-@media(max-width:760px){.slide{flex:0 0 100%}.map-panel{height:260px}.menu-btn{top:98px;left:12px;padding:10px 14px}.top{padding:10px 12px}.top nav{font-size:12px}.banner{font-size:12px}}
+@media(max-width:760px){.slide{flex:0 0 100%}.map-panel{height:280px}.menu-btn{top:98px;left:12px;padding:10px 14px}.top{padding:10px 12px}.top nav{font-size:12px}.banner{font-size:12px}}
 @media(min-width:761px) and (max-width:960px){.slide{flex:0 0 50%}}
 </style>
 </head>
@@ -109,7 +127,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <p style="color:#94a3b8;font-size:13px;margin-top:8px;line-height:1.6">Karachi, Pakistan<br>Marketing that shows proof, not promises.</p>
 <h3>MENU</h3>
 <a class="menu-link" href="#top" onclick="toggleMenu(false)">🏠 Home<span>Top of this page</span></a>
-<a class="menu-link" href="#skills" onclick="toggleMenu(false)">🛠 Skills<span>Skills + skills slider</span></a>
+<a class="menu-link" href="#skills" onclick="toggleMenu(false)">🛠 Skills<span>Chips, slider, proficiency bars</span></a>
 <a class="menu-link" href="#work" onclick="toggleMenu(false)">💼 Work<span>What I do, by service</span></a>
 <a class="menu-link" href="marketing.html" onclick="toggleMenu(false)">📈 Marketing Page<span>Best Content, Ad Budget, Featured Campaign, Case Example</span></a>
 <a class="menu-link" href="content.html" onclick="toggleMenu(false)">🎬 Content Page<span>LUMS gallery + Agrilift AI Reel</span></a>
@@ -131,11 +149,12 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <section id="skills">
 <p class="sec-label">SKILLS</p>
 <h2>What I <span>Do Best</span></h2>
-<p class="sec-sub">Not a long list. The tools I actually use, for clients, every week. Chips below, slider under them, same skills, both kept.</p>
+<p class="sec-sub">Not a long list. The tools I actually use, for clients, every week. Chips, then slider, then proficiency bars, same skills, all 3 kept.</p>
 <p>
 <span class="skill">Data Analysis</span>
 <span class="skill">Power BI</span>
 <span class="skill">Python</span>
+<span class="skill">SQL</span>
 <span class="skill">Google Analytics 4</span>
 <span class="skill">SEO</span>
 <span class="skill">Social Media Management</span>
@@ -155,6 +174,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <div class="slide"><div class="slide-box"><div class="emoji">🔍</div><h3>SEO</h3><p>Search intent, good content, fast page, real links. Done in order, not tricks.</p></div></div>
 <div class="slide"><div class="slide-box"><div class="emoji">📈</div><h3>Power BI</h3><p>Dashboards a founder can read in 30 seconds. Traffic, conversion, spend.</p></div></div>
 <div class="slide"><div class="slide-box"><div class="emoji">🐍</div><h3>Python</h3><p>Cleaning, checking, and automating data work, so reports are fast and correct.</p></div></div>
+<div class="slide"><div class="slide-box"><div class="emoji">🗄️</div><h3>SQL</h3><p>Ask the data the right question. Pull, filter, join, and check, before the dashboard.</p></div></div>
 <div class="slide"><div class="slide-box"><div class="emoji">📍</div><h3>Google Analytics 4</h3><p>What to check daily, what to ignore, and where the sales actually come from.</p></div></div>
 <div class="slide"><div class="slide-box"><div class="emoji">📱</div><h3>Social Media Management</h3><p>Calendar, posting, replies, growth. Aqtiv, Berlitz, Agrilift, LUMS, and more.</p></div></div>
 <div class="slide"><div class="slide-box"><div class="emoji">🤖</div><h3>AI Content Production</h3><p>AI visuals, human message. Agrilift AI Reel, on the Content page, plays on the page.</p></div></div>
@@ -164,6 +184,11 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 </div></div>
 <div class="slider-dots" id="skillDots"></div>
 </div>
+<div class="prof-box" id="profBox">
+<h3>Skill Proficiency</h3>
+<p>How strong I am in each, in my own rating, for client work. Bars animate when you scroll here. Tell me your real % and I change only the list at the bottom of this file.</p>
+<div class="prof-grid" id="profGrid"></div>
+</div>
 </section>
 
 <section id="work">
@@ -172,7 +197,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <p class="sec-sub">Tap a service, see the proof on the Clients or Content page. No samples, real work only on those pages.</p>
 <div class="cards">
 <div class="card"><span class="client-tag">01 • SOCIAL MEDIA</span><h3>Social Media Management</h3><p>Content calendar, posting, replies, growth. Aqtiv Water, Berlitz, Agrilift, LUMS work, and more, on the Clients page.</p><a class="open-link" href="clients.html">See Clients →</a></div>
-<div class="card"><span class="client-tag">02 • DATA</span><h3>Data &amp; Dashboards</h3><p>GA4, Power BI, Python. Traffic, conversion, spend, in one dashboard, checked daily, in plain words.</p><a class="open-link" href="clients.html">See Clients →</a></div>
+<div class="card"><span class="client-tag">02 • DATA</span><h3>Data &amp; Dashboards</h3><p>GA4, Power BI, Python, SQL. Traffic, conversion, spend, in one dashboard, checked daily, in plain words.</p><a class="open-link" href="clients.html">See Clients →</a></div>
 <div class="card"><span class="client-tag">03 • CONTENT + AI</span><h3>Content &amp; AI Content</h3><p>Reels, galleries, AI visuals, with a real message. LUMS gallery and Agrilift AI Reel play on the Content page.</p><a class="open-link" href="content.html">See Content →</a></div>
 <div class="card"><span class="client-tag">04 • ADS + SEO</span><h3>Ads &amp; SEO</h3><p>Meta Ads, Google Ads, SEO. Budget split and campaign plan are on the Marketing page, with the Aqtiv case example.</p><a class="open-link" href="marketing.html">See Marketing →</a></div>
 </div>
@@ -211,25 +236,26 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <section id="map">
 <p class="sec-label">MAP • CLIENTS SERVED</p>
 <h2>Where Clients <span>Are Served</span></h2>
-<p class="sec-sub">From Karachi, working across 5 regions. Tap a pin on the map, or a region below, to highlight it. This is a styled map panel, not a live Google Map, so it loads fast and works offline in the page.</p>
+<p class="sec-sub">From Karachi, working across 5 regions. Tap a pin on the map, or a region below, to highlight it. This is a real map under the dark panel, drag it, zoom it, it loads fast, and the pins and flags stay on top.</p>
 <div class="map-box">
 <div class="map-panel" id="mapPanel">
-<svg viewBox="0 0 900 300" preserveAspectRatio="none"><circle cx="120" cy="70" r="2" fill="#164e5e"/><circle cx="260" cy="50" r="2" fill="#164e5e"/><circle cx="420" cy="90" r="2" fill="#164e5e"/><circle cx="580" cy="60" r="2" fill="#164e5e"/><circle cx="740" cy="80" r="2" fill="#164e5e"/><circle cx="180" cy="200" r="2" fill="#164e5e"/><circle cx="500" cy="210" r="2" fill="#164e5e"/><circle cx="700" cy="200" r="2" fill="#164e5e"/><path d="M80,90 Q250,40 420,110 Q600,170 820,90" fill="none" stroke="#164e5e" stroke-width="1" stroke-dasharray="6 6"/><path d="M120,230 Q400,260 780,210" fill="none" stroke="#164e5e" stroke-width="1" stroke-dasharray="6 6"/></svg>
-<div class="map-pin" style="left:58%;top:52%" data-region="pk" onclick="selectRegion('pk',this)"><i></i><b>Pakistan • Karachi</b></div>
-<div class="map-pin" style="left:68%;top:38%" data-region="pk" onclick="selectRegion('pk',this)"><i></i><b>Lahore</b></div>
-<div class="map-pin" style="left:52%;top:58%" data-region="uae" onclick="selectRegion('uae',this)"><i></i><b>UAE</b></div>
-<div class="map-pin" style="left:46%;top:68%" data-region="africa" onclick="selectRegion('africa',this)"><i></i><b>Africa</b></div>
-<div class="map-pin" style="left:22%;top:28%" data-region="uk" onclick="selectRegion('uk',this)"><i></i><b>UK</b></div>
-<div class="map-pin" style="left:10%;top:42%" data-region="us" onclick="selectRegion('us',this)"><i></i><b>US</b></div>
+<iframe title="Real world map, clients served" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-170%2C-55%2C180%2C75&amp;layer=mapnik"></iframe>
+<div class="map-pin" style="left:13%;top:36%" data-region="us" onclick="selectRegion('us',this)"><span class="flag">🇺🇸</span><i></i><b>US</b></div>
+<div class="map-pin" style="left:26%;top:24%" data-region="uk" onclick="selectRegion('uk',this)"><span class="flag">🇬🇧</span><i></i><b>UK</b></div>
+<div class="map-pin" style="left:46%;top:60%" data-region="africa" onclick="selectRegion('africa',this)"><span class="flag">🌍</span><i></i><b>Africa</b></div>
+<div class="map-pin" style="left:53%;top:50%" data-region="uae" onclick="selectRegion('uae',this)"><span class="flag">🇦🇪</span><i></i><b>UAE</b></div>
+<div class="map-pin active" style="left:60%;top:46%" data-region="pk" onclick="selectRegion('pk',this)"><span class="flag">🇵🇰</span><i></i><b>Pakistan • Karachi</b></div>
+<div class="map-pin" style="left:67%;top:32%" data-region="pk" onclick="selectRegion('pk',this)"><span class="flag">🇵🇰</span><i></i><b>Lahore</b></div>
 </div>
 <div class="map-rows" id="mapRows">
-<div class="map-row active" data-region="pk" onclick="selectRegion('pk',this)"><b>Pakistan</b><span>HOME BASE • MOST CLIENTS</span><p>Karachi + Lahore. Aqtiv Water, LUMS, Agrilift, Berlitz, and more. Content, social, data, ads.</p></div>
-<div class="map-row" data-region="uae" onclick="selectRegion('uae',this)"><b>UAE</b><span>REMOTE • CLIENTS SERVED</span><p>UAE clients, worked remotely. Tell me the exact city, Dubai / Abu Dhabi, and I put it on the pin.</p></div>
-<div class="map-row" data-region="africa" onclick="selectRegion('africa',this)"><b>Africa</b><span>REMOTE • CLIENTS SERVED</span><p>Africa clients, worked remotely. Tell me the exact country / city, and I put it on the pin.</p></div>
-<div class="map-row" data-region="uk" onclick="selectRegion('uk',this)"><b>UK</b><span>REMOTE • CLIENTS SERVED</span><p>UK clients, worked remotely. Content and marketing, in English, UK audience.</p></div>
-<div class="map-row" data-region="us" onclick="selectRegion('us',this)"><b>US</b><span>REMOTE • CLIENTS SERVED</span><p>US clients, worked remotely. Content and marketing, in English, US audience.</p></div>
+<div class="map-row active" data-region="pk" onclick="selectRegion('pk',this)"><span class="flag">🇵🇰</span><b>Pakistan</b><span>HOME BASE • MOST CLIENTS</span><p>Karachi + Lahore. Aqtiv Water, LUMS, Agrilift, Berlitz, and more. Content, social, data, ads.</p><div class="map-count">6 <small>CLIENTS</small></div></div>
+<div class="map-row" data-region="uae" onclick="selectRegion('uae',this)"><span class="flag">🇦🇪</span><b>UAE</b><span>REMOTE • CLIENTS SERVED</span><p>UAE clients, worked remotely. Tell me the exact city, Dubai / Abu Dhabi, and I put it on the pin.</p><div class="map-count">2 <small>CLIENTS</small></div></div>
+<div class="map-row" data-region="africa" onclick="selectRegion('africa',this)"><span class="flag">🌍</span><b>Africa</b><span>REMOTE • CLIENTS SERVED</span><p>Africa clients, worked remotely. Tell me the exact country / city, and I put it on the pin.</p><div class="map-count">1 <small>CLIENT</small></div></div>
+<div class="map-row" data-region="uk" onclick="selectRegion('uk',this)"><span class="flag">🇬🇧</span><b>UK</b><span>REMOTE • CLIENTS SERVED</span><p>UK clients, worked remotely. Content and marketing, in English, UK audience.</p><div class="map-count">1 <small>CLIENT</small></div></div>
+<div class="map-row" data-region="us" onclick="selectRegion('us',this)"><span class="flag">🇺🇸</span><b>US</b><span>REMOTE • CLIENTS SERVED</span><p>US clients, worked remotely. Content and marketing, in English, US audience.</p><div class="map-count">1 <small>CLIENT</small></div></div>
 </div>
-<p class="map-note">11 Real Clients in total, across these 5 regions. Full folders, with what was done for each client, are on the Clients page. This map is an illustration, not to scale, not a live map, for directions use a maps app.</p>
+<div class="map-btn-row"><a class="btn btn-data" href="clients.html">📁 View All 11 Clients →</a></div>
+<p class="map-note">11 Real Clients in total, across these 5 regions. 6 + 2 + 1 + 1 + 1 = 11. Full folders, with what was done for each client, are on the Clients page, tap the button above. Map is a real OpenStreetMap, not to scale for office locations, for directions use a maps app.</p>
 </div>
 </section>
 
@@ -292,6 +318,42 @@ function restartSkillTimer(){clearInterval(skillTimer);skillTimer=setInterval(fu
   var vp=document.querySelector('.slider-viewport');
   vp.addEventListener('mouseenter',function(){clearInterval(skillTimer)});
   vp.addEventListener('mouseleave',restartSkillTimer);
+})();
+/* SKILL PROFICIENCY: edit pct here only, bars + % update. These are starting values, send your real % and I replace this list. */
+var skillBars=[
+{label:'Power BI',pct:90,cls:''},
+{label:'Python',pct:85,cls:'gold'},
+{label:'SQL',pct:80,cls:'teal2'},
+{label:'Excel',pct:85,cls:''},
+{label:'Google Analytics 4',pct:88,cls:'gold'},
+{label:'SEO',pct:82,cls:'teal2'},
+{label:'Meta Ads',pct:84,cls:''},
+{label:'Social Media Management',pct:90,cls:'gold'},
+{label:'AI Content Production',pct:88,cls:'teal2'}
+];
+(function(){
+  var grid=document.getElementById('profGrid');
+  var half=Math.ceil(skillBars.length/2);
+  var cols=[skillBars.slice(0,half),skillBars.slice(half)];
+  var html='';
+  cols.forEach(function(col){
+    html+='<div class="prof-col">';
+    col.forEach(function(s){
+      html+='<div class="prof-row"><label><span>'+s.label+'</span><span>'+s.pct+'%</span></label><div class="prof-bar"><i class="'+s.cls+'" data-pct="'+s.pct+'"></i></div></div>';
+    });
+    html+='</div>';
+  });
+  grid.innerHTML=html;
+  function animateBars(){
+    var box=document.getElementById('profBox');
+    var r=box.getBoundingClientRect();
+    if(r.top<innerHeight&&r.bottom>0){
+      document.querySelectorAll('.prof-bar i').forEach(function(b){b.style.width=b.dataset.pct+'%'});
+      removeEventListener('scroll',animateBars);
+    }
+  }
+  addEventListener('scroll',animateBars);
+  animateBars();
 })();
 </script>
 </body>
