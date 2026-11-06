@@ -49,6 +49,13 @@ h2{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fef3c7;margin
 .case-metrics b{color:#5eead4;font-size:20px;display:block}
 .case-metrics span{font-size:12px;color:#94a3b8}
 .case-link{color:#5eead4;font-weight:700}
+.country-grid{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:24px}
+.country{flex:1;min-width:150px;background:#0b2a35;border:1px solid #164e5e;border-radius:16px;padding:24px 14px}
+.country:hover{transform:translateY(-4px);border-color:#2dd4bf}
+.country .flag{font-size:38px;display:block;margin-bottom:10px}
+.country b{font-size:18px;color:#fff;display:block}
+.country span{color:#94a3b8;font-size:13px}
+.country.home{border-color:#2dd4bf;background:#0e3a42}
 .cert-grid{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 .cert{flex:1;min-width:200px;background:#0b2a35;border:1px solid #164e5e;border-radius:16px;padding:24px}
 .cert:hover{transform:translateY(-4px);border-color:#2dd4bf}
@@ -131,7 +138,18 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 <div class="card"><span class="sample">IMAGE • SAMPLE</span><h3>Dashboard Guide Image</h3><p>Static image • Blog cover</p></div>
 </div></section>
 
-<section><h2>Clients Served</h2><p class="sub">World map + countries • SAMPLE, send real countries</p><p style="font-size:48px">🌍</p><p>Pakistan • UAE • UK • USA • SAMPLE</p><p>20+ Brands • 12 Countries • SAMPLE</p></section>
+<section><h2>Clients Served</h2><p class="sub">Working across 5 regions, from Karachi to the world • SAMPLE counts, send real numbers</p>
+<p style="font-size:48px">🌍</p>
+<p><b>20+ Brands • 5 Regions • SAMPLE</b></p>
+<div class="country-grid">
+<div class="country home"><span class="flag">🇵🇰</span><b>Pakistan</b><span>Home Base • Karachi</span><br><span class="sample" style="margin-top:8px">SAMPLE</span></div>
+<div class="country"><span class="flag">🇺🇸</span><b>United States</b><span>US Clients</span><br><span class="sample" style="margin-top:8px">SAMPLE</span></div>
+<div class="country"><span class="flag">🇬🇧</span><b>United Kingdom</b><span>UK Clients</span><br><span class="sample" style="margin-top:8px">SAMPLE</span></div>
+<div class="country"><span class="flag">🇮🇳</span><b>India</b><span>India Clients</span><br><span class="sample" style="margin-top:8px">SAMPLE</span></div>
+<div class="country"><span class="flag">🌍</span><b>Africa</b><span>Africa Clients</span><br><span class="sample" style="margin-top:8px">SAMPLE</span></div>
+</div>
+<p style="margin-top:22px;color:#cbd5e1;line-height:1.7">Based in Karachi, Pakistan, serving clients in the <b style="color:#5eead4">US, UK, India, and Africa</b>, across time zones, in English, with data + marketing in one place.</p>
+</section>
 
 <section id="certs"><h2>Certifications</h2><p class="sub">Verified skills, not just claims • Add your real certificates here</p>
 <div class="cert-grid">
