@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clients | Taseen - Marketlitics</title>
+<meta name="description" content="Clients served by Taseen, Karachi. Filter by location and service. Tap a client to open its project folders.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.top{position:fixed;top:0;left:0;right:0;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;background:rgba(7,24,38,.85);backdrop-filter:blur(10px);z-index:999}
+.logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px}
+.top nav{font-size:14px}
+.top nav a{margin:0 10px;opacity:.85}
+.hero{padding:120px 20px 30px}
+h1{font-family:Georgia,serif;font-size:clamp(42px,9vw,72px);font-weight:400;color:#fef3c7}
+.sub{color:#94a3b8;margin:12px auto 30px;max-width:680px;line-height:1.7}
+.filters{max-width:960px;margin:0 auto;padding:0 20px;text-align:left}
+.filters h3{color:#5eead4;font-size:13px;letter-spacing:3px;margin:22px 0 10px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{padding:10px 18px;border-radius:999px;border:1px solid #164e5e;background:#0b2a35;color:#fff;cursor:pointer;font-size:14px;font-weight:700}
+.chip.active{background:#2dd4bf;color:#06202a;border-color:#2dd4bf}
+.count-line{max-width:960px;margin:26px auto 0;padding:0 20px;color:#94a3b8;text-align:left}
+.client-grid{max-width:960px;margin:20px auto;padding:0 20px 20px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.client{flex:1;min-width:270px;background:#0b2a35;border:1px solid #164e5e;border-radius:16px;padding:26px;text-align:left;cursor:pointer}
+.client:hover,.client.open{transform:translateY(-4px);border-color:#2dd4bf;box-shadow:0 14px 35px rgba(45,212,191,.25)}
+.client h2{font-family:Georgia,serif;font-size:28px;font-weight:400;color:#fff;margin:10px 0 6px}
+.client .loc{color:#5eead4;font-weight:700;font-size:14px}
+.client p.desc{color:#cbd5e1;line-height:1.7;margin:10px 0}
+.client ul{list-style:none;margin:14px 0}
+.client li{padding:8px 0;border-bottom:1px solid #123845;color:#e2e8f0}
+.client li:last-child{border-bottom:0}
+.tag{display:inline-block;background:#2dd4bf;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px;margin-bottom:6px}
+.svc{display:inline-block;background:#123845;border:1px solid #164e5e;color:#cbd5e1;font-size:12px;padding:5px 10px;border-radius:999px;margin:4px 4px 0 0}
+.open-link{color:#5eead4;font-weight:700;margin-top:12px;display:block}
+.detail{max-width:960px;margin:0 auto 40px;padding:0 20px;display:none;text-align:left}
+.detail.show{display:block}
+.detail-box{background:#0e3a42;border:1px solid #2dd4bf;border-radius:16px;padding:28px}
+.detail-box h2{font-family:Georgia,serif;font-size:34px;font-weight:400;color:#fef3c7;margin:8px 0}
+.detail-box p{color:#cbd5e1;line-height:1.7}
+.close-btn{float:right;background:transparent;border:1px solid #5eead4;color:#fff;border-radius:999px;padding:8px 16px;cursor:pointer;font-weight:700}
+.folders{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+.folder{flex:1;min-width:220px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:20px}
+.folder b{color:#fff;font-size:16px;display:block;margin-bottom:6px}
+.folder p{color:#94a3b8;font-size:13px;line-height:1.6}
+.folder .coming{display:inline-block;margin-top:10px;background:#fef3c7;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px}
+.before-after{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
+.before-after div{flex:1;min-width:200px;background:#071826;border:1px dashed #164e5e;border-radius:14px;padding:20px;text-align:center;color:#94a3b8}
+.empty{max-width:960px;margin:0 auto 60px;padding:30px 20px;background:#0b2a35;border:1px dashed #164e5e;border-radius:16px;display:none}
+.btn{padding:16px 36px;border-radius:999px;font-weight:700;font-size:16px;border:2px solid #5eead4;display:inline-block;margin:6px}
+.btn-data{background:#2dd4bf;color:#06202a}
+.btn-mark{background:transparent;color:#fff}
+footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
+@media(max-width:640px){.top nav{display:none}.client-grid{flex-direction:column}.folders{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a href="index.html">Home</a><a href="index.html#certs">Certifications</a><a href="clients.html">Clients</a><a href="index.html#contact">Contact</a></nav></header>
+
+<div class="hero">
+<h1>CLIENTS</h1>
+<p class="sub">13 real clients. Filter by location, then by service. Tap a client card to open it like a folder, inside are the projects done for them, reels, ad images, reporting PDFs, and calendars, as you upload them.</p>
+<p><a class="btn btn-mark" href="index.html">← Back to Home</a></p>
+</div>
+
+<div class="filters">
+<h3>FILTER BY LOCATION</h3>
+<div class="chips" id="locChips">
+<button class="chip active" data-loc="all">All Locations (13)</button>
+<button class="chip" data-loc="pakistan">🇵🇰 Pakistan (5)</button>
+<button class="chip" data-loc="uae">🇦🇪 UAE (1)</button>
+<button class="chip" data-loc="africa">🌍 Africa (4)</button>
+<button class="chip" data-loc="uk">🇬🇧 UK (2)</button>
+<button class="chip" data-loc="us">🇺🇸 US (1)</button>
+<button class="chip" data-loc="india">🇮🇳 India</button>
+</div>
+<h3>FILTER BY SERVICE</h3>
+<div class="chips" id="svcChips">
+<button class="chip active" data-svc="all">All Services</button>
+<button class="chip" data-svc="paid-ads">Paid Ads</button>
+<button class="chip" data-svc="content-strategy">Content Strategy</button>
+<button class="chip" data-svc="social-media">Social Media Management</button>
+<button class="chip" data-svc="ai-content">AI Content</button>
+<button class="chip" data-svc="reporting">Performance Reporting</button>
+<button class="chip" data-svc="wikipedia">Wikipedia</button>
+<button class="chip" data-svc="shopify">Shopify</button>
+<button class="chip" data-svc="content-production">Content Production</button>
+<button class="chip" data-svc="seo-aso">SEO / ASO</button>
+<button class="chip" data-svc="lead-gen">Lead Generation</button>
+</div>
+</div>
+
+<p class="count-line" id="countLine">Showing 13 clients • Tap a client to open its folders</p>
+
+<div class="client-grid" id="clientGrid">
+
+<div class="client" data-id="bj" data-loc="pakistan" data-svc="wikipedia shopify paid-ads content-strategy">
+<span class="tag">REAL CLIENT • PAKISTAN</span>
+<h2>📁 BJ Productions</h2>
+<p class="loc">🇵🇰 Pakistan</p>
+<ul><li>Wikipedia Page and Updating</li><li>Shopify Store Development</li><li>Paid Ad</li><li>Content Strategy</li></ul>
+<div><span class="svc">Wikipedia</span><span class="svc">Shopify</span><span class="svc">Paid Ads</span><span class="svc">Content Strategy</span></div>
+<span class="open-link">Open Folder → See Projects</span>
+</div>
+
+<div class="client" data-id="afx" data-loc="pakistan" data-svc="paid-ads social-media content-strategy">
+<span class="tag">REAL CLIENT • PAKISTAN</span>
+<h2>📁 AFX Training Hub</h2>
+<p class="loc">🇵🇰 Pakistan</p>
+<ul><li>Forex Education Training</li><li>Paid Ad</li><li>Social Media</li><li>Content Strategy</li></ul>
+<div><span class="svc">Forex Education</span><span class="svc">Paid Ads</span><span class="svc">Social Media</span><span class="svc">Content Strategy</span></div>
+<span class="open-link">Open Folder → See Projects</span>
+</div>
+
+<div class="client" data-id="berlitz" data-loc="pakistan" data-svc="content-production social-media reporting content-strategy">
+<span class="tag">REAL CLIENT • PAKISTAN</span>
+<h2>📁 Berlitz</h2>
+<p class="loc">🇵🇰 Pakistan</p>
+<ul><li>Content Production</li><li>Content Calendar</li><li>Brainstorming Content</li><li>Performance Reporting</li><li>Social Media Posting and Scheduling</li></ul>
+<div><span class="svc">Content Production</span><span class="svc">Content Calendar</span><span class="svc">Social Media</span><span class="svc">Reporting</span></div>
+<span class="open-link">Open Folder → See Projects</span>
+</div>
+
+<div class="client" data-id="aqtiv" data-loc="pakistan" data-svc="social-media content-production">
+<span class="tag">REAL CLIENT • PAKISTAN</span>
+<h2>📁 Aqtiv Water</h2>
+<p class="loc">🇵🇰 Pakistan</p>
+<ul><li>Content Calendar</li><li>Content Production</li><li>Social Media Management</li></ul>
+<div><span class="svc">Content Calendar</span><span class="svc">Content Production</span><span class="svc">Social Media Management</span></div>
+<span class="open-link">Open Folder → See Before / After</span>
+</div>
+
+<div class="client" data-id="agrilift" data-loc="pakistan" data-svc="social-media ai-content">
+<span class="tag">REAL CLIENT • PAKISTAN</span>
+<h2>📁 Agrilift</h2>
+<p class="loc">🇵🇰 Pakistan</p>
+<ul><li>Social Media Management</li><li>AI Content Production</li></ul>
+<div><span class="svc">Social Media Management</span><span class="svc">AI Content</span></div>
+<span class="open-link">Open Folder → See Projects</span>
+</div>
+
+<div class="client" data-id="sarah" data-loc="uae" data-svc="social-media ai-content reporting seo-aso content-strategy">
+<span class="tag">REAL CLIENT • UAE</span>
+<h2>📁 Sarah AI</h2>
+<p class="loc">🇦🇪 UAE</p>
+<ul><li>Client Coordination</li><li>Performance Reporting</li><li>AI Content</li><li>Social Media Management</li><li>Collaboration with Creative and Design Team</li><li>Newsletter Posting</li><li>Website Content</li><li>ASO Reporting</li><li>ASO Optimization</li><li>Community Management</li><li>Hashtag and Keyword Research</li><li>Competitor Analysis</li></ul>
+<div><span class="svc">AI Content</span><span class="svc">Social Media</span><span class="svc">ASO</span><span class="svc">Reporting</span></div>
+<span class="open-link">Open Folder → See Projects</span>
+</div>
+
+<div class="client" data-id="iib-west" data-loc="africa" data-svc="social-media ai-content reporting">
+<span class="tag">IIB GROUP • AFRICA</span>
+<h2>📁 IIB West Africa (CVE)</h2>
+<p class="loc">🌍 Africa • West Africa • CVE</p>
+<p class="desc">Part of IIB Group.</p>
+<ul><li>Social Media Management</li><li>Performance Reporting</li><li>AI Content</li><li>Social Media Copy</li><li>Captions, Keywords, Hashtags</li></ul>
+<div><span class="svc">Social Media Management</span><span class="svc">AI Content</span><span class="svc">Reporting</span><span class="svc">Captions / Hashtags</span></div>
+<span class="open-link">Open Folder → See Projects</span>
+</div>
+
+<div class="client" data-id="iib-east" data-loc="africa" data-svc="social-media ai-content reporting">
+<span class="tag">IIB GROUP • AFRICA</span>
+<h2>📁 IIB East Africa (Djibouti)</h2>
+<p class="loc">🌍 Africa • East Africa • Djibouti</p>
+<p class="desc">Part of IIB Group.</p>
+<ul><li>Social Media Management</li><li>Performance Reporting</li><li>AI Content</li><li>Social Media Copy</li><li>Captions, Keywords, Hashtags</li></ul>
+<div><span class="svc">Social Media Management</span><span class="svc">AI Content</span><span class="svc">Reporting</span><span class="svc">Captions / Hashtags</span></div>
+<span class="open-link">Open Folder → See Projects</span>
+</div>
+
+<div class="client" data-id="iib-caribbean" data-loc="africa" data-svc="social-media ai-content reporting">
+<span class="tag">IIB GROUP • CARIBBEAN</span>
+<h2>📁 IIB Caribbean</h2>
+<p class="loc">🌍 Caribbean • IIB Group</p>
+<p class="desc">Part of IIB Group.</p>
+<ul><li>Social Media Management</li><li>Performance Reporting</li><li>AI Content</li><li>Social Media Copy</li><li>Captions, Keywords, Hashtags</li></ul>
+<div><span class="svc">Social Media Management</span><span class="svc">AI Content</span><span class="svc">Reporting</span><span class="svc">Captions / Hashtags</span></div>
+<span class="open-link">Open Folder → See Projects</span>
+</div>
+
+<div class="client" data-id="afrifiber" data-loc="africa" data-svc="social-media ai-content reporting">
+<span class="tag">REAL CLIENT • AFRICA</span>
+<h2>📁 Afrifiber</h2>
+<p class="loc">🌍 Africa</p>
+<ul><li>Social Media Management</li><li>Performance Reporting</li><li>AI Content</li><li>Social Media Copy</li><li>Captions, Keywords, Hashtags</li></ul>
+<div><span class="svc">Social Media Management</span><span class="svc">AI Content</span><span class="svc">Reporting</span><span class="svc">Captions / Hashtags</span></div>
+<span class="open-link">Open Folder → See Projects</span>
+</div>
+
+<div class="client" data-id="modelml" data-loc="uk" data-svc="ai-content">
+<span class="tag">REAL CLIENT • UK</span>
+<h2>📁 Model ML</h2>
+<p class="loc">🇬🇧 UK</p>
+<ul><li>AI Content</li><li>AI Music</li></ul>
+<div><span class="svc">AI Content</span><span class="svc">AI Music</span></div>
+<span class="open-link">Open Folder → See Projects</span>
+</div>
+
+<div class="client" data-id="voitech" data-loc="uk" data-svc="social-media content-strategy paid-ads">
+<span class="tag">REAL CLIENT • UK</span>
+<h2>📁 Voitech</h2>
+<p class="loc">🇬🇧 UK</p>
+<ul><li>Social Media Strategy</li><li>Content Strategy</li><li>Paid Ad Strategy</li><li>Media Plan</li></ul>
+<div><span class="svc">Social Media Strategy</span><span class="svc">Content Strategy</span><span class="svc">Paid Ad Strategy</span><span class="svc">Media Plan</span></div>
+<span class="open-link">Open Folder → See Projects</span>
+</div>
+
+<div class="client" data-id="invaar" data-loc="us" data-svc="lead-gen social-media">
+<span class="tag">REAL CLIENT • US</span>
+<h2>📁 Invaar Studios</h2>
+<p class="loc">🇺🇸 US</p>
+<ul><li>Lead Generation</li><li>Social Media Outreach</li></ul>
+<div><span class="svc">Lead Generation</span><span class="svc">Social Media Outreach</span></div>
+<span class="open-link">Open Folder → See Projects</span>
+</div>
+
+</div>
+
+<div class="detail" id="detailBox">
+<div class="detail-box">
+<button class="close-btn" onclick="closeDetail()">X Close</button>
+<span class="tag" id="dTag">CLIENT FOLDER</span>
+<h2 id="dName"></h2>
+<p id="dLoc"></p>
+<p id="dServices" style="margin-top:12px"></p>
+<div class="folders" id="dFolders"></div>
+<div id="dBeforeAfter"></div>
+<p style="margin-top:22px;color:#94a3b8;font-size:13px">Files, reels, and PDFs for this client will appear in the folders above as you upload them. Reels over 300MB will be linked, not uploaded to GitHub, so the site stays fast.</p>
+</div>
+</div>
+
+<div class="empty" id="emptyBox">
+<h2 style="font-family:Georgia,serif;font-weight:400;color:#fef3c7;margin-bottom:10px">No client listed yet for this filter</h2>
+<p style="color:#94a3b8;line-height:1.7">Tap All Locations / All Services to see all 13 clients.</p>
+<p style="margin-top:18px"><button class="btn btn-data" onclick="resetFilters()">Show All Clients</button></p>
+</div>
+
+<div style="padding:0 20px 60px">
+<p style="color:#cbd5e1;line-height:1.7;max-width:640px;margin:0 auto 18px">Want the same work for your business? Data + marketing, from Karachi, for Pakistan, UAE, Africa, UK, and US.</p>
+<p><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a> <a class="btn btn-mark" href="https://www.linkedin.com/in/taseen-shafquat" target="_blank" rel="noopener">LinkedIn →</a></p>
+</div>
+
+<footer><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p><a href="index.html" style="color:#5eead4;font-weight:700">Back to Home →</a></p></footer>
+
+<script>
+var loc='all', svc='all';
+var clients={
+bj:{name:'BJ Productions',loc:'🇵🇰 Pakistan',services:'Wikipedia Page and Updating • Shopify Store Development • Paid Ad • Content Strategy',folders:['Wikipedia Page','Shopify Store','Paid Ads','Content Strategy']},
+afx:{name:'AFX Training Hub',loc:'🇵🇰 Pakistan',services:'Forex Education Training • Paid Ad • Social Media • Content Strategy',folders:['Reels / Video Links','Ad Images','Social Media Management','Content Strategy']},
+berlitz:{name:'Berlitz',loc:'🇵🇰 Pakistan',services:'Content Production • Content Calendar • Brainstorming • Performance Reporting • Social Media Posting and Scheduling',folders:['Content Production','Social Media Calendar','Performance Reporting PDF','Social Media Posting / Scheduling']},
+aqtiv:{name:'Aqtiv Water',loc:'🇵🇰 Pakistan',services:'Content Calendar • Content Production • Social Media Management',folders:['Content Calendar','Content Production','Social Media Management'],beforeAfter:true},
+agrilift:{name:'Agrilift',loc:'🇵🇰 Pakistan',services:'Social Media Management • AI Content Production',folders:['Social Media Management','AI Content Production']},
+sarah:{name:'Sarah AI',loc:'🇦🇪 UAE',services:'Client Coordination • Performance Reporting • AI Content • Social Media Management • Creative / Design Collaboration • Newsletter • Website Content • ASO Reporting / Optimization • Community Management • Hashtag / Keyword Research • Competitor Analysis',folders:['AI Content','Social Media Management','Performance / ASO Reporting PDF','Newsletter / Website Content','Hashtag / Keyword Research']},
+'iib-west':{name:'IIB West Africa (CVE)',loc:'🌍 Africa • West Africa • CVE • IIB Group',services:'Social Media Management • Performance Reporting • AI Content • Social Media Copy • Captions, Keywords, Hashtags',folders:['Social Media Management','Performance Reporting PDF','AI Content','Captions / Keywords / Hashtags']},
+'iib-east':{name:'IIB East Africa (Djibouti)',loc:'🌍 Africa • East Africa • Djibouti • IIB Group',services:'Social Media Management • Performance Reporting • AI Content • Social Media Copy • Captions, Keywords, Hashtags',folders:['Social Media Management','Performance Reporting PDF','AI Content','Captions / Keywords / Hashtags']},
+'iib-caribbean':{name:'IIB Caribbean',loc:'🌍 Caribbean • IIB Group',services:'Social Media Management • Performance Reporting • AI Content • Social Media Copy • Captions, Keywords, Hashtags',folders:['Social Media Management','Performance Reporting PDF','AI Content','Captions / Keywords / Hashtags']},
+afrifiber:{name:'Afrifiber',loc:'🌍 Africa',services:'Social Media Management • Performance Reporting • AI Content • Social Media Copy • Captions, Keywords, Hashtags',folders:['Social Media Management','Performance Reporting PDF','AI Content','Captions / Keywords / Hashtags']},
+modelml:{name:'Model ML',loc:'🇬🇧 UK',services:'AI Content • AI Music',folders:['AI Content','AI Music']},
+voitech:{name:'Voitech',loc:'🇬🇧 UK',services:'Social Media Strategy • Content Strategy • Paid Ad Strategy • Media Plan',folders:['Social Media Strategy','Content Strategy','Paid Ad Strategy','Media Plan PDF']},
+invaar:{name:'Invaar Studios',loc:'🇺🇸 US',services:'Lead Generation • Social Media Outreach',folders:['Lead Generation','Social Media Outreach']}
+};
+function openDetail(id){
+  var c=clients[id]; if(!c) return;
+  document.querySelectorAll('.client').forEach(function(el){el.classList.remove('open')});
+  var card=document.querySelector('.client[data-id="'+id+'"]'); if(card) card.classList.add('open');
+  document.getElementById('dName').textContent='📁 '+c.name;
+  document.getElementById('dLoc').textContent=c.loc;
+  document.getElementById('dServices').textContent=c.services;
+  var html='';
+  c.folders.forEach(function(f){
+    html+='<div class="folder"><b>📁 '+f+'</b><p>Projects, files, and links for '+f+' will appear here.</p><span class="coming">COMING • UPLOAD NEXT</span></div>';
+  });
+  document.getElementById('dFolders').innerHTML=html;
+  var ba='';
+  if(c.beforeAfter){
+    ba='<h3 style="color:#5eead4;font-size:13px;letter-spacing:3px;margin:26px 0 10px">BEFORE / AFTER • SOCIAL MEDIA</h3><div class="before-after"><div><b style="color:#fff">BEFORE</b><br><br>Image before your handling<br>Upload next</div><div><b style="color:#fff">AFTER</b><br><br>Image after your handling<br>Upload next</div></div>';
+  }
+  document.getElementById('dBeforeAfter').innerHTML=ba;
+  var box=document.getElementById('detailBox'); box.classList.add('show');
+  box.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function closeDetail(){
+  document.getElementById('detailBox').classList.remove('show');
+  document.querySelectorAll('.client').forEach(function(el){el.classList.remove('open')});
+}
+document.querySelectorAll('.client').forEach(function(card){
+  card.addEventListener('click',function(){openDetail(card.dataset.id)});
+});
+function applyFilters(){
+  var cards=document.querySelectorAll('.client'); var shown=0;
+  cards.forEach(function(c){
+    var okLoc=(loc==='all'||c.dataset.loc===loc);
+    var okSvc=(svc==='all'||c.dataset.svc.indexOf(svc)>-1);
+    if(okLoc&&okSvc){c.style.display='block';shown++}else{c.style.display='none'}
+  });
+  document.getElementById('countLine').textContent='Showing '+shown+' client'+(shown===1?'':'s')+' • Tap a client to open its folders';
+  document.getElementById('emptyBox').style.display=(shown===0?'block':'none');
+  document.getElementById('clientGrid').style.display=(shown===0?'none':'flex');
+}
+function setActive(group,btn){
+  document.querySelectorAll('#'+group+' .chip').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+}
+document.querySelectorAll('#locChips .chip').forEach(function(b){
+  b.addEventListener('click',function(){loc=b.dataset.loc;setActive('locChips',b);applyFilters()});
+});
+document.querySelectorAll('#svcChips .chip').forEach(function(b){
+  b.addEventListener('click',function(){svc=b.dataset.svc;setActive('svcChips',b);applyFilters()});
+});
+function resetFilters(){
+  loc='all';svc='all';
+  document.querySelectorAll('.chip').forEach(function(b){b.classList.remove('active')});
+  document.querySelector('#locChips .chip').classList.add('active');
+  document.querySelector('#svcChips .chip').classList.add('active');
+  applyFilters();
+}
+var params=new URLSearchParams(window.location.search);
+var qLoc=params.get('location');
+if(qLoc){
+  var target=document.querySelector('#locChips .chip[data-loc="'+qLoc+'"]');
+  if(target){loc=qLoc;setActive('locChips',target)}
+}
+applyFilters();
+</script>
+</body>
+</html>
