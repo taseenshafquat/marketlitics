@@ -46,21 +46,32 @@ section h2{font-family:Georgia,serif;font-size:clamp(30px,6vw,44px);font-weight:
 section h2 span{color:#5eead4}
 .sec-label{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800}
 .sec-sub{color:#94a3b8;line-height:1.7;margin:12px 0 22px;max-width:680px}
-.cards{display:flex;gap:16px;flex-wrap:wrap}
-.card{flex:1;min-width:240px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:22px;text-align:left;transition:.25s}
-.card:hover{transform:translateY(-4px);border-color:#2dd4bf}
-.card h3{font-family:Georgia,serif;font-size:21px;font-weight:400;line-height:1.4;margin:8px 0 6px;color:#fff}
+.cards{display:flex;gap:16px;flex-wrap:wrap;perspective:900px}
+.card{flex:1;min-width:240px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:22px;text-align:left;transition:transform .25s ease,border-color .25s,box-shadow .25s;position:relative;overflow:hidden;will-change:transform;cursor:pointer}
+.card:before{content:"";position:absolute;top:0;left:-80%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.14),transparent);transform:skewX(-20deg);transition:left .6s ease;pointer-events:none}
+.card:hover:before,.card:focus-within:before,.card.tapped:before{left:130%}
+.card:hover,.card:focus-within,.card.tapped{border-color:#2dd4bf;box-shadow:0 18px 40px rgba(45,212,191,.28),0 0 0 1px rgba(45,212,191,.35)}
+.card h3{font-family:Georgia,serif;font-size:21px;font-weight:400;line-height:1.4;margin:8px 0 6px;color:#fff;transition:color .25s}
+.card:hover h3,.card.tapped h3{color:#fef3c7}
 .card p{color:#94a3b8;font-size:13px;line-height:1.6}
 .client-tag{color:#5eead4;font-size:12px;font-weight:700;letter-spacing:1px}
-.open-link{color:#5eead4;font-weight:700;font-size:13px;display:block;margin-top:12px}
-.skill{display:inline-block;background:#123845;border:1px solid #164e5e;color:#e2e8f0;font-size:13px;padding:8px 14px;border-radius:999px;margin:4px 4px 0 0}
+.open-link{color:#5eead4;font-weight:700;font-size:13px;display:block;margin-top:12px;transition:transform .25s}
+.card:hover .open-link,.card.tapped .open-link{transform:translateX(4px)}
+.hover-reveal{max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .35s ease,margin .35s ease;color:#e2e8f0;font-size:13px;line-height:1.6;margin:0}
+.card:hover .hover-reveal,.card:focus-within .hover-reveal,.card.tapped .hover-reveal{max-height:60px;opacity:1;margin-top:10px}
+.hover-hint{font-size:11px;color:#64748b;letter-spacing:1px;margin-top:10px;display:block}
+.card:hover .hover-hint,.card.tapped .hover-hint{opacity:0}
+.skill{display:inline-block;background:#123845;border:1px solid #164e5e;color:#e2e8f0;font-size:13px;padding:8px 14px;border-radius:999px;margin:4px 4px 0 0;transition:.25s;cursor:default}
+.skill:hover{background:#2dd4bf;color:#06202a;border-color:#2dd4bf;transform:translateY(-3px)}
 .slider-wrap{margin-top:26px;position:relative}
 .slider-title{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800;margin-bottom:12px}
 .slider-viewport{overflow:hidden;border-radius:18px}
 .slider-track{display:flex;transition:transform .5s ease}
 .slide{flex:0 0 33.333%;padding:0 8px;box-sizing:border-box}
-.slide-box{background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:24px;min-height:190px;text-align:left}
-.slide-box .emoji{font-size:36px}
+.slide-box{background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:24px;min-height:190px;text-align:left;transition:.25s;height:100%}
+.slide-box:hover{border-color:#2dd4bf;transform:translateY(-6px);box-shadow:0 14px 30px rgba(45,212,191,.22)}
+.slide-box .emoji{font-size:36px;transition:transform .25s}
+.slide-box:hover .emoji{transform:scale(1.2) rotate(-6deg)}
 .slide-box h3{font-family:Georgia,serif;font-size:20px;font-weight:400;color:#fff;margin:12px 0 6px}
 .slide-box p{color:#94a3b8;font-size:13px;line-height:1.6}
 .slider-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid #5eead4;background:#071826;color:#fff;font-size:18px;cursor:pointer;z-index:3}
@@ -85,7 +96,8 @@ section h2 span{color:#5eead4}
 .map-panel{position:relative;height:340px;background:#0e3a42;overflow:hidden}
 .map-panel iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:.55;filter:saturate(.9)}
 .map-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,58,66,.25),rgba(7,24,38,.45));pointer-events:none}
-.map-pin{position:absolute;transform:translate(-50%,-100%);text-align:center;cursor:pointer;z-index:2}
+.map-pin{position:absolute;transform:translate(-50%,-100%);text-align:center;cursor:pointer;z-index:2;transition:transform .25s}
+.map-pin:hover{transform:translate(-50%,-100%) scale(1.12)}
 .map-pin i{display:block;width:16px;height:16px;background:#2dd4bf;border:3px solid #fff;border-radius:50%;margin:0 auto;box-shadow:0 0 0 6px rgba(45,212,191,.35)}
 .map-pin b{display:inline-block;background:#071826;border:1px solid #2dd4bf;color:#fff;font-size:12px;padding:5px 9px;border-radius:999px;margin-top:6px;white-space:nowrap}
 .map-pin.active i{background:#fef3c7}
@@ -93,7 +105,8 @@ section h2 span{color:#5eead4}
 .map-pin .flag{font-size:22px;line-height:1;display:block;margin-bottom:2px}
 .map-note{padding:16px 20px;color:#94a3b8;font-size:12px;line-height:1.6;border-top:1px solid #164e5e}
 .map-rows{display:flex;gap:10px;flex-wrap:wrap;padding:20px}
-.map-row{flex:1;min-width:140px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:16px;cursor:pointer;text-align:left}
+.map-row{flex:1;min-width:140px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:16px;cursor:pointer;text-align:left;transition:.25s}
+.map-row:hover{transform:translateY(-4px);border-color:#2dd4bf}
 .map-row.active{border-color:#2dd4bf;background:#0e3a42}
 .map-row .flag{font-size:28px;line-height:1.2}
 .map-row b{color:#fff;font-size:15px;display:block;margin-top:6px}
@@ -102,12 +115,14 @@ section h2 span{color:#5eead4}
 .map-count{font-family:Georgia,serif;font-size:28px;color:#fef3c7;margin-top:12px;line-height:1}
 .map-count small{font-size:12px;color:#5eead4;font-family:Arial,sans-serif;font-weight:700;letter-spacing:1px}
 .map-btn-row{padding:0 20px 22px;text-align:center}
-.marketing-teaser{background:#0e3a42;border:1px solid #2dd4bf;border-radius:18px;padding:26px}
+.marketing-teaser{background:#0e3a42;border:1px solid #2dd4bf;border-radius:18px;padding:26px;transition:.25s}
+.marketing-teaser:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(45,212,191,.2)}
 .marketing-teaser h3{font-family:Georgia,serif;font-size:28px;font-weight:400;color:#fef3c7;line-height:1.3;margin:10px 0}
 .marketing-teaser p{color:#cbd5e1;line-height:1.7}
 .marketing-list{margin:18px 0 6px;color:#e2e8f0;line-height:2;font-size:15px}
 .marketing-list b{color:#5eead4}
-.btn{padding:16px 36px;border-radius:999px;font-weight:700;font-size:16px;border:2px solid #5eead4;display:inline-block;margin:6px}
+.btn{padding:16px 36px;border-radius:999px;font-weight:700;font-size:16px;border:2px solid #5eead4;display:inline-block;margin:6px;transition:.25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(45,212,191,.25)}
 .btn-data{background:#2dd4bf;color:#06202a}
 .btn-mark{background:transparent;color:#fff}
 .cta{text-align:center;padding:50px 20px 60px}
@@ -150,7 +165,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <section id="skills">
 <p class="sec-label">SKILLS</p>
 <h2>What I <span>Do Best</span></h2>
-<p class="sec-sub">Not a long list. The tools I actually use, for clients, every week. Chips, then slider, then proficiency bars, same skills, all 3 kept.</p>
+<p class="sec-sub">Not a long list. The tools I actually use, for clients, every week. Chips, then slider, then proficiency bars, same skills, all 3 kept. Hover a card, it lifts and tilts.</p>
 <p>
 <span class="skill">Data Analysis</span>
 <span class="skill">Power BI</span>
@@ -195,12 +210,12 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <section id="work">
 <p class="sec-label">WORK</p>
 <h2>Work, <span>By Service</span></h2>
-<p class="sec-sub">Tap a service, see the proof on the Clients or Content page. No samples, real work only on those pages.</p>
+<p class="sec-sub">Hover a card, it lifts, tilts toward your mouse, and shows what you get. Tap a service, see the proof on the Clients or Content page.</p>
 <div class="cards">
-<div class="card"><span class="client-tag">01 • SOCIAL MEDIA</span><h3>Social Media Management</h3><p>Content calendar, posting, replies, growth. Aqtiv Water, Berlitz, Agrilift, LUMS work, and more, on the Clients page.</p><a class="open-link" href="clients.html">See Clients →</a></div>
-<div class="card"><span class="client-tag">02 • DATA</span><h3>Data &amp; Dashboards</h3><p>GA4, Power BI, Python, SQL. Traffic, conversion, spend, in one dashboard, checked daily, in plain words.</p><a class="open-link" href="clients.html">See Clients →</a></div>
-<div class="card"><span class="client-tag">03 • CONTENT + AI</span><h3>Content &amp; AI Content</h3><p>Reels, galleries, AI visuals, with a real message. LUMS gallery and Agrilift AI Reel play on the Content page.</p><a class="open-link" href="content.html">See Content →</a></div>
-<div class="card"><span class="client-tag">04 • ADS + SEO</span><h3>Ads &amp; SEO</h3><p>Meta Ads, Google Ads, SEO. Budget split and campaign plan are on the Marketing page, with the Aqtiv case example.</p><a class="open-link" href="marketing.html">See Marketing →</a></div>
+<div class="card tilt-card" tabindex="0"><span class="client-tag">01 • SOCIAL MEDIA</span><h3>Social Media Management</h3><p>Content calendar, posting, replies, growth. Aqtiv Water, Berlitz, Agrilift, LUMS work, and more, on the Clients page.</p><p class="hover-reveal">✓ Calendar + posting + growth, with a weekly report, so you see what grew, not just what was posted.</p><a class="open-link" href="clients.html">See Clients →</a><span class="hover-hint">HOVER FOR MORE ↑</span></div>
+<div class="card tilt-card" tabindex="0"><span class="client-tag">02 • DATA</span><h3>Data &amp; Dashboards</h3><p>GA4, Power BI, Python, SQL. Traffic, conversion, spend, in one dashboard, checked daily, in plain words.</p><p class="hover-reveal">✓ 1 dashboard, checked daily: traffic, conversion, spend, in 30 seconds, no jargon.</p><a class="open-link" href="clients.html">See Clients →</a><span class="hover-hint">HOVER FOR MORE ↑</span></div>
+<div class="card tilt-card" tabindex="0"><span class="client-tag">03 • CONTENT + AI</span><h3>Content &amp; AI Content</h3><p>Reels, galleries, AI visuals, with a real message. LUMS gallery and Agrilift AI Reel play on the Content page.</p><p class="hover-reveal">✓ Reel + gallery, with a real message, plays on the page, from Box, no download needed.</p><a class="open-link" href="content.html">See Content →</a><span class="hover-hint">HOVER FOR MORE ↑</span></div>
+<div class="card tilt-card" tabindex="0"><span class="client-tag">04 • ADS + SEO</span><h3>Ads &amp; SEO</h3><p>Meta Ads, Google Ads, SEO. Budget split and campaign plan are on the Marketing page, with the Aqtiv case example.</p><p class="hover-reveal">✓ Budget split + campaign plan, with the Aqtiv case: 21 to 360 followers, on the Marketing page.</p><a class="open-link" href="marketing.html">See Marketing →</a><span class="hover-hint">HOVER FOR MORE ↑</span></div>
 </div>
 </section>
 
@@ -227,9 +242,9 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <h2>11 Real <span>Clients</span></h2>
 <p class="sec-sub">Pakistan, UAE, Africa, UK, US. Each client has its own folder, with what was done, and the result. Aqtiv, Berlitz, LUMS, Agrilift, and more.</p>
 <div class="cards">
-<div class="card"><span class="client-tag">FEATURED</span><h3>Aqtiv Water</h3><p>Launch + re-launch, 1st bottle free, 21 to 360 followers. See the full folder on the Clients page.</p><a class="open-link" href="clients.html">Open Clients Page →</a></div>
-<div class="card"><span class="client-tag">FEATURED</span><h3>Agrilift</h3><p>Social Media Management + AI Content Production. AI Reel plays on the Content page.</p><a class="open-link" href="content.html?id=agrilift">Play Agrilift Reel →</a></div>
-<div class="card"><span class="client-tag">FEATURED</span><h3>LUMS</h3><p>Content gallery, 6 Box videos, each with its file name. Tap Play on the Content page.</p><a class="open-link" href="content.html?id=lums">Open LUMS Gallery →</a></div>
+<div class="card tilt-card" tabindex="0"><span class="client-tag">FEATURED</span><h3>Aqtiv Water</h3><p>Launch + re-launch, 1st bottle free, 21 to 360 followers. See the full folder on the Clients page.</p><p class="hover-reveal">✓ Launch + re-launch event, same message everywhere: Drink Aqtiv, Stay Active.</p><a class="open-link" href="clients.html">Open Clients Page →</a><span class="hover-hint">HOVER FOR MORE ↑</span></div>
+<div class="card tilt-card" tabindex="0"><span class="client-tag">FEATURED</span><h3>Agrilift</h3><p>Social Media Management + AI Content Production. AI Reel plays on the Content page.</p><p class="hover-reveal">✓ AI Reel, agriculture made simple and visual, plays on the page.</p><a class="open-link" href="content.html?id=agrilift">Play Agrilift Reel →</a><span class="hover-hint">HOVER FOR MORE ↑</span></div>
+<div class="card tilt-card" tabindex="0"><span class="client-tag">FEATURED</span><h3>LUMS</h3><p>Content gallery, 6 Box videos, each with its file name. Tap Play on the Content page.</p><p class="hover-reveal">✓ 6 videos, 1 gallery, each with its file name, tap Play, no download needed.</p><a class="open-link" href="content.html?id=lums">Open LUMS Gallery →</a><span class="hover-hint">HOVER FOR MORE ↑</span></div>
 </div>
 <p style="margin-top:18px"><a class="btn btn-data" href="clients.html">📁 View All 11 Clients →</a></p>
 </section>
@@ -265,9 +280,9 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <h2>Certifications</h2>
 <p class="sec-sub">Back on Home, same section as before. I did not invent names, so no fake certificate is shown. Send me the real ones and I fill them in.</p>
 <div class="cards">
-<div class="card"><span class="client-tag">CERTIFICATE 1</span><h3>Certificate Name Here</h3><p>Provider, year, and 1 line on what it covered. Replace this text with your real certificate name, provider, and year.</p><span class="open-link">Add certificate link →</span></div>
-<div class="card"><span class="client-tag">CERTIFICATE 2</span><h3>Certificate Name Here</h3><p>Provider, year, and 1 line on what it covered. Replace this text with your real certificate name, provider, and year.</p><span class="open-link">Add certificate link →</span></div>
-<div class="card"><span class="client-tag">CERTIFICATE 3</span><h3>Certificate Name Here</h3><p>Provider, year, and 1 line on what it covered. Replace this text with your real certificate name, provider, and year.</p><span class="open-link">Add certificate link →</span></div>
+<div class="card tilt-card" tabindex="0"><span class="client-tag">CERTIFICATE 1</span><h3>Certificate Name Here</h3><p>Provider, year, and 1 line on what it covered. Replace this text with your real certificate name, provider, and year.</p><span class="open-link">Add certificate link →</span></div>
+<div class="card tilt-card" tabindex="0"><span class="client-tag">CERTIFICATE 2</span><h3>Certificate Name Here</h3><p>Provider, year, and 1 line on what it covered. Replace this text with your real certificate name, provider, and year.</p><span class="open-link">Add certificate link →</span></div>
+<div class="card tilt-card" tabindex="0"><span class="client-tag">CERTIFICATE 3</span><h3>Certificate Name Here</h3><p>Provider, year, and 1 line on what it covered. Replace this text with your real certificate name, provider, and year.</p><span class="open-link">Add certificate link →</span></div>
 </div>
 <p style="color:#94a3b8;font-size:13px;line-height:1.7;margin-top:14px">Send me, in 1 message: <b style="color:#fff">Name, Provider, Year</b>, for each certificate, for example: Google Analytics 4, Google, 2024. I put the real names in, nothing else changes.</p>
 </section>
@@ -355,6 +370,23 @@ var skillBars=[
   addEventListener('scroll',animateBars);
   animateBars();
 })();
+/* HOVER INTERACTIVE CARDS: tilt follows mouse, shine + reveal on hover, tap on phone toggles it. */
+document.querySelectorAll('.tilt-card').forEach(function(card){
+  card.addEventListener('mousemove',function(e){
+    var r=card.getBoundingClientRect();
+    var x=(e.clientX-r.left)/r.width-0.5;
+    var y=(e.clientY-r.top)/r.height-0.5;
+    card.style.transform='translateY(-8px) rotateX('+(-y*7)+'deg) rotateY('+(x*8)+'deg) scale(1.02)';
+  });
+  card.addEventListener('mouseleave',function(){card.style.transform=''});
+  card.addEventListener('click',function(e){
+    if(e.target.closest('a'))return;
+    document.querySelectorAll('.tilt-card.tapped').forEach(function(c){if(c!==card)c.classList.remove('tapped')});
+    card.classList.toggle('tapped');
+  });
+  card.addEventListener('focus',function(){card.classList.add('tapped')});
+  card.addEventListener('blur',function(){card.classList.remove('tapped')});
+});
 </script>
 </body>
 </html>
