@@ -50,7 +50,8 @@ h2{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fef3c7;margin
 .case-metrics b{color:#5eead4;font-size:20px;display:block}
 .case-metrics span{font-size:12px;color:#94a3b8}
 .case-link{color:#5eead4;font-weight:700}
-#map{height:420px;width:100%;border-radius:16px;border:1px solid #164e5e;z-index:1;text-align:left}
+#map{height:420px;width:100%;border-radius:16px;border:1px solid #164e5e;z-index:1;text-align:left;background:#0b2a35}
+.leaflet-tile{filter:invert(92%) hue-rotate(185deg) brightness(.88) contrast(.92)}
 .flag-pin{font-size:32px;line-height:1;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));text-align:center}
 .flag-pin-home{font-size:42px}
 .leaflet-popup-content{color:#071826;font-family:Arial,sans-serif;text-align:center}
@@ -173,7 +174,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 var map=L.map('map',{scrollWheelZoom:false}).setView([28,20],2);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap © CARTO',maxZoom:18}).addTo(map);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:18}).addTo(map);
 function pin(flag,home){return L.divIcon({className:'',html:'<div class="flag-pin '+(home?'flag-pin-home':'')+'">'+flag+'</div>',iconSize:[40,40],iconAnchor:[20,20]});}
 L.marker([24.86,67.01],{icon:pin('🇵🇰',true)}).addTo(map).bindPopup('<b>🇵🇰 Pakistan</b><br>Home Base • Karachi<br>Clients Served • SAMPLE');
 L.marker([40.71,-74.00],{icon:pin('🇺🇸')}).addTo(map).bindPopup('<b>🇺🇸 United States</b><br>US Clients<br>Clients Served • SAMPLE');
