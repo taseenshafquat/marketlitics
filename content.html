@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Content | Taseen - Marketlitics</title>
-<meta name="description" content="Best content by Taseen. LUMS Content gallery, 6 Box videos embedded. Filter by Static, Reel, Carousel, Gallery.">
+<meta name="description" content="Best content by Taseen. LUMS Content gallery and Agrilift AI Reel, Box videos embedded.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden}
@@ -52,11 +52,9 @@ h1{font-family:Georgia,serif;font-size:clamp(42px,9vw,72px);font-weight:400;colo
 .body{padding:18px 18px 48px;position:relative}
 .body h2{font-family:Georgia,serif;font-size:21px;font-weight:400;color:#fff;line-height:1.4;margin:8px 0 6px}
 .body p{color:#94a3b8;font-size:13px;line-height:1.6}
-.sample{display:inline-block;background:#2dd4bf;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px}
 .client-tag{color:#5eead4;font-size:12px;font-weight:700;letter-spacing:1px;margin-top:8px;display:block}
 .type-badge{position:absolute;right:14px;bottom:14px;background:#2dd4bf;color:#06202a;font-size:11px;font-weight:800;letter-spacing:1px;padding:6px 11px;border-radius:999px}
 .type-badge.reel{background:#fef3c7}
-.type-badge.carousel{background:#5eead4}
 .type-badge.gallery{background:#fef3c7;color:#06202a}
 .open-link{color:#5eead4;font-weight:700;font-size:13px;display:block;margin-top:10px}
 .detail{max-width:1100px;margin:0 auto 40px;padding:20px;display:none;text-align:left}
@@ -83,8 +81,6 @@ h1{font-family:Georgia,serif;font-size:clamp(42px,9vw,72px);font-weight:400;colo
 .close-btn{float:right;background:transparent;border:1px solid #5eead4;color:#fff;border-radius:999px;padding:8px 16px;cursor:pointer;font-weight:700}
 .detail-type{position:absolute;right:26px;bottom:26px;background:#fef3c7;color:#06202a;font-size:12px;font-weight:800;letter-spacing:1px;padding:8px 14px;border-radius:999px}
 .detail-type.reel{background:#fef3c7}
-.detail-type.carousel{background:#5eead4}
-.detail-type.static{background:#2dd4bf}
 .info{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
 .info-box{flex:1;min-width:230px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:20px}
 .info-box b{color:#5eead4;font-size:12px;letter-spacing:2px;display:block;margin-bottom:8px}
@@ -117,7 +113,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a class="work-link" href="index.html#work">Work</a><a href="index.html#skills">Skills</a><a class="content-link" href="content.html">Content</a><a class="clients-link" href="clients.html">Clients</a><a href="index.html#certs">Certifications</a><a href="index.html#contact">Contact</a></nav></header>
 <div class="hero">
 <h1>CONTENT</h1>
-<p class="sub">Best content, by type. Use the filters on the left. Tap LUMS Content to open its gallery, all 6 Box videos play inside this page, each with its file name.</p>
+<p class="sub">Real content only. LUMS gallery and Agrilift AI Reel. Tap a piece to open it, details open under it: client, tools, message, strategy, brief. Videos play inside this page.</p>
 <p><a class="btn btn-mark" href="index.html">← Back to Home</a> <a class="btn btn-data" href="clients.html">📁 Clients →</a></p>
 </div>
 <div class="layout">
@@ -127,24 +123,18 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <input class="search-box" id="searchInput" type="search" placeholder="Search content, client...">
 <h3 style="margin-top:4px">FILTER BY TYPE</h3>
 <div class="filter-list" id="typeFilters">
-<button class="filter-btn active" data-type="all">All Content <span>6</span></button>
-<button class="filter-btn" data-type="static">Static <span>2</span></button>
+<button class="filter-btn active" data-type="all">All Content <span>2</span></button>
 <button class="filter-btn" data-type="reel">Reel <span>1</span></button>
-<button class="filter-btn" data-type="carousel">Carousel <span>2</span></button>
 <button class="filter-btn" data-type="gallery">Gallery <span>1</span></button>
 </div>
-<p class="sidebar-note">Tip: type LUMS in the search box above, and only the LUMS gallery shows.</p>
+<p class="sidebar-note">Tip: type Agrilift or LUMS in the search box above, and only that work shows.</p>
 <button class="clear-btn" onclick="resetFilter()">Clear Filters</button>
 </aside>
 <main class="main">
-<p class="count-line" id="countLine">Showing 6 pieces • Tap one to open its details under it</p>
+<p class="count-line" id="countLine">Showing 2 pieces • Tap one to open its details under it</p>
 <div class="grid" id="grid">
-<div class="item" data-id="c1" data-type="static" data-search="aqtiv water launch drink stay active static"><div class="thumb">💧</div><div class="body"><span class="sample">SAMPLE</span><span class="client-tag">AQTIV WATER</span><h2>Aqtiv Launch: Drink Aqtiv, Stay Active</h2><p>Launch static • 1st bottle free • Lahore</p><span class="open-link">Open Details →</span><span class="type-badge">STATIC</span></div></div>
-<div class="item" data-id="c2" data-type="reel" data-search="berlitz storytelling hook reel video"><div class="thumb">🎬<span class="play">▶ REEL • PLAYS ON PAGE</span></div><div class="body"><span class="sample">SAMPLE</span><span class="client-tag">BERLITZ</span><h2>Storytelling Hook Reel</h2><p>Hook in 3 seconds • Story first, sell second • Box / OneDrive embed</p><span class="open-link">Open Details → Play Reel</span><span class="type-badge reel">REEL</span></div></div>
-<div class="item" data-id="c3" data-type="carousel" data-search="seo framework carousel slides"><div class="thumb">📊</div><div class="body"><span class="sample">SAMPLE</span><span class="client-tag">SEO • CONTENT</span><h2>SEO Framework Carousel</h2><p>5 slides • Swipe • Save this framework</p><span class="open-link">Open Details →</span><span class="type-badge carousel">CAROUSEL</span></div></div>
-<div class="item" data-id="c4" data-type="static" data-search="dashboard guide data power bi ga4 static"><div class="thumb">📈</div><div class="body"><span class="sample">SAMPLE</span><span class="client-tag">DATA • DASHBOARD</span><h2>Dashboard Guide Image</h2><p>GA4 + Power BI • What to check daily</p><span class="open-link">Open Details →</span><span class="type-badge">STATIC</span></div></div>
-<div class="item" data-id="c5" data-type="carousel" data-search="aqtiv water relaunch offer carousel event"><div class="thumb">🎁</div><div class="body"><span class="sample">SAMPLE</span><span class="client-tag">AQTIV WATER</span><h2>Re-launch Offer Carousel</h2><p>Get your 1st bottle free • Event + offer</p><span class="open-link">Open Details →</span><span class="type-badge carousel">CAROUSEL</span></div></div>
 <div class="item" data-id="lums" data-type="gallery" data-search="lums content gallery videos box"><div class="thumb">🎓<span class="play">▶ 6 VIDEOS • GALLERY</span></div><div class="body"><span class="client-tag">LUMS</span><h2>LUMS Content</h2><p>Gallery of 6 content pieces • Box embedded • Tap to play each, with file name</p><span class="open-link">Open Gallery → Play Videos</span><span class="type-badge gallery">GALLERY</span></div></div>
+<div class="item" data-id="agrilift" data-type="reel" data-search="agrilift ai reel artificial intelligence agriculture video box"><div class="thumb">🌾<span class="play">▶ AI REEL • PLAYS ON PAGE</span></div><div class="body"><span class="client-tag">AGRILIFT • AI CONTENT</span><h2>AI Reel: Agrilift</h2><p>AI content for Agrilift • Box link embedded • Plays on this page</p><span class="open-link">Open Details → Play Reel</span><span class="type-badge reel">REEL</span></div></div>
 </div>
 <div class="empty" id="emptyBox" style="margin:20px 0 0"><h2 style="font-family:Georgia,serif;font-weight:400;color:#fef3c7;margin-bottom:10px">No content matches that filter</h2><p style="color:#94a3b8">Try another type on the left, or clear the search box.</p><p style="margin-top:18px"><button class="btn btn-data" onclick="resetFilter()">Show All Content</button></p></div>
 </main>
@@ -155,7 +145,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <div id="dGallery"></div>
 <div class="detail-inner">
 <button class="close-btn" onclick="closeDetail()">X Close</button>
-<span class="sample" id="dSample">CONTENT DETAIL</span>
+<span class="sample" id="dSample" style="display:inline-block;background:#2dd4bf;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px">BOX VIDEO</span>
 <span class="client-tag" id="dClient"></span>
 <h2 id="dTitle"></h2>
 <p id="dIntro"></p>
@@ -182,18 +172,17 @@ addEventListener('mousemove',function(e){var g=document.getElementById('glow');g
 function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;for(var j=i+1;j<pts.length;j++){var q=pts[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<120){ctx.strokeStyle='rgba(45,212,191,'+(0.28-dd/450)+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}ctx.fillStyle='rgba(94,234,212,.85)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}requestAnimationFrame(draw)}
 draw();
 function toEmbed(url){
-  if(!url||url.indexOf('PASTE_')===0||url.indexOf('http')!==0)return null;
+  if(!url||url.indexOf('http')!==0)return null;
   if(url.indexOf('box.com/embed')>-1)return url.split('?')[0];
   if(url.indexOf('box.com/s/')>-1)return url.replace('box.com/s/','box.com/embed/s/').split('?')[0];
   if(url.indexOf('onedrive.live.com/embed')>-1)return url;
   return url;
 }
 function watchUrl(url){
-  if(!url||url.indexOf('PASTE_')===0)return null;
+  if(!url||url.indexOf('http')!==0)return null;
   if(url.indexOf('box.com/embed/s/')>-1)return url.replace('box.com/embed/s/','box.com/s/');
   return url.split('?')[0];
 }
-/* LUMS FILE NAMES: replace the text after name: with the actual Box file name, in this same order 1 to 6. Do not change the url lines. */
 var lumsFiles=[
 {name:'LUMS File 1',url:'https://app.box.com/s/8p7c4vyq1rkpmdqu6ch66a67yd06yo0y'},
 {name:'LUMS File 2',url:'https://app.box.com/s/y5zc5m3hn0b9bwsg0t7fmrw5q05x71qp'},
@@ -204,12 +193,8 @@ var lumsFiles=[
 ];
 var type='all', query='';
 var items={
-c1:{title:'Aqtiv Launch: Drink Aqtiv, Stay Active',client:'AQTIV WATER',type:'STATIC',typeClass:'static',emoji:'💧',videoUrl:'',intro:'Launch static for Aqtiv Water, Lahore. One clear offer, one clear action.',madeFor:'Aqtiv Water • Lahore • Instagram @aqtivsolutions • New water brand, launching in Lahore.',tools:'Canva • Instagram • Content Calendar',message:'Drink Aqtiv, Stay Active. Fresh, clean, local water, easy to try, easy to remember.',strategy:'Static first for launch, because the offer must be read in 2 seconds. Big offer, big bottle, location + time, no clutter. Posted with the launch event post, same day.',brief:'Goal: Launch awareness + footfall at the launch event. Audience: Lahore, active / health conscious, 18-35. Deliverable: 1 launch static + caption + hashtags. Result: SAMPLE, replace with your real reach / saves / event visits.',link:'Replace 💧 with your real image file, for example: content-aqtiv-launch.png'},
-c2:{title:'Storytelling Hook Reel',client:'BERLITZ',type:'REEL',typeClass:'reel',emoji:'🎬',videoUrl:'PASTE_YOUR_BOX_OR_ONEDRIVE_LINK_HERE',intro:'Reel built on story first. Hook in 3 seconds, lesson in the middle, CTA at the end. Plays inside this page, Box / OneDrive embed.',madeFor:'Berlitz • Pakistan • Language / learning audience.',tools:'CapCut • Canva • Instagram Reels',message:'Learning a language changes how you see the world. Start with one story, not one rule.',strategy:'Reel, not static, because story needs voice + face + movement. Hook: a relatable mistake. Middle: the fix. End: save + follow. Posted at peak time, caption asks a question to get comments.',brief:'Goal: Reach + saves + profile visits. Audience: Students / professionals learning English. Deliverable: 1 vertical reel, 9:16, captions on screen, hosted on Box / OneDrive, embedded here. Result: SAMPLE, replace with your real views.',link:'PASTE YOUR LINK ABOVE: Box Share link, or OneDrive Embed link. Box Share link auto-converts to embed.'},
-c3:{title:'SEO Framework Carousel',client:'SEO • CONTENT',type:'CAROUSEL',typeClass:'carousel',emoji:'📊',videoUrl:'',intro:'5 slide carousel. Each slide = 1 step. Last slide = save this.',madeFor:'Marketlitics audience • Business owners + marketers learning SEO.',tools:'Canva • SEO Research • Google Search Console',message:'SEO is not tricks. It is: search intent, good content, fast page, real links. Do it in order.',strategy:'Carousel, not static, because a framework needs steps. Slide 1: promise. Slides 2-4: steps. Slide 5: checklist + save CTA. Carousels get swipes + saves, which is the goal here.',brief:'Goal: Saves + shares + authority. Audience: Founders / marketers, beginner to intermediate SEO. Deliverable: 5 slide carousel, 1080x1350, + caption with keywords. Result: SAMPLE, replace with your real saves / shares.',link:'Replace 📊 with your real carousel images, slide 1 first, then add slides 2-5 in the detail preview.'},
-c4:{title:'Dashboard Guide Image',client:'DATA • DASHBOARD',type:'STATIC',typeClass:'static',emoji:'📈',videoUrl:'',intro:'One static that teaches: what to check in GA4 + Power BI every day, in 30 seconds.',madeFor:'Marketlitics audience • Founders who look at data but do not know what matters.',tools:'Power BI • Python • GA4 • Canva',message:'Data is not for looking pretty. Check traffic, conversion, and spend, every day, in that order.',strategy:'Static, because it is a checklist people screenshot and save. Clean layout, 3 numbers only, no jargon. Caption breaks down each number with an example.',brief:'Goal: Saves + DMs asking for a dashboard. Audience: E-commerce + service business owners. Deliverable: 1 static guide image + caption. Result: SAMPLE, replace with your real saves / DMs.',link:'Replace 📈 with your real dashboard image file.'},
-c5:{title:'Re-launch Offer Carousel',client:'AQTIV WATER',type:'CAROUSEL',typeClass:'carousel',emoji:'🎁',videoUrl:'',intro:'Re-launch carousel. Offer first, event second, proof third.',madeFor:'Aqtiv Water • Lahore • Instagram @aqtivsolutions • Re-launch event, 24 August 2025.',tools:'Canva • Instagram • Content Calendar',message:'Get your 1st bottle free. Come, try Aqtiv, stay active. Something refreshing, coming soon, now here.',strategy:'Carousel, because one static cannot hold offer + event + location + time. Slide 1: Free bottle. Slide 2: Event details, QuickOffice Upper Mall Road, 1:00 PM - 06:00 PM. Slide 3: Launch event at Mega Arena. CTA on every slide: save the date.',brief:'Goal: Event footfall + new followers + trial. Audience: Lahore, Mall Road + Mega Arena area. Deliverable: 3+ slide carousel + caption + event post. Result: SAMPLE, replace with your real event visits / followers, 21 to 360 in the Aqtiv folder.',link:'Replace 🎁 with your real carousel images, or link to the Aqtiv PDF: Aqtiv-after.pdf'},
-lums:{title:'LUMS Content',client:'LUMS',type:'GALLERY',typeClass:'gallery',emoji:'🎓',videoUrl:'',gallery:true,intro:'Gallery of 6 LUMS content pieces, embedded from Box. Tap Play on each video, each one plays inside this page, with its file name on top.',madeFor:'LUMS • Content made for LUMS. Tell me the exact LUMS team / event / page name, and I will put it here.',tools:'Content Production • Video • Canva • CapCut',message:'Tell me the message behind this LUMS set in 1 line, and I will put it here. For now: LUMS stories, told clearly, made to be watched and shared.',strategy:'Gallery, not 6 separate cards, because this is one LUMS set. One tap opens all 6, each video loads only when you tap Play, so the page stays fast. Each file keeps its own Box link and its own file name.',brief:'Goal: Show the full LUMS set in one place. Audience: LUMS students / audience. Deliverable: 6 Box videos, embedded, with actual file names. Result: Tell me views / feedback for this set, and I will add it here.',link:'All 6 Box links are embedded above. If a video asks for login, set that Box link to Anyone with the link, Can View, in Box, then it plays for everyone. File names: replace LUMS File 1 to 6 in the lumsFiles list at the top of the script, in the same order you sent the links.'}
+lums:{title:'LUMS Content',client:'LUMS',type:'GALLERY',typeClass:'gallery',emoji:'🎓',videoUrl:'',gallery:true,intro:'Gallery of 6 LUMS content pieces, embedded from Box. Tap Play on each video, each one plays inside this page, with its file name on top.',madeFor:'LUMS • Content made for LUMS. Tell me the exact LUMS team / event / page name, and I will put it here.',tools:'Content Production • Video • Canva • CapCut',message:'Tell me the message behind this LUMS set in 1 line, and I will put it here. For now: LUMS stories, told clearly, made to be watched and shared.',strategy:'Gallery, not 6 separate cards, because this is one LUMS set. One tap opens all 6, each video loads only when you tap Play, so the page stays fast. Each file keeps its own Box link and its own file name.',brief:'Goal: Show the full LUMS set in one place. Audience: LUMS students / audience. Deliverable: 6 Box videos, embedded, with actual file names. Result: Tell me views / feedback for this set, and I will add it here.',link:'All 6 Box links are embedded above. If a video asks for login, set that Box link to Anyone with the link, Can View, in Box, then it plays for everyone. File names: replace LUMS File 1 to 6 in the lumsFiles list, in the same order you sent the links.'},
+agrilift:{title:'AI Reel: Agrilift',client:'AGRILIFT • AI CONTENT',type:'REEL',typeClass:'reel',emoji:'🌾',videoUrl:'https://app.box.com/s/0454hquumfnsfp98cmivxf03fywkxip3',intro:'AI Reel made for Agrilift. AI visuals, real message, made for social. This video plays inside this page, from Box.',madeFor:'Agrilift • Pakistan • Social Media Management + AI Content Production client. See Agrilift folder on the Clients page.',tools:'AI Video Tools • CapCut • Canva',message:'Agriculture, made simple and visual. AI shows the idea clearly, so a viewer understands it in seconds, without reading a long post.',strategy:'Reel, not static, because AI needs motion to stop the scroll. Hook in the first 3 seconds, AI visual in the middle, clear Agrilift message at the end. Hosted on Box, embedded here, so the file stays light and the site stays fast.',brief:'Goal: Reach + saves + show AI content capability for Agrilift. Audience: Agriculture / farming audience in Pakistan, social media users. Deliverable: 1 AI reel, vertical, hosted on Box, embedded on this page. Result: Tell me the views / client result for this reel, and I will add it here. Tell me the real AI tool name, and I will put that exact tool in Tools Used.',link:'Box link: app.box.com/s/0454hquumfnsfp98cmivxf03fywkxip3 • If the player asks for login, set the Box link to Anyone with the link, Can View, then it plays for everyone.'}
 };
 function playLums(i,btn){
   var f=lumsFiles[i];var embed=toEmbed(f.url);
@@ -236,13 +221,9 @@ function openDetail(id){
     galleryBox.innerHTML=renderGallery();
   } else {
     galleryBox.innerHTML='';
-    if(embed){
-      preview.innerHTML='<div style="width:100%"><div class="video-wrap"><iframe src="'+embed+'" allow="autoplay; fullscreen" allowfullscreen title="'+c.title+'"></iframe></div><p class="video-note">Tap play in the video above • Plays on this page • Box / OneDrive</p></div>';
-    } else {
-      preview.innerHTML='<span style="font-size:72px">'+c.emoji+'</span>'+(c.type==='REEL'?'<p class="video-note" style="position:absolute;bottom:16px;left:0;right:0">No video link pasted yet</p>':'');
-    }
+    preview.innerHTML='<div style="width:100%"><div class="video-wrap"><iframe src="'+embed+'" allow="autoplay; fullscreen" allowfullscreen title="'+c.title+'"></iframe></div><p class="video-note">Tap play in the video above • Plays on this page • Box</p></div>';
   }
-  document.getElementById('dSample').textContent=c.gallery?'LUMS • GALLERY OF 6 • BOX EMBEDDED':'SAMPLE • REPLACE WITH YOUR REAL FILE';
+  document.getElementById('dSample').textContent=c.gallery?'LUMS • GALLERY OF 6 • BOX EMBEDDED':'AGRILIFT • AI REEL • BOX VIDEO';
   document.getElementById('dClient').textContent=c.client;
   document.getElementById('dTitle').textContent=c.title;
   document.getElementById('dIntro').textContent=c.intro;
