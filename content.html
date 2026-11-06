@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content | Taseen - Marketlitics</title>
+<meta name="description" content="Best content by Taseen. Filter by Static, Reel, Carousel. Tap to see client, tools, message, strategy and project brief.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+#bgCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}
+.orb{position:fixed;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none;opacity:.55;animation:drift 14s ease-in-out infinite alternate}
+.orb1{width:340px;height:340px;background:#0e7490;top:-80px;left:-80px}
+.orb2{width:280px;height:280px;background:#2dd4bf;top:35%;right:-100px;animation-delay:-5s}
+.orb3{width:220px;height:220px;background:#fef3c7;bottom:-60px;left:35%;opacity:.22;animation-delay:-9s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(50px,35px) scale(1.15)}}
+#glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.22),transparent 65%);z-index:0;pointer-events:none;transform:translate(-50%,-50%);left:50%;top:40%}
+.banner,.top,.hero,.filters,.count-line,.grid,.detail,.empty,footer{position:relative;z-index:2}
+.banner{position:fixed;top:0;left:0;right:0;z-index:1000;background:#2dd4bf;color:#06202a;font-weight:700;font-size:14px;line-height:38px;height:38px;padding:0 16px;text-align:center;white-space:nowrap;overflow:hidden}
+.banner a{font-weight:800;text-decoration:underline}
+.top{position:fixed;top:38px;left:0;right:0;min-height:58px;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(7,24,38,.88);backdrop-filter:blur(10px);z-index:999}
+.logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px;white-space:nowrap;line-height:1}
+.top nav{font-size:14px;display:flex;align-items:center;gap:4px;overflow-x:auto;white-space:nowrap;line-height:1}
+.top nav a{margin:0 8px;opacity:.85;display:inline-block;padding:8px 2px}
+.top nav a.clients-link{background:#2dd4bf;color:#06202a;font-weight:800;opacity:1;border-radius:999px;padding:9px 16px;margin:0 6px}
+.top nav a.content-link{color:#fef3c7;font-weight:800;opacity:1}
+.top nav a.work-link{color:#fef3c7;font-weight:800;opacity:1}
+.hero{padding:160px 20px 20px}
+h1{font-family:Georgia,serif;font-size:clamp(42px,9vw,72px);font-weight:400;color:#fef3c7;text-shadow:0 0 40px rgba(45,212,191,.25)}
+.sub{color:#94a3b8;margin:12px auto 10px;max-width:680px;line-height:1.7}
+.filters{max-width:960px;margin:0 auto;padding:0 20px;text-align:left}
+.filters h3{color:#5eead4;font-size:13px;letter-spacing:3px;margin:22px 0 10px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{padding:10px 18px;border-radius:999px;border:1px solid #164e5e;background:rgba(11,42,53,.9);color:#fff;cursor:pointer;font-size:14px;font-weight:700}
+.chip.active{background:#2dd4bf;color:#06202a;border-color:#2dd4bf}
+.count-line{max-width:960px;margin:20px auto 0;padding:0 20px;color:#94a3b8;text-align:left}
+.grid{max-width:960px;margin:18px auto;padding:0 20px 20px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.item{flex:1;min-width:270px;max-width:310px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;overflow:hidden;text-align:left;cursor:pointer;transition:.25s;position:relative}
+.item:hover,.item.open{transform:translateY(-4px);border-color:#2dd4bf;box-shadow:0 14px 35px rgba(45,212,191,.25)}
+.thumb{height:190px;background:linear-gradient(135deg,#0e3a42,#164e5e);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb .play{position:absolute;font-size:14px;background:rgba(7,24,38,.8);border:1px solid #5eead4;border-radius:999px;padding:8px 12px;color:#fff}
+.body{padding:18px 18px 48px;position:relative}
+.body h2{font-family:Georgia,serif;font-size:21px;font-weight:400;color:#fff;line-height:1.4;margin:8px 0 6px}
+.body p{color:#94a3b8;font-size:13px;line-height:1.6}
+.sample{display:inline-block;background:#2dd4bf;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px}
+.client-tag{color:#5eead4;font-size:12px;font-weight:700;letter-spacing:1px;margin-top:8px;display:block}
+.type-badge{position:absolute;right:14px;bottom:14px;background:#2dd4bf;color:#06202a;font-size:11px;font-weight:800;letter-spacing:1px;padding:6px 11px;border-radius:999px}
+.type-badge.reel{background:#fef3c7}
+.type-badge.carousel{background:#5eead4}
+.open-link{color:#5eead4;font-weight:700;font-size:13px;display:block;margin-top:10px}
+.detail{max-width:960px;margin:0 auto 40px;padding:0 20px;display:none;text-align:left}
+.detail.show{display:block}
+.detail-box{background:#0e3a42;border:1px solid #2dd4bf;border-radius:18px;overflow:hidden}
+.detail-preview{height:280px;background:linear-gradient(135deg,#0e3a42,#164e5e);display:flex;align-items:center;justify-content:center;font-size:72px;position:relative}
+.detail-preview img,.detail-preview video{width:100%;height:100%;object-fit:cover;display:block}
+.detail-preview .play-big{position:absolute;font-size:16px;background:rgba(7,24,38,.8);border:1px solid #5eead4;border-radius:999px;padding:12px 18px;color:#fff}
+.detail-inner{padding:26px;position:relative}
+.detail-inner h2{font-family:Georgia,serif;font-size:32px;font-weight:400;color:#fef3c7;line-height:1.3;margin:8px 0}
+.detail-inner p{color:#cbd5e1;line-height:1.7}
+.close-btn{float:right;background:transparent;border:1px solid #5eead4;color:#fff;border-radius:999px;padding:8px 16px;cursor:pointer;font-weight:700}
+.detail-type{position:absolute;right:26px;bottom:26px;background:#2dd4bf;color:#06202a;font-size:12px;font-weight:800;letter-spacing:1px;padding:8px 14px;border-radius:999px}
+.detail-type.reel{background:#fef3c7}
+.detail-type.carousel{background:#5eead4}
+.info{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+.info-box{flex:1;min-width:230px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:20px}
+.info-box b{color:#5eead4;font-size:12px;letter-spacing:2px;display:block;margin-bottom:8px}
+.info-box p{color:#e2e8f0;font-size:14px;line-height:1.7}
+.tool{display:inline-block;background:#123845;border:1px solid #164e5e;color:#cbd5e1;font-size:12px;padding:5px 10px;border-radius:999px;margin:3px 3px 0 0}
+.empty{max-width:960px;margin:0 auto 60px;padding:30px 20px;background:#0b2a35;border:1px dashed #164e5e;border-radius:16px;display:none}
+.btn{padding:16px 36px;border-radius:999px;font-weight:700;font-size:16px;border:2px solid #5eead4;display:inline-block;margin:6px}
+.btn-data{background:#2dd4bf;color:#06202a}
+.btn-mark{background:transparent;color:#fff}
+footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
+@media(max-width:640px){.top{padding:10px 12px}.top nav{font-size:12px}.grid{flex-direction:column}.item{max-width:none}.detail-preview{height:210px}.detail-type{position:static;display:inline-block;margin-top:18px}.banner{font-size:12px}}
+</style>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+<div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+<div id="glow"></div>
+<div class="banner">11 Real Clients • Pakistan, UAE, Africa, UK, US • <a href="clients.html">View All Clients →</a></div>
+<header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a class="work-link" href="index.html#work">Work</a><a href="index.html#skills">Skills</a><a class="content-link" href="content.html">Content</a><a class="clients-link" href="clients.html">Clients</a><a href="index.html#certs">Certifications</a><a href="index.html#contact">Contact</a></nav></header>
+<div class="hero">
+<h1>CONTENT</h1>
+<p class="sub">Best content, by type. Tap Static, Reel, or Carousel. Tap a piece to open it, details open under it: client, tools, message, strategy, brief.</p>
+<p><a class="btn btn-mark" href="index.html">← Back to Home</a> <a class="btn btn-data" href="clients.html">📁 Clients →</a></p>
+</div>
+<div class="filters">
+<h3>FILTER BY TYPE</h3>
+<div class="chips" id="typeChips">
+<button class="chip active" data-type="all">All Content (5)</button>
+<button class="chip" data-type="static">Static (2)</button>
+<button class="chip" data-type="reel">Reel (1)</button>
+<button class="chip" data-type="carousel">Carousel (2)</button>
+</div>
+</div>
+<p class="count-line" id="countLine">Showing 5 pieces • Tap one to open its details under it</p>
+<div class="grid" id="grid">
+<div class="item" data-id="c1" data-type="static"><div class="thumb">💧</div><div class="body"><span class="sample">SAMPLE</span><span class="client-tag">AQTIV WATER</span><h2>Aqtiv Launch: Drink Aqtiv, Stay Active</h2><p>Launch static • 1st bottle free • Lahore</p><span class="open-link">Open Details →</span><span class="type-badge">STATIC</span></div></div>
+<div class="item" data-id="c2" data-type="reel"><div class="thumb">🎬<span class="play">▶ REEL</span></div><div class="body"><span class="sample">SAMPLE</span><span class="client-tag">BERLITZ</span><h2>Storytelling Hook Reel</h2><p>Hook in 3 seconds • Story first, sell second</p><span class="open-link">Open Details →</span><span class="type-badge reel">REEL</span></div></div>
+<div class="item" data-id="c3" data-type="carousel"><div class="thumb">📊</div><div class="body"><span class="sample">SAMPLE</span><span class="client-tag">SEO • CONTENT</span><h2>SEO Framework Carousel</h2><p>5 slides • Swipe • Save this framework</p><span class="open-link">Open Details →</span><span class="type-badge carousel">CAROUSEL</span></div></div>
+<div class="item" data-id="c4" data-type="static"><div class="thumb">📈</div><div class="body"><span class="sample">SAMPLE</span><span class="client-tag">DATA • DASHBOARD</span><h2>Dashboard Guide Image</h2><p>GA4 + Power BI • What to check daily</p><span class="open-link">Open Details →</span><span class="type-badge">STATIC</span></div></div>
+<div class="item" data-id="c5" data-type="carousel"><div class="thumb">🎁</div><div class="body"><span class="sample">SAMPLE</span><span class="client-tag">AQTIV WATER</span><h2>Re-launch Offer Carousel</h2><p>Get your 1st bottle free • Event + offer</p><span class="open-link">Open Details →</span><span class="type-badge carousel">CAROUSEL</span></div></div>
+</div>
+<div class="detail" id="detailBox">
+<div class="detail-box">
+<div class="detail-preview" id="dPreview"></div>
+<div class="detail-inner">
+<button class="close-btn" onclick="closeDetail()">X Close</button>
+<span class="sample">SAMPLE • REPLACE WITH YOUR REAL FILE</span>
+<span class="client-tag" id="dClient"></span>
+<h2 id="dTitle"></h2>
+<p id="dIntro"></p>
+<div class="info">
+<div class="info-box"><b>CLIENT MADE FOR</b><p id="dMadeFor"></p></div>
+<div class="info-box"><b>TOOLS USED</b><p id="dTools"></p></div>
+<div class="info-box"><b>MESSAGE BEHIND</b><p id="dMessage"></p></div>
+<div class="info-box"><b>STRATEGY</b><p id="dStrategy"></p></div>
+</div>
+<div class="info-box" style="margin-top:14px"><b>PROJECT BRIEF</b><p id="dBrief"></p></div>
+<p style="margin-top:16px;color:#94a3b8;font-size:13px" id="dLink"></p>
+<span class="detail-type" id="dType"></span>
+</div>
+</div>
+</div>
+<div class="empty" id="emptyBox"><h2 style="font-family:Georgia,serif;font-weight:400;color:#fef3c7;margin-bottom:10px">No content for this type yet</h2><p style="color:#94a3b8">Tap All Content to see all 5 pieces.</p><p style="margin-top:18px"><button class="btn btn-data" onclick="resetFilter()">Show All Content</button></p></div>
+<div style="padding:0 20px 60px"><p style="color:#cbd5e1;line-height:1.7;max-width:640px;margin:0 auto 18px">Want content like this for your business? Send your brief, I plan the hook, the format, and the message.</p><p><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a> <a class="btn btn-mark" href="clients.html">📁 See Clients →</a></p></div>
+<footer><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p><a href="index.html" style="color:#5eead4;font-weight:700">Back to Home →</a></p></footer>
+<script>
+var canvas=document.getElementById('bgCanvas'),ctx=canvas.getContext('2d'),pts=[],mx=innerWidth/2,my=innerHeight/2;
+function resize(){canvas.width=innerWidth;canvas.height=innerHeight;pts=[];var n=innerWidth<640?32:60;for(var i=0;i<n;i++){pts.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*2+1.2})}}
+resize();addEventListener('resize',resize);
+addEventListener('mousemove',function(e){var g=document.getElementById('glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';mx=e.clientX;my=e.clientY});
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;for(var j=i+1;j<pts.length;j++){var q=pts[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<120){ctx.strokeStyle='rgba(45,212,191,'+(0.28-dd/450)+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}ctx.fillStyle='rgba(94,234,212,.85)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}requestAnimationFrame(draw)}
+draw();
+var type='all';
+var items={
+c1:{title:'Aqtiv Launch: Drink Aqtiv, Stay Active',client:'AQTIV WATER',type:'STATIC',typeClass:'',emoji:'💧',intro:'Launch static for Aqtiv Water, Lahore. One clear offer, one clear action.',madeFor:'Aqtiv Water • Lahore • Instagram @aqtivsolutions • New water brand, launching in Lahore.',tools:'Canva • Instagram • Content Calendar',message:'Drink Aqtiv, Stay Active. Fresh, clean, local water, easy to try, easy to remember.',strategy:'Static first for launch, because the offer must be read in 2 seconds. Big offer, big bottle, location + time, no clutter. Posted with the launch event post, same day.',brief:'Goal: Launch awareness + footfall at the launch event. Audience: Lahore, active / health conscious, 18-35. Deliverable: 1 launch static + caption + hashtags. Result: SAMPLE, replace with your real reach / saves / event visits.',link:'Replace 💧 with your real image file, for example: content-aqtiv-launch.png'},
+c2:{title:'Storytelling Hook Reel',client:'BERLITZ',type:'REEL',typeClass:'reel',emoji:'🎬',intro:'Reel built on story first. Hook in 3 seconds, lesson in the middle, CTA at the end.',madeFor:'Berlitz • Pakistan • Language / learning audience.',tools:'CapCut • Canva • Instagram Reels',message:'Learning a language changes how you see the world. Start with one story, not one rule.',strategy:'Reel, not static, because story needs voice + face + movement. Hook: a relatable mistake. Middle: the fix. End: save + follow. Posted at peak time, caption asks a question to get comments.',brief:'Goal: Reach + saves + profile visits. Audience: Students / professionals learning English. Deliverable: 1 vertical reel, 9:16, captions on screen. Result: SAMPLE, replace with your real views, 410k in the old sample.',link:'Replace 🎬 with your real reel link or video file. Reels over 300MB: link it, do not upload to GitHub.'},
+c3:{title:'SEO Framework Carousel',client:'SEO • CONTENT',type:'CAROUSEL',typeClass:'carousel',emoji:'📊',intro:'5 slide carousel. Each slide = 1 step. Last slide = save this.',madeFor:'Marketlitics audience • Business owners + marketers learning SEO.',tools:'Canva • SEO Research • Google Search Console',message:'SEO is not tricks. It is: search intent, good content, fast page, real links. Do it in order.',strategy:'Carousel, not static, because a framework needs steps. Slide 1: promise. Slides 2-4: steps. Slide 5: checklist + save CTA. Carousels get swipes + saves, which is the goal here.',brief:'Goal: Saves + shares + authority. Audience: Founders / marketers, beginner to intermediate SEO. Deliverable: 5 slide carousel, 1080x1350, + caption with keywords. Result: SAMPLE, replace with your real saves / shares.',link:'Replace 📊 with your real carousel images, slide 1 first, then add slides 2-5 in the detail preview.'},
+c4:{title:'Dashboard Guide Image',client:'DATA • DASHBOARD',type:'STATIC',typeClass:'',emoji:'📈',intro:'One static that teaches: what to check in GA4 + Power BI every day, in 30 seconds.',madeFor:'Marketlitics audience • Founders who look at data but do not know what matters.',tools:'Power BI • Python • GA4 • Canva',message:'Data is not for looking pretty. Check traffic, conversion, and spend, every day, in that order.',strategy:'Static, because it is a checklist people screenshot and save. Clean layout, 3 numbers only, no jargon. Caption breaks down each number with an example.',brief:'Goal: Saves + DMs asking for a dashboard. Audience: E-commerce + service business owners. Deliverable: 1 static guide image + caption. Result: SAMPLE, replace with your real saves / DMs.',link:'Replace 📈 with your real dashboard image file.'},
+c5:{title:'Re-launch Offer Carousel',client:'AQTIV WATER',type:'CAROUSEL',typeClass:'carousel',emoji:'🎁',intro:'Re-launch carousel. Offer first, event second, proof third.',madeFor:'Aqtiv Water • Lahore • Instagram @aqtivsolutions • Re-launch event, 24 August 2025.',tools:'Canva • Instagram • Content Calendar',message:'Get your 1st bottle free. Come, try Aqtiv, stay active. Something refreshing, coming soon, now here.',strategy:'Carousel, because one static cannot hold offer + event + location + time. Slide 1: Free bottle. Slide 2: Event details, QuickOffice Upper Mall Road, 1:00 PM - 06:00 PM. Slide 3: Launch event at Mega Arena. CTA on every slide: save the date.',brief:'Goal: Event footfall + new followers + trial. Audience: Lahore, Mall Road + Mega Arena area. Deliverable: 3+ slide carousel + caption + event post. Result: SAMPLE, replace with your real event visits / followers, 21 to 360 in the Aqtiv folder.',link:'Replace 🎁 with your real carousel images, or link to the Aqtiv PDF: Aqtiv-after.pdf'}
+};
+function openDetail(id){
+  var c=items[id];if(!c)return;
+  document.querySelectorAll('.item').forEach(function(el){el.classList.remove('open')});
+  var card=document.querySelector('.item[data-id="'+id+'"]');if(card)card.classList.add('open');
+  document.getElementById('dPreview').innerHTML='<span style="font-size:72px">'+c.emoji+'</span>'+(c.type==='REEL'?'<span class="play-big">▶ PLAY REEL</span>':'');
+  document.getElementById('dClient').textContent=c.client;
+  document.getElementById('dTitle').textContent=c.title;
+  document.getElementById('dIntro').textContent=c.intro;
+  document.getElementById('dMadeFor').textContent=c.madeFor;
+  document.getElementById('dTools').innerHTML=c.tools.split(' • ').map(function(t){return '<span class="tool">'+t+'</span>'}).join('');
+  document.getElementById('dMessage').textContent=c.message;
+  document.getElementById('dStrategy').textContent=c.strategy;
+  document.getElementById('dBrief').textContent=c.brief;
+  document.getElementById('dLink').textContent=c.link;
+  var tp=document.getElementById('dType');tp.textContent=c.type;tp.className='detail-type '+c.typeClass;
+  var box=document.getElementById('detailBox');box.classList.add('show');
+  box.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function closeDetail(){document.getElementById('detailBox').classList.remove('show');document.querySelectorAll('.item').forEach(function(el){el.classList.remove('open')})}
+document.querySelectorAll('.item').forEach(function(card){card.addEventListener('click',function(){openDetail(card.dataset.id)})});
+function applyFilter(){
+  var shown=0;document.querySelectorAll('.item').forEach(function(el){var ok=(type==='all'||el.dataset.type===type);el.style.display=ok?'block':'none';if(ok)shown++});
+  document.getElementById('countLine').textContent='Showing '+shown+' piece'+(shown===1?'':'s')+' • Tap one to open its details under it';
+  document.getElementById('emptyBox').style.display=shown===0?'block':'none';
+  document.getElementById('grid').style.display=shown===0?'none':'flex';
+}
+document.querySelectorAll('#typeChips .chip').forEach(function(b){b.addEventListener('click',function(){type=b.dataset.type;document.querySelectorAll('#typeChips .chip').forEach(function(x){x.classList.remove('active')});b.classList.add('active');closeDetail();applyFilter()})});
+function resetFilter(){type='all';document.querySelectorAll('#typeChips .chip').forEach(function(x){x.classList.remove('active')});document.querySelector('#typeChips .chip').classList.add('active');applyFilter()}
+var params=new URLSearchParams(window.location.search);
+var qType=params.get('type');if(qType){var t=document.querySelector('#typeChips .chip[data-type="'+qType+'"]');if(t){type=qType;document.querySelectorAll('#typeChips .chip').forEach(function(x){x.classList.remove('active')});t.classList.add('active')}}
+var qId=params.get('id');applyFilter();if(qId&&items[qId]){openDetail(qId)}
+</script>
+</body>
+</html>
