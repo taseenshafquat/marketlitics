@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taseen | Marketlitics - Marketing That Sells, Data That Proves It</title>
 <meta name="description" content="Taseen, Karachi. Data Analyst, Marketing, Paid Ads, SEO, Power BI, Python, SQL.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-.top{position:fixed;top:0;left:0;right:0;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;background:rgba(7,24,38,.85);backdrop-filter:blur(10px);z-index:99}
+.top{position:fixed;top:0;left:0;right:0;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;background:rgba(7,24,38,.85);backdrop-filter:blur(10px);z-index:999}
 .logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px}
 .top nav{font-size:14px}
 .top nav a{margin:0 10px;opacity:.85}
@@ -49,6 +50,10 @@ h2{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fef3c7;margin
 .case-metrics b{color:#5eead4;font-size:20px;display:block}
 .case-metrics span{font-size:12px;color:#94a3b8}
 .case-link{color:#5eead4;font-weight:700}
+#map{height:420px;width:100%;border-radius:16px;border:1px solid #164e5e;z-index:1;text-align:left}
+.flag-pin{font-size:32px;line-height:1;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));text-align:center}
+.flag-pin-home{font-size:42px}
+.leaflet-popup-content{color:#071826;font-family:Arial,sans-serif;text-align:center}
 .country-grid{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:24px}
 .country{flex:1;min-width:150px;background:#0b2a35;border:1px solid #164e5e;border-radius:16px;padding:24px 14px}
 .country:hover{transform:translateY(-4px);border-color:#2dd4bf}
@@ -62,7 +67,7 @@ h2{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fef3c7;margin
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 .marquee{display:flex;gap:16px;animation:scroll 30s linear infinite}
 @keyframes scroll{to{transform:translateX(-50%)}}
-@media(max-width:640px){.cards{flex-direction:column}.top nav{display:none}.case-grid{flex-direction:column}}
+@media(max-width:640px){.cards{flex-direction:column}.top nav{display:none}.case-grid{flex-direction:column}#map{height:340px}}
 </style>
 </head>
 <body>
@@ -138,15 +143,15 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 <div class="card"><span class="sample">IMAGE • SAMPLE</span><h3>Dashboard Guide Image</h3><p>Static image • Blog cover</p></div>
 </div></section>
 
-<section><h2>Clients Served</h2><p class="sub">Working across 5 regions, from Karachi to the world • SAMPLE counts, send real numbers</p>
-<p style="font-size:48px">🌍</p>
-<p><b>20+ Brands • 5 Regions • SAMPLE</b></p>
+<section><h2>Clients Served</h2><p class="sub">Tap a flag pin on the map • Based in Karachi, serving 5 regions • SAMPLE</p>
+<div id="map"></div>
+<p style="margin-top:14px;color:#94a3b8;font-size:13px">Drag to move • Pinch / + / - to zoom • Tap a flag to see country</p>
 <div class="country-grid">
 <div class="country home"><span class="flag">🇵🇰</span><b>Pakistan</b><span>Home Base • Karachi</span><br><span class="sample" style="margin-top:8px">SAMPLE</span></div>
 <div class="country"><span class="flag">🇺🇸</span><b>United States</b><span>US Clients</span><br><span class="sample" style="margin-top:8px">SAMPLE</span></div>
 <div class="country"><span class="flag">🇬🇧</span><b>United Kingdom</b><span>UK Clients</span><br><span class="sample" style="margin-top:8px">SAMPLE</span></div>
 <div class="country"><span class="flag">🇮🇳</span><b>India</b><span>India Clients</span><br><span class="sample" style="margin-top:8px">SAMPLE</span></div>
-<div class="country"><span class="flag">🌍</span><b>Africa</b><span>Africa Clients</span><br><span class="sample" style="margin-top:8px">SAMPLE</span></div>
+<div class="country"><span class="flag">🌍</span><b>Africa</b><span>Nigeria • Kenya</span><br><span class="sample" style="margin-top:8px">SAMPLE</span></div>
 </div>
 <p style="margin-top:22px;color:#cbd5e1;line-height:1.7">Based in Karachi, Pakistan, serving clients in the <b style="color:#5eead4">US, UK, India, and Africa</b>, across time zones, in English, with data + marketing in one place.</p>
 </section>
@@ -165,7 +170,18 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 
 <footer id="contact"><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p>hello@marketlitics.com • LinkedIn • Instagram • GitHub</p><p style="margin-top:10px"><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a></p></footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+var map=L.map('map',{scrollWheelZoom:false}).setView([28,20],2);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap © CARTO',maxZoom:18}).addTo(map);
+function pin(flag,home){return L.divIcon({className:'',html:'<div class="flag-pin '+(home?'flag-pin-home':'')+'">'+flag+'</div>',iconSize:[40,40],iconAnchor:[20,20]});}
+L.marker([24.86,67.01],{icon:pin('🇵🇰',true)}).addTo(map).bindPopup('<b>🇵🇰 Pakistan</b><br>Home Base • Karachi<br>Clients Served • SAMPLE');
+L.marker([40.71,-74.00],{icon:pin('🇺🇸')}).addTo(map).bindPopup('<b>🇺🇸 United States</b><br>US Clients<br>Clients Served • SAMPLE');
+L.marker([51.50,-0.12],{icon:pin('🇬🇧')}).addTo(map).bindPopup('<b>🇬🇧 United Kingdom</b><br>UK Clients<br>Clients Served • SAMPLE');
+L.marker([28.61,77.20],{icon:pin('🇮🇳')}).addTo(map).bindPopup('<b>🇮🇳 India</b><br>India Clients<br>Clients Served • SAMPLE');
+L.marker([6.52,3.37],{icon:pin('🌍')}).addTo(map).bindPopup('<b>🌍 Africa • Nigeria</b><br>Africa Clients<br>Clients Served • SAMPLE');
+L.marker([-1.29,36.82],{icon:pin('🌍')}).addTo(map).bindPopup('<b>🌍 Africa • Kenya</b><br>Africa Clients<br>Clients Served • SAMPLE');
+map.on('click',function(){map.scrollWheelZoom.enable();});
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');
 e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');
 e.target.querySelectorAll('.count').forEach(c=>{let t=+c.dataset.to,n=0;let i=setInterval(()=>{n+=Math.ceil(t/40);if(n>=t){n=t;clearInterval(i)}c.textContent=n},25)})}})},{threshold:.25});
