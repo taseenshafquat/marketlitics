@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taseen - Marketlitics | Marketing, Data, Content</title>
-<meta name="description" content="Taseen, Marketlitics. Marketing, data analysis, SEO, content. Karachi, Pakistan. 11 real clients. See Marketing page for Best Content, Ad Budget, Featured Campaign and Case Example.">
+<meta name="description" content="Taseen, Marketlitics. Marketing, data analysis, SEO, content. Karachi, Pakistan. 11 real clients in Pakistan, UAE, Africa, UK, US.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden}
@@ -53,6 +53,36 @@ section h2 span{color:#5eead4}
 .client-tag{color:#5eead4;font-size:12px;font-weight:700;letter-spacing:1px}
 .open-link{color:#5eead4;font-weight:700;font-size:13px;display:block;margin-top:12px}
 .skill{display:inline-block;background:#123845;border:1px solid #164e5e;color:#e2e8f0;font-size:13px;padding:8px 14px;border-radius:999px;margin:4px 4px 0 0}
+.slider-wrap{margin-top:26px;position:relative}
+.slider-title{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800;margin-bottom:12px}
+.slider-viewport{overflow:hidden;border-radius:18px}
+.slider-track{display:flex;transition:transform .5s ease}
+.slide{flex:0 0 33.333%;padding:0 8px;box-sizing:border-box}
+.slide-box{background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:24px;min-height:190px;text-align:left}
+.slide-box .emoji{font-size:36px}
+.slide-box h3{font-family:Georgia,serif;font-size:20px;font-weight:400;color:#fff;margin:12px 0 6px}
+.slide-box p{color:#94a3b8;font-size:13px;line-height:1.6}
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid #5eead4;background:#071826;color:#fff;font-size:18px;cursor:pointer;z-index:3}
+.slider-prev{left:-8px}
+.slider-next{right:-8px}
+.slider-dots{text-align:center;margin-top:14px}
+.slider-dots button{width:9px;height:9px;border-radius:50%;border:0;background:#164e5e;margin:0 4px;cursor:pointer;padding:0}
+.slider-dots button.active{background:#2dd4bf;width:24px;border-radius:999px}
+.map-box{background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;overflow:hidden}
+.map-panel{position:relative;height:300px;background:linear-gradient(135deg,#0e3a42,#071826);overflow:hidden}
+.map-panel svg{position:absolute;inset:0;width:100%;height:100%}
+.map-pin{position:absolute;transform:translate(-50%,-100%);text-align:center;cursor:pointer;z-index:2}
+.map-pin i{display:block;width:16px;height:16px;background:#2dd4bf;border:3px solid #fff;border-radius:50%;margin:0 auto;box-shadow:0 0 0 6px rgba(45,212,191,.25)}
+.map-pin b{display:inline-block;background:#071826;border:1px solid #2dd4bf;color:#fff;font-size:11px;padding:4px 8px;border-radius:999px;margin-top:6px;white-space:nowrap}
+.map-pin.active i{background:#fef3c7}
+.map-pin.active b{background:#fef3c7;color:#06202a;border-color:#fef3c7}
+.map-note{padding:16px 20px;color:#94a3b8;font-size:12px;line-height:1.6;border-top:1px solid #164e5e}
+.map-rows{display:flex;gap:10px;flex-wrap:wrap;padding:20px}
+.map-row{flex:1;min-width:140px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:16px;cursor:pointer;text-align:left}
+.map-row.active{border-color:#2dd4bf;background:#0e3a42}
+.map-row b{color:#fff;font-size:15px;display:block}
+.map-row span{color:#5eead4;font-size:12px}
+.map-row p{color:#94a3b8;font-size:12px;line-height:1.6;margin-top:6px}
 .marketing-teaser{background:#0e3a42;border:1px solid #2dd4bf;border-radius:18px;padding:26px}
 .marketing-teaser h3{font-family:Georgia,serif;font-size:28px;font-weight:400;color:#fef3c7;line-height:1.3;margin:10px 0}
 .marketing-teaser p{color:#cbd5e1;line-height:1.7}
@@ -63,7 +93,8 @@ section h2 span{color:#5eead4}
 .btn-mark{background:transparent;color:#fff}
 .cta{text-align:center;padding:50px 20px 60px}
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:center}
-@media(max-width:640px){.menu-btn{top:98px;left:12px;padding:10px 14px}.top{padding:10px 12px}.top nav{font-size:12px}.banner{font-size:12px}}
+@media(max-width:760px){.slide{flex:0 0 100%}.map-panel{height:260px}.menu-btn{top:98px;left:12px;padding:10px 14px}.top{padding:10px 12px}.top nav{font-size:12px}.banner{font-size:12px}}
+@media(min-width:761px) and (max-width:960px){.slide{flex:0 0 50%}}
 </style>
 </head>
 <body>
@@ -78,11 +109,12 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <p style="color:#94a3b8;font-size:13px;margin-top:8px;line-height:1.6">Karachi, Pakistan<br>Marketing that shows proof, not promises.</p>
 <h3>MENU</h3>
 <a class="menu-link" href="#top" onclick="toggleMenu(false)">🏠 Home<span>Top of this page</span></a>
-<a class="menu-link" href="#skills" onclick="toggleMenu(false)">🛠 Skills<span>Data, SEO, content, ads</span></a>
+<a class="menu-link" href="#skills" onclick="toggleMenu(false)">🛠 Skills<span>Skills + skills slider</span></a>
 <a class="menu-link" href="#work" onclick="toggleMenu(false)">💼 Work<span>What I do, by service</span></a>
 <a class="menu-link" href="marketing.html" onclick="toggleMenu(false)">📈 Marketing Page<span>Best Content, Ad Budget, Featured Campaign, Case Example</span></a>
 <a class="menu-link" href="content.html" onclick="toggleMenu(false)">🎬 Content Page<span>LUMS gallery + Agrilift AI Reel</span></a>
 <a class="menu-link" href="clients.html" onclick="toggleMenu(false)">📁 Clients Page<span>11 real clients, folders</span></a>
+<a class="menu-link" href="#map" onclick="toggleMenu(false)">🗺 Map<span>Where clients are served</span></a>
 <a class="menu-link" href="#certs" onclick="toggleMenu(false)">🏅 Certifications<span>Courses + certificates</span></a>
 <a class="menu-link" href="#contact" onclick="toggleMenu(false)">💬 Contact<span>WhatsApp + brief</span></a>
 <p style="color:#64748b;font-size:12px;line-height:1.6;margin-top:20px">Tip: tap anywhere outside this menu to close it.</p>
@@ -99,7 +131,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <section id="skills">
 <p class="sec-label">SKILLS</p>
 <h2>What I <span>Do Best</span></h2>
-<p class="sec-sub">Not a long list. The tools I actually use, for clients, every week.</p>
+<p class="sec-sub">Not a long list. The tools I actually use, for clients, every week. Chips below, slider under them, same skills, both kept.</p>
 <p>
 <span class="skill">Data Analysis</span>
 <span class="skill">Power BI</span>
@@ -114,6 +146,24 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <span class="skill">CapCut</span>
 <span class="skill">Content Strategy</span>
 </p>
+<div class="slider-wrap">
+<p class="slider-title">SKILLS SLIDER • TAP ‹ › OR LET IT SLIDE</p>
+<button class="slider-btn slider-prev" onclick="moveSkill(-1)" aria-label="Previous skill">‹</button>
+<button class="slider-btn slider-next" onclick="moveSkill(1)" aria-label="Next skill">›</button>
+<div class="slider-viewport"><div class="slider-track" id="skillTrack">
+<div class="slide"><div class="slide-box"><div class="emoji">📊</div><h3>Data Analysis</h3><p>Numbers into decisions. What worked, what did not, what to do next, in plain words.</p></div></div>
+<div class="slide"><div class="slide-box"><div class="emoji">🔍</div><h3>SEO</h3><p>Search intent, good content, fast page, real links. Done in order, not tricks.</p></div></div>
+<div class="slide"><div class="slide-box"><div class="emoji">📈</div><h3>Power BI</h3><p>Dashboards a founder can read in 30 seconds. Traffic, conversion, spend.</p></div></div>
+<div class="slide"><div class="slide-box"><div class="emoji">🐍</div><h3>Python</h3><p>Cleaning, checking, and automating data work, so reports are fast and correct.</p></div></div>
+<div class="slide"><div class="slide-box"><div class="emoji">📍</div><h3>Google Analytics 4</h3><p>What to check daily, what to ignore, and where the sales actually come from.</p></div></div>
+<div class="slide"><div class="slide-box"><div class="emoji">📱</div><h3>Social Media Management</h3><p>Calendar, posting, replies, growth. Aqtiv, Berlitz, Agrilift, LUMS, and more.</p></div></div>
+<div class="slide"><div class="slide-box"><div class="emoji">🤖</div><h3>AI Content Production</h3><p>AI visuals, human message. Agrilift AI Reel, on the Content page, plays on the page.</p></div></div>
+<div class="slide"><div class="slide-box"><div class="emoji">🎯</div><h3>Meta Ads</h3><p>Offer first, audience second. Test, keep the winner, kill the loser, fast.</p></div></div>
+<div class="slide"><div class="slide-box"><div class="emoji">💰</div><h3>Google Ads</h3><p>Search when people are ready to buy. Budget split is on the Marketing page.</p></div></div>
+<div class="slide"><div class="slide-box"><div class="emoji">✍️</div><h3>Content Strategy</h3><p>Hook, message, format, CTA. Planned before design, so content has a job.</p></div></div>
+</div></div>
+<div class="slider-dots" id="skillDots"></div>
+</div>
 </section>
 
 <section id="work">
@@ -158,15 +208,41 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <p style="margin-top:18px"><a class="btn btn-data" href="clients.html">📁 View All 11 Clients →</a></p>
 </section>
 
+<section id="map">
+<p class="sec-label">MAP • CLIENTS SERVED</p>
+<h2>Where Clients <span>Are Served</span></h2>
+<p class="sec-sub">From Karachi, working across 5 regions. Tap a pin on the map, or a region below, to highlight it. This is a styled map panel, not a live Google Map, so it loads fast and works offline in the page.</p>
+<div class="map-box">
+<div class="map-panel" id="mapPanel">
+<svg viewBox="0 0 900 300" preserveAspectRatio="none"><circle cx="120" cy="70" r="2" fill="#164e5e"/><circle cx="260" cy="50" r="2" fill="#164e5e"/><circle cx="420" cy="90" r="2" fill="#164e5e"/><circle cx="580" cy="60" r="2" fill="#164e5e"/><circle cx="740" cy="80" r="2" fill="#164e5e"/><circle cx="180" cy="200" r="2" fill="#164e5e"/><circle cx="500" cy="210" r="2" fill="#164e5e"/><circle cx="700" cy="200" r="2" fill="#164e5e"/><path d="M80,90 Q250,40 420,110 Q600,170 820,90" fill="none" stroke="#164e5e" stroke-width="1" stroke-dasharray="6 6"/><path d="M120,230 Q400,260 780,210" fill="none" stroke="#164e5e" stroke-width="1" stroke-dasharray="6 6"/></svg>
+<div class="map-pin" style="left:58%;top:52%" data-region="pk" onclick="selectRegion('pk',this)"><i></i><b>Pakistan • Karachi</b></div>
+<div class="map-pin" style="left:68%;top:38%" data-region="pk" onclick="selectRegion('pk',this)"><i></i><b>Lahore</b></div>
+<div class="map-pin" style="left:52%;top:58%" data-region="uae" onclick="selectRegion('uae',this)"><i></i><b>UAE</b></div>
+<div class="map-pin" style="left:46%;top:68%" data-region="africa" onclick="selectRegion('africa',this)"><i></i><b>Africa</b></div>
+<div class="map-pin" style="left:22%;top:28%" data-region="uk" onclick="selectRegion('uk',this)"><i></i><b>UK</b></div>
+<div class="map-pin" style="left:10%;top:42%" data-region="us" onclick="selectRegion('us',this)"><i></i><b>US</b></div>
+</div>
+<div class="map-rows" id="mapRows">
+<div class="map-row active" data-region="pk" onclick="selectRegion('pk',this)"><b>Pakistan</b><span>HOME BASE • MOST CLIENTS</span><p>Karachi + Lahore. Aqtiv Water, LUMS, Agrilift, Berlitz, and more. Content, social, data, ads.</p></div>
+<div class="map-row" data-region="uae" onclick="selectRegion('uae',this)"><b>UAE</b><span>REMOTE • CLIENTS SERVED</span><p>UAE clients, worked remotely. Tell me the exact city, Dubai / Abu Dhabi, and I put it on the pin.</p></div>
+<div class="map-row" data-region="africa" onclick="selectRegion('africa',this)"><b>Africa</b><span>REMOTE • CLIENTS SERVED</span><p>Africa clients, worked remotely. Tell me the exact country / city, and I put it on the pin.</p></div>
+<div class="map-row" data-region="uk" onclick="selectRegion('uk',this)"><b>UK</b><span>REMOTE • CLIENTS SERVED</span><p>UK clients, worked remotely. Content and marketing, in English, UK audience.</p></div>
+<div class="map-row" data-region="us" onclick="selectRegion('us',this)"><b>US</b><span>REMOTE • CLIENTS SERVED</span><p>US clients, worked remotely. Content and marketing, in English, US audience.</p></div>
+</div>
+<p class="map-note">11 Real Clients in total, across these 5 regions. Full folders, with what was done for each client, are on the Clients page. This map is an illustration, not to scale, not a live map, for directions use a maps app.</p>
+</div>
+</section>
+
 <section id="certs">
 <p class="sec-label">CERTIFICATIONS</p>
 <h2>Certifications</h2>
-<p class="sec-sub">Add your real certificate names and links here, in this same card format, and I will fill them in. For now, this is the placeholder section, so the page structure stays ready.</p>
+<p class="sec-sub">Back on Home, same section as before. I did not invent names, so no fake certificate is shown. Send me the real ones and I fill them in.</p>
 <div class="cards">
-<div class="card"><span class="client-tag">CERTIFICATE 1</span><h3>Certificate Name Here</h3><p>Provider, year, and 1 line on what it covered. Replace this text with your real certificate.</p><span class="open-link">Add link →</span></div>
-<div class="card"><span class="client-tag">CERTIFICATE 2</span><h3>Certificate Name Here</h3><p>Provider, year, and 1 line on what it covered. Replace this text with your real certificate.</p><span class="open-link">Add link →</span></div>
-<div class="card"><span class="client-tag">CERTIFICATE 3</span><h3>Certificate Name Here</h3><p>Provider, year, and 1 line on what it covered. Replace this text with your real certificate.</p><span class="open-link">Add link →</span></div>
+<div class="card"><span class="client-tag">CERTIFICATE 1</span><h3>Certificate Name Here</h3><p>Provider, year, and 1 line on what it covered. Replace this text with your real certificate name, provider, and year.</p><span class="open-link">Add certificate link →</span></div>
+<div class="card"><span class="client-tag">CERTIFICATE 2</span><h3>Certificate Name Here</h3><p>Provider, year, and 1 line on what it covered. Replace this text with your real certificate name, provider, and year.</p><span class="open-link">Add certificate link →</span></div>
+<div class="card"><span class="client-tag">CERTIFICATE 3</span><h3>Certificate Name Here</h3><p>Provider, year, and 1 line on what it covered. Replace this text with your real certificate name, provider, and year.</p><span class="open-link">Add certificate link →</span></div>
 </div>
+<p style="color:#94a3b8;font-size:13px;line-height:1.7;margin-top:14px">Send me, in 1 message: <b style="color:#fff">Name, Provider, Year</b>, for each certificate, for example: Google Analytics 4, Google, 2024. I put the real names in, nothing else changes.</p>
 </section>
 
 <section id="contact">
@@ -191,6 +267,32 @@ function toggleMenu(open){
   document.body.style.overflow=open?'hidden':'';
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')toggleMenu(false)});
+function selectRegion(region,el){
+  document.querySelectorAll('.map-pin').forEach(function(p){p.classList.toggle('active',p.dataset.region===region)});
+  document.querySelectorAll('.map-row').forEach(function(r){r.classList.toggle('active',r.dataset.region===region)});
+}
+var skillIndex=0, skillTimer=null;
+var skillSlides=document.querySelectorAll('#skillTrack .slide');
+function perView(){return innerWidth<=760?1:(innerWidth<=960?2:3)}
+function maxIndex(){return Math.max(0,skillSlides.length-perView())}
+function showSkill(i){
+  skillIndex=Math.max(0,Math.min(i,maxIndex()));
+  var track=document.getElementById('skillTrack');
+  var w=100/perView();
+  track.style.transform='translateX(-'+(skillIndex*w)+'%)';
+  document.querySelectorAll('#skillDots button').forEach(function(d,di){d.classList.toggle('active',di===skillIndex)});
+}
+function moveSkill(dir){showSkill(skillIndex+dir);restartSkillTimer()}
+function restartSkillTimer(){clearInterval(skillTimer);skillTimer=setInterval(function(){showSkill(skillIndex>=maxIndex()?0:skillIndex+1)},4000)}
+(function(){
+  var dots=document.getElementById('skillDots');
+  for(var i=0;i<=maxIndex();i++){var b=document.createElement('button');b.setAttribute('aria-label','Go to skill group '+(i+1));(function(idx){b.addEventListener('click',function(){showSkill(idx);restartSkillTimer()})})(i);dots.appendChild(b)}
+  showSkill(0);restartSkillTimer();
+  addEventListener('resize',function(){showSkill(skillIndex)});
+  var vp=document.querySelector('.slider-viewport');
+  vp.addEventListener('mouseenter',function(){clearInterval(skillTimer)});
+  vp.addEventListener('mouseleave',restartSkillTimer);
+})();
 </script>
 </body>
 </html>
