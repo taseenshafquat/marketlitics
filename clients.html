@@ -46,13 +46,18 @@ h1{font-family:Georgia,serif;font-size:clamp(42px,9vw,72px);font-weight:400;colo
 .folder p{color:#94a3b8;font-size:13px;line-height:1.6}
 .folder .coming{display:inline-block;margin-top:10px;background:#fef3c7;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px}
 .before-after{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
-.before-after div{flex:1;min-width:200px;background:#071826;border:1px dashed #164e5e;border-radius:14px;padding:20px;text-align:center;color:#94a3b8}
+.ba-box{flex:1;min-width:220px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:16px;text-align:center}
+.ba-box img{width:100%;border-radius:10px;display:block;margin:10px 0;background:#fff}
+.growth{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;text-align:center}
+.growth div{flex:1;min-width:140px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:16px}
+.growth b{color:#5eead4;font-size:20px;display:block}
+.growth span{color:#94a3b8;font-size:12px}
 .empty{max-width:960px;margin:0 auto 60px;padding:30px 20px;background:#0b2a35;border:1px dashed #164e5e;border-radius:16px;display:none}
 .btn{padding:16px 36px;border-radius:999px;font-weight:700;font-size:16px;border:2px solid #5eead4;display:inline-block;margin:6px}
 .btn-data{background:#2dd4bf;color:#06202a}
 .btn-mark{background:transparent;color:#fff}
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
-@media(max-width:640px){.top nav{display:none}.client-grid{flex-direction:column}.folders{flex-direction:column}}
+@media(max-width:640px){.top nav{display:none}.client-grid{flex-direction:column}.folders{flex-direction:column}.before-after{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -123,12 +128,12 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 </div>
 
 <div class="client" data-id="aqtiv" data-loc="pakistan" data-svc="social-media content-production">
-<span class="tag">REAL CLIENT • PAKISTAN</span>
+<span class="tag">REAL CLIENT • PAKISTAN • BEFORE / AFTER COMPLETE</span>
 <h2>📁 Aqtiv Water</h2>
-<p class="loc">🇵🇰 Pakistan</p>
+<p class="loc">🇵🇰 Pakistan • Lahore • @aqtivsolutions</p>
 <ul><li>Content Calendar</li><li>Content Production</li><li>Social Media Management</li></ul>
 <div><span class="svc">Content Calendar</span><span class="svc">Content Production</span><span class="svc">Social Media Management</span></div>
-<span class="open-link">Open Folder → See Before / After</span>
+<span class="open-link">Open Folder → See Before / After: 21 → 360 followers</span>
 </div>
 
 <div class="client" data-id="agrilift" data-loc="pakistan" data-svc="social-media ai-content">
@@ -249,7 +254,7 @@ var clients={
 bj:{name:'BJ Productions',loc:'🇵🇰 Pakistan',services:'Wikipedia Page and Updating • Shopify Store Development • Paid Ad • Content Strategy',folders:['Wikipedia Page','Shopify Store','Paid Ads','Content Strategy']},
 afx:{name:'AFX Training Hub',loc:'🇵🇰 Pakistan',services:'Forex Education Training • Paid Ad • Social Media • Content Strategy',folders:['Reels / Video Links','Ad Images','Social Media Management','Content Strategy']},
 berlitz:{name:'Berlitz',loc:'🇵🇰 Pakistan',services:'Content Production • Content Calendar • Brainstorming • Performance Reporting • Social Media Posting and Scheduling',folders:['Content Production','Social Media Calendar','Performance Reporting PDF','Social Media Posting / Scheduling']},
-aqtiv:{name:'Aqtiv Water',loc:'🇵🇰 Pakistan',services:'Content Calendar • Content Production • Social Media Management',folders:['Content Calendar','Content Production','Social Media Management'],beforeAfter:true},
+aqtiv:{name:'Aqtiv Water',loc:'🇵🇰 Pakistan • Lahore • @aqtivsolutions',services:'Content Calendar • Content Production • Social Media Management • Instagram: @aqtivsolutions • Drink Aqtiv Stay Active!',folders:['Content Calendar','Content Production','Social Media Management'],beforeAfter:true},
 agrilift:{name:'Agrilift',loc:'🇵🇰 Pakistan',services:'Social Media Management • AI Content Production',folders:['Social Media Management','AI Content Production']},
 sarah:{name:'Sarah AI',loc:'🇦🇪 UAE',services:'Client Coordination • Performance Reporting • AI Content • Social Media Management • Creative / Design Collaboration • Newsletter • Website Content • ASO Reporting / Optimization • Community Management • Hashtag / Keyword Research • Competitor Analysis',folders:['AI Content','Social Media Management','Performance / ASO Reporting PDF','Newsletter / Website Content','Hashtag / Keyword Research']},
 'iib-west':{name:'IIB West Africa (CVE)',loc:'🌍 Africa • West Africa • CVE • IIB Group',services:'Social Media Management • Performance Reporting • AI Content • Social Media Copy • Captions, Keywords, Hashtags',folders:['Social Media Management','Performance Reporting PDF','AI Content','Captions / Keywords / Hashtags']},
@@ -274,7 +279,7 @@ function openDetail(id){
   document.getElementById('dFolders').innerHTML=html;
   var ba='';
   if(c.beforeAfter){
-    ba='<h3 style="color:#5eead4;font-size:13px;letter-spacing:3px;margin:26px 0 10px">BEFORE / AFTER • SOCIAL MEDIA</h3><div class="before-after"><div><b style="color:#fff">BEFORE</b><br><br>Image before your handling<br>Upload next</div><div><b style="color:#fff">AFTER</b><br><br>Image after your handling<br>Upload next</div></div>';
+    ba='<h3 style="color:#5eead4;font-size:13px;letter-spacing:3px;margin:26px 0 10px">BEFORE / AFTER • SOCIAL MEDIA</h3><div class="growth"><div><b>5 → 96</b><span>Posts • +91 posts</span></div><div><b>21 → 360</b><span>Followers • +339 followers</span></div><div><b>0 → 3</b><span>Following</span></div></div><div class="before-after"><div class="ba-box"><b style="color:#fff">BEFORE</b><a href="aqtiv-before.png" target="_blank" rel="noopener"><img src="aqtiv-before.png" alt="Aqtiv Water Instagram before Taseen handling, 5 posts, 21 followers"></a><p style="color:#94a3b8;font-size:13px">5 posts • 21 followers • 0 following<br>Aqtiv Solutions • Now delivering all across Lahore!<br>Tap image to open full size</p></div><div class="ba-box"><b style="color:#fff">AFTER</b><a href="aqtiv-after.png" target="_blank" rel="noopener"><img src="aqtiv-after.png" alt="Aqtiv Water Instagram after Taseen handling, 96 posts, 360 followers"></a><p style="color:#94a3b8;font-size:13px">@aqtivsolutions • 96 posts • 360 followers • Lahore<br>Tap image to open full size in a new tab</p><p><a href="https://www.instagram.com/aqtivsolutions" target="_blank" rel="noopener" style="color:#5eead4;font-weight:700">View Instagram @aqtivsolutions →</a></p></div></div>';
   }
   document.getElementById('dBeforeAfter').innerHTML=ba;
   var box=document.getElementById('detailBox'); box.classList.add('show');
