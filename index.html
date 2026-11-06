@@ -12,11 +12,12 @@ body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:cente
 a{color:inherit;text-decoration:none}
 .banner{position:fixed;top:0;left:0;right:0;z-index:1000;background:#2dd4bf;color:#06202a;font-weight:700;font-size:14px;padding:10px 16px;text-align:center}
 .banner a{font-weight:800;text-decoration:underline}
-.top{position:fixed;top:38px;left:0;right:0;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;background:rgba(7,24,38,.85);backdrop-filter:blur(10px);z-index:999}
-.logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px}
-.top nav{font-size:14px}
+.top{position:fixed;top:38px;left:0;right:0;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(7,24,38,.85);backdrop-filter:blur(10px);z-index:999}
+.logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px;white-space:nowrap}
+.top nav{font-size:14px;white-space:nowrap;overflow-x:auto}
 .top nav a{margin:0 10px;opacity:.85}
 .top nav a.clients-link{color:#5eead4;font-weight:800;opacity:1;border:1px solid #5eead4;border-radius:999px;padding:6px 12px}
+.top nav a.work-link{color:#fef3c7;font-weight:800;opacity:1}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:150px 20px 60px;background:radial-gradient(circle at 50% 20%,#0e3a42, #071826 65%)}
 h1{font-family:Georgia,serif;font-size:clamp(64px,14vw,150px);font-weight:400;letter-spacing:6px;color:#fef3c7;line-height:1}
 .hero p.tag{color:#5eead4;letter-spacing:4px;margin:14px 0;font-size:13px}
@@ -79,12 +80,12 @@ h2{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fef3c7;margin
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 .marquee{display:flex;gap:16px;animation:scroll 30s linear infinite}
 @keyframes scroll{to{transform:translateX(-50%)}}
-@media(max-width:640px){.cards{flex-direction:column}.top nav{display:none}.case-grid{flex-direction:column}#map{height:340px}.banner{font-size:12px}}
+@media(max-width:640px){.cards{flex-direction:column}.case-grid{flex-direction:column}#map{height:340px}.banner{font-size:12px}.top{padding:12px 12px}.top nav{font-size:12px}.top nav a{margin:0 6px}.logo{font-size:19px}}
 </style>
 </head>
 <body>
 <div class="banner">📁 13 Real Clients • Pakistan, UAE, Africa, UK, US • <a href="clients.html">View All Clients →</a></div>
-<header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a href="#work">Work</a><a href="#skills">Skills</a><a class="clients-link" href="clients.html">📁 Clients</a><a href="#certs">Certifications</a><a href="#contact">Contact</a></nav></header>
+<header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a class="work-link" href="#work">Work</a><a href="#skills">Skills</a><a class="clients-link" href="clients.html">📁 Clients</a><a href="#certs">Certifications</a><a href="#contact">Contact</a></nav></header>
 
 <section class="hero" style="opacity:1;transform:none">
 <h1>TASEEN</h1>
@@ -95,7 +96,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 <a class="btn btn-mark" href="#marketing">🎯 MARKETING</a>
 <a class="btn btn-data" href="clients.html">📁 CLIENTS</a>
 </div>
-<p style="margin-top:18px;color:#cbd5e1">13 real clients, with Before / After proof. <a href="clients.html" style="color:#5eead4;font-weight:700">Tap Clients, filter by location and service →</a></p>
+<p style="margin-top:18px;color:#cbd5e1">Work section below, plus 13 real clients, with Before / After proof. <a href="#work" style="color:#fef3c7;font-weight:700">See Work ↓</a> &nbsp;•&nbsp; <a href="clients.html" style="color:#5eead4;font-weight:700">See Clients →</a></p>
 <div class="scroll-hint">↓ Scroll to explore ↓</div>
 </section>
 
@@ -202,7 +203,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
 <div class="card"><span class="sample">SAMPLE</span><h3>SEO vs Paid Ads: When to Double Down</h3></div>
 <div class="card"><span class="sample">SAMPLE</span><h3>Storytelling for Brand Growth in 2026</h3></div></div></section>
 
-<footer id="contact"><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p>hello@marketlitics.com • <a href="https://www.linkedin.com/in/taseen-shafquat" target="_blank" rel="noopener" style="color:#5eead4;font-weight:700">LinkedIn</a> • Instagram • GitHub</p><p style="margin-top:10px"><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a> <a class="btn btn-data" href="clients.html">📁 Clients →</a></p></footer>
+<footer id="contact"><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p>hello@marketlitics.com • <a href="https://www.linkedin.com/in/taseen-shafquat" target="_blank" rel="noopener" style="color:#5eead4;font-weight:700">LinkedIn</a> • Instagram • GitHub</p><p style="margin-top:10px"><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a> <a class="btn btn-data" href="clients.html">📁 Clients →</a> <a class="btn btn-mark" href="#work">Work ↑</a></p></footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
