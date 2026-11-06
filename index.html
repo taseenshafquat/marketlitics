@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taseen - Marketlitics | Marketing, Data, Content</title>
-<meta name="description" content="Taseen, Marketlitics. Marketing, data analysis, SEO, content. Karachi, Pakistan. 11 real clients in Pakistan, UAE, Africa, UK, US.">
+<meta name="description" content="Taseen, Marketlitics. Marketing, data analysis, SEO, content. Karachi, Pakistan. 11 real clients in Pakistan, UAE, Caribbean, Djibouti, Cabo Verde, UK, US.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden}
@@ -84,18 +85,19 @@ section h2 span{color:#5eead4}
 .prof-bar i.gold{background:#fef3c7}
 .prof-bar i.teal2{background:#5eead4}
 .map-box{background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;overflow:hidden}
-.map-panel{position:relative;height:340px;background:#0e3a42;overflow:hidden}
-.map-panel iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:.55;filter:saturate(.9)}
-.map-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,58,66,.25),rgba(7,24,38,.45));pointer-events:none}
-.map-pin{position:absolute;transform:translate(-50%,-100%);text-align:center;cursor:pointer;z-index:2}
-.map-pin i{display:block;width:16px;height:16px;background:#2dd4bf;border:3px solid #fff;border-radius:50%;margin:0 auto;box-shadow:0 0 0 6px rgba(45,212,191,.35)}
-.map-pin b{display:inline-block;background:#071826;border:1px solid #2dd4bf;color:#fff;font-size:12px;padding:5px 9px;border-radius:999px;margin-top:6px;white-space:nowrap}
-.map-pin.active i{background:#fef3c7}
-.map-pin.active b{background:#fef3c7;color:#06202a;border-color:#fef3c7}
-.map-pin .flag{font-size:22px;line-height:1;display:block;margin-bottom:2px}
+#map{height:420px;width:100%;border-radius:0;border:0;z-index:1;text-align:left;background:#0b2a35}
+.leaflet-tile{filter:invert(92%) hue-rotate(185deg) brightness(.88) contrast(.92)}
+.flag-pin{font-size:32px;line-height:1;text-align:center;animation:pinBounce 2s ease-in-out infinite}
+.flag-pin-home{font-size:42px}
+@keyframes pinBounce{50%{transform:translateY(-5px)}}
+.flag-label-pin{text-align:center;line-height:1.1;animation:pinBounce 2s ease-in-out infinite}
+.flag-label-pin .flag-big{font-size:34px;line-height:1;display:block}
+.flag-label-pin .label-pill{display:inline-block;margin-top:4px;background:#2dd4bf;color:#06202a;font-weight:800;font-size:12px;letter-spacing:1px;line-height:22px;border-radius:999px;border:2px solid #fff;padding:0 9px;white-space:nowrap}
+.leaflet-popup-content{color:#071826;font-family:Arial,sans-serif;text-align:center}
 .map-note{padding:16px 20px;color:#94a3b8;font-size:12px;line-height:1.6;border-top:1px solid #164e5e}
 .map-rows{display:flex;gap:10px;flex-wrap:wrap;padding:20px}
-.map-row{flex:1;min-width:140px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:16px;cursor:pointer;text-align:left}
+.map-row{flex:1;min-width:140px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:16px;cursor:pointer;text-align:left;transition:.25s}
+.map-row:hover{transform:translateY(-4px);border-color:#2dd4bf}
 .map-row.active{border-color:#2dd4bf;background:#0e3a42}
 .map-row .flag{font-size:28px;line-height:1.2}
 .map-row b{color:#fff;font-size:15px;display:block;margin-top:6px}
@@ -125,7 +127,7 @@ section h2 span{color:#5eead4}
 #certs{text-align:center}
 #certs .sub{color:#94a3b8;margin-bottom:30px}
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:center}
-@media(max-width:760px){.slide{flex:0 0 100%}.map-panel{height:280px}.menu-btn{top:98px;left:12px;padding:10px 14px}.top{padding:10px 12px}.top nav{font-size:12px}.banner{font-size:12px}.domains{letter-spacing:2px;font-size:11px}}
+@media(max-width:760px){.slide{flex:0 0 100%}#map{height:340px}.menu-btn{top:98px;left:12px;padding:10px 14px}.top{padding:10px 12px}.top nav{font-size:12px}.banner{font-size:12px}.domains{letter-spacing:2px;font-size:11px}}
 @media(min-width:761px) and (max-width:960px){.slide{flex:0 0 50%}}
 </style>
 </head>
@@ -151,12 +153,12 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <a class="menu-link" href="#contact" onclick="toggleMenu(false)">💬 Contact<span>WhatsApp + brief</span></a>
 <p style="color:#64748b;font-size:12px;line-height:1.6;margin-top:20px">Tip: tap anywhere outside this menu to close it.</p>
 </aside>
-<div class="banner">11 Real Clients • Pakistan, UAE, Africa, UK, US • <a href="clients.html">View All Clients →</a></div>
+<div class="banner">11 Real Clients • Pakistan, UAE, Caribbean, Djibouti, Cabo Verde, UK, US • <a href="clients.html">View All Clients →</a></div>
 <header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a href="#work">Work</a><a href="#skills">Skills</a><a class="marketing-link" href="marketing.html">Marketing</a><a class="content-link" href="content.html">Content</a><a class="clients-link" href="clients.html">Clients</a><a href="#certs">Certifications</a><a href="#contact">Contact</a></nav></header>
 <div class="hero" id="top">
 <h1 aria-label="TASEEN MARKETLITICS"><span>T</span><span>A</span><span>S</span><span>E</span><span>E</span><span>N</span><br><span style="font-size:.62em">M</span><span style="font-size:.62em">A</span><span style="font-size:.62em">R</span><span style="font-size:.62em">K</span><span style="font-size:.62em">E</span><span style="font-size:.62em">T</span><span style="font-size:.62em">L</span><span style="font-size:.62em">I</span><span style="font-size:.62em">T</span><span style="font-size:.62em">I</span><span style="font-size:.62em">C</span><span style="font-size:.62em">S</span></h1>
 <p class="domains">DATA ANALYST • DIGITAL MARKETER • CONTENT CREATOR</p>
-<p class="sub">Marketing, data, and content, in one place. I plan the message, I build the content, I check the numbers, and I show the result. Karachi, Pakistan. 11 real clients, Pakistan, UAE, Africa, UK, US.</p>
+<p class="sub">Marketing, data, and content, in one place. I plan the message, I build the content, I check the numbers, and I show the result. Karachi, Pakistan. 11 real clients, Pakistan, UAE, Caribbean, Djibouti, Cabo Verde, UK, US.</p>
 <p><a class="btn btn-data" href="#skills">📊 Data →</a> <a class="btn btn-mark" href="marketing.html">📈 Marketing →</a></p>
 </div>
 
@@ -238,7 +240,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <section id="clients-preview">
 <p class="sec-label">CLIENTS</p>
 <h2>11 Real <span>Clients</span></h2>
-<p class="sec-sub">Pakistan, UAE, Africa, UK, US. Each client has its own folder, with what was done, and the result. Aqtiv, Berlitz, LUMS, Agrilift, and more.</p>
+<p class="sec-sub">Pakistan, UAE, Caribbean, Djibouti, Cabo Verde, UK, US. Each client has its own folder, with what was done, and the result. Aqtiv, Berlitz, LUMS, Agrilift, and more.</p>
 <div class="cards">
 <div class="card"><span class="client-tag">FEATURED</span><h3>Aqtiv Water</h3><p>Launch + re-launch, 1st bottle free, 21 to 360 followers. See the full folder on the Clients page.</p><a class="open-link" href="clients.html">Open Clients Page →</a></div>
 <div class="card"><span class="client-tag">FEATURED</span><h3>Agrilift</h3><p>Social Media Management + AI Content Production. AI Reel plays on the Content page.</p><a class="open-link" href="content.html?id=agrilift">Play Agrilift Reel →</a></div>
@@ -250,26 +252,20 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <section id="map">
 <p class="sec-label">MAP • CLIENTS SERVED</p>
 <h2>Where Clients <span>Are Served</span></h2>
-<p class="sec-sub">From Karachi, working across 5 regions. Tap a pin on the map, or a region below, to highlight it. This is a real map under the dark panel, drag it, zoom it, it loads fast, and the pins and flags stay on top.</p>
+<p class="sec-sub">From Karachi, working across 7 locations. No Lahore. No generic Africa. Tap a flag pin on the map, it stays on its country when you drag / zoom. Tap a card below, the map flies to that country.</p>
 <div class="map-box">
-<div class="map-panel" id="mapPanel">
-<iframe title="Real world map, clients served" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-170%2C-55%2C180%2C75&amp;layer=mapnik"></iframe>
-<div class="map-pin" style="left:13%;top:36%" data-region="us" onclick="selectRegion('us',this)"><span class="flag">🇺🇸</span><i></i><b>US</b></div>
-<div class="map-pin" style="left:26%;top:24%" data-region="uk" onclick="selectRegion('uk',this)"><span class="flag">🇬🇧</span><i></i><b>UK</b></div>
-<div class="map-pin" style="left:46%;top:60%" data-region="africa" onclick="selectRegion('africa',this)"><span class="flag">🌍</span><i></i><b>Africa</b></div>
-<div class="map-pin" style="left:53%;top:50%" data-region="uae" onclick="selectRegion('uae',this)"><span class="flag">🇦🇪</span><i></i><b>UAE</b></div>
-<div class="map-pin active" style="left:60%;top:46%" data-region="pk" onclick="selectRegion('pk',this)"><span class="flag">🇵🇰</span><i></i><b>Pakistan • Karachi</b></div>
-<div class="map-pin" style="left:67%;top:32%" data-region="pk" onclick="selectRegion('pk',this)"><span class="flag">🇵🇰</span><i></i><b>Lahore</b></div>
-</div>
+<div id="map"></div>
 <div class="map-rows" id="mapRows">
-<div class="map-row active" data-region="pk" onclick="selectRegion('pk',this)"><span class="flag">🇵🇰</span><b>Pakistan</b><span>HOME BASE • MOST CLIENTS</span><p>Karachi + Lahore. Aqtiv Water, LUMS, Agrilift, Berlitz, and more. Content, social, data, ads.</p><div class="map-count">6 <small>CLIENTS</small></div></div>
-<div class="map-row" data-region="uae" onclick="selectRegion('uae',this)"><span class="flag">🇦🇪</span><b>UAE</b><span>REMOTE • CLIENTS SERVED</span><p>UAE clients, worked remotely. Tell me the exact city, Dubai / Abu Dhabi, and I put it on the pin.</p><div class="map-count">2 <small>CLIENTS</small></div></div>
-<div class="map-row" data-region="africa" onclick="selectRegion('africa',this)"><span class="flag">🌍</span><b>Africa</b><span>REMOTE • CLIENTS SERVED</span><p>Africa clients, worked remotely. Tell me the exact country / city, and I put it on the pin.</p><div class="map-count">1 <small>CLIENT</small></div></div>
-<div class="map-row" data-region="uk" onclick="selectRegion('uk',this)"><span class="flag">🇬🇧</span><b>UK</b><span>REMOTE • CLIENTS SERVED</span><p>UK clients, worked remotely. Content and marketing, in English, UK audience.</p><div class="map-count">1 <small>CLIENT</small></div></div>
-<div class="map-row" data-region="us" onclick="selectRegion('us',this)"><span class="flag">🇺🇸</span><b>US</b><span>REMOTE • CLIENTS SERVED</span><p>US clients, worked remotely. Content and marketing, in English, US audience.</p><div class="map-count">1 <small>CLIENT</small></div></div>
+<div class="map-row active" data-region="pk" onclick="selectRegion('pk')"><span class="flag">🇵🇰</span><b>Pakistan</b><span>HOME BASE • KARACHI ONLY</span><p>Karachi. Aqtiv Water, LUMS, Agrilift, Berlitz, and more. Content, social, data, ads.</p><div class="map-count">5 <small>CLIENTS</small></div></div>
+<div class="map-row" data-region="uae" onclick="selectRegion('uae')"><span class="flag">🇦🇪</span><b>UAE</b><span>REMOTE • DUBAI</span><p>UAE client, worked remotely, Dubai.</p><div class="map-count">1 <small>CLIENT</small></div></div>
+<div class="map-row" data-region="caribbean" onclick="selectRegion('caribbean')"><span class="flag">🇯🇲</span><b>Caribbean</b><span>IIB GROUP</span><p>Caribbean, Jamaica. IIB Group, part of the 2 IIB clients across Caribbean, Djibouti, Cabo Verde.</p><div class="map-count">IIB <small>GROUP</small></div></div>
+<div class="map-row" data-region="djibouti" onclick="selectRegion('djibouti')"><span class="flag">🇩🇯</span><b>Djibouti</b><span>IIB GROUP • EAST AFRICA</span><p>Djibouti. IIB Group, part of the 2 IIB clients across Caribbean, Djibouti, Cabo Verde.</p><div class="map-count">IIB <small>GROUP</small></div></div>
+<div class="map-row" data-region="caboverde" onclick="selectRegion('caboverde')"><span class="flag">🇨🇻</span><b>Cabo Verde</b><span>IIB GROUP • WEST AFRICA</span><p>Cabo Verde. IIB Group, part of the 2 IIB clients across Caribbean, Djibouti, Cabo Verde.</p><div class="map-count">IIB <small>GROUP</small></div></div>
+<div class="map-row" data-region="uk" onclick="selectRegion('uk')"><span class="flag">🇬🇧</span><b>UK</b><span>REMOTE • LONDON</span><p>UK clients, worked remotely. Content and marketing, in English, UK audience.</p><div class="map-count">2 <small>CLIENTS</small></div></div>
+<div class="map-row" data-region="us" onclick="selectRegion('us')"><span class="flag">🇺🇸</span><b>US</b><span>REMOTE • NEW YORK</span><p>US client, worked remotely. Content and marketing, in English, US audience.</p><div class="map-count">1 <small>CLIENT</small></div></div>
 </div>
 <div class="map-btn-row"><a class="btn btn-data" href="clients.html">📁 View All 11 Clients →</a></div>
-<p class="map-note">11 Real Clients in total, across these 5 regions. 6 + 2 + 1 + 1 + 1 = 11. Full folders, with what was done for each client, are on the Clients page, tap the button above. Map is a real OpenStreetMap, not to scale for office locations, for directions use a maps app.</p>
+<p class="map-note">11 Real Clients in total: 5 Pakistan + 1 UAE + 2 UK + 1 US + 2 IIB Group (Caribbean, Djibouti, Cabo Verde) = 11. Full folders are on the Clients page. Map is a real Leaflet / OpenStreetMap map, pins are at real coordinates, for directions use a maps app.</p>
 </div>
 </section>
 
@@ -284,6 +280,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 </section>
 
 <footer><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p><a href="marketing.html" style="color:#5eead4;font-weight:700">Marketing Page →</a> &nbsp;•&nbsp; <a href="content.html" style="color:#5eead4;font-weight:700">Content →</a> &nbsp;•&nbsp; <a href="clients.html" style="color:#5eead4;font-weight:700">Clients →</a></p></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 var canvas=document.getElementById('bgCanvas'),ctx=canvas.getContext('2d'),pts=[];
 function resize(){canvas.width=innerWidth;canvas.height=innerHeight;pts=[];var n=innerWidth<640?32:60;for(var i=0;i<n;i++){pts.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*2+1.2})}}
@@ -297,10 +294,6 @@ function toggleMenu(open){
   document.body.style.overflow=open?'hidden':'';
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')toggleMenu(false)});
-function selectRegion(region,el){
-  document.querySelectorAll('.map-pin').forEach(function(p){p.classList.toggle('active',p.dataset.region===region)});
-  document.querySelectorAll('.map-row').forEach(function(r){r.classList.toggle('active',r.dataset.region===region)});
-}
 var skillIndex=0, skillTimer=null;
 var skillSlides=document.querySelectorAll('#skillTrack .slide');
 function perView(){return innerWidth<=760?1:(innerWidth<=960?2:3)}
@@ -358,6 +351,28 @@ var skillBars=[
   addEventListener('scroll',animateBars);
   animateBars();
 })();
+/* REAL LEAFLET MAP: pins at real coordinates, they move WITH the map. No Lahore. No Africa. */
+var map=L.map('map',{scrollWheelZoom:false}).setView([28,20],2);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:18}).addTo(map);
+function pin(flag,home){return L.divIcon({className:'',html:'<div class="flag-pin '+(home?'flag-pin-home':'')+'">'+flag+'</div>',iconSize:[40,40],iconAnchor:[20,20]});}
+function flagPin(flag,label){return L.divIcon({className:'',html:'<div class="flag-label-pin"><span class="flag-big">'+flag+'</span><span class="label-pill">'+label+'</span></div>',iconSize:[60,62],iconAnchor:[30,31]});}
+var markers={};
+markers.pk=L.marker([24.86,67.01],{icon:pin('🇵🇰',true)}).addTo(map).bindPopup('<b>🇵🇰 Pakistan • Karachi</b><br>5 Clients<br><a href="clients.html?location=pakistan">View Clients →</a>');
+markers.uae=L.marker([25.20,55.27],{icon:pin('🇦🇪')}).addTo(map).bindPopup('<b>🇦🇪 UAE • Dubai</b><br>1 Client<br><a href="clients.html?location=uae">View Clients →</a>');
+markers.uk=L.marker([51.50,-0.12],{icon:pin('🇬🇧')}).addTo(map).bindPopup('<b>🇬🇧 United Kingdom • London</b><br>2 Clients<br><a href="clients.html?location=uk">View Clients →</a>');
+markers.us=L.marker([40.71,-74.00],{icon:pin('🇺🇸')}).addTo(map).bindPopup('<b>🇺🇸 United States • New York</b><br>1 Client<br><a href="clients.html?location=us">View Clients →</a>');
+markers.caboverde=L.marker([14.92,-23.51],{icon:flagPin('🇨🇻','CABO VERDE')}).addTo(map).bindPopup('<b>🇨🇻 Cabo Verde</b><br>IIB Group<br><a href="clients.html?location=africa">View Clients →</a>');
+markers.djibouti=L.marker([11.59,43.15],{icon:flagPin('🇩🇯','DJIBOUTI')}).addTo(map).bindPopup('<b>🇩🇯 Djibouti</b><br>IIB Group<br><a href="clients.html?location=africa">View Clients →</a>');
+markers.caribbean=L.marker([18.11,-77.30],{icon:flagPin('🇯🇲','CARIBBEAN')}).addTo(map).bindPopup('<b>🇯🇲 Caribbean • Jamaica</b><br>IIB Group<br><a href="clients.html?location=africa">View Clients →</a>');
+var regionCoords={pk:[24.86,67.01,5],uae:[25.20,55.27,5],uk:[51.50,-0.12,5],us:[40.71,-74.00,5],caboverde:[14.92,-23.51,5],djibouti:[11.59,43.15,5],caribbean:[18.11,-77.30,5]};
+function selectRegion(region){
+  document.querySelectorAll('.map-row').forEach(function(r){r.classList.toggle('active',r.dataset.region===region)});
+  var c=regionCoords[region];
+  if(c&&map){map.flyTo([c[0],c[1]],c[2]);if(markers[region])markers[region].openPopup();}
+  setTimeout(function(){if(map)map.invalidateSize()},300);
+}
+map.on('click',function(){map.scrollWheelZoom.enable();});
+setTimeout(function(){if(map)map.invalidateSize()},500);
 </script>
 </body>
 </html>
