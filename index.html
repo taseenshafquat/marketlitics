@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden}
+body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden;padding-left:250px}
 a{color:inherit;text-decoration:none}
 #bgCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}
 .orb{position:fixed;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none;opacity:.55;animation:drift 14s ease-in-out infinite alternate}
@@ -17,30 +17,28 @@ a{color:inherit;text-decoration:none}
 .orb3{width:220px;height:220px;background:#fef3c7;bottom:-60px;left:35%;opacity:.22;animation-delay:-9s}
 @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(50px,35px) scale(1.15)}}
 #glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.22),transparent 65%);z-index:0;pointer-events:none;transform:translate(-50%,-50%);left:50%;top:40%}
+.sidebar{width:250px;height:100vh;position:fixed;top:0;left:0;z-index:1200;background:#0b2a35;border-right:1px solid #164e5e;padding:24px 14px;text-align:left;overflow-y:auto}
+.sidebar h2{font-family:Georgia,serif;font-size:24px;color:#5eead4;font-weight:400;padding-left:8px}
+.sidebar .side-sub{color:#94a3b8;font-size:13px;line-height:1.6;padding-left:8px;margin-top:8px}
+.sidebar h3{color:#5eead4;font-size:12px;letter-spacing:3px;margin:20px 0 12px 8px;font-weight:800}
+.sidebar ul{list-style:none}
+.sidebar li{margin-bottom:4px}
+.sidebar a{display:block;padding:11px 10px;color:#94a3b8;text-decoration:none;border-radius:8px;transition:all .2s ease;font-weight:700;font-size:14px;line-height:1.4}
+.sidebar a span{display:block;font-size:11px;color:#64748b;font-weight:400;margin-top:2px}
+.sidebar a:hover{background:#071826;color:#5eead4}
+.sidebar a.active{background:#2dd4bf;color:#06202a;font-weight:800}
+.sidebar a.active span{color:#06202a}
+.sidebar .side-tip{color:#64748b;font-size:11px;line-height:1.6;margin:20px 0 0 8px}
 .top,.hero,section,footer{position:relative;z-index:2}
-.top{position:fixed;top:0;left:0;right:0;min-height:58px;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(7,24,38,.88);backdrop-filter:blur(10px);z-index:999}
+.top{position:fixed;top:0;left:250px;right:0;min-height:58px;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(7,24,38,.88);backdrop-filter:blur(10px);z-index:999}
 .logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px;white-space:nowrap;line-height:1}
 .top nav{font-size:14px;display:flex;align-items:center;gap:4px;overflow-x:auto;white-space:nowrap;line-height:1}
 .top nav a{margin:0 8px;opacity:.85;display:inline-block;padding:8px 2px}
 .top nav a.clients-link{background:#2dd4bf;color:#06202a;font-weight:800;opacity:1;border-radius:999px;padding:9px 16px;margin:0 6px}
 .top nav a.marketing-link{color:#fef3c7;font-weight:800;opacity:1}
 .top nav a.content-link{color:#fef3c7;font-weight:800;opacity:1}
-.menu-btn{position:fixed;top:68px;left:16px;z-index:1100;background:#2dd4bf;color:#06202a;border:0;border-radius:999px;padding:12px 18px;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 8px 25px rgba(45,212,191,.35)}
-.side-menu{position:fixed;top:0;left:0;bottom:0;width:290px;max-width:85vw;background:#0b2a35;border-right:1px solid #164e5e;z-index:1200;transform:translateX(-105%);transition:transform .3s ease;text-align:left;padding:22px;overflow-y:auto}
-.side-menu.open{transform:translateX(0)}
-.side-menu h3{color:#5eead4;font-size:12px;letter-spacing:3px;margin:14px 0 12px}
-.side-menu .menu-logo{font-family:Georgia,serif;font-size:24px;color:#5eead4}
-.side-menu a.menu-link{display:block;padding:14px 14px;border-radius:12px;color:#fff;font-weight:700;font-size:15px;border:1px solid transparent;margin-bottom:6px;transition:background .2s,color .2s}
-.side-menu a.menu-link:hover{background:#071826;border-color:#164e5e;color:#5eead4}
-.side-menu a.menu-link span{display:block;font-size:12px;color:#94a3b8;font-weight:400;margin-top:3px}
-.side-menu a.menu-link.active{background:#2dd4bf;border-color:#2dd4bf;color:#06202a;box-shadow:0 8px 25px rgba(45,212,191,.45)}
-.side-menu a.menu-link.active::before{content:"● ";color:#06202a;font-size:11px}
-.side-menu a.menu-link.active span{color:#06202a}
-.menu-close{float:right;background:transparent;border:1px solid #5eead4;color:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:700}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1150;opacity:0;pointer-events:none;transition:.3s}
-.overlay.show{opacity:1;pointer-events:auto}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:140px 20px 60px;position:relative;overflow:hidden;text-align:center}
-h1{font-family:Georgia,serif;font-size:clamp(64px,14vw,150px);font-weight:400;letter-spacing:6px;color:#fef3c7;line-height:1;text-shadow:0 0 40px rgba(45,212,191,.25)}
+h1{font-family:Georgia,serif;font-size:clamp(52px,10vw,130px);font-weight:400;letter-spacing:6px;color:#fef3c7;line-height:1;text-shadow:0 0 40px rgba(45,212,191,.25)}
 h1 span{display:inline-block;transition:transform .25s,color .25s}
 h1 span:hover,h1 span:active{transform:translateY(-10px) scale(1.08);color:#5eead4}
 .domains{color:#5eead4;font-size:13px;letter-spacing:4px;font-weight:800;margin:18px 0 4px}
@@ -54,7 +52,7 @@ section h2 span{color:#5eead4}
 .logos-section h2{text-align:center}
 .logos-section .sec-sub{margin-left:auto;margin-right:auto;text-align:center}
 .logos{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-.logo-card{flex:1;min-width:150px;max-width:175px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:24px 14px;text-align:center;transition:.25s;display:block}
+.logo-card{flex:1;min-width:140px;max-width:175px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:24px 14px;text-align:center;transition:.25s;display:block}
 .logo-card:hover{transform:translateY(-6px) scale(1.03);border-color:#2dd4bf;box-shadow:0 16px 35px rgba(45,212,191,.25)}
 .logo-card .mark{width:56px;height:56px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;color:#fff}
 .mark-github{background:#171515}.mark-linkedin{background:#0a66c2}.mark-behance{background:#1769ff}.mark-onedrive{background:#0364b8}.mark-box{background:#0061d5}
@@ -140,7 +138,7 @@ section h2 span{color:#5eead4}
 #certs{text-align:center}
 #certs .sub{color:#94a3b8;margin-bottom:24px}
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:center}
-@media(max-width:760px){.slide{flex:0 0 100%}#map{height:340px}.menu-btn{top:62px;left:12px;padding:10px 14px}.top{padding:10px 12px}.top nav{font-size:12px}.domains{letter-spacing:2px;font-size:11px}.cert-grid{grid-template-columns:1fr}}
+@media(max-width:760px){body{padding-left:190px}.sidebar{width:190px;padding:18px 10px}.sidebar h2{font-size:20px}.sidebar a{font-size:13px;padding:10px 8px}.sidebar a span{font-size:10px}.top{left:190px;padding:10px 12px}.top nav{font-size:12px}.logo{font-size:18px}.slide{flex:0 0 100%}#map{height:340px}.domains{letter-spacing:2px;font-size:11px}.cert-grid{grid-template-columns:1fr}h1{font-size:clamp(44px,11vw,72px);letter-spacing:3px}}
 @media(min-width:761px) and (max-width:960px){.slide{flex:0 0 50%}.cert-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
@@ -148,25 +146,24 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <canvas id="bgCanvas"></canvas>
 <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
 <div id="glow"></div>
-<button class="menu-btn" onclick="toggleMenu(true)" aria-label="Open menu">☰ Menu</button>
-<div class="overlay" id="overlay" onclick="toggleMenu(false)"></div>
-<aside class="side-menu" id="sideMenu">
-<button class="menu-close" onclick="toggleMenu(false)">X Close</button>
-<div class="menu-logo">Marketlitics</div>
-<p style="color:#94a3b8;font-size:13px;margin-top:8px;line-height:1.6">Karachi, Pakistan<br>Marketing that shows proof, not promises.</p>
+<nav class="sidebar">
+<h2>Marketlitics</h2>
+<p class="side-sub">Karachi, Pakistan<br>Marketing that shows proof, not promises.</p>
 <h3>MENU</h3>
-<a class="menu-link" href="#top" onclick="toggleMenu(false)" data-section="top">🏠 Home<span>Top of this page</span></a>
-<a class="menu-link" href="#profiles" onclick="toggleMenu(false)" data-section="profiles">🔗 Profiles<span>GitHub, LinkedIn, Behance, OneDrive, Box</span></a>
-<a class="menu-link" href="#skills" onclick="toggleMenu(false)" data-section="skills">🛠 Skills<span>Chips, slider, proficiency bars</span></a>
-<a class="menu-link" href="#work" onclick="toggleMenu(false)" data-section="work">💼 Work<span>What I do, by service</span></a>
-<a class="menu-link" href="marketing.html" onclick="toggleMenu(false)">📈 Marketing Page<span>Best Content, Ad Budget, Featured Campaign, Case Example</span></a>
-<a class="menu-link" href="content.html" onclick="toggleMenu(false)">🎬 Content Page<span>LUMS gallery + Agrilift AI Reel</span></a>
-<a class="menu-link" href="clients.html" onclick="toggleMenu(false)">📁 Clients Page<span>11 real clients, folders</span></a>
-<a class="menu-link" href="#map" onclick="toggleMenu(false)" data-section="map">🗺 Map<span>Where clients are served</span></a>
-<a class="menu-link" href="#certs" onclick="toggleMenu(false)" data-section="certs">🏅 Certifications<span>Courses + certificates</span></a>
-<a class="menu-link" href="#contact" onclick="toggleMenu(false)" data-section="contact">💬 Contact<span>WhatsApp + brief</span></a>
-<p style="color:#64748b;font-size:12px;line-height:1.6;margin-top:20px">Tip: tap anywhere outside this menu to close it.</p>
-</aside>
+<ul>
+<li><a href="#top" class="active">🏠 Home<span>Top of this page</span></a></li>
+<li><a href="#profiles">🔗 Profiles<span>GitHub, LinkedIn, Behance, OneDrive, Box</span></a></li>
+<li><a href="#skills">🛠 Skills<span>Chips, slider, proficiency bars</span></a></li>
+<li><a href="#work">💼 Work<span>What I do, by service</span></a></li>
+<li><a href="marketing.html">📈 Marketing Page<span>Best Content, Ad Budget, Featured Campaign, Case Example</span></a></li>
+<li><a href="content.html">🎬 Content Page<span>LUMS gallery + Agrilift AI Reel</span></a></li>
+<li><a href="clients.html">📁 Clients Page<span>11 real clients, folders</span></a></li>
+<li><a href="#map">🗺 Map<span>Where clients are served</span></a></li>
+<li><a href="#certs">🏅 Certifications<span>Courses + certificates</span></a></li>
+<li><a href="#contact">💬 Contact<span>WhatsApp + brief</span></a></li>
+</ul>
+<p class="side-tip">Scroll, the sidebar highlights where you are.</p>
+</nav>
 <header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a class="marketing-link" href="marketing.html">Marketing</a><a class="content-link" href="content.html">Content</a><a class="clients-link" href="clients.html">Clients</a></nav></header>
 <div class="hero" id="top">
 <h1 aria-label="TASEEN MARKETLITICS"><span>T</span><span>A</span><span>S</span><span>E</span><span>E</span><span>N</span><br><span style="font-size:.62em">M</span><span style="font-size:.62em">A</span><span style="font-size:.62em">R</span><span style="font-size:.62em">K</span><span style="font-size:.62em">E</span><span style="font-size:.62em">T</span><span style="font-size:.62em">L</span><span style="font-size:.62em">I</span><span style="font-size:.62em">T</span><span style="font-size:.62em">I</span><span style="font-size:.62em">C</span><span style="font-size:.62em">S</span></h1>
@@ -296,35 +293,20 @@ resize();addEventListener('resize',resize);
 addEventListener('mousemove',function(e){var g=document.getElementById('glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
 function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;for(var j=i+1;j<pts.length;j++){var q=pts[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<120){ctx.strokeStyle='rgba(45,212,191,'+(0.28-dd/450)+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}ctx.fillStyle='rgba(94,234,212,.85)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}requestAnimationFrame(draw)}
 draw();
-function toggleMenu(open){
-  document.getElementById('sideMenu').classList.toggle('open',open);
-  document.getElementById('overlay').classList.toggle('show',open);
-  /* NO overflow lock: page must keep scrolling while the menu is open, or the highlight can never move */
-}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')toggleMenu(false)});
-/* SCROLL HIGHLIGHT, IntersectionObserver: the section in the middle of the screen wins */
-function setActiveMenu(id){
-  document.querySelectorAll('.side-menu a.menu-link[data-section]').forEach(function(l){
-    var on=l.dataset.section===id;
-    l.classList.toggle('active',on);
-    if(on && document.getElementById('sideMenu').classList.contains('open')){
-      try{ l.scrollIntoView({block:'nearest'}); }catch(e){}
-    }
-  });
-}
-var spy=new IntersectionObserver(function(entries){
-  entries.forEach(function(en){
-    if(en.isIntersecting){ setActiveMenu(en.target.id); }
-  });
-},{rootMargin:'-40% 0px -55% 0px',threshold:0});
-['top','profiles','skills','work','map','certs','contact'].forEach(function(id){
-  var el=document.getElementById(id); if(el) spy.observe(el);
+document.addEventListener('DOMContentLoaded',function(){
+  var observerOptions={root:null,rootMargin:'-20% 0px -60% 0px',threshold:0};
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var id=entry.target.getAttribute('id');
+        document.querySelectorAll('.sidebar a').forEach(function(link){link.classList.remove('active')});
+        var activeLink=document.querySelector('.sidebar a[href="#'+id+'"]');
+        if(activeLink){activeLink.classList.add('active')}
+      }
+    });
+  },observerOptions);
+  document.querySelectorAll('section, .hero').forEach(function(section){observer.observe(section)});
 });
-/* Fallback for the very bottom: Contact must win when you reach the footer */
-addEventListener('scroll',function(){
-  if((innerHeight+scrollY) >= document.body.scrollHeight-80){ setActiveMenu('contact'); }
-},{passive:true});
-setActiveMenu('top');
 var skillIndex=0, skillTimer=null;
 var skillSlides=document.querySelectorAll('#skillTrack .slide');
 function perView(){return innerWidth<=760?1:(innerWidth<=960?2:3)}
