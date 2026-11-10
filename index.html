@@ -49,6 +49,16 @@ section h2{font-family:Georgia,serif;font-size:clamp(30px,6vw,44px);font-weight:
 section h2 span{color:#5eead4}
 .sec-label{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800}
 .sec-sub{color:#94a3b8;line-height:1.7;margin:12px 0 22px;max-width:680px}
+.logos-section{text-align:center;padding-top:20px}
+.logos-section h2{text-align:center}
+.logos-section .sec-sub{margin-left:auto;margin-right:auto;text-align:center}
+.logos{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.logo-card{flex:1;min-width:150px;max-width:175px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:24px 14px;text-align:center;transition:.25s;display:block}
+.logo-card:hover{transform:translateY(-6px) scale(1.03);border-color:#2dd4bf;box-shadow:0 16px 35px rgba(45,212,191,.25)}
+.logo-card .mark{width:56px;height:56px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;color:#fff}
+.mark-github{background:#171515}.mark-linkedin{background:#0a66c2}.mark-behance{background:#1769ff}.mark-onedrive{background:#0364b8}.mark-box{background:#0061d5}
+.logo-card b{color:#fff;font-size:16px;display:block}
+.logo-card span{color:#94a3b8;font-size:12px;line-height:1.5;display:block;margin-top:6px}
 .cards{display:flex;gap:16px;flex-wrap:wrap}
 .card{flex:1;min-width:240px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:22px;text-align:left;transition:.25s}
 .card:hover{transform:translateY(-4px);border-color:#2dd4bf}
@@ -143,6 +153,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <p style="color:#94a3b8;font-size:13px;margin-top:8px;line-height:1.6">Karachi, Pakistan<br>Marketing that shows proof, not promises.</p>
 <h3>MENU</h3>
 <a class="menu-link" href="#top" onclick="toggleMenu(false)">🏠 Home<span>Top of this page</span></a>
+<a class="menu-link" href="#profiles" onclick="toggleMenu(false)">🔗 Profiles<span>GitHub, LinkedIn, Behance, OneDrive, Box</span></a>
 <a class="menu-link" href="#skills" onclick="toggleMenu(false)">🛠 Skills<span>Chips, slider, proficiency bars</span></a>
 <a class="menu-link" href="#work" onclick="toggleMenu(false)">💼 Work<span>What I do, by service</span></a>
 <a class="menu-link" href="marketing.html" onclick="toggleMenu(false)">📈 Marketing Page<span>Best Content, Ad Budget, Featured Campaign, Case Example</span></a>
@@ -161,6 +172,19 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <p class="sub">Marketing, data, and content, in one place. I plan the message, I build the content, I check the numbers, and I show the result. Karachi, Pakistan. 11 real clients, Pakistan, UAE, Caribbean, Djibouti, Cabo Verde, UK, US.</p>
 <p><a class="btn btn-data" href="#skills">📊 Data →</a> <a class="btn btn-mark" href="marketing.html">📈 Marketing →</a></p>
 </div>
+
+<section class="logos-section" id="profiles">
+<p class="sec-label">MY WORK LIVES HERE</p>
+<h2>GitHub • LinkedIn • Behance • OneDrive • Box</h2>
+<p class="sec-sub">Tap a logo, it opens that profile / folder in a new tab. Code, work history, design, files, and videos, in one row, right under the hero.</p>
+<div class="logos">
+<a class="logo-card" href="https://marketlitics.vercel.app/" target="_blank" rel="noopener"><div class="mark mark-github">GH</div><b>GitHub</b><span>Live site • Vercel • send your github.com link to replace this</span></a>
+<a class="logo-card" href="https://www.linkedin.com/in/taseen-shafquat" target="_blank" rel="noopener"><div class="mark mark-linkedin">in</div><b>LinkedIn</b><span>Work, certificates, posts</span></a>
+<a class="logo-card" href="https://www.behance.net/taseenshafquat" target="_blank" rel="noopener"><div class="mark mark-behance">Bē</div><b>Behance</b><span>Design, content, campaigns</span></a>
+<a class="logo-card" href="https://1drv.ms/f/c/63b791acb28e6bf3/IgB7zJi5Gv2sTqEtNfGJ-c3FAa5dhQmRMrKlu3VmkWA4ZPU?e=Eo4upE" target="_blank" rel="noopener"><div class="mark mark-onedrive">OD</div><b>OneDrive</b><span>Files, reports, folders</span></a>
+<a class="logo-card" href="https://app.box.com/s/b8nebmct96ja9h2umxn1q5k3ozlbzprw" target="_blank" rel="noopener"><div class="mark mark-box">Box</div><b>Box</b><span>LUMS videos, Agrilift reel</span></a>
+</div>
+</section>
 
 <section id="skills">
 <p class="sec-label">SKILLS</p>
