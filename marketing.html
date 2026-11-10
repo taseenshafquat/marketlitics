@@ -61,8 +61,19 @@ a.card-link{flex:1;min-width:240px;display:block}
 .case-btn-row a{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:800;font-size:14px;border:2px solid #5eead4;color:#fff}
 .case-btn-row a:hover{background:rgba(45,212,191,.15)}
 .slide-btn{display:inline-block;padding:11px 20px;border-radius:999px;font-weight:800;font-size:13px;border:2px solid #5eead4;color:#fff;margin-top:14px}
-.slide-img{display:block;background:#000;border:1px solid #164e5e;border-radius:14px;overflow:hidden;margin:12px 0 4px}
-.slide-img img{width:100%;height:auto;max-height:300px;object-fit:contain;display:block}
+.mini-wrap{position:relative;margin:12px 0 4px}
+.mini-viewport{overflow:hidden;border-radius:14px;background:#000;border:1px solid #164e5e}
+.mini-track{display:flex;transition:transform .5s ease}
+.mini-slide{flex:0 0 100%;box-sizing:border-box}
+.mini-slide img{width:100%;height:auto;max-height:320px;object-fit:contain;display:block;background:#000}
+.mini-slide .mini-empty{padding:50px 18px;text-align:center;color:#94a3b8;font-size:13px;line-height:1.6;min-height:180px;display:flex;align-items:center;justify-content:center}
+.mini-btn{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:1px solid #5eead4;background:#071826;color:#fff;font-size:17px;cursor:pointer;z-index:3}
+.mini-prev{left:8px}
+.mini-next{right:8px}
+.mini-dots{text-align:center;margin-top:10px}
+.mini-dots button{width:9px;height:9px;border-radius:50%;border:0;background:#164e5e;margin:0 4px;cursor:pointer;padding:0}
+.mini-dots button.active{background:#2dd4bf;width:24px;border-radius:999px}
+.mini-cap{text-align:center;color:#94a3b8;font-size:12px;margin-top:6px;letter-spacing:1px}
 .budget-row{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:14px;margin-bottom:7px}
 .budget-row span:last-child{color:#5eead4}
 .budget-bar{height:12px;background:#071826;border:1px solid #164e5e;border-radius:999px;overflow:hidden;margin-bottom:16px}
@@ -87,7 +98,7 @@ a.card-link{flex:1;min-width:240px;display:block}
 .btn-data{background:#2dd4bf;color:#06202a}
 .btn-mark{background:transparent;color:#fff}
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:center}
-@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px;grid-template-columns:1fr auto}.top-logo{font-size:18px}.logo{font-size:18px}.domains{letter-spacing:2px;font-size:10px}h1{font-size:clamp(42px,10vw,64px);letter-spacing:3px}.card{min-width:200px}.hero-btns a{padding:11px 18px;font-size:13px}.case-btn-row a{padding:11px 18px;font-size:13px}.slide-img img{max-height:240px}}
+@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px;grid-template-columns:1fr auto}.top-logo{font-size:18px}.logo{font-size:18px}.domains{letter-spacing:2px;font-size:10px}h1{font-size:clamp(42px,10vw,64px);letter-spacing:3px}.card{min-width:200px}.hero-btns a{padding:11px 18px;font-size:13px}.case-btn-row a{padding:11px 18px;font-size:13px}.mini-slide img{max-height:260px}}
 </style>
 </head>
 <body>
@@ -143,18 +154,35 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 </div>
 </section>
 <section id="paid">
-<p class="sec-label">PAID MEDIA CAMPAIGNS • WITH RESULTS • IMAGE ON THIS PAGE, PDF ON THE NEXT PAGE</p>
+<p class="sec-label">PAID MEDIA CAMPAIGNS • IMAGE SLIDER IN THE CARD • PDF ON THE PAID PAGE</p>
 <h2>Top Paid Campaigns, <span>Tap To Open</span></h2>
-<p class="sec-sub">Slide 1 is the YouTube Demand Gen campaign, with the creative image on the card. Tap the image, the card, or the button on the card, and it opens the Paid Marketing page, where the PDF proof is in the centre. Slides 2 to 5 are Aqtiv and EDIT lines, fill in real spend and result only.</p>
+<p class="sec-sub">Slide 1: image slider inside the card, Creative first, then Results Pages 1, 2, 3 as PNGs. Tap ‹ › inside the card to change the image, tap the button on the card to open the Paid page, where the same results are the PDF, Youtube_Google_Ads.pdf, in the centre.</p>
 <div class="slider-wrap">
-<p class="slider-title">PAID SLIDER • TAP ‹ › OR LET IT SLIDE • TAP A SLIDE TO OPEN ITS PDF PAGE</p>
+<p class="slider-title">PAID SLIDER • TAP ‹ › OR LET IT SLIDE • INSIDE THE FIRST CARD: TAP ITS OWN ‹ › FOR CREATIVE / RESULTS</p>
 <button class="slider-btn slider-prev" onclick="movePaid(-1)" aria-label="Previous campaign">‹</button>
 <button class="slider-btn slider-next" onclick="movePaid(1)" aria-label="Next campaign">›</button>
 <div class="slider-viewport"><div class="slider-track" id="paidTrack">
-<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-1"><span class="client-tag">01 • YOUTUBE / GOOGLE • DEMAND GEN • AGE 18+</span><span class="slide-img"><img src="Creatives.png" alt="YouTube Demand Gen creatives, Hogland and Kiddo, Letting Go, Wait for This Drop, Need Vocalist"></span><h3>YouTube / Google Video Ad, Follower / Awareness</h3><p>Result: 198 subscribers, 15,366 impressions, PKR 1,965 cost, PKR 10 per subscriber. Creative above, PDF proof on the next page.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
-<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-2"><span class="client-tag">02 • META + GOOGLE • AQTIV WATER</span><h3>Aqtiv Water, Launch + Re-Launch</h3><p>Result: 21 to 360 followers. Offer: 1st bottle free, Karachi, local targeting. EDIT: Add the Aqtiv creative image here, same as Slide 1, when you send it. Tap to open its PDF page.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
-<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-3"><span class="client-tag">03 • EDIT: META / GOOGLE • EDIT: CLIENT</span><h3>EDIT: Campaign name 3</h3><p>EDIT: Spend, leads / sales, and result. Replace this line with the real numbers from this campaign. EDIT: Add its creative image on this card, and its PDF on the Paid page.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
-<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-4"><span class="client-tag">04 • EDIT: META / GOOGLE • EDIT: CLIENT</span><h3>EDIT: Campaign name 4</h3><p>EDIT: Spend, leads / sales, and result. Replace this line with the real numbers from this campaign. EDIT: Add its creative image on this card, and its PDF on the Paid page.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
+<div class="slide"><div class="slide-box">
+<span class="client-tag">01 • YOUTUBE / GOOGLE • DEMAND GEN • AGE 18+</span>
+<div class="mini-wrap">
+<div class="mini-viewport"><div class="mini-track" id="miniTrack">
+<div class="mini-slide"><a href="marketing-paid.html#campaign-1"><img src="Creatives.png" alt="YouTube Demand Gen creative board"></a></div>
+<div class="mini-slide"><a href="marketing-paid.html#campaign-1"><img src="youtube-result-1.png" alt="YouTube results page 1, Need Vocalist and Wait for This Drop" onerror="this.style.display='none';this.parentElement.parentElement.innerHTML='<div class=&quot;mini-empty&quot;>Add the PNG: youtube-result-1.png, PDF page 1 as a PNG, same folder.</div>'"></a></div>
+<div class="mini-slide"><a href="marketing-paid.html#campaign-1"><img src="youtube-result-2.png" alt="YouTube results page 2, Letting Go, 124 subscribers" onerror="this.style.display='none';this.parentElement.parentElement.innerHTML='<div class=&quot;mini-empty&quot;>Add the PNG: youtube-result-2.png, PDF page 2 as a PNG, same folder.</div>'"></a></div>
+<div class="mini-slide"><a href="marketing-paid.html#campaign-1"><img src="youtube-result-3.png" alt="YouTube results page 3, table and How to Remix, 32 subscribers" onerror="this.style.display='none';this.parentElement.parentElement.innerHTML='<div class=&quot;mini-empty&quot;>Add the PNG: youtube-result-3.png, PDF page 3 as a PNG, same folder.</div>'"></a></div>
+</div></div>
+<button class="mini-btn mini-prev" onclick="moveMini(-1,event)" aria-label="Previous image in card">‹</button>
+<button class="mini-btn mini-next" onclick="moveMini(1,event)" aria-label="Next image in card">›</button>
+<div class="mini-dots" id="miniDots"></div>
+<p class="mini-cap" id="miniCap">1 OF 4 • CREATIVE</p>
+</div>
+<h3>YouTube / Google Video Ad, Follower / Awareness</h3>
+<p>Result: 198 subscribers, 15,366 impressions, PKR 1,965 cost, PKR 10 per subscriber. Images in the card above, PDF proof on the next page.</p>
+<a class="slide-btn" href="marketing-paid.html#campaign-1">Open Paid Marketing Campaign →</a>
+</div></div>
+<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-2"><span class="client-tag">02 • META + GOOGLE • AQTIV WATER</span><h3>Aqtiv Water, Launch + Re-Launch</h3><p>Result: 21 to 360 followers. Offer: 1st bottle free, Karachi, local targeting. EDIT: Add an image slider in this card too, creative + results PNGs, when you send them. Tap to open its PDF page.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
+<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-3"><span class="client-tag">03 • EDIT: META / GOOGLE • EDIT: CLIENT</span><h3>EDIT: Campaign name 3</h3><p>EDIT: Spend, leads / sales, and result. Replace this line with the real numbers from this campaign. EDIT: Add its creative + results PNG slider in this card, and its PDF on the Paid page.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
+<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-4"><span class="client-tag">04 • EDIT: META / GOOGLE • EDIT: CLIENT</span><h3>EDIT: Campaign name 4</h3><p>EDIT: Spend, leads / sales, and result. Replace this line with the real numbers from this campaign. EDIT: Add its creative + results PNG slider in this card, and its PDF on the Paid page.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
 <div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-4"><span class="client-tag">05 • EDIT: META / GOOGLE • EDIT: CLIENT</span><h3>EDIT: Campaign name 5</h3><p>EDIT: Spend, leads / sales, and result. Add a 6th slide here if you have a 6th top campaign, copy this slide block.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
 </div></div>
 <div class="slider-dots" id="paidDots"></div>
@@ -235,6 +263,17 @@ document.addEventListener('DOMContentLoaded',function(){
     if(el){observer.observe(el)}
   });
 });
+var miniIndex=0;
+var miniLabels=["CREATIVE","RESULTS PAGE 1","RESULTS PAGE 2","RESULTS PAGE 3"];
+var miniSlides=document.querySelectorAll('#miniTrack .mini-slide');
+function showMini(i){
+  miniIndex=Math.max(0,Math.min(i,miniSlides.length-1));
+  document.getElementById('miniTrack').style.transform='translateX(-'+(miniIndex*100)+'%)';
+  document.querySelectorAll('#miniDots button').forEach(function(d,di){d.classList.toggle('active',di===miniIndex)});
+  document.getElementById('miniCap').textContent=(miniIndex+1)+" OF "+miniSlides.length+" • "+miniLabels[miniIndex];
+}
+function moveMini(dir,ev){if(ev){ev.preventDefault();ev.stopPropagation()}showMini(miniIndex+dir)}
+(function(){var dots=document.getElementById('miniDots');for(var i=0;i<miniSlides.length;i++){var b=document.createElement('button');b.setAttribute('aria-label','Show image '+(i+1));(function(idx){b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();showMini(idx)})})(i);dots.appendChild(b)}showMini(0)})();
 var paidIndex=0,paidTimer=null;
 var paidSlides=document.querySelectorAll('#paidTrack .slide');
 function showPaid(i){paidIndex=Math.max(0,Math.min(i,paidSlides.length-1));document.getElementById('paidTrack').style.transform='translateX(-'+(paidIndex*100)+'%)';document.querySelectorAll('#paidDots button').forEach(function(d,di){d.classList.toggle('active',di===paidIndex)})}
