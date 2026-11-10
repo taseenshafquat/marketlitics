@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paid Marketing Campaigns - Marketlitics | Results</title>
-<meta name="description" content="Paid marketing campaigns by Taseen, Marketlitics. YouTube Google Demand Gen follower awareness campaign, creative and results images.">
+<meta name="description" content="Paid marketing campaigns by Taseen, Marketlitics. YouTube Google Demand Gen follower awareness campaign, creative and results images, zoom to read.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden;padding-left:250px}
@@ -54,11 +54,16 @@ section h2 span{color:#5eead4}
 .centre-slider{position:relative}
 .centre-viewport{overflow:hidden;border-radius:18px;border:1px solid #164e5e;background:#000}
 .centre-track{display:flex;transition:transform .5s ease}
-.centre-slide{flex:0 0 100%;box-sizing:border-box;background:#000;min-height:560px}
-.centre-slide img{width:100%;height:560px;object-fit:contain;display:block;background:#000}
+.centre-slide{flex:0 0 100%;box-sizing:border-box;background:#000;min-height:560px;overflow:auto}
+.centre-slide img{width:100%;height:560px;object-fit:contain;display:block;background:#000;transform-origin:center top;transition:transform .25s ease;cursor:zoom-in}
+.centre-slide img.zoomed{cursor:zoom-out}
 .centre-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid #5eead4;background:#071826;color:#fff;font-size:18px;cursor:pointer;z-index:3}
 .centre-prev{left:10px}
 .centre-next{right:10px}
+.zoom-pill{position:absolute;top:10px;right:10px;z-index:5;display:flex;align-items:center;gap:2px;background:rgba(7,24,38,.92);border:1px solid #5eead4;border-radius:999px;padding:4px;box-shadow:0 4px 18px rgba(0,0,0,.45)}
+.zoom-pill button{border:0;background:transparent;color:#fff;font-size:16px;font-weight:800;width:34px;height:32px;border-radius:999px;cursor:pointer;line-height:1}
+.zoom-pill button:hover{background:rgba(45,212,191,.25)}
+.zoom-pill .zoom-label{min-width:78px;text-align:center;font-size:13px;font-weight:800;letter-spacing:1px;color:#fef3c7}
 .viewer-bar{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:12px;flex-wrap:wrap}
 .viewer-bar .page-btn{border-radius:999px;padding:9px 16px;font-size:13px;font-weight:800;border:1px solid #5eead4;background:#071826;color:#fff;cursor:pointer}
 .viewer-bar .page-btn.active{background:#2dd4bf;color:#06202a;border-color:#2dd4bf}
@@ -98,7 +103,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <p class="side-sub">Karachi, Pakistan<br>Marketing that shows proof, not promises.</p>
 <h3>MENU</h3>
 <ul>
-<li><a href="#top" class="active">🎯 Paid Marketing Campaigns<span>Creative + results images, description</span></a></li>
+<li><a href="#top" class="active">🎯 Paid Marketing Campaigns<span>Creative + results images, zoom, description</span></a></li>
 <li><a href="#viewer">📄 Results View<span>Centre image slider, right list</span></a></li>
 <li><a href="#contact">💬 Contact<span>WhatsApp + brief</span></a></li>
 </ul>
@@ -107,23 +112,28 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <div class="hero" id="top">
 <p class="domains">PAID MEDIA &amp; SEO • YOUTUBE / GOOGLE VIDEO AD</p>
 <h1>YouTube / Google<br>Video Ad, <span style="color:#5eead4">Follower &amp; Awareness</span></h1>
-<p class="sub">Demand Gen / Audience Growth ad, age 18+, ended Apr 2026. Centre slider: creative, then results images 1, 2, 3. Campaigns on the right, alongside the centre. No PDF on this page.</p>
+<p class="sub">Demand Gen / Audience Growth ad, age 18+, ended Apr 2026. Centre slider: creative, then results images 1, 2, 3. Zoom button on the image, top right, with the %. Campaigns on the right, alongside the centre. No PDF on this page.</p>
 <div class="hero-btns"><a href="marketing-paid.html" class="hero-btn-fill">Paid Marketing</a><a href="marketing-content.html">Content</a><a href="marketing-social.html">Social Media</a><a href="case-examples.html">Case Examples</a></div>
 </div>
 
 <section id="viewer">
-<p class="sec-label">CREATIVE + RESULTS IMAGES • CENTRE • CAMPAIGNS ON THE RIGHT</p>
+<p class="sec-label">CREATIVE + RESULTS IMAGES • ZOOM ON THE IMAGE • CENTRE • CAMPAIGNS ON THE RIGHT</p>
 <h2>Creative That Ran, <span>Then The Proof</span></h2>
-<p class="sec-sub">Centre: 1 slider, creative first, then Youtube_DemandGenCampaig_1, _2, _3. Right: tap a campaign, centre goes back to its creative. Below the centre: description for the campaign you tapped.</p>
+<p class="sec-sub">Centre: 1 slider, creative first, then Youtube_DemandGenCampaig_1, _2, _3. Zoom: tap + on the image, top right, scroll inside the image to read the small text. Right: tap a campaign, centre goes back to its creative, zoom resets to 100%.</p>
 <div class="viewer-wrap">
 <div class="viewer-main">
 <div class="centre-slider">
 <div class="centre-viewport"><div class="centre-track" id="centreTrack">
-<div class="centre-slide"><img id="creativeImg" src="Creatives.png" alt="YouTube Demand Gen creatives, Hogland and Kiddo, Letting Go, Wait for This Drop, Need Vocalist, How to Remix"></div>
-<div class="centre-slide"><img id="resultImg1" src="Youtube_DemandGenCampaig_1.png" alt="YouTube results image 1" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='Youtube_DemandGenCampaig_1.jpg'}"></div>
-<div class="centre-slide"><img id="resultImg2" src="Youtube_DemandGenCampaig_2.png" alt="YouTube results image 2" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='Youtube_DemandGenCampaig_2.jpg'}"></div>
-<div class="centre-slide"><img id="resultImg3" src="Youtube_DemandGenCampaig_3.png" alt="YouTube results image 3" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='Youtube_DemandGenCampaig_3.jpg'}"></div>
+<div class="centre-slide"><img id="creativeImg" src="Creatives.png" alt="YouTube Demand Gen creatives, Hogland and Kiddo, Letting Go, Wait for This Drop, Need Vocalist, How to Remix" onclick="toggleZoom(event)"></div>
+<div class="centre-slide"><img id="resultImg1" src="Youtube_DemandGenCampaig_1.png" alt="YouTube results image 1" onclick="toggleZoom(event)" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='Youtube_DemandGenCampaig_1.jpg'}"></div>
+<div class="centre-slide"><img id="resultImg2" src="Youtube_DemandGenCampaig_2.png" alt="YouTube results image 2" onclick="toggleZoom(event)" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='Youtube_DemandGenCampaig_2.jpg'}"></div>
+<div class="centre-slide"><img id="resultImg3" src="Youtube_DemandGenCampaig_3.png" alt="YouTube results image 3" onclick="toggleZoom(event)" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='Youtube_DemandGenCampaig_3.jpg'}"></div>
 </div></div>
+<div class="zoom-pill" role="group" aria-label="Zoom image">
+<button onclick="zoomOut(event)" aria-label="Zoom out">−</button>
+<button class="zoom-label" onclick="resetZoom(event)" aria-label="Reset zoom to 100 percent" id="zoomLabel">🔍 100%</button>
+<button onclick="zoomIn(event)" aria-label="Zoom in">+</button>
+</div>
 <button class="centre-btn centre-prev" onclick="moveCentre(-1)" aria-label="Previous centre slide">‹</button>
 <button class="centre-btn centre-next" onclick="moveCentre(1)" aria-label="Next centre slide">›</button>
 </div>
@@ -146,7 +156,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 </div>
 <aside class="campaign-list">
 <h3>CAMPAIGNS • TAP ONE</h3>
-<button class="campaign-item active" id="campaign-1" onclick="selectCampaign(0)"><b>01 • YouTube Demand Gen</b><span>Follower / Awareness • 198 subs • PKR 1,965 • Images 1 to 3 • Creative + image slider</span></button>
+<button class="campaign-item active" id="campaign-1" onclick="selectCampaign(0)"><b>01 • YouTube Demand Gen</b><span>Follower / Awareness • 198 subs • PKR 1,965 • Images 1 to 3 • Creative + image slider, zoom on image</span></button>
 <button class="campaign-item" id="campaign-2" onclick="selectCampaign(1)"><b>02 • Aqtiv Water</b><span>Launch + Re-Launch • 21 to 360 • Images not uploaded yet</span></button>
 <button class="campaign-item" id="campaign-3" onclick="selectCampaign(2)"><b>03 • EDIT: Campaign 3</b><span>EDIT: Client • EDIT: Result • Images not uploaded yet</span></button>
 <button class="campaign-item" id="campaign-4" onclick="selectCampaign(3)"><b>04 • EDIT: Campaign 4</b><span>EDIT: Client • EDIT: Result • Images not uploaded yet</span></button>
@@ -178,11 +188,24 @@ var campaigns=[
 {tag:"04 • EDIT: META / GOOGLE • EDIT: CLIENT",title:"EDIT: Campaign name 4",result:"EDIT: Spend, leads / sales, and result, only the real number.",text:"EDIT: What was tested, what won, what was killed, and why. Replace this description with the real story from this campaign, in 2 to 3 lines. Upload its results images as _1, _2, _3, same naming, and put their names in the images: line for this campaign.",stats:[["EDIT","SPEND"],["EDIT","RESULT"],["EDIT","LEADS / SALES"],["EDIT","COST PER RESULT"]],images:["","","",""],short:"CAMPAIGN 4"}
 ];
 var currentCampaign=0,centreIndex=0;
+var zoomLevel=100;
+var zoomSteps=[100,125,150,175,200,250,300];
 var centreLabels=["CREATIVE","RESULTS IMAGE 1","RESULTS IMAGE 2","RESULTS IMAGE 3"];
+function applyZoom(){
+  document.getElementById('zoomLabel').textContent="🔍 "+zoomLevel+"%";
+  var imgs=document.querySelectorAll('.centre-slide img');
+  imgs.forEach(function(img){img.style.transform="scale("+(zoomLevel/100)+")";img.classList.toggle('zoomed',zoomLevel>100)});
+}
+function setZoom(level,ev){if(ev){ev.preventDefault();ev.stopPropagation()}zoomLevel=level;applyZoom()}
+function zoomIn(ev){var i=zoomSteps.indexOf(zoomLevel);if(i<zoomSteps.length-1){setZoom(zoomSteps[i+1],ev)}}
+function zoomOut(ev){var i=zoomSteps.indexOf(zoomLevel);if(i>0){setZoom(zoomSteps[i-1],ev)}}
+function resetZoom(ev){setZoom(100,ev)}
+function toggleZoom(ev){if(ev){ev.preventDefault()}setZoom(zoomLevel===100?200:100,null)}
 function showCentre(){
   var c=campaigns[currentCampaign];
   var total=c.images.length;
   centreIndex=Math.max(0,Math.min(centreIndex,total-1));
+  zoomLevel=100;applyZoom();
   document.getElementById('centreTrack').style.transform='translateX(-'+(centreIndex*100)+'%)';
   var imgs=["creativeImg","resultImg1","resultImg2","resultImg3"];
   for(var k=0;k<imgs.length;k++){
@@ -191,8 +214,8 @@ function showCentre(){
   }
   var currentImg=c.images[centreIndex]||c.images[0]||"";
   document.getElementById('openImgBtn').href=currentImg;
-  document.getElementById('pdfCount').textContent=(centreIndex+1)+" OF "+total+" • "+centreLabels[centreIndex]+" • "+c.short+" • FILE: "+currentImg;
-  document.getElementById('pdfNote').textContent=currentImg ? "If this image is empty, that file is not uploaded yet, with that exact name, in the same folder: "+currentImg+"." : "No image uploaded for this campaign yet.";
+  document.getElementById('pdfCount').textContent=(centreIndex+1)+" OF "+total+" • "+centreLabels[centreIndex]+" • "+c.short+" • FILE: "+currentImg+" • ZOOM: "+zoomLevel+"%";
+  document.getElementById('pdfNote').textContent=currentImg ? "Zoom: tap + on the image, top right, to read the small text. Tap Open This Image In Full Screen for the full size image: "+currentImg+"." : "No image uploaded for this campaign yet.";
   document.getElementById('descTag').textContent=c.tag;
   document.getElementById('descTitle').textContent=c.title;
   document.getElementById('descResult').textContent=c.result;
