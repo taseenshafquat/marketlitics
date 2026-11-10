@@ -36,7 +36,7 @@ a{color:inherit;text-decoration:none}
 .top nav a{margin:0 8px;opacity:.85;display:inline-block;padding:8px 2px}
 .top nav a.clients-link{background:#2dd4bf;color:#06202a;font-weight:800;opacity:1;border-radius:999px;padding:9px 16px;margin:0 6px}
 .top nav a.marketing-link{color:#fef3c7;font-weight:800;opacity:1}
-.hero{min-height:52vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:120px 20px 30px;text-align:center}
+.hero{min-height:46vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:110px 20px 20px;text-align:center}
 h1{font-family:Georgia,serif;font-size:clamp(38px,7vw,72px);font-weight:400;letter-spacing:3px;color:#fef3c7;line-height:1}
 .domains{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800;margin:18px 0 4px}
 .sub{color:#94a3b8;margin:12px auto 10px;max-width:680px;line-height:1.7}
@@ -49,24 +49,25 @@ section h2{font-family:Georgia,serif;font-size:clamp(26px,5vw,40px);font-weight:
 section h2 span{color:#5eead4}
 .sec-label{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800}
 .sec-sub{color:#94a3b8;line-height:1.7;margin:12px 0 22px;max-width:680px}
-.creative-box{margin:22px 0 24px}
-.creative-box a{display:block;background:#000;border:1px solid #164e5e;border-radius:18px;overflow:hidden}
-.creative-box img{width:100%;height:auto;display:block}
-.creative-cap{color:#94a3b8;font-size:13px;line-height:1.7;margin-top:10px}
-.creative-cap b{color:#fef3c7}
 .viewer-wrap{display:flex;gap:16px;align-items:flex-start}
 .viewer-main{flex:1;min-width:0}
-.viewer-box{position:relative;background:#fff;border:1px solid #164e5e;border-radius:18px;overflow:hidden}
-.viewer-box iframe{width:100%;height:560px;border:0;display:block;background:#fff}
+.centre-slider{position:relative}
+.centre-viewport{overflow:hidden;border-radius:18px;border:1px solid #164e5e;background:#000}
+.centre-track{display:flex;transition:transform .5s ease}
+.centre-slide{flex:0 0 100%;box-sizing:border-box;background:#000;min-height:560px}
+.centre-slide img{width:100%;height:560px;object-fit:cover;object-position:center;display:block;background:#000}
+.centre-slide iframe{width:100%;height:560px;border:0;display:block;background:#fff}
+.centre-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid #5eead4;background:#071826;color:#fff;font-size:18px;cursor:pointer;z-index:3}
+.centre-prev{left:10px}
+.centre-next{right:10px}
 .viewer-bar{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:12px;flex-wrap:wrap}
-.viewer-bar button{width:42px;height:42px;border-radius:50%;border:1px solid #5eead4;background:#071826;color:#fff;font-size:18px;cursor:pointer}
-.viewer-bar .page-btn{width:auto;height:auto;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:800}
+.viewer-bar .page-btn{border-radius:999px;padding:9px 16px;font-size:13px;font-weight:800;border:1px solid #5eead4;background:#071826;color:#fff;cursor:pointer}
 .viewer-bar .page-btn.active{background:#2dd4bf;color:#06202a;border-color:#2dd4bf}
 .viewer-count{text-align:center;color:#94a3b8;font-size:12px;margin-top:8px;letter-spacing:1px;word-break:break-all}
 .case-btn-row{text-align:center;margin-top:16px}
 .case-btn-row a{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:800;font-size:14px;border:2px solid #5eead4;color:#fff;margin:4px}
 .case-btn-row a:hover{background:rgba(45,212,191,.15)}
-.campaign-list{width:260px;flex-shrink:0}
+.campaign-list{width:260px;flex-shrink:0;position:sticky;top:80px}
 .campaign-list h3{color:#5eead4;font-size:12px;letter-spacing:3px;margin-bottom:12px;font-weight:800}
 .campaign-item{display:block;width:100%;text-align:left;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:14px;padding:16px;margin-bottom:10px;cursor:pointer;color:#fff;font-family:Arial,sans-serif}
 .campaign-item b{display:block;font-family:Georgia,serif;font-size:18px;font-weight:400;line-height:1.3}
@@ -81,16 +82,12 @@ section h2 span{color:#5eead4}
 .stat-box{flex:1;min-width:110px;background:#071826;border:1px solid #164e5e;border-radius:12px;padding:12px;text-align:center}
 .stat-box b{display:block;font-family:Georgia,serif;font-size:22px;font-weight:400;color:#fef3c7}
 .stat-box span{font-size:11px;color:#5eead4;letter-spacing:1px;font-weight:700}
-.cards{display:flex;gap:16px;flex-wrap:wrap}
-.card{flex:1;min-width:240px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:22px;text-align:left}
-.card h3{font-family:Georgia,serif;font-size:21px;font-weight:400;line-height:1.4;margin:8px 0 6px;color:#fff}
-.card p{color:#94a3b8;font-size:13px;line-height:1.6}
 .client-tag{color:#5eead4;font-size:12px;font-weight:700;letter-spacing:1px}
 .btn{padding:16px 36px;border-radius:999px;font-weight:700;font-size:16px;border:2px solid #5eead4;display:inline-block;margin:6px}
 .btn-data{background:#2dd4bf;color:#06202a}
 .btn-mark{background:transparent;color:#fff}
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:center}
-@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px;grid-template-columns:1fr auto}.top-logo{font-size:18px}.logo{font-size:18px}.viewer-wrap{flex-direction:column}.campaign-list{width:100%}.viewer-box iframe{height:480px}.hero-btns a{padding:11px 18px;font-size:13px}.case-btn-row a{padding:11px 18px;font-size:13px}}
+@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px;grid-template-columns:1fr auto}.top-logo{font-size:18px}.logo{font-size:18px}.viewer-wrap{flex-direction:column}.campaign-list{width:100%;position:static}.centre-slide,.centre-slide img,.centre-slide iframe{height:480px;min-height:480px}.hero-btns a{padding:11px 18px;font-size:13px}.case-btn-row a{padding:11px 18px;font-size:13px}}
 </style>
 </head>
 <body>
@@ -102,9 +99,8 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <p class="side-sub">Karachi, Pakistan<br>Marketing that shows proof, not promises.</p>
 <h3>MENU</h3>
 <ul>
-<li><a href="#top" class="active">🎯 Paid Marketing Campaigns<span>Creative, PDF results, description</span></a></li>
-<li><a href="#viewer">📄 Results View<span>Creative, centre PDF, right list</span></a></li>
-<li><a href="#how">🛠 How To Add A PDF<span>Upload PDF only, same name</span></a></li>
+<li><a href="#top" class="active">🎯 Paid Marketing Campaigns<span>Creative + PDF slider, description</span></a></li>
+<li><a href="#viewer">📄 Results View<span>Centre slider, right list</span></a></li>
 <li><a href="#contact">💬 Contact<span>WhatsApp + brief</span></a></li>
 </ul>
 </nav>
@@ -112,28 +108,28 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <div class="hero" id="top">
 <p class="domains">PAID MEDIA &amp; SEO • YOUTUBE / GOOGLE VIDEO AD</p>
 <h1>YouTube / Google<br>Video Ad, <span style="color:#5eead4">Follower &amp; Awareness</span></h1>
-<p class="sub">Demand Gen / Audience Growth ad, age 18+, ended Apr 2026. Creative first, PDF proof below it, description below that. PDF file added, no images needed on this page.</p>
+<p class="sub">Demand Gen / Audience Growth ad, age 18+, ended Apr 2026. Centre slider: creative, then PDF pages. Campaigns on the right, alongside the centre.</p>
 <div class="hero-btns"><a href="marketing-paid.html" class="hero-btn-fill">Paid Marketing</a><a href="marketing-content.html">Content</a><a href="marketing-social.html">Social Media</a><a href="case-examples.html">Case Examples</a></div>
 </div>
 
 <section id="viewer">
-<p class="sec-label">CREATIVE + RESULTS VIEW • YOUTUBE DEMAND GEN • PDF ADDED</p>
+<p class="sec-label">CREATIVE + PDF SLIDER • CENTRE • CAMPAIGNS ON THE RIGHT</p>
 <h2>Creative That Ran, <span>Then The Proof</span></h2>
-<p class="sec-sub">Top: the creative board that ran in the ad. Centre: the PDF file itself, Youtube_Google_Ads.pdf. Right: the campaign list. Below: the description for the campaign you tapped.</p>
-<div class="creative-box" id="creativeBox">
-<p class="sec-label" style="margin-bottom:12px">CREATIVE USED IN THE AD • TAP IT TO OPEN THE PDF</p>
-<a id="creativeLink" href="Youtube_Google_Ads.pdf" target="_blank" rel="noopener"><img src="Creatives.png" alt="YouTube Demand Gen creatives, Hogland and Kiddo, Letting Go, Wait for This Drop, Need Vocalist, How to Remix"></a>
-<p class="creative-cap"><b>Creative board:</b> Need Vocalist, Wait for This Drop, Letting Go, Hogland Ft Kiddo, How to Remix, and the other Hogland / Kiddo cuts in the same board, same artwork that ran in the Demand Gen ad. File: Creatives.png. Tap the board to open the results PDF.</p>
-</div>
+<p class="sec-sub">Centre: 1 slider, creative first, then the PDF, page by page. Right: tap a campaign, centre goes back to its creative. Below the centre: description for the campaign you tapped.</p>
 <div class="viewer-wrap">
 <div class="viewer-main">
-<div class="viewer-box"><iframe id="pdfFrame" src="" title="Campaign results PDF"></iframe></div>
-<div class="viewer-bar">
-<button onclick="movePdf(-1)" aria-label="Previous PDF page">‹</button>
-<span id="pdfPages"></span>
-<button onclick="movePdf(1)" aria-label="Next PDF page">›</button>
+<div class="centre-slider">
+<div class="centre-viewport"><div class="centre-track" id="centreTrack">
+<div class="centre-slide"><a id="creativeLink" href="Youtube_Google_Ads.pdf" target="_blank" rel="noopener"><img id="creativeImg" src="Creatives.png" alt="YouTube Demand Gen creatives, Hogland and Kiddo, Letting Go, Wait for This Drop, Need Vocalist, How to Remix"></a></div>
+<div class="centre-slide"><iframe id="pdfFrame1" src="" title="Campaign results PDF page 1"></iframe></div>
+<div class="centre-slide"><iframe id="pdfFrame2" src="" title="Campaign results PDF page 2"></iframe></div>
+<div class="centre-slide"><iframe id="pdfFrame3" src="" title="Campaign results PDF page 3"></iframe></div>
+</div></div>
+<button class="centre-btn centre-prev" onclick="moveCentre(-1)" aria-label="Previous centre slide">‹</button>
+<button class="centre-btn centre-next" onclick="moveCentre(1)" aria-label="Next centre slide">›</button>
 </div>
-<p class="viewer-count" id="pdfCount">LOADING PDF…</p>
+<div class="viewer-bar" id="centreDots"></div>
+<p class="viewer-count" id="pdfCount">LOADING…</p>
 <div class="case-btn-row"><a id="openPdfBtn" href="Youtube_Google_Ads.pdf" target="_blank" rel="noopener">Open PDF In Full Screen →</a><a id="downloadPdfBtn" href="Youtube_Google_Ads.pdf" download>Download PDF</a></div>
 <p style="color:#94a3b8;font-size:12px;line-height:1.6;text-align:center;margin-top:10px" id="pdfNote">If the PDF does not show inside the page on your phone, tap Open PDF In Full Screen, it is the same file.</p>
 <div class="desc-box" id="descBox">
@@ -151,22 +147,11 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 </div>
 <aside class="campaign-list">
 <h3>CAMPAIGNS • TAP ONE</h3>
-<button class="campaign-item active" id="campaign-1" onclick="selectCampaign(0)"><b>01 • YouTube Demand Gen</b><span>Follower / Awareness • 198 subs • PKR 1,965 • PDF, 3 pages • Creative above</span></button>
+<button class="campaign-item active" id="campaign-1" onclick="selectCampaign(0)"><b>01 • YouTube Demand Gen</b><span>Follower / Awareness • 198 subs • PKR 1,965 • PDF, 3 pages • Creative + PDF slider</span></button>
 <button class="campaign-item" id="campaign-2" onclick="selectCampaign(1)"><b>02 • Aqtiv Water</b><span>Launch + Re-Launch • 21 to 360 • PDF not uploaded yet</span></button>
 <button class="campaign-item" id="campaign-3" onclick="selectCampaign(2)"><b>03 • EDIT: Campaign 3</b><span>EDIT: Client • EDIT: Result • PDF not uploaded yet</span></button>
 <button class="campaign-item" id="campaign-4" onclick="selectCampaign(3)"><b>04 • EDIT: Campaign 4</b><span>EDIT: Client • EDIT: Result • PDF not uploaded yet</span></button>
 </aside>
-</div>
-</section>
-
-<section id="how">
-<p class="sec-label">HOW TO ADD A PDF</p>
-<h2>Upload The PDF, <span>Keep The Name</span></h2>
-<p class="sec-sub">You already added it. If the name is different from the one in the code, change only the pdf: line for that campaign, in the script below.</p>
-<div class="cards">
-<div class="card"><span class="client-tag">PDF ADDED</span><h3>Youtube_Google_Ads.pdf</h3><p>Exact name, capital Y, G, A, same folder as this file. That is the centre viewer. If your file has a space or different capitals, copy its exact name into the pdf: line.</p></div>
-<div class="card"><span class="client-tag">CREATIVE</span><h3>Creatives.png</h3><p>Exact name, capital C, same folder as this file. That is the board above the PDF viewer.</p></div>
-<div class="card"><span class="client-tag">NEW CAMPAIGN</span><h3>Send PDF + Creative</h3><p>Send both here, same way. I will add its file name, its page count, and its real numbers, no JPG / PNG step on this page.</p></div>
 </div>
 </section>
 
@@ -186,54 +171,54 @@ resize();addEventListener('resize',resize);
 addEventListener('mousemove',function(e){var g=document.getElementById('glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
 function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;for(var j=i+1;j<pts.length;j++){var q=pts[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<120){ctx.strokeStyle='rgba(45,212,191,'+(0.28-dd/450)+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}ctx.fillStyle='rgba(94,234,212,.85)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}requestAnimationFrame(draw)}
 draw();
-/* CHANGE THE PDF NAME HERE ONLY, Campaign 1, pdf: line, if your added file is named differently. Keep the quotes. */
+/* PDF name here only, Campaign 1, pdf: line, if your added file is named differently. Keep the quotes. */
 var campaigns=[
-{tag:"01 • YOUTUBE / GOOGLE • DEMAND GEN • AGE 18+",title:"YouTube / Google Video Ad, Follower / Awareness Campaign",result:"Total: PKR 1,965 cost • 15,366 impressions • 228 clicks • 198 subscribers • PKR 10 per subscriber • 16.53% conv. rate.",text:"Demand Gen / Audience Growth ad, goal: audience growth. Locations: Canada, Belgium, Germany, United Kingdom, Italy, Netherlands, United States, plus Mexico, Australia, New Zealand, UAE, Pakistan, Sweden, Norway, Switzerland, Bangladesh and Turkiye across the promos. Page 1: Need Vocalist, Rs325, 286 impressions, 16 subscribers; Wait for This Drop, Rs394, 1,821 impressions, 26 subscribers. Page 2: Letting Go, Hogland Ft Kiddo, Rs694, 10,961 impressions, 601 views, 124 subscribers. Page 3: How to Remix Hogland and Kiddo, Rs442, 2,114 impressions, 70 views, 32 subscribers. Total in the Google Ads table: 15,366 impressions, 228 clicks, 1.48% CTR, PKR 9 avg. CPC, PKR 1,965 cost, 198 conversions, PKR 10 cost per conversion.",stats:[["198","SUBSCRIBERS"],["15,366","IMPRESSIONS"],["PKR 1,965","TOTAL COST"],["PKR 10","PER SUBSCRIBER"]],pdf:"Youtube_Google_Ads.pdf",pages:3,short:"YOUTUBE DEMAND GEN",creative:"Creatives.png",creativeCap:"Creative board: Need Vocalist, Wait for This Drop, Letting Go, Hogland Ft Kiddo, How to Remix, and the other Hogland / Kiddo cuts in the same board, same artwork that ran in the Demand Gen ad. File: Creatives.png. Tap the board to open the results PDF."},
-{tag:"02 • META + GOOGLE • AQTIV WATER",title:"Aqtiv Water, Launch + Re-Launch",result:"Result: 21 to 360 followers. Offer: 1st bottle free, Karachi, local targeting.",text:"Same offer, same audience, same CTA, from launch to re-launch. Growth from the offer and the content, not from bought followers. Upload the Aqtiv results PDF as Aqtiv_Results.pdf, and its creative image, and they will show here, same layout as YouTube.",stats:[["21 → 360","FOLLOWERS"],["1st Bottle","FREE"],["Karachi","LOCAL FIRST"],["Launch +","RE-LAUNCH"]],pdf:"Aqtiv_Results.pdf",pages:3,short:"AQTIV WATER",creative:"",creativeCap:""},
-{tag:"03 • EDIT: META / GOOGLE • EDIT: CLIENT",title:"EDIT: Campaign name 3",result:"EDIT: Spend, leads / sales, and result, only the real number.",text:"EDIT: What was tested, what won, what was killed, and why. Replace this description with the real story from this campaign, in 2 to 3 lines. Upload its PDF as campaign-3-results.pdf, and change pages: 3 to its real page count.",stats:[["EDIT","SPEND"],["EDIT","RESULT"],["EDIT","LEADS / SALES"],["EDIT","COST PER RESULT"]],pdf:"campaign-3-results.pdf",pages:3,short:"CAMPAIGN 3",creative:"",creativeCap:""},
-{tag:"04 • EDIT: META / GOOGLE • EDIT: CLIENT",title:"EDIT: Campaign name 4",result:"EDIT: Spend, leads / sales, and result, only the real number.",text:"EDIT: What was tested, what won, what was killed, and why. Replace this description with the real story from this campaign, in 2 to 3 lines. Upload its PDF as campaign-4-results.pdf, and change pages: 3 to its real page count.",stats:[["EDIT","SPEND"],["EDIT","RESULT"],["EDIT","LEADS / SALES"],["EDIT","COST PER RESULT"]],pdf:"campaign-4-results.pdf",pages:3,short:"CAMPAIGN 4",creative:"",creativeCap:""}
+{tag:"01 • YOUTUBE / GOOGLE • DEMAND GEN • AGE 18+",title:"YouTube / Google Video Ad, Follower / Awareness Campaign",result:"Total: PKR 1,965 cost • 15,366 impressions • 228 clicks • 198 subscribers • PKR 10 per subscriber • 16.53% conv. rate.",text:"Demand Gen / Audience Growth ad, goal: audience growth. Locations: Canada, Belgium, Germany, United Kingdom, Italy, Netherlands, United States, plus Mexico, Australia, New Zealand, UAE, Pakistan, Sweden, Norway, Switzerland, Bangladesh and Turkiye across the promos. Page 1: Need Vocalist, Rs325, 286 impressions, 16 subscribers; Wait for This Drop, Rs394, 1,821 impressions, 26 subscribers. Page 2: Letting Go, Hogland Ft Kiddo, Rs694, 10,961 impressions, 601 views, 124 subscribers. Page 3: How to Remix Hogland and Kiddo, Rs442, 2,114 impressions, 70 views, 32 subscribers. Total in the Google Ads table: 15,366 impressions, 228 clicks, 1.48% CTR, PKR 9 avg. CPC, PKR 1,965 cost, 198 conversions, PKR 10 cost per conversion.",stats:[["198","SUBSCRIBERS"],["15,366","IMPRESSIONS"],["PKR 1,965","TOTAL COST"],["PKR 10","PER SUBSCRIBER"]],pdf:"Youtube_Google_Ads.pdf",pages:3,short:"YOUTUBE DEMAND GEN",creative:"Creatives.png"},
+{tag:"02 • META + GOOGLE • AQTIV WATER",title:"Aqtiv Water, Launch + Re-Launch",result:"Result: 21 to 360 followers. Offer: 1st bottle free, Karachi, local targeting.",text:"Same offer, same audience, same CTA, from launch to re-launch. Growth from the offer and the content, not from bought followers. Upload the Aqtiv results PDF as Aqtiv_Results.pdf, and its creative image, and they will show here, same layout as YouTube.",stats:[["21 → 360","FOLLOWERS"],["1st Bottle","FREE"],["Karachi","LOCAL FIRST"],["Launch +","RE-LAUNCH"]],pdf:"Aqtiv_Results.pdf",pages:3,short:"AQTIV WATER",creative:""},
+{tag:"03 • EDIT: META / GOOGLE • EDIT: CLIENT",title:"EDIT: Campaign name 3",result:"EDIT: Spend, leads / sales, and result, only the real number.",text:"EDIT: What was tested, what won, what was killed, and why. Replace this description with the real story from this campaign, in 2 to 3 lines. Upload its PDF as campaign-3-results.pdf, and change pages: 3 to its real page count.",stats:[["EDIT","SPEND"],["EDIT","RESULT"],["EDIT","LEADS / SALES"],["EDIT","COST PER RESULT"]],pdf:"campaign-3-results.pdf",pages:3,short:"CAMPAIGN 3",creative:""},
+{tag:"04 • EDIT: META / GOOGLE • EDIT: CLIENT",title:"EDIT: Campaign name 4",result:"EDIT: Spend, leads / sales, and result, only the real number.",text:"EDIT: What was tested, what won, what was killed, and why. Replace this description with the real story from this campaign, in 2 to 3 lines. Upload its PDF as campaign-4-results.pdf, and change pages: 3 to its real page count.",stats:[["EDIT","SPEND"],["EDIT","RESULT"],["EDIT","LEADS / SALES"],["EDIT","COST PER RESULT"]],pdf:"campaign-4-results.pdf",pages:3,short:"CAMPAIGN 4",creative:""}
 ];
-var currentCampaign=0,currentPage=1;
+var currentCampaign=0,centreIndex=0;
+var centreLabels=["CREATIVE","PDF PAGE 1","PDF PAGE 2","PDF PAGE 3"];
 function pdfUrl(c,page){return encodeURI(c.pdf)+"#page="+page+"&zoom=page-width"}
-function showPdf(){
+function showCentre(){
   var c=campaigns[currentCampaign];
-  document.getElementById('pdfFrame').src=pdfUrl(c,currentPage);
+  var total=1+c.pages;
+  centreIndex=Math.max(0,Math.min(centreIndex,total-1));
+  document.getElementById('centreTrack').style.transform='translateX(-'+(centreIndex*100)+'%)';
+  document.getElementById('pdfFrame1').src=pdfUrl(c,1);
+  document.getElementById('pdfFrame2').src=pdfUrl(c,2);
+  document.getElementById('pdfFrame3').src=pdfUrl(c,3);
   document.getElementById('creativeLink').href=encodeURI(c.pdf);
   document.getElementById('openPdfBtn').href=encodeURI(c.pdf);
   document.getElementById('downloadPdfBtn').href=encodeURI(c.pdf);
-  document.getElementById('pdfCount').textContent="PAGE "+currentPage+" OF "+c.pages+" • "+c.short+" • FILE: "+c.pdf;
-  document.getElementById('pdfNote').textContent="If the PDF does not show inside the page on your phone, tap Open PDF In Full Screen, it is the same file: "+c.pdf+". If it is still empty, that PDF is not in the same folder, or its name is not exactly this.";
+  document.getElementById('pdfCount').textContent=(centreIndex+1)+" OF "+total+" • "+centreLabels[centreIndex]+" • "+c.short+" • FILE: "+c.pdf;
+  document.getElementById('pdfNote').textContent="If the PDF does not show inside the page on your phone, tap Open PDF In Full Screen, it is the same file: "+c.pdf+".";
   document.getElementById('descTag').textContent=c.tag;
   document.getElementById('descTitle').textContent=c.title;
   document.getElementById('descResult').textContent=c.result;
   document.getElementById('descText').textContent=c.text;
   document.getElementById('statRow').innerHTML=c.stats.map(function(s){return '<div class="stat-box"><b>'+s[0]+'</b><span>'+s[1]+'</span></div>'}).join("");
-  var box=document.getElementById('creativeBox');
-  if(c.creative){
-    box.style.display="block";
-    box.querySelector('img').src=c.creative;
-    box.querySelector('img').alt=c.title+" creative";
-    box.querySelector('.creative-cap').innerHTML="<b>Creative board:</b> "+c.creativeCap;
-  } else {
-    box.style.display="none";
-  }
-  var wrap=document.getElementById('pdfPages');wrap.innerHTML="";
-  for(var i=1;i<=c.pages;i++){
+  var img=document.getElementById('creativeImg');
+  if(c.creative){img.src=c.creative;img.alt=c.title+" creative";img.style.display="block"} else {img.style.display="none"}
+  var dots=document.getElementById('centreDots');dots.innerHTML="";
+  var labels=["Creative","PDF 1","PDF 2","PDF 3"];
+  for(var i=0;i<total;i++){
     (function(p){
-      var b=document.createElement('button');b.className="page-btn"+(p===currentPage?" active":"");b.textContent="Page "+p;
-      b.addEventListener('click',function(){currentPage=p;showPdf()});
-      wrap.appendChild(b);
+      var b=document.createElement('button');b.className="page-btn"+(p===centreIndex?" active":"");b.textContent=labels[p];
+      b.addEventListener('click',function(){centreIndex=p;showCentre()});
+      dots.appendChild(b);
     })(i);
   }
   document.querySelectorAll('.campaign-item').forEach(function(el,ei){el.classList.toggle('active',ei===currentCampaign)});
 }
-function selectCampaign(i){currentCampaign=i;currentPage=1;showPdf();history.replaceState(null,"","#campaign-"+(i+1))}
-function movePdf(dir){var n=campaigns[currentCampaign].pages;currentPage=currentPage+dir;if(currentPage<1)currentPage=n;if(currentPage>n)currentPage=1;showPdf()}
+function selectCampaign(i){currentCampaign=i;centreIndex=0;showCentre();history.replaceState(null,"","#campaign-"+(i+1))}
+function moveCentre(dir){var total=1+campaigns[currentCampaign].pages;centreIndex=centreIndex+dir;if(centreIndex<0)centreIndex=total-1;if(centreIndex>=total)centreIndex=0;showCentre()}
 (function(){
   var hash=location.hash.replace("#campaign-","");
   var start=parseInt(hash,10);
   if(start>=1&&start<=campaigns.length){currentCampaign=start-1}
-  showPdf();
+  showCentre();
   document.addEventListener('DOMContentLoaded',function(){
     var observerOptions={root:null,rootMargin:'-20% 0px -60% 0px',threshold:0};
     var observer=new IntersectionObserver(function(entries){
@@ -248,7 +233,7 @@ function movePdf(dir){var n=campaigns[currentCampaign].pages;currentPage=current
         }
       });
     },observerOptions);
-    ['top','viewer','how','contact'].forEach(function(id){var el=document.getElementById(id);if(el){observer.observe(el)}});
+    ['top','viewer','contact'].forEach(function(id){var el=document.getElementById(id);if(el){observer.observe(el)}});
   });
 })();
 </script>
