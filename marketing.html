@@ -102,7 +102,8 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <li><a href="#budget">💰 Ad Budget<span>How the budget is split</span></a></li>
 <li><a href="#paid">🎯 Paid Media Campaigns<span>Top campaigns, with results</span></a></li>
 <li><a href="#campaign">🎯 Featured Campaign<span>The offer, the audience, the result</span></a></li>
-<li><a href="#case">📁 Case Examples<span>UK AI Reception, Wear Your Slant, Aqtiv</span></a></li>
+<li><a href="#social-media">📱 Social Media Management<span>Aqtiv, Agrilift, LUMS</span></a></li>
+<li><a href="#case">📁 Case Examples<span>UK AI Reception, Wear Your Slant</span></a></li>
 <li><a href="#contact">💬 Contact<span>WhatsApp + brief</span></a></li>
 </ul>
 </nav>
@@ -162,7 +163,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <section id="campaign">
 <p class="sec-label">FEATURED CAMPAIGN</p>
 <h2>Aqtiv Water, <span>Launch + Re-Launch</span></h2>
-<p class="sec-sub">The campaign that is also a case example below. Same offer, same audience, same result, shown twice so you can see the plan and the proof in one place.</p>
+<p class="sec-sub">The campaign that is also in Social Media Management below. Same offer, same audience, same result, shown twice so you can see the plan and the proof in one place.</p>
 <div class="cards">
 <div class="card"><span class="client-tag">OFFER</span><h3>1st Bottle Free</h3><p>Simple, clear, no fine print in the hook. First bottle free, to try Aqtiv, in Karachi. That offer did the work, the design just carried it.</p></div>
 <div class="card"><span class="client-tag">AUDIENCE</span><h3>Karachi, Local First</h3><p>Local areas, local interests, people who buy water every day. No broad Pakistan targeting, no wasted spend outside delivery areas.</p></div>
@@ -170,15 +171,24 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 </div>
 </section>
 
+<section id="social-media">
+<p class="sec-label">SOCIAL MEDIA MANAGEMENT</p>
+<h2>Social Media, <span>Managed Day To Day</span></h2>
+<p class="sec-sub">Content calendar, posting, replies, and growth, for real clients. These two cards were in Case Examples, they now live here, before Case Examples.</p>
+<div class="cards">
+<div class="card"><span class="client-tag">PAKISTAN • LAUNCH</span><h3>Aqtiv Water</h3><p>Launch + re-launch, 1st bottle free, 21 to 360 followers. See the full folder on the Clients page.</p><a class="open-link" href="clients.html">Open Aqtiv Folder →</a></div>
+<div class="card"><span class="client-tag">CONTENT • AI</span><h3>Agrilift + LUMS, Content Cases</h3><p>Agrilift AI Reel plays on the Content page. LUMS gallery, 6 Box videos, each with its file name, on the Content page.</p><a class="open-link" href="content.html">Open Content Page →</a></div>
+</div>
+<p style="margin-top:18px"><a class="open-link" href="marketing-social.html">Open the Social Media subpage →</a></p>
+</section>
+
 <section id="case">
 <p class="sec-label">CASE EXAMPLES</p>
-<h2>UK AI Reception, <span>Wear Your Slant, And More</span></h2>
+<h2>UK AI Reception, <span>Wear Your Slant</span></h2>
 <p class="sec-sub">Real work, by client, not samples. Fill only the EDIT lines, I have not invented results for the two new cases.</p>
 <div class="cards">
 <div class="card"><span class="client-tag">UK • AI</span><h3>UK AI Reception</h3><p>EDIT: What is it, in 1 line, e.g. AI receptionist / AI answering for a UK business. EDIT: What I did, content, social, or ads. EDIT: Result, calls booked / leads / reply rate.</p><a class="open-link" href="clients.html">See Clients Page →</a></div>
 <div class="card"><span class="client-tag">CONTENT • BRAND</span><h3>Wear Your Slant</h3><p>EDIT: What is it, in 1 line, e.g. apparel / brand, what slant means for this brand. EDIT: What I did, content, social, or ads. EDIT: Result, followers / sales / content that worked. EDIT: Link to the post / reel / folder.</p><a class="open-link" href="content.html">See Content Page →</a></div>
-<div class="card"><span class="client-tag">PAKISTAN • LAUNCH</span><h3>Aqtiv Water</h3><p>Launch + re-launch, 1st bottle free, 21 to 360 followers. See the full folder on the Clients page.</p><a class="open-link" href="clients.html">Open Aqtiv Folder →</a></div>
-<div class="card"><span class="client-tag">CONTENT • AI</span><h3>Agrilift + LUMS, Content Cases</h3><p>Agrilift AI Reel plays on the Content page. LUMS gallery, 6 Box videos, each with its file name, on the Content page.</p><a class="open-link" href="content.html">Open Content Page →</a></div>
 </div>
 </section>
 
@@ -212,7 +222,7 @@ document.addEventListener('DOMContentLoaded',function(){
       }
     });
   },observerOptions);
-  ['top','best-content','budget','paid','campaign','case','contact'].forEach(function(id){
+  ['top','best-content','budget','paid','campaign','social-media','case','contact'].forEach(function(id){
     var el=document.getElementById(id);
     if(el){observer.observe(el)}
   });
