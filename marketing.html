@@ -39,11 +39,11 @@ a{color:inherit;text-decoration:none}
 .top nav a.content-link{color:#fef3c7;font-weight:800;opacity:1}
 .drop{position:relative;display:inline-block;padding-bottom:0}
 .drop-toggle{display:inline-block;padding:12px 2px;cursor:pointer}
-.drop-menu{position:absolute;top:100%;left:0;min-width:220px;padding:8px 0;text-align:left;display:none;background:#071826;border:1px solid #164e5e;border-radius:14px;z-index:1300;box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.drop-menu{position:absolute;top:100%;left:0;width:220px;min-width:220px;padding:8px 0;text-align:left;display:none;background:#071826;border:1px solid #164e5e;border-radius:14px;z-index:1300;box-shadow:0 18px 40px rgba(0,0,0,.5)}
 .drop-menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
 .drop:hover .drop-menu,.drop:focus-within .drop-menu,.drop.open .drop-menu{display:block}
-.drop-menu a{display:block;margin:0;padding:11px 16px;color:#94a3b8;font-weight:700;font-size:13px;line-height:1.4}
-.drop-menu a span{display:block;font-size:11px;color:#64748b;font-weight:400}
+.top nav .drop .drop-menu a{display:block;width:100%;margin:0;padding:11px 16px;color:#94a3b8;font-weight:700;font-size:13px;line-height:1.4;text-align:left;box-sizing:border-box}
+.top nav .drop .drop-menu a span{display:block;font-size:11px;color:#64748b;font-weight:400}
 .drop-menu a:hover{color:#5eead4;background:transparent}
 .hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:140px 20px 60px;position:relative;overflow:hidden;text-align:center}
 h1{font-family:Georgia,serif;font-size:clamp(48px,9vw,110px);font-weight:400;letter-spacing:5px;color:#fef3c7;line-height:1;text-shadow:0 0 40px rgba(45,212,191,.25)}
@@ -67,8 +67,6 @@ section h2 span{color:#5eead4}
 .budget-bar i{display:block;height:100%;background:#2dd4bf;border-radius:999px}
 .budget-bar i.gold{background:#fef3c7}
 .budget-bar i.teal2{background:#5eead4}
-.big-stat{font-family:Georgia,serif;font-size:44px;color:#fef3c7;line-height:1;margin:10px 0 4px}
-.big-stat small{font-size:13px;color:#5eead4;font-family:Arial,sans-serif;font-weight:700;letter-spacing:1px}
 .slider-wrap{margin-top:26px;position:relative}
 .slider-title{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800;margin-bottom:12px}
 .slider-viewport{overflow:hidden;border-radius:18px}
@@ -115,7 +113,6 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <h1>Marketing<br>That Shows<br>Proof</h1>
 <p class="sub">Not promises, not vanity numbers. The content that worked, the budget that was spent, the campaign that ran, and the case with the real result. Karachi, Pakistan. Aqtiv, Berlitz, Agrilift, LUMS, and 7 more real clients.</p>
 </div>
-
 <section id="best-content">
 <p class="sec-label">BEST CONTENT</p>
 <h2>What Worked, <span>And Why</span></h2>
@@ -128,7 +125,6 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 </div>
 <p style="margin-top:18px"><a class="open-link" href="marketing-content.html">Open the Content subpage →</a></p>
 </section>
-
 <section id="budget">
 <p class="sec-label">AD BUDGET</p>
 <h2>How The Budget <span>Is Split</span></h2>
@@ -143,7 +139,6 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <p style="color:#94a3b8;font-size:13px;line-height:1.7">Rule: test small, keep the winner, kill the loser fast. No ad runs for a week without a check. Spend follows sales, not likes.</p>
 </div>
 </section>
-
 <section id="paid">
 <p class="sec-label">PAID MEDIA CAMPAIGNS • WITH RESULTS</p>
 <h2>Top Paid Campaigns, <span>Tap To Open</span></h2>
@@ -161,7 +156,6 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <div class="slider-dots" id="paidDots"></div>
 </div>
 </section>
-
 <section id="campaign">
 <p class="sec-label">FEATURED CAMPAIGN</p>
 <h2>Aqtiv Water, <span>Launch + Re-Launch</span></h2>
@@ -172,7 +166,6 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <div class="card"><span class="client-tag">CONTENT</span><h3>Launch Posts + Reels</h3><p>Launch content, re-launch content, and follow-up posts, all with the same offer and the same CTA. See the full folder on the Clients page.</p></div>
 </div>
 </section>
-
 <section id="social-media">
 <p class="sec-label">SOCIAL MEDIA MANAGEMENT</p>
 <h2>Social Media, <span>Managed Day To Day</span></h2>
@@ -181,7 +174,6 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <div class="card"><span class="client-tag">PAKISTAN • LAUNCH • SOCIAL MEDIA CAMPAIGN</span><h3>Aqtiv Water, Social Media Campaign</h3><p>Social Media Campaign: content calendar, launch posts, re-launch posts, replies, and follow-up, all with the same offer. Launch + re-launch, 1st bottle free, in Karachi. Followers grew from 21 to 360, from the offer and the content, not from bought followers. See the full folder on the Clients page, and the full campaign on the Social Media subpage.</p><a class="open-link" href="clients.html">Open Aqtiv Folder →</a><a class="open-link" href="marketing-social.html">Open the Social Media Campaign →</a></div>
 </div>
 </section>
-
 <section id="case">
 <p class="sec-label">CASE EXAMPLES</p>
 <h2>UK AI Reception, <span>Wear Your Slant</span></h2>
@@ -191,7 +183,6 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <div class="card"><span class="client-tag">CONTENT • BRAND</span><h3>Wear Your Slant</h3><p>EDIT: What is it, in 1 line, e.g. apparel / brand, what slant means for this brand. EDIT: What I did, content, social, or ads. EDIT: Result, followers / sales / content that worked. EDIT: Link to the post / reel / folder.</p><a class="open-link" href="content.html">See Content Page →</a></div>
 </div>
 </section>
-
 <section id="contact">
 <p class="sec-label">CONTACT</p>
 <h2>Start With <span>A Brief</span></h2>
@@ -199,7 +190,6 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <p><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a> <a class="btn btn-mark" href="index.html">🏠 Back To Home →</a></p>
 <p style="color:#94a3b8;font-size:13px;line-height:1.7;margin-top:14px">Karachi, Pakistan • Replace the WhatsApp number, search for 92XXXXXXXXXX, with your real number, in all files, so every button goes to the same number.</p>
 </section>
-
 <footer><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p><a href="index.html" style="color:#5eead4;font-weight:700">Home →</a> &nbsp;•&nbsp; <a href="content.html" style="color:#5eead4;font-weight:700">Content →</a> &nbsp;•&nbsp; <a href="clients.html" style="color:#5eead4;font-weight:700">Clients →</a></p></footer>
 <script>
 var canvas=document.getElementById('bgCanvas'),ctx=canvas.getContext('2d'),pts=[];
