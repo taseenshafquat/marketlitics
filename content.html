@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Content | Taseen - Marketlitics</title>
-<meta name="description" content="Best content by Taseen. LUMS Content gallery and Agrilift AI Reel, Box videos embedded.">
+<title>Content - Marketing | Marketlitics</title>
+<meta name="description" content="Content marketing by Taseen, Marketlitics. LUMS gallery, Agrilift AI Reel, hooks, reels, AI content.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden}
+body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden;padding-left:250px}
 a{color:inherit;text-decoration:none}
 #bgCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}
 .orb{position:fixed;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none;opacity:.55;animation:drift 14s ease-in-out infinite alternate}
@@ -16,247 +16,170 @@ a{color:inherit;text-decoration:none}
 .orb3{width:220px;height:220px;background:#fef3c7;bottom:-60px;left:35%;opacity:.22;animation-delay:-9s}
 @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(50px,35px) scale(1.15)}}
 #glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.22),transparent 65%);z-index:0;pointer-events:none;transform:translate(-50%,-50%);left:50%;top:40%}
-.banner,.top,.hero,.layout,.detail,.empty,footer{position:relative;z-index:2}
-.banner{position:fixed;top:0;left:0;right:0;z-index:1000;background:#2dd4bf;color:#06202a;font-weight:700;font-size:14px;line-height:38px;height:38px;padding:0 16px;text-align:center;white-space:nowrap;overflow:hidden}
-.banner a{font-weight:800;text-decoration:underline}
-.top{position:fixed;top:38px;left:0;right:0;min-height:58px;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(7,24,38,.88);backdrop-filter:blur(10px);z-index:999}
+.sidebar{width:250px;height:100vh;position:fixed;top:0;left:0;z-index:1200;background:transparent;border:0;padding:24px 14px;text-align:left;overflow-y:auto}
+.sidebar h2{font-family:Georgia,serif;font-size:24px;color:#5eead4;font-weight:400;padding-left:8px}
+.sidebar .side-sub{color:#94a3b8;font-size:13px;line-height:1.6;padding-left:8px;margin-top:8px}
+.sidebar h3{color:#5eead4;font-size:12px;letter-spacing:3px;margin:20px 0 12px 8px;font-weight:800}
+.sidebar ul{list-style:none}
+.sidebar li{margin-bottom:4px}
+.sidebar a{display:block;padding:11px 10px;color:#94a3b8;text-decoration:none;background:transparent;border:0;border-radius:0;transition:color .2s ease;font-weight:700;font-size:14px;line-height:1.4}
+.sidebar a span{display:block;font-size:11px;color:#64748b;font-weight:400;margin-top:2px}
+.sidebar a:hover{background:transparent;color:#5eead4}
+.sidebar a.active{background:transparent;border:0;border-radius:0;color:#5eead4;font-weight:800}
+.sidebar a.active::before{content:"● ";color:#2dd4bf;font-size:10px}
+.sidebar a.active span{color:#94a3b8}
+.top,.hero,section,footer{position:relative;z-index:2}
+.top{position:fixed;top:0;left:250px;right:0;min-height:58px;padding:10px 20px;display:flex;justify-content:flex-end;align-items:center;gap:12px;background:transparent;backdrop-filter:none;z-index:999}
+.top-logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px;white-space:nowrap;line-height:1}
 .logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px;white-space:nowrap;line-height:1}
 .top nav{font-size:14px;display:flex;align-items:center;gap:4px;overflow-x:auto;white-space:nowrap;line-height:1}
 .top nav a{margin:0 8px;opacity:.85;display:inline-block;padding:8px 2px}
 .top nav a.clients-link{background:#2dd4bf;color:#06202a;font-weight:800;opacity:1;border-radius:999px;padding:9px 16px;margin:0 6px}
+.top nav a.marketing-link{color:#fef3c7;font-weight:800;opacity:1}
 .top nav a.content-link{color:#fef3c7;font-weight:800;opacity:1}
-.top nav a.work-link{color:#fef3c7;font-weight:800;opacity:1}
-.hero{padding:160px 20px 10px}
-h1{font-family:Georgia,serif;font-size:clamp(42px,9vw,72px);font-weight:400;color:#fef3c7;text-shadow:0 0 40px rgba(45,212,191,.25)}
+.drop{position:relative;display:inline-block}
+.drop-menu{position:absolute;top:100%;left:0;min-width:210px;padding:10px 0;text-align:left;display:none;background:#071826;border:1px solid #164e5e;border-radius:14px}
+.drop:hover .drop-menu,.drop:focus-within .drop-menu{display:block}
+.drop-menu a{display:block;margin:0;padding:11px 16px;color:#94a3b8;font-weight:700;font-size:13px;line-height:1.4}
+.drop-menu a span{display:block;font-size:11px;color:#64748b;font-weight:400}
+.drop-menu a:hover{color:#5eead4;background:transparent}
+.hero{min-height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:130px 20px 50px;position:relative;overflow:hidden;text-align:center}
+h1{font-family:Georgia,serif;font-size:clamp(42px,8vw,90px);font-weight:400;letter-spacing:4px;color:#fef3c7;line-height:1;text-shadow:0 0 40px rgba(45,212,191,.25)}
+.domains{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800;margin:18px 0 4px}
 .sub{color:#94a3b8;margin:12px auto 10px;max-width:680px;line-height:1.7}
-.layout{max-width:1100px;margin:24px auto 0;padding:0 20px;display:flex;gap:20px;align-items:flex-start;text-align:left}
-.sidebar{width:260px;flex-shrink:0;position:sticky;top:118px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:22px}
-.sidebar h3{color:#5eead4;font-size:12px;letter-spacing:3px;margin:0 0 12px}
-.sidebar label{color:#94a3b8;font-size:12px;letter-spacing:1px;display:block;margin-bottom:8px;font-weight:700}
-.search-box{width:100%;padding:13px 14px;border-radius:999px;border:1px solid #164e5e;background:#071826;color:#fff;font-size:14px;outline:none;margin-bottom:20px}
-.search-box:focus{border-color:#2dd4bf}
-.search-box::placeholder{color:#64748b}
-.filter-list{display:flex;flex-direction:column;gap:10px}
-.filter-btn{width:100%;text-align:left;padding:13px 16px;border-radius:14px;border:1px solid #164e5e;background:#071826;color:#fff;cursor:pointer;font-size:14px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
-.filter-btn.active{background:#2dd4bf;color:#06202a;border-color:#2dd4bf}
-.filter-btn span{font-size:12px;opacity:.75;font-weight:800}
-.sidebar-note{color:#94a3b8;font-size:12px;line-height:1.6;margin-top:18px}
-.clear-btn{width:100%;margin-top:14px;padding:11px;border-radius:999px;border:1px solid #5eead4;background:transparent;color:#fff;font-weight:700;cursor:pointer;font-size:13px}
-.main{flex:1;min-width:0}
-.count-line{color:#94a3b8;text-align:left;margin:4px 0 16px}
-.grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-start}
-.item{flex:1;min-width:260px;max-width:320px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;overflow:hidden;text-align:left;cursor:pointer;transition:.25s;position:relative}
-.item:hover,.item.open{transform:translateY(-4px);border-color:#2dd4bf;box-shadow:0 14px 35px rgba(45,212,191,.25)}
-.thumb{height:190px;background:linear-gradient(135deg,#0e3a42,#164e5e);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative}
-.thumb .play{position:absolute;font-size:13px;background:rgba(7,24,38,.8);border:1px solid #5eead4;border-radius:999px;padding:8px 12px;color:#fff}
-.body{padding:18px 18px 48px;position:relative}
-.body h2{font-family:Georgia,serif;font-size:21px;font-weight:400;color:#fff;line-height:1.4;margin:8px 0 6px}
-.body p{color:#94a3b8;font-size:13px;line-height:1.6}
-.client-tag{color:#5eead4;font-size:12px;font-weight:700;letter-spacing:1px;margin-top:8px;display:block}
-.type-badge{position:absolute;right:14px;bottom:14px;background:#2dd4bf;color:#06202a;font-size:11px;font-weight:800;letter-spacing:1px;padding:6px 11px;border-radius:999px}
-.type-badge.reel{background:#fef3c7}
-.type-badge.gallery{background:#fef3c7;color:#06202a}
-.open-link{color:#5eead4;font-weight:700;font-size:13px;display:block;margin-top:10px}
-.detail{max-width:1100px;margin:0 auto 40px;padding:20px;display:none;text-align:left}
-.detail.show{display:block}
-.detail-box{background:#0e3a42;border:1px solid #2dd4bf;border-radius:18px;overflow:hidden}
-.detail-preview{min-height:120px;background:linear-gradient(135deg,#0e3a42,#164e5e);display:flex;align-items:center;justify-content:center;font-size:60px;position:relative;padding:22px;text-align:center}
-.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:22px;background:#071826}
-.gallery-item{background:#0b2a35;border:1px solid #164e5e;border-radius:16px;overflow:hidden}
-.gallery-name{padding:14px 14px 10px;text-align:left}
-.gallery-name b{color:#fff;font-size:15px;line-height:1.4;display:block;word-break:break-word}
-.gallery-name span{color:#5eead4;font-size:11px;letter-spacing:2px;font-weight:800}
-.gallery-player{aspect-ratio:16/9;background:#000;position:relative;display:flex;align-items:center;justify-content:center}
-.gallery-player iframe{width:100%;height:100%;border:0;display:block;position:absolute;inset:0}
-.play-video-btn{padding:12px 22px;border-radius:999px;background:#2dd4bf;color:#06202a;font-weight:800;border:0;cursor:pointer;font-size:14px}
-.gallery-links{padding:12px 14px 16px;text-align:left}
-.gallery-links a{color:#5eead4;font-weight:700;font-size:13px}
-.video-wrap{width:100%;max-width:340px;margin:0 auto;background:#000;border-radius:16px;overflow:hidden;border:1px solid #164e5e}
-.video-wrap iframe{width:100%;height:560px;border:0;display:block}
-.video-note{font-size:12px;color:#94a3b8;text-align:center;margin-top:10px}
-.watch-btn{display:inline-block;margin-top:12px;padding:12px 22px;border-radius:999px;background:#2dd4bf;color:#06202a;font-weight:800;font-size:14px}
-.detail-inner{padding:26px;position:relative}
-.detail-inner h2{font-family:Georgia,serif;font-size:32px;font-weight:400;color:#fef3c7;line-height:1.3;margin:8px 0}
-.detail-inner p{color:#cbd5e1;line-height:1.7}
-.close-btn{float:right;background:transparent;border:1px solid #5eead4;color:#fff;border-radius:999px;padding:8px 16px;cursor:pointer;font-weight:700}
-.detail-type{position:absolute;right:26px;bottom:26px;background:#fef3c7;color:#06202a;font-size:12px;font-weight:800;letter-spacing:1px;padding:8px 14px;border-radius:999px}
-.detail-type.reel{background:#fef3c7}
-.info{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
-.info-box{flex:1;min-width:230px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:20px}
-.info-box b{color:#5eead4;font-size:12px;letter-spacing:2px;display:block;margin-bottom:8px}
-.info-box p{color:#e2e8f0;font-size:14px;line-height:1.7}
-.tool{display:inline-block;background:#123845;border:1px solid #164e5e;color:#cbd5e1;font-size:12px;padding:5px 10px;border-radius:999px;margin:3px 3px 0 0}
-.empty{max-width:1100px;margin:0 auto 60px;padding:30px 20px;background:#0b2a35;border:1px dashed #164e5e;border-radius:16px;display:none;text-align:center}
+section{max-width:960px;margin:0 auto;padding:50px 20px 10px;text-align:left;scroll-margin-top:90px}
+section h2{font-family:Georgia,serif;font-size:clamp(28px,5vw,42px);font-weight:400;color:#fef3c7;line-height:1.2}
+section h2 span{color:#5eead4}
+.sec-label{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800}
+.sec-sub{color:#94a3b8;line-height:1.7;margin:12px 0 22px;max-width:680px}
+.cards{display:flex;gap:16px;flex-wrap:wrap}
+.card{flex:1;min-width:240px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:22px;text-align:left;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:#2dd4bf}
+.card h3{font-family:Georgia,serif;font-size:21px;font-weight:400;line-height:1.4;margin:8px 0 6px;color:#fff}
+.card p{color:#94a3b8;font-size:13px;line-height:1.6}
+.client-tag{color:#5eead4;font-size:12px;font-weight:700;letter-spacing:1px}
+.open-link{color:#5eead4;font-weight:700;font-size:13px;display:block;margin-top:12px}
+.file-name{color:#e2e8f0;font-size:12px;line-height:1.5;word-break:break-all;margin-top:6px;display:block}
+.video-box{background:#071826;border:1px solid #164e5e;border-radius:18px;overflow:hidden;margin-top:20px}
+.video-box video{width:100%;display:block;max-height:520px;background:#000}
+.video-note{padding:16px 20px;color:#94a3b8;font-size:12px;line-height:1.6;border-top:1px solid #164e5e;text-align:left}
 .btn{padding:16px 36px;border-radius:999px;font-weight:700;font-size:16px;border:2px solid #5eead4;display:inline-block;margin:6px}
 .btn-data{background:#2dd4bf;color:#06202a}
 .btn-mark{background:transparent;color:#fff}
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:center}
-@media(max-width:760px){
-.layout{flex-direction:column}
-.sidebar{width:100%;position:static}
-.filter-list{flex-direction:row;flex-wrap:wrap}
-.filter-btn{width:auto;flex:1;min-width:110px;justify-content:center;gap:6px}
-.grid{justify-content:center}
-.item{max-width:none}
-.gallery-grid{grid-template-columns:1fr}
-.video-wrap iframe{height:480px}
-.detail-type{position:static;display:inline-block;margin-top:18px}
-.top{padding:10px 12px}.top nav{font-size:12px}.banner{font-size:12px}
-}
+@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px}.top nav{font-size:11px}.top-logo{font-size:18px}.logo{font-size:18px}.domains{letter-spacing:2px;font-size:10px}h1{font-size:clamp(40px,10vw,60px);letter-spacing:3px}.card{min-width:200px}.drop-menu{position:fixed;left:auto;right:12px;top:58px}}
 </style>
 </head>
 <body>
 <canvas id="bgCanvas"></canvas>
 <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
 <div id="glow"></div>
-<div class="banner">11 Real Clients • Pakistan, UAE, Africa, UK, US • <a href="clients.html">View All Clients →</a></div>
-<header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a class="work-link" href="index.html#work">Work</a><a href="index.html#skills">Skills</a><a class="content-link" href="content.html">Content</a><a class="clients-link" href="clients.html">Clients</a><a href="index.html#certs">Certifications</a><a href="index.html#contact">Contact</a></nav></header>
-<div class="hero">
-<h1>CONTENT</h1>
-<p class="sub">Real content only. LUMS gallery and Agrilift AI Reel. Tap a piece to open it, details open under it: client, tools, message, strategy, brief. Videos play inside this page.</p>
-<p><a class="btn btn-mark" href="index.html">← Back to Home</a></p>
+<nav class="sidebar">
+<h2>Marketlitics</h2>
+<p class="side-sub">Karachi, Pakistan<br>Marketing that shows proof, not promises.</p>
+<h3>MENU</h3>
+<ul>
+<li><a href="#top" class="active">📝 Content<span>Hooks, reels, AI content</span></a></li>
+<li><a href="#hooks">🪝 Hooks + Formats<span>What stops the scroll</span></a></li>
+<li><a href="#lums">🎓 LUMS Gallery<span>6 Box videos, file names</span></a></li>
+<li><a href="#agrilift">🤖 Agrilift AI Reel<span>Plays on this page</span></a></li>
+<li><a href="#proof">📸 Proof Content<span>UK AI Reception, Wear Your Slant, Aqtiv</span></a></li>
+<li><a href="#contact">💬 Contact<span>WhatsApp + brief</span></a></li>
+</ul>
+</nav>
+<header class="top"><div class="top-logo"><a href="index.html">Marketlitics</a></div><nav><span class="drop"><a class="marketing-link" href="marketing.html" aria-haspopup="true">Marketing ▾</a><span class="drop-menu"><a href="marketing-content.html">Content<span>Content, hooks, reels, AI</span></a><a href="marketing-social.html">Social Media<span>Calendar, posting, growth</span></a><a href="marketing-paid.html">Paid Media &amp; SEO<span>Meta, Google, search</span></a></span></span><a class="content-link" href="content.html">Content</a><a class="clients-link" href="clients.html">Clients</a></nav></header>
+<div class="hero" id="top">
+<p class="domains">MARKETING • CONTENT</p>
+<h1>Content<br>That Sells</h1>
+<p class="sub">Hook first, offer clear, proof in the post. This page is now both pages merged: the Marketing Content subpage, and the old Content page, LUMS gallery and Agrilift AI Reel, in one place.</p>
 </div>
-<div class="layout">
-<aside class="sidebar">
-<h3>FILTERS</h3>
-<label for="searchInput">SEARCH CONTENT</label>
-<input class="search-box" id="searchInput" type="search" placeholder="Search content, client...">
-<h3 style="margin-top:4px">FILTER BY TYPE</h3>
-<div class="filter-list" id="typeFilters">
-<button class="filter-btn active" data-type="all">All Content <span>2</span></button>
-<button class="filter-btn" data-type="reel">Reel <span>1</span></button>
-<button class="filter-btn" data-type="gallery">Gallery <span>1</span></button>
+
+<section id="hooks">
+<p class="sec-label">HOOKS + FORMATS</p>
+<h2>Hooks, <span>Formats, AI</span></h2>
+<p class="sec-sub">EDIT: Add your 3 best hooks here, with the client and the result for each.</p>
+<div class="cards">
+<div class="card"><span class="client-tag">HOOK 1</span><h3>EDIT: Hook / format 1</h3><p>EDIT: Client, format, what was said in the first 3 seconds, and what happened.</p></div>
+<div class="card"><span class="client-tag">HOOK 2</span><h3>EDIT: Hook / format 2</h3><p>EDIT: Client, format, what was said in the first 3 seconds, and what happened.</p></div>
+<div class="card"><span class="client-tag">AI</span><h3>AI Content Production</h3><p>AI visuals, human message. Agrilift AI Reel plays below, on this page, in the Agrilift section.</p><a class="open-link" href="#agrilift">Play Agrilift Reel ↓</a></div>
 </div>
-<p class="sidebar-note">Tip: type Agrilift or LUMS in the search box above, and only that work shows.</p>
-<button class="clear-btn" onclick="resetFilter()">Clear Filters</button>
-</aside>
-<main class="main">
-<p class="count-line" id="countLine">Showing 2 pieces • Tap one to open its details under it</p>
-<div class="grid" id="grid">
-<div class="item" data-id="lums" data-type="gallery" data-search="lums content gallery videos box"><div class="thumb">🎓<span class="play">▶ 6 VIDEOS • GALLERY</span></div><div class="body"><span class="client-tag">LUMS</span><h2>LUMS Content</h2><p>Gallery of 6 content pieces • Box embedded • Tap to play each, with file name</p><span class="open-link">Open Gallery → Play Videos</span><span class="type-badge gallery">GALLERY</span></div></div>
-<div class="item" data-id="agrilift" data-type="reel" data-search="agrilift ai reel artificial intelligence agriculture video box"><div class="thumb">🌾<span class="play">▶ AI REEL • PLAYS ON PAGE</span></div><div class="body"><span class="client-tag">AGRILIFT • AI CONTENT</span><h2>AI Reel: Agrilift</h2><p>AI content for Agrilift • Box link embedded • Plays on this page</p><span class="open-link">Open Details → Play Reel</span><span class="type-badge reel">REEL</span></div></div>
+</section>
+
+<section id="lums">
+<p class="sec-label">LUMS • FROM THE OLD CONTENT PAGE</p>
+<h2>LUMS Gallery, <span>6 Videos</span></h2>
+<p class="sec-sub">Each video with its file name, as on the old Content page. Tap Play, it plays on this page if the file is in GitHub, or tap Open in Box and it opens in Box. Replace only the 6 file names below with the real names from your old Content page / Box folder.</p>
+<div class="cards">
+<div class="card"><span class="client-tag">LUMS • 01</span><h3>LUMS Video 1</h3><span class="file-name">EDIT: LUMS video 1 file name, e.g. lums-1.mp4</span><p>EDIT: 1 line, what is in this video.</p><a class="open-link" href="https://app.box.com/s/b8nebmct96ja9h2umxn1q5k3ozlbzprw" target="_blank" rel="noopener">▶ Play in Box →</a></div>
+<div class="card"><span class="client-tag">LUMS • 02</span><h3>LUMS Video 2</h3><span class="file-name">EDIT: LUMS video 2 file name</span><p>EDIT: 1 line, what is in this video.</p><a class="open-link" href="https://app.box.com/s/b8nebmct96ja9h2umxn1q5k3ozlbzprw" target="_blank" rel="noopener">▶ Play in Box →</a></div>
+<div class="card"><span class="client-tag">LUMS • 03</span><h3>LUMS Video 3</h3><span class="file-name">EDIT: LUMS video 3 file name</span><p>EDIT: 1 line, what is in this video.</p><a class="open-link" href="https://app.box.com/s/b8nebmct96ja9h2umxn1q5k3ozlbzprw" target="_blank" rel="noopener">▶ Play in Box →</a></div>
+<div class="card"><span class="client-tag">LUMS • 04</span><h3>LUMS Video 4</h3><span class="file-name">EDIT: LUMS video 4 file name</span><p>EDIT: 1 line, what is in this video.</p><a class="open-link" href="https://app.box.com/s/b8nebmct96ja9h2umxn1q5k3ozlbzprw" target="_blank" rel="noopener">▶ Play in Box →</a></div>
+<div class="card"><span class="client-tag">LUMS • 05</span><h3>LUMS Video 5</h3><span class="file-name">EDIT: LUMS video 5 file name</span><p>EDIT: 1 line, what is in this video.</p><a class="open-link" href="https://app.box.com/s/b8nebmct96ja9h2umxn1q5k3ozlbzprw" target="_blank" rel="noopener">▶ Play in Box →</a></div>
+<div class="card"><span class="client-tag">LUMS • 06</span><h3>LUMS Video 6</h3><span class="file-name">EDIT: LUMS video 6 file name</span><p>EDIT: 1 line, what is in this video.</p><a class="open-link" href="https://app.box.com/s/b8nebmct96ja9h2umxn1q5k3ozlbzprw" target="_blank" rel="noopener">▶ Play in Box →</a></div>
 </div>
-<div class="empty" id="emptyBox" style="margin:20px 0 0"><h2 style="font-family:Georgia,serif;font-weight:400;color:#fef3c7;margin-bottom:10px">No content matches that filter</h2><p style="color:#94a3b8">Try another type on the left, or clear the search box.</p><p style="margin-top:18px"><button class="btn btn-data" onclick="resetFilter()">Show All Content</button></p></div>
-</main>
+<p style="margin-top:18px"><a class="open-link" href="https://app.box.com/s/b8nebmct96ja9h2umxn1q5k3ozlbzprw" target="_blank" rel="noopener">Open full LUMS Box folder →</a></p>
+</section>
+
+<section id="agrilift">
+<p class="sec-label">AGRILIFT • FROM THE OLD CONTENT PAGE</p>
+<h2>Agrilift AI Reel, <span>Plays On This Page</span></h2>
+<p class="sec-sub">Social Media Management + AI Content Production. Tap play below. If the reel file is not in GitHub yet, tap Open in Box, it opens the same Box folder.</p>
+<div class="video-box">
+<video controls preload="metadata" poster="agrilift-reel-poster.jpg">
+<source src="agrilift-ai-reel.mp4" type="video/mp4">
+Your browser does not support this video. Tap Open in Box below.
+</video>
+<p class="video-note">File: EDIT: Agrilift AI Reel file name, e.g. agrilift-ai-reel.mp4, in GitHub, same folder as this file. Poster: agrilift-reel-poster.jpg, optional, remove the poster line if you do not have one.</p>
 </div>
-<div class="detail" id="detailBox">
-<div class="detail-box">
-<div class="detail-preview" id="dPreview"></div>
-<div id="dGallery"></div>
-<div class="detail-inner">
-<button class="close-btn" onclick="closeDetail()">X Close</button>
-<span class="sample" id="dSample" style="display:inline-block;background:#2dd4bf;color:#06202a;font-size:11px;font-weight:700;padding:4px 8px;border-radius:20px">BOX VIDEO</span>
-<span class="client-tag" id="dClient"></span>
-<h2 id="dTitle"></h2>
-<p id="dIntro"></p>
-<div class="info">
-<div class="info-box"><b>CLIENT MADE FOR</b><p id="dMadeFor"></p></div>
-<div class="info-box"><b>TOOLS USED</b><p id="dTools"></p></div>
-<div class="info-box"><b>MESSAGE BEHIND</b><p id="dMessage"></p></div>
-<div class="info-box"><b>STRATEGY</b><p id="dStrategy"></p></div>
+<p style="margin-top:18px"><a class="open-link" href="https://app.box.com/s/b8nebmct96ja9h2umxn1q5k3ozlbzprw" target="_blank" rel="noopener">▶ Open Agrilift Reel in Box →</a> &nbsp;•&nbsp; <a class="open-link" href="clients.html" style="display:inline">See Agrilift Client Folder →</a></p>
+</section>
+
+<section id="proof">
+<p class="sec-label">PROOF CONTENT</p>
+<h2>Content Cases, <span>By Client</span></h2>
+<p class="sec-sub">EDIT lines only, no invented results.</p>
+<div class="cards">
+<div class="card"><span class="client-tag">UK • AI</span><h3>UK AI Reception</h3><p>EDIT: Best content piece, format, and result. EDIT: Link to the post / reel / folder.</p></div>
+<div class="card"><span class="client-tag">BRAND</span><h3>Wear Your Slant</h3><p>EDIT: Best content piece, format, and result. EDIT: Link to the post / reel / folder.</p></div>
+<div class="card"><span class="client-tag">LAUNCH</span><h3>Aqtiv Water</h3><p>1st bottle free, launch + re-launch, 21 to 360 followers.</p><a class="open-link" href="clients.html">Open Aqtiv Folder →</a></div>
 </div>
-<div class="info-box" style="margin-top:14px"><b>PROJECT BRIEF</b><p id="dBrief"></p></div>
-<p style="margin-top:16px;color:#94a3b8;font-size:13px" id="dLink"></p>
-<p id="dWatch"></p>
-<span class="detail-type" id="dType"></span>
-</div>
-</div>
-</div>
-<div style="padding:0 20px 60px;text-align:center"><p style="color:#cbd5e1;line-height:1.7;max-width:640px;margin:0 auto 18px">Want content like this for your business? Send your brief, I plan the hook, the format, and the message.</p><p><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a> <a class="btn btn-mark" href="clients.html">📁 See Clients →</a></p></div>
-<footer><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p><a href="index.html" style="color:#5eead4;font-weight:700">Back to Home →</a></p></footer>
+</section>
+
+<section id="contact">
+<p class="sec-label">CONTACT</p>
+<h2>Start With <span>A Brief</span></h2>
+<p class="sec-sub">Send 3 lines: your business, your offer, your goal. I reply with the plan: content, budget, and timeline.</p>
+<p><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a> <a class="btn btn-mark" href="marketing.html">📈 Back To Marketing →</a></p>
+<p style="color:#94a3b8;font-size:13px;line-height:1.7;margin-top:14px">Karachi, Pakistan • Replace the WhatsApp number, search for 92XXXXXXXXXX, with your real number, in all files, so every button goes to the same number.</p>
+</section>
+
+<footer><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p><a href="marketing.html" style="color:#5eead4;font-weight:700">Marketing →</a> &nbsp;•&nbsp; <a href="content.html" style="color:#5eead4;font-weight:700">Content →</a> &nbsp;•&nbsp; <a href="clients.html" style="color:#5eead4;font-weight:700">Clients →</a></p></footer>
 <script>
-var canvas=document.getElementById('bgCanvas'),ctx=canvas.getContext('2d'),pts=[],mx=innerWidth/2,my=innerHeight/2;
+var canvas=document.getElementById('bgCanvas'),ctx=canvas.getContext('2d'),pts=[];
 function resize(){canvas.width=innerWidth;canvas.height=innerHeight;pts=[];var n=innerWidth<640?32:60;for(var i=0;i<n;i++){pts.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*2+1.2})}}
 resize();addEventListener('resize',resize);
-addEventListener('mousemove',function(e){var g=document.getElementById('glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';mx=e.clientX;my=e.clientY});
+addEventListener('mousemove',function(e){var g=document.getElementById('glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
 function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;for(var j=i+1;j<pts.length;j++){var q=pts[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<120){ctx.strokeStyle='rgba(45,212,191,'+(0.28-dd/450)+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}ctx.fillStyle='rgba(94,234,212,.85)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}requestAnimationFrame(draw)}
 draw();
-function toEmbed(url){
-  if(!url||url.indexOf('http')!==0)return null;
-  if(url.indexOf('box.com/embed')>-1)return url.split('?')[0];
-  if(url.indexOf('box.com/s/')>-1)return url.replace('box.com/s/','box.com/embed/s/').split('?')[0];
-  if(url.indexOf('onedrive.live.com/embed')>-1)return url;
-  return url;
-}
-function watchUrl(url){
-  if(!url||url.indexOf('http')!==0)return null;
-  if(url.indexOf('box.com/embed/s/')>-1)return url.replace('box.com/embed/s/','box.com/s/');
-  return url.split('?')[0];
-}
-var lumsFiles=[
-{name:'LUMS File 1',url:'https://app.box.com/s/8p7c4vyq1rkpmdqu6ch66a67yd06yo0y'},
-{name:'LUMS File 2',url:'https://app.box.com/s/y5zc5m3hn0b9bwsg0t7fmrw5q05x71qp'},
-{name:'LUMS File 3',url:'https://app.box.com/s/32so898clstujnl732gt1ypby83hhtok'},
-{name:'LUMS File 4',url:'https://app.box.com/s/fz4tgp3ug5cwsvgq1uzt920anihd1sgs'},
-{name:'LUMS File 5',url:'https://app.box.com/s/zpkdl5s1v74gkglif03hc5bgi254i92w'},
-{name:'LUMS File 6',url:'https://app.box.com/s/3sz09kudl01qrzd73g1vr779krxz5x1q'}
-];
-var type='all', query='';
-var items={
-lums:{title:'LUMS Content',client:'LUMS',type:'GALLERY',typeClass:'gallery',emoji:'🎓',videoUrl:'',gallery:true,intro:'Gallery of 6 LUMS content pieces, embedded from Box. Tap Play on each video, each one plays inside this page, with its file name on top.',madeFor:'LUMS • Content made for LUMS. Tell me the exact LUMS team / event / page name, and I will put it here.',tools:'Content Production • Video • Canva • CapCut',message:'Tell me the message behind this LUMS set in 1 line, and I will put it here. For now: LUMS stories, told clearly, made to be watched and shared.',strategy:'Gallery, not 6 separate cards, because this is one LUMS set. One tap opens all 6, each video loads only when you tap Play, so the page stays fast. Each file keeps its own Box link and its own file name.',brief:'Goal: Show the full LUMS set in one place. Audience: LUMS students / audience. Deliverable: 6 Box videos, embedded, with actual file names. Result: Tell me views / feedback for this set, and I will add it here.',link:'All 6 Box links are embedded above. If a video asks for login, set that Box link to Anyone with the link, Can View, in Box, then it plays for everyone. File names: replace LUMS File 1 to 6 in the lumsFiles list, in the same order you sent the links.'},
-agrilift:{title:'AI Reel: Agrilift',client:'AGRILIFT • AI CONTENT',type:'REEL',typeClass:'reel',emoji:'🌾',videoUrl:'https://app.box.com/s/0454hquumfnsfp98cmivxf03fywkxip3',intro:'AI Reel made for Agrilift. AI visuals, real message, made for social. This video plays inside this page, from Box.',madeFor:'Agrilift • Pakistan • Social Media Management + AI Content Production client. See Agrilift folder on the Clients page.',tools:'AI Video Tools • CapCut • Canva',message:'Agriculture, made simple and visual. AI shows the idea clearly, so a viewer understands it in seconds, without reading a long post.',strategy:'Reel, not static, because AI needs motion to stop the scroll. Hook in the first 3 seconds, AI visual in the middle, clear Agrilift message at the end. Hosted on Box, embedded here, so the file stays light and the site stays fast.',brief:'Goal: Reach + saves + show AI content capability for Agrilift. Audience: Agriculture / farming audience in Pakistan, social media users. Deliverable: 1 AI reel, vertical, hosted on Box, embedded on this page. Result: Tell me the views / client result for this reel, and I will add it here. Tell me the real AI tool name, and I will put that exact tool in Tools Used.',link:'Box link: app.box.com/s/0454hquumfnsfp98cmivxf03fywkxip3 • If the player asks for login, set the Box link to Anyone with the link, Can View, then it plays for everyone.'}
-};
-function playLums(i,btn){
-  var f=lumsFiles[i];var embed=toEmbed(f.url);
-  var holder=btn.parentElement;
-  holder.innerHTML='<iframe src="'+embed+'" allow="autoplay; fullscreen" allowfullscreen title="'+f.name.replace(/"/g,'')+'"></iframe>';
-}
-function renderGallery(){
-  var html='<div class="gallery-grid">';
-  lumsFiles.forEach(function(f,i){
-    html+='<div class="gallery-item"><div class="gallery-name"><span>LUMS • VIDEO '+(i+1)+' OF 6</span><b>'+f.name+'</b></div><div class="gallery-player"><button class="play-video-btn" onclick="playLums('+i+',this)">▶ Play Video</button></div><div class="gallery-links"><a href="'+f.url+'" target="_blank" rel="noopener">Watch in Box →</a></div></div>';
+document.addEventListener('DOMContentLoaded',function(){
+  var observerOptions={root:null,rootMargin:'-20% 0px -60% 0px',threshold:0};
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var id=entry.target.getAttribute('id');
+        var activeLink=document.querySelector('.sidebar a[href="#'+id+'"]');
+        if(activeLink){
+          document.querySelectorAll('.sidebar a').forEach(function(link){link.classList.remove('active')});
+          activeLink.classList.add('active');
+        }
+      }
+    });
+  },observerOptions);
+  ['top','hooks','lums','agrilift','proof','contact'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el){observer.observe(el)}
   });
-  html+='</div>';
-  return html;
-}
-function openDetail(id){
-  var c=items[id];if(!c)return;
-  document.querySelectorAll('.item').forEach(function(el){el.classList.remove('open')});
-  var card=document.querySelector('.item[data-id="'+id+'"]');if(card)card.classList.add('open');
-  var embed=toEmbed(c.videoUrl);
-  var preview=document.getElementById('dPreview');
-  var galleryBox=document.getElementById('dGallery');
-  if(c.gallery){
-    preview.innerHTML='<div><div style="font-size:60px">🎓</div><p style="font-size:15px;color:#cbd5e1;margin-top:10px">LUMS Content • Gallery of 6 • Tap Play on each video below</p><p class="video-note">Each video loads only when you tap Play, so the page stays fast</p></div>';
-    galleryBox.innerHTML=renderGallery();
-  } else {
-    galleryBox.innerHTML='';
-    preview.innerHTML='<div style="width:100%"><div class="video-wrap"><iframe src="'+embed+'" allow="autoplay; fullscreen" allowfullscreen title="'+c.title+'"></iframe></div><p class="video-note">Tap play in the video above • Plays on this page • Box</p></div>';
-  }
-  document.getElementById('dSample').textContent=c.gallery?'LUMS • GALLERY OF 6 • BOX EMBEDDED':'AGRILIFT • AI REEL • BOX VIDEO';
-  document.getElementById('dClient').textContent=c.client;
-  document.getElementById('dTitle').textContent=c.title;
-  document.getElementById('dIntro').textContent=c.intro;
-  document.getElementById('dMadeFor').textContent=c.madeFor;
-  document.getElementById('dTools').innerHTML=c.tools.split(' • ').map(function(t){return '<span class="tool">'+t+'</span>'}).join('');
-  document.getElementById('dMessage').textContent=c.message;
-  document.getElementById('dStrategy').textContent=c.strategy;
-  document.getElementById('dBrief').textContent=c.brief;
-  document.getElementById('dLink').textContent=c.link;
-  var w=watchUrl(c.videoUrl);
-  document.getElementById('dWatch').innerHTML=w?'<a class="watch-btn" href="'+w+'" target="_blank" rel="noopener">▶ Watch in Box →</a>':'';
-  var tp=document.getElementById('dType');tp.textContent=c.type;tp.className='detail-type '+c.typeClass;
-  var box=document.getElementById('detailBox');box.classList.add('show');
-  box.scrollIntoView({behavior:'smooth',block:'start'});
-}
-function closeDetail(){document.getElementById('detailBox').classList.remove('show');document.getElementById('dPreview').innerHTML='';document.getElementById('dGallery').innerHTML='';document.querySelectorAll('.item').forEach(function(el){el.classList.remove('open')})}
-document.querySelectorAll('.item').forEach(function(card){card.addEventListener('click',function(){openDetail(card.dataset.id)})});
-function applyFilter(){
-  var shown=0;document.querySelectorAll('.item').forEach(function(el){
-    var okType=(type==='all'||el.dataset.type===type);
-    var okSearch=!query||(el.dataset.search+' '+el.textContent.toLowerCase()).indexOf(query)>-1;
-    var ok=okType&&okSearch;el.style.display=ok?'block':'none';if(ok)shown++;
-  });
-  document.getElementById('countLine').textContent='Showing '+shown+' piece'+(shown===1?'':'s')+' • Tap one to open its details under it';
-  document.getElementById('emptyBox').style.display=shown===0?'block':'none';
-  document.getElementById('grid').style.display=shown===0?'none':'flex';
-}
-document.querySelectorAll('#typeFilters .filter-btn').forEach(function(b){b.addEventListener('click',function(){type=b.dataset.type;document.querySelectorAll('#typeFilters .filter-btn').forEach(function(x){x.classList.remove('active')});b.classList.add('active');closeDetail();applyFilter()})});
-document.getElementById('searchInput').addEventListener('input',function(e){query=e.target.value.toLowerCase().trim();applyFilter()});
-function resetFilter(){type='all';query='';document.getElementById('searchInput').value='';document.querySelectorAll('#typeFilters .filter-btn').forEach(function(x){x.classList.remove('active')});document.querySelector('#typeFilters .filter-btn').classList.add('active');applyFilter()}
-var params=new URLSearchParams(window.location.search);
-var qType=params.get('type');if(qType){var t=document.querySelector('#typeFilters .filter-btn[data-type="'+qType+'"]');if(t){type=qType;document.querySelectorAll('#typeFilters .filter-btn').forEach(function(x){x.classList.remove('active')});t.classList.add('active')}}
-var qId=params.get('id');applyFilter();if(qId&&items[qId]){openDetail(qId)}
+});
 </script>
 </body>
 </html>
