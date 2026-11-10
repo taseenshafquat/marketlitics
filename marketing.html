@@ -36,19 +36,14 @@ a{color:inherit;text-decoration:none}
 .top nav a{margin:0 8px;opacity:.85;display:inline-block;padding:8px 2px}
 .top nav a.clients-link{background:#2dd4bf;color:#06202a;font-weight:800;opacity:1;border-radius:999px;padding:9px 16px;margin:0 6px}
 .top nav a.marketing-link{color:#fef3c7;font-weight:800;opacity:1}
-.top nav a.content-link{color:#fef3c7;font-weight:800;opacity:1}
-.drop{position:relative;display:inline-block;padding-bottom:0}
-.drop-toggle{display:inline-block;padding:12px 2px;cursor:pointer}
-.drop-menu{position:absolute;top:100%;left:0;width:220px;min-width:220px;padding:8px 0;text-align:left;display:none;background:#071826;border:1px solid #164e5e;border-radius:14px;z-index:1300;box-shadow:0 18px 40px rgba(0,0,0,.5)}
-.drop-menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
-.drop:hover .drop-menu,.drop:focus-within .drop-menu,.drop.open .drop-menu{display:block}
-.top nav .drop .drop-menu a{display:block;width:100%;margin:0;padding:11px 16px;color:#94a3b8;font-weight:700;font-size:13px;line-height:1.4;text-align:left;box-sizing:border-box}
-.top nav .drop .drop-menu a span{display:block;font-size:11px;color:#64748b;font-weight:400}
-.drop-menu a:hover{color:#5eead4;background:transparent}
 .hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:140px 20px 60px;position:relative;overflow:hidden;text-align:center}
 h1{font-family:Georgia,serif;font-size:clamp(48px,9vw,110px);font-weight:400;letter-spacing:5px;color:#fef3c7;line-height:1;text-shadow:0 0 40px rgba(45,212,191,.25)}
 .domains{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800;margin:18px 0 4px}
 .sub{color:#94a3b8;margin:12px auto 10px;max-width:680px;line-height:1.7}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+.hero-btns a{padding:13px 26px;border-radius:999px;font-weight:800;font-size:14px;border:2px solid #5eead4;color:#fff;display:inline-block}
+.hero-btns a:hover{background:rgba(45,212,191,.15)}
+.hero-btns a.hero-btn-fill{background:#2dd4bf;color:#06202a;border-color:#2dd4bf}
 section{max-width:960px;margin:0 auto;padding:50px 20px 10px;text-align:left;scroll-margin-top:90px}
 section h2{font-family:Georgia,serif;font-size:clamp(28px,5vw,42px);font-weight:400;color:#fef3c7;line-height:1.2}
 section h2 span{color:#5eead4}
@@ -85,7 +80,7 @@ section h2 span{color:#5eead4}
 .btn-data{background:#2dd4bf;color:#06202a}
 .btn-mark{background:transparent;color:#fff}
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:center}
-@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px;grid-template-columns:1fr auto}.top-logo{font-size:18px}.logo{font-size:18px}.domains{letter-spacing:2px;font-size:10px}h1{font-size:clamp(42px,10vw,64px);letter-spacing:3px}.card{min-width:200px}.drop-menu{position:fixed;left:auto;right:12px;top:58px}}
+@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px;grid-template-columns:1fr auto}.top-logo{font-size:18px}.logo{font-size:18px}.domains{letter-spacing:2px;font-size:10px}h1{font-size:clamp(42px,10vw,64px);letter-spacing:3px}.card{min-width:200px}.hero-btns a{padding:11px 18px;font-size:13px}}
 </style>
 </head>
 <body>
@@ -107,11 +102,12 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <li><a href="#contact">💬 Contact<span>WhatsApp + brief</span></a></li>
 </ul>
 </nav>
-<header class="top"><div></div><div class="top-logo"><a href="index.html">Marketlitics</a></div><nav class="top-nav"><div class="drop" id="marketingDrop"><a class="marketing-link drop-toggle" href="marketing.html" id="marketingToggle" aria-haspopup="true" aria-expanded="false">Marketing ▾</a><div class="drop-menu"><a href="marketing-content.html">Content<span>Content, hooks, reels, AI</span></a><a href="marketing-social.html">Social Media<span>Calendar, posting, growth</span></a><a href="marketing-paid.html">Paid Media &amp; SEO<span>Meta, Google, search</span></a></div></div><a class="content-link" href="content.html">Content</a><a class="clients-link" href="clients.html">Clients</a></nav></header>
+<header class="top"><div></div><div class="top-logo"><a href="index.html">Marketlitics</a></div><nav class="top-nav"><a class="marketing-link" href="marketing.html">Marketing</a><a class="clients-link" href="clients.html">Clients</a></nav></header>
 <div class="hero" id="top">
 <p class="domains">MARKETING • MARKETLITICS</p>
 <h1>Marketing<br>That Shows<br>Proof</h1>
 <p class="sub">Not promises, not vanity numbers. The content that worked, the budget that was spent, the campaign that ran, and the case with the real result. Karachi, Pakistan. Aqtiv, Berlitz, Agrilift, LUMS, and 7 more real clients.</p>
+<div class="hero-btns"><a href="marketing-paid.html">Paid Marketing</a><a href="marketing-content.html">Content</a><a href="marketing-social.html">Social Media</a></div>
 </div>
 <section id="best-content">
 <p class="sec-label">BEST CONTENT</p>
@@ -198,17 +194,6 @@ resize();addEventListener('resize',resize);
 addEventListener('mousemove',function(e){var g=document.getElementById('glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
 function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;for(var j=i+1;j<pts.length;j++){var q=pts[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<120){ctx.strokeStyle='rgba(45,212,191,'+(0.28-dd/450)+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}ctx.fillStyle='rgba(94,234,212,.85)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}requestAnimationFrame(draw)}
 draw();
-(function(){
-  var drop=document.getElementById('marketingDrop');
-  var toggle=document.getElementById('marketingToggle');
-  if(drop&&toggle){
-    toggle.addEventListener('click',function(e){
-      if(!drop.classList.contains('open')){e.preventDefault();drop.classList.add('open');toggle.setAttribute('aria-expanded','true')}
-    });
-    document.addEventListener('click',function(e){if(!drop.contains(e.target)){drop.classList.remove('open');toggle.setAttribute('aria-expanded','false')}});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'){drop.classList.remove('open');toggle.setAttribute('aria-expanded','false')}});
-  }
-})();
 document.addEventListener('DOMContentLoaded',function(){
   var observerOptions={root:null,rootMargin:'-20% 0px -60% 0px',threshold:0};
   var observer=new IntersectionObserver(function(entries){
