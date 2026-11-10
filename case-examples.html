@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Examples - Marketlitics | Team &amp; Academic Projects</title>
+<meta name="description" content="Case examples by Taseen, Marketlitics. Team and assisted projects, and academic projects, with the role stated honestly.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden;padding-left:250px}
+a{color:inherit;text-decoration:none}
+#bgCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}
+.orb{position:fixed;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none;opacity:.55;animation:drift 14s ease-in-out infinite alternate}
+.orb1{width:340px;height:340px;background:#0e7490;top:-80px;left:-80px}
+.orb2{width:280px;height:280px;background:#2dd4bf;top:35%;right:-100px;animation-delay:-5s}
+.orb3{width:220px;height:220px;background:#fef3c7;bottom:-60px;left:35%;opacity:.22;animation-delay:-9s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(50px,35px) scale(1.15)}}
+#glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.22),transparent 65%);z-index:0;pointer-events:none;transform:translate(-50%,-50%);left:50%;top:40%}
+.sidebar{width:250px;height:100vh;position:fixed;top:0;left:0;z-index:1200;background:transparent;border:0;padding:24px 14px;text-align:left;overflow-y:auto}
+.sidebar h2{font-family:Georgia,serif;font-size:24px;color:#5eead4;font-weight:400;padding-left:8px}
+.sidebar .side-sub{color:#94a3b8;font-size:13px;line-height:1.6;padding-left:8px;margin-top:8px}
+.sidebar h3{color:#5eead4;font-size:12px;letter-spacing:3px;margin:20px 0 12px 8px;font-weight:800}
+.sidebar ul{list-style:none}
+.sidebar li{margin-bottom:4px}
+.sidebar a{display:block;padding:11px 10px;color:#94a3b8;text-decoration:none;background:transparent;border:0;border-radius:0;transition:color .2s ease;font-weight:700;font-size:14px;line-height:1.4}
+.sidebar a span{display:block;font-size:11px;color:#64748b;font-weight:400;margin-top:2px}
+.sidebar a:hover{background:transparent;color:#5eead4}
+.sidebar a.active{background:transparent;border:0;border-radius:0;color:#5eead4;font-weight:800}
+.sidebar a.active::before{content:"● ";color:#2dd4bf;font-size:10px}
+.sidebar a.active span{color:#94a3b8}
+.top,.hero,section,footer{position:relative;z-index:2}
+.top{position:fixed;top:0;left:250px;right:0;min-height:58px;padding:10px 20px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;background:transparent;backdrop-filter:none;z-index:999}
+.top-logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px;white-space:nowrap;line-height:1;text-align:center;justify-self:center}
+.top-nav{justify-self:end;font-size:14px;display:flex;align-items:center;gap:4px;overflow:visible;white-space:nowrap;line-height:1}
+.logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px;white-space:nowrap;line-height:1}
+.top nav a{margin:0 8px;opacity:.85;display:inline-block;padding:8px 2px}
+.top nav a.clients-link{background:#2dd4bf;color:#06202a;font-weight:800;opacity:1;border-radius:999px;padding:9px 16px;margin:0 6px}
+.top nav a.marketing-link{color:#fef3c7;font-weight:800;opacity:1}
+.hero{min-height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:130px 20px 50px;position:relative;overflow:hidden;text-align:center}
+h1{font-family:Georgia,serif;font-size:clamp(42px,8vw,90px);font-weight:400;letter-spacing:4px;color:#fef3c7;line-height:1;text-shadow:0 0 40px rgba(45,212,191,.25)}
+.domains{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800;margin:18px 0 4px}
+.sub{color:#94a3b8;margin:12px auto 10px;max-width:680px;line-height:1.7}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+.hero-btns a{padding:13px 26px;border-radius:999px;font-weight:800;font-size:14px;border:2px solid #5eead4;color:#fff;display:inline-block}
+.hero-btns a:hover{background:rgba(45,212,191,.15)}
+.hero-btns a.hero-btn-fill{background:#2dd4bf;color:#06202a;border-color:#2dd4bf}
+section{max-width:960px;margin:0 auto;padding:50px 20px 10px;text-align:left;scroll-margin-top:90px}
+section h2{font-family:Georgia,serif;font-size:clamp(28px,5vw,42px);font-weight:400;color:#fef3c7;line-height:1.2}
+section h2 span{color:#5eead4}
+.sec-label{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800}
+.sec-sub{color:#94a3b8;line-height:1.7;margin:12px 0 22px;max-width:680px}
+.cards{display:flex;gap:16px;flex-wrap:wrap}
+.card{flex:1;min-width:240px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:22px;text-align:left;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:#2dd4bf}
+.card h3{font-family:Georgia,serif;font-size:21px;font-weight:400;line-height:1.4;margin:8px 0 6px;color:#fff}
+.card p{color:#94a3b8;font-size:13px;line-height:1.6}
+.client-tag{color:#5eead4;font-size:12px;font-weight:700;letter-spacing:1px}
+.role-line{color:#fef3c7;font-size:13px;line-height:1.6;margin-top:10px}
+.open-link{color:#5eead4;font-weight:700;font-size:13px;display:block;margin-top:12px}
+.btn{padding:16px 36px;border-radius:999px;font-weight:700;font-size:16px;border:2px solid #5eead4;display:inline-block;margin:6px}
+.btn-data{background:#2dd4bf;color:#06202a}
+.btn-mark{background:transparent;color:#fff}
+footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:center}
+@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px;grid-template-columns:1fr auto}.top-logo{font-size:18px}.logo{font-size:18px}.domains{letter-spacing:2px;font-size:10px}h1{font-size:clamp(40px,10vw,60px);letter-spacing:3px}.card{min-width:200px}.hero-btns a{padding:11px 18px;font-size:13px}}
+</style>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+<div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+<div id="glow"></div>
+<nav class="sidebar">
+<h2>Marketlitics</h2>
+<p class="side-sub">Karachi, Pakistan<br>Marketing that shows proof, not promises.</p>
+<h3>MENU</h3>
+<ul>
+<li><a href="#top" class="active">📁 Case Examples<span>Team, assisted &amp; academic work</span></a></li>
+<li><a href="#how-to-read">📖 How To Read This Page<span>My role, stated honestly</span></a></li>
+<li><a href="#team">👥 Team / Assisted Projects<span>Not directly responsible</span></a></li>
+<li><a href="#academic">🎓 Academic Projects<span>Course work, not paid client work</span></a></li>
+<li><a href="#add-case">➕ Add A New Case<span>Copy this card, fill the EDIT lines</span></a></li>
+<li><a href="#contact">💬 Contact<span>WhatsApp + brief</span></a></li>
+</ul>
+</nav>
+<header class="top"><div></div><div class="top-logo"><a href="index.html">Marketlitics</a></div><nav class="top-nav"><a class="marketing-link" href="marketing.html">Marketing</a><a class="clients-link" href="clients.html">Clients</a></nav></header>
+<div class="hero" id="top">
+<p class="domains">CASE EXAMPLES • NOT MY SOLO CLIENT WORK</p>
+<h1>Case Examples,<br>Stated<br>Honestly</h1>
+<p class="sub">This page is only for projects I was not directly responsible for, and for academic projects. Direct client work, where I ran the campaign, stays on the Marketing and Clients pages. Here, every card says my real role, what I did, and what I did not do.</p>
+<div class="hero-btns"><a href="marketing-paid.html">Paid Marketing</a><a href="marketing-content.html">Content</a><a href="marketing-social.html">Social Media</a><a class="hero-btn-fill" href="case-examples.html">Case Examples</a></div>
+</div>
+
+<section id="how-to-read">
+<p class="sec-label">HOW TO READ THIS PAGE</p>
+<h2>Role First, <span>Result Second</span></h2>
+<p class="sec-sub">If a project was a team project, the result belongs to the team, not to me alone. If it was academic, it was practice, not a paid result. I do not claim either as solo client work.</p>
+<div class="cards">
+<div class="card"><span class="client-tag">TEAM / ASSISTED</span><h3>Not Directly Responsible</h3><p>I helped, I did a part, someone else led it, or the client was not mine. The card says my part, and the part that was not mine.</p></div>
+<div class="card"><span class="client-tag">ACADEMIC</span><h3>Academic Project</h3><p>Course, university, or practice brief. No paid client, no real ad spend, unless the card says so. What I learned matters more than a number here.</p></div>
+<div class="card"><span class="client-tag">DIRECT WORK</span><h3>Not On This Page</h3><p>Work I ran directly, like the Aqtiv Social Media Campaign, 21 to 360 followers, stays on Marketing and Clients. Do not add direct work here, it weakens this page.</p></div>
+</div>
+</section>
+
+<section id="team">
+<p class="sec-label">TEAM / ASSISTED PROJECTS • NOT DIRECTLY RESPONSIBLE</p>
+<h2>UK AI Reception, <span>Wear Your Slant</span></h2>
+<p class="sec-sub">Moved here from the Marketing page, from your screenshot. Fill only the EDIT lines, and move a card to Academic below if it was academic, not team work. I have not invented a role or a result for either one.</p>
+<div class="cards">
+<div class="card"><span class="client-tag">UK • AI • TEAM / ASSISTED</span><h3>UK AI Reception</h3><p>EDIT: What is it, in 1 line, e.g. AI receptionist / AI answering for a UK business.</p><p class="role-line">My role: EDIT: What I actually did, e.g. content / social / ads, in 1 line. EDIT: Who led it / who was directly responsible. EDIT: What I did NOT do.</p><p>EDIT: Result, calls booked / leads / reply rate, only if you know the real number, and say if it was a team result.</p><a class="open-link" href="clients.html">See Clients Page →</a></div>
+<div class="card"><span class="client-tag">CONTENT • BRAND • TEAM / ASSISTED</span><h3>Wear Your Slant</h3><p>EDIT: What is it, in 1 line, e.g. apparel / brand, what slant means for this brand.</p><p class="role-line">My role: EDIT: What I actually did, e.g. content / social / ads, in 1 line. EDIT: Who led it / who was directly responsible. EDIT: What I did NOT do.</p><p>EDIT: Result, followers / sales / content that worked, only if you know the real number, and say if it was a team result. EDIT: Link to the post / reel / folder.</p><a class="open-link" href="content.html">See Content Page →</a></div>
+</div>
+</section>
+
+<section id="academic">
+<p class="sec-label">ACADEMIC PROJECTS</p>
+<h2>Academic Work, <span>Practice, Not Paid Results</span></h2>
+<p class="sec-sub">Course work only. Say the course, the brief, and what you learned. Do not put a paid client number here unless it was real spend on a real client.</p>
+<div class="cards">
+<div class="card"><span class="client-tag">🎓 ACADEMIC • EDIT: COURSE</span><h3>EDIT: Academic project name 1</h3><p>EDIT: Course / university, and the brief, in 1 line.</p><p class="role-line">My role: EDIT: What I did alone, and what was group work. EDIT: What I learned, in 1 line.</p><p>EDIT: Output, e.g. plan / campaign / content, and link, if there is one.</p></div>
+<div class="card"><span class="client-tag">🎓 ACADEMIC • EDIT: COURSE</span><h3>EDIT: Academic project name 2</h3><p>EDIT: Course / university, and the brief, in 1 line.</p><p class="role-line">My role: EDIT: What I did alone, and what was group work. EDIT: What I learned, in 1 line.</p><p>EDIT: Output, e.g. plan / campaign / content, and link, if there is one.</p></div>
+</div>
+</section>
+
+<section id="add-case">
+<p class="sec-label">ADD A NEW CASE</p>
+<h2>Copy This Card, <span>Fill The EDIT Lines</span></h2>
+<p class="sec-sub">For every new team, assisted, or academic project, copy the card below into the right section above, Team or Academic, never into Marketing. Keep the role line, it is what makes this page trustworthy.</p>
+<div class="cards">
+<div class="card"><span class="client-tag">EDIT: TEAM / ASSISTED OR ACADEMIC</span><h3>EDIT: Project name</h3><p>EDIT: What is it, in 1 line.</p><p class="role-line">My role: EDIT: What I actually did. EDIT: Who led it, or course / group, if academic. EDIT: What I did NOT do.</p><p>EDIT: Result or learning, only the real one. EDIT: Link to the post / reel / folder / file, if there is one.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<p class="sec-label">CONTACT</p>
+<h2>Start With <span>A Brief</span></h2>
+<p class="sec-sub">Send 3 lines: your business, your offer, your goal. I reply with the plan: content, budget, and timeline. Direct work I run myself is on Marketing and Clients.</p>
+<p><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a> <a class="btn btn-mark" href="marketing.html">📈 Back To Marketing →</a></p>
+<p style="color:#94a3b8;font-size:13px;line-height:1.7;margin-top:14px">Karachi, Pakistan • Replace the WhatsApp number, search for 92XXXXXXXXXX, with your real number, in all files, so every button goes to the same number.</p>
+</section>
+
+<footer><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p><a href="marketing.html" style="color:#5eead4;font-weight:700">Marketing →</a> &nbsp;•&nbsp; <a href="content.html" style="color:#5eead4;font-weight:700">Content →</a> &nbsp;•&nbsp; <a href="clients.html" style="color:#5eead4;font-weight:700">Clients →</a></p></footer>
+<script>
+var canvas=document.getElementById('bgCanvas'),ctx=canvas.getContext('2d'),pts=[];
+function resize(){canvas.width=innerWidth;canvas.height=innerHeight;pts=[];var n=innerWidth<640?32:60;for(var i=0;i<n;i++){pts.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*2+1.2})}}
+resize();addEventListener('resize',resize);
+addEventListener('mousemove',function(e){var g=document.getElementById('glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;for(var j=i+1;j<pts.length;j++){var q=pts[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<120){ctx.strokeStyle='rgba(45,212,191,'+(0.28-dd/450)+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}ctx.fillStyle='rgba(94,234,212,.85)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}requestAnimationFrame(draw)}
+draw();
+document.addEventListener('DOMContentLoaded',function(){
+  var observerOptions={root:null,rootMargin:'-20% 0px -60% 0px',threshold:0};
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var id=entry.target.getAttribute('id');
+        var activeLink=document.querySelector('.sidebar a[href="#'+id+'"]');
+        if(activeLink){
+          document.querySelectorAll('.sidebar a').forEach(function(link){link.classList.remove('active')});
+          activeLink.classList.add('active');
+        }
+      }
+    });
+  },observerOptions);
+  ['top','how-to-read','team','academic','add-case','contact'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el){observer.observe(el)}
+  });
+});
+</script>
+</body>
+</html>
