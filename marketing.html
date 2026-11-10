@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marketing | Taseen - Marketlitics</title>
-<meta name="description" content="Marketing by Taseen. Best Content, Ad Budget, Featured Campaign, Case Example. LUMS and Agrilift.">
+<title>Marketing - Taseen Marketlitics | Best Content, Ad Budget, Campaigns</title>
+<meta name="description" content="Marketing by Taseen, Marketlitics. Best content, ad budget, featured campaign, Aqtiv case example. Karachi, Pakistan.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden}
+body{background:#071826;color:#fff;font-family:Arial,sans-serif;text-align:center;overflow-x:hidden;padding-left:250px}
 a{color:inherit;text-decoration:none}
 #bgCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}
 .orb{position:fixed;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none;opacity:.55;animation:drift 14s ease-in-out infinite alternate}
@@ -16,171 +17,151 @@ a{color:inherit;text-decoration:none}
 .orb3{width:220px;height:220px;background:#fef3c7;bottom:-60px;left:35%;opacity:.22;animation-delay:-9s}
 @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(50px,35px) scale(1.15)}}
 #glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.22),transparent 65%);z-index:0;pointer-events:none;transform:translate(-50%,-50%);left:50%;top:40%}
-.banner,.top,.hero,section,footer{position:relative;z-index:2}
-.banner{position:fixed;top:0;left:0;right:0;z-index:1000;background:#2dd4bf;color:#06202a;font-weight:700;font-size:14px;line-height:38px;height:38px;padding:0 16px;text-align:center;white-space:nowrap;overflow:hidden}
-.banner a{font-weight:800;text-decoration:underline}
-.top{position:fixed;top:38px;left:0;right:0;min-height:58px;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(7,24,38,.88);backdrop-filter:blur(10px);z-index:999}
+.sidebar{width:250px;height:100vh;position:fixed;top:0;left:0;z-index:1200;background:transparent;border:0;padding:24px 14px;text-align:left;overflow-y:auto}
+.sidebar h2{font-family:Georgia,serif;font-size:24px;color:#5eead4;font-weight:400;padding-left:8px}
+.sidebar .side-sub{color:#94a3b8;font-size:13px;line-height:1.6;padding-left:8px;margin-top:8px}
+.sidebar h3{color:#5eead4;font-size:12px;letter-spacing:3px;margin:20px 0 12px 8px;font-weight:800}
+.sidebar ul{list-style:none}
+.sidebar li{margin-bottom:4px}
+.sidebar a{display:block;padding:11px 10px;color:#94a3b8;text-decoration:none;background:transparent;border:0;border-radius:0;transition:color .2s ease;font-weight:700;font-size:14px;line-height:1.4}
+.sidebar a span{display:block;font-size:11px;color:#64748b;font-weight:400;margin-top:2px}
+.sidebar a:hover{background:transparent;color:#5eead4}
+.sidebar a.active{background:transparent;border:0;border-radius:0;color:#5eead4;font-weight:800}
+.sidebar a.active::before{content:"● ";color:#2dd4bf;font-size:10px}
+.sidebar a.active span{color:#94a3b8}
+.top,.hero,section,footer{position:relative;z-index:2}
+.top{position:fixed;top:0;left:250px;right:0;min-height:58px;padding:10px 20px;display:flex;justify-content:flex-end;align-items:center;gap:12px;background:transparent;backdrop-filter:none;z-index:999}
 .logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px;white-space:nowrap;line-height:1}
 .top nav{font-size:14px;display:flex;align-items:center;gap:4px;overflow-x:auto;white-space:nowrap;line-height:1}
 .top nav a{margin:0 8px;opacity:.85;display:inline-block;padding:8px 2px}
 .top nav a.clients-link{background:#2dd4bf;color:#06202a;font-weight:800;opacity:1;border-radius:999px;padding:9px 16px;margin:0 6px}
 .top nav a.marketing-link{color:#fef3c7;font-weight:800;opacity:1}
 .top nav a.content-link{color:#fef3c7;font-weight:800;opacity:1}
-.menu-btn{position:fixed;top:106px;left:16px;z-index:1100;background:#2dd4bf;color:#06202a;border:0;border-radius:999px;padding:12px 18px;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 8px 25px rgba(45,212,191,.35)}
-.menu-btn:hover{transform:translateY(-1px)}
-.side-menu{position:fixed;top:0;left:0;bottom:0;width:290px;max-width:85vw;background:#0b2a35;border-right:1px solid #164e5e;z-index:1200;transform:translateX(-105%);transition:transform .3s ease;text-align:left;padding:22px;overflow-y:auto}
-.side-menu.open{transform:translateX(0)}
-.side-menu h3{color:#5eead4;font-size:12px;letter-spacing:3px;margin:14px 0 12px}
-.side-menu .menu-logo{font-family:Georgia,serif;font-size:24px;color:#5eead4}
-.side-menu a.menu-link{display:block;padding:14px 14px;border-radius:12px;color:#fff;font-weight:700;font-size:15px;border:1px solid transparent;margin-bottom:6px}
-.side-menu a.menu-link:hover,.side-menu a.menu-link.active{background:#071826;border-color:#164e5e;color:#5eead4}
-.side-menu a.menu-link span{display:block;font-size:12px;color:#94a3b8;font-weight:400;margin-top:3px}
-.menu-close{float:right;background:transparent;border:1px solid #5eead4;color:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:700}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1150;opacity:0;pointer-events:none;transition:.3s}
-.overlay.show{opacity:1;pointer-events:auto}
-.hero{padding:180px 20px 20px}
-h1{font-family:Georgia,serif;font-size:clamp(42px,9vw,72px);font-weight:400;color:#fef3c7;text-shadow:0 0 40px rgba(45,212,191,.25)}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:140px 20px 60px;position:relative;overflow:hidden;text-align:center}
+h1{font-family:Georgia,serif;font-size:clamp(48px,9vw,110px);font-weight:400;letter-spacing:5px;color:#fef3c7;line-height:1;text-shadow:0 0 40px rgba(45,212,191,.25)}
+.domains{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800;margin:18px 0 4px}
 .sub{color:#94a3b8;margin:12px auto 10px;max-width:680px;line-height:1.7}
-section{max-width:960px;margin:0 auto;padding:50px 20px 10px;text-align:left;scroll-margin-top:130px}
-section h2{font-family:Georgia,serif;font-size:clamp(30px,6vw,44px);font-weight:400;color:#fef3c7;line-height:1.2}
+section{max-width:960px;margin:0 auto;padding:50px 20px 10px;text-align:left;scroll-margin-top:90px}
+section h2{font-family:Georgia,serif;font-size:clamp(28px,5vw,42px);font-weight:400;color:#fef3c7;line-height:1.2}
 section h2 span{color:#5eead4}
 .sec-label{color:#5eead4;font-size:12px;letter-spacing:3px;font-weight:800}
 .sec-sub{color:#94a3b8;line-height:1.7;margin:12px 0 22px;max-width:680px}
 .cards{display:flex;gap:16px;flex-wrap:wrap}
-.card{flex:1;min-width:260px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;overflow:hidden;text-align:left;transition:.25s}
+.card{flex:1;min-width:240px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:22px;text-align:left;transition:.25s}
 .card:hover{transform:translateY(-4px);border-color:#2dd4bf}
-.card .thumb{height:160px;background:linear-gradient(135deg,#0e3a42,#164e5e);display:flex;align-items:center;justify-content:center;font-size:48px;position:relative}
-.card .thumb span{position:absolute;bottom:12px;font-size:12px;background:rgba(7,24,38,.85);border:1px solid #5eead4;border-radius:999px;padding:7px 11px;color:#fff}
-.card .body{padding:20px 20px 22px}
-.card h3{font-family:Georgia,serif;font-size:21px;font-weight:400;line-height:1.4;margin:8px 0 6px}
+.card h3{font-family:Georgia,serif;font-size:21px;font-weight:400;line-height:1.4;margin:8px 0 6px;color:#fff}
 .card p{color:#94a3b8;font-size:13px;line-height:1.6}
 .client-tag{color:#5eead4;font-size:12px;font-weight:700;letter-spacing:1px}
 .open-link{color:#5eead4;font-weight:700;font-size:13px;display:block;margin-top:12px}
-.budget-box{background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:24px}
-.budget-row{margin-bottom:18px}
-.budget-row label{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-bottom:8px}
-.budget-row label span{color:#5eead4}
-.bar{height:14px;background:#071826;border-radius:999px;overflow:hidden;border:1px solid #164e5e}
-.bar i{display:block;height:100%;background:#2dd4bf;border-radius:999px}
-.bar i.gold{background:#fef3c7}
-.bar i.teal2{background:#5eead4}
-.budget-total{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid #164e5e;padding-top:18px;margin-top:6px;font-weight:800}
-.budget-total span:last-child{color:#fef3c7}
-.featured{background:#0e3a42;border:1px solid #2dd4bf;border-radius:18px;overflow:hidden}
-.featured-top{padding:26px}
-.featured-top h3{font-family:Georgia,serif;font-size:28px;font-weight:400;color:#fef3c7;line-height:1.3;margin:10px 0}
-.featured-top p{color:#cbd5e1;line-height:1.7}
-.offer{display:inline-block;background:#fef3c7;color:#06202a;font-weight:800;font-size:13px;padding:8px 14px;border-radius:999px;margin-top:14px}
-.featured-grid{display:flex;gap:14px;flex-wrap:wrap;padding:0 26px 26px}
-.featured-grid div{flex:1;min-width:200px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:18px}
-.featured-grid b{color:#5eead4;font-size:12px;letter-spacing:2px;display:block;margin-bottom:8px}
-.featured-grid p{color:#e2e8f0;font-size:14px;line-height:1.6}
-.case-box{background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:26px}
-.case-num{font-family:Georgia,serif;font-size:clamp(40px,8vw,60px);color:#fef3c7;line-height:1}
-.case-num small{font-size:18px;color:#5eead4}
-.case-box p{color:#cbd5e1;line-height:1.7;margin-top:12px}
-.case-stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px}
-.case-stats div{flex:1;min-width:140px;background:#071826;border:1px solid #164e5e;border-radius:14px;padding:16px;text-align:center}
-.case-stats b{font-size:22px;color:#5eead4;display:block}
-.case-stats span{font-size:12px;color:#94a3b8}
+.budget-row{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:14px;margin-bottom:7px}
+.budget-row span:last-child{color:#5eead4}
+.budget-bar{height:12px;background:#071826;border:1px solid #164e5e;border-radius:999px;overflow:hidden;margin-bottom:16px}
+.budget-bar i{display:block;height:100%;background:#2dd4bf;border-radius:999px}
+.budget-bar i.gold{background:#fef3c7}
+.budget-bar i.teal2{background:#5eead4}
+.big-stat{font-family:Georgia,serif;font-size:44px;color:#fef3c7;line-height:1;margin:10px 0 4px}
+.big-stat small{font-size:13px;color:#5eead4;font-family:Arial,sans-serif;font-weight:700;letter-spacing:1px}
 .btn{padding:16px 36px;border-radius:999px;font-weight:700;font-size:16px;border:2px solid #5eead4;display:inline-block;margin:6px}
 .btn-data{background:#2dd4bf;color:#06202a}
 .btn-mark{background:transparent;color:#fff}
-.cta{text-align:center;padding:50px 20px 60px}
-footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8}
-@media(max-width:640px){.menu-btn{top:98px;left:12px;padding:10px 14px}.top{padding:10px 12px}.top nav{font-size:12px}.banner{font-size:12px}}
+footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:center}
+@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px}.top nav{font-size:11px}.logo{font-size:18px}.domains{letter-spacing:2px;font-size:10px}h1{font-size:clamp(42px,10vw,64px);letter-spacing:3px}.card{min-width:200px}}
 </style>
 </head>
 <body>
 <canvas id="bgCanvas"></canvas>
 <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
 <div id="glow"></div>
-<button class="menu-btn" onclick="toggleMenu(true)" aria-label="Open menu">☰ Menu</button>
-<div class="overlay" id="overlay" onclick="toggleMenu(false)"></div>
-<aside class="side-menu" id="sideMenu">
-<button class="menu-close" onclick="toggleMenu(false)">X Close</button>
-<div class="menu-logo">Marketlitics</div>
-<p style="color:#94a3b8;font-size:13px;margin-top:8px;line-height:1.6">Karachi, Pakistan<br>Marketing that shows proof, not promises.</p>
+<nav class="sidebar">
+<h2>Marketlitics</h2>
+<p class="side-sub">Karachi, Pakistan<br>Marketing that shows proof, not promises.</p>
 <h3>MENU</h3>
-<a class="menu-link" href="index.html" onclick="toggleMenu(false)">🏠 Home<span>Back to main page</span></a>
-<a class="menu-link" href="#best-content" onclick="toggleMenu(false)">⭐ Best Content<span>LUMS + Agrilift AI Reel</span></a>
-<a class="menu-link" href="#ad-budget" onclick="toggleMenu(false)">💰 Ad Budget<span>How budget is split</span></a>
-<a class="menu-link" href="#featured" onclick="toggleMenu(false)">🚀 Featured Campaign<span>Aqtiv Launch / Re-launch</span></a>
-<a class="menu-link" href="#case" onclick="toggleMenu(false)">📈 Case Example<span>Aqtiv: 21 to 360 followers</span></a>
-<h3>PAGES</h3>
-<a class="menu-link" href="content.html" onclick="toggleMenu(false)">🎬 Content Page<span>LUMS gallery + Agrilift, play on page</span></a>
-<a class="menu-link" href="clients.html" onclick="toggleMenu(false)">📁 Clients Page<span>11 real clients, folders</span></a>
-<a class="menu-link" href="index.html#contact" onclick="toggleMenu(false)">💬 Contact<span>WhatsApp + brief</span></a>
-<p style="color:#64748b;font-size:12px;line-height:1.6;margin-top:20px">Tip: tap anywhere outside this menu to close it. On phone, it slides in from the left, same button at the top-left.</p>
-</aside>
-<div class="banner">11 Real Clients • Pakistan, UAE, Africa, UK, US • <a href="clients.html">View All Clients →</a></div>
-<header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a class="work-link" href="index.html#work">Work</a><a href="index.html#skills">Skills</a><a class="marketing-link" href="marketing.html">Marketing</a><a class="content-link" href="content.html">Content</a><a class="clients-link" href="clients.html">Clients</a><a href="index.html#contact">Contact</a></nav></header>
-<div class="hero">
-<h1>MARKETING</h1>
-<p class="sub">Best Content, Ad Budget, Featured Campaign, and a real Case Example. All in one place, with the left menu to jump to any part in 1 tap.</p>
-<p><a class="btn btn-mark" href="index.html">← Back to Home</a> <a class="btn btn-data" href="content.html">🎬 Content Page →</a></p>
+<ul>
+<li><a href="index.html">🏠 Home<span>Top of the home page</span></a></li>
+<li><a href="index.html#profiles">🔗 Profiles<span>GitHub, LinkedIn, Behance, OneDrive, Box</span></a></li>
+<li><a href="index.html#skills">🛠 Skills<span>Chips, slider, proficiency bars</span></a></li>
+<li><a href="index.html#work">💼 Work<span>What I do, by service</span></a></li>
+<li><a href="#top" class="active">📈 Marketing Page<span>Best Content, Ad Budget, Featured Campaign, Case Example</span></a></li>
+<li><a href="#best-content">⭐ Best Content<span>What worked, and why</span></a></li>
+<li><a href="#budget">💰 Ad Budget<span>How the budget is split</span></a></li>
+<li><a href="#campaign">🎯 Featured Campaign<span>The offer, the audience, the result</span></a></li>
+<li><a href="#case">📁 Case Example<span>Aqtiv Water, 21 to 360</span></a></li>
+<li><a href="content.html">🎬 Content Page<span>LUMS gallery + Agrilift AI Reel</span></a></li>
+<li><a href="clients.html">📁 Clients Page<span>11 real clients, folders</span></a></li>
+<li><a href="index.html#map">🗺 Map<span>Where clients are served</span></a></li>
+<li><a href="index.html#certs">🏅 Certifications<span>Courses + certificates</span></a></li>
+<li><a href="index.html#volunteering">🤝 Volunteering<span>11 roles, from LinkedIn</span></a></li>
+<li><a href="#contact">💬 Contact<span>WhatsApp + brief</span></a></li>
+</ul>
+</nav>
+<header class="top"><nav><a class="marketing-link" href="marketing.html">Marketing</a><a class="content-link" href="content.html">Content</a><a class="clients-link" href="clients.html">Clients</a></nav></header>
+<div class="hero" id="top">
+<p class="domains">MARKETING • MARKETLITICS</p>
+<h1>Marketing<br>That Shows<br>Proof</h1>
+<p class="sub">Not promises, not vanity numbers. The content that worked, the budget that was spent, the campaign that ran, and the case with the real result. Karachi, Pakistan. Aqtiv, Berlitz, Agrilift, LUMS, and 7 more real clients.</p>
+<p><a class="btn btn-data" href="#best-content">⭐ Best Content →</a> <a class="btn btn-mark" href="#case">📁 Case Example →</a></p>
 </div>
 
 <section id="best-content">
-<p class="sec-label">01 • BEST CONTENT</p>
-<h2>Best <span>Content</span></h2>
-<p class="sec-sub">Real content only. No samples. Tap a card, it opens on the Content page, video plays inside the page, from Box.</p>
+<p class="sec-label">BEST CONTENT</p>
+<h2>What Worked, <span>And Why</span></h2>
+<p class="sec-sub">The posts that got the reply, the visit, and the sale, not just the like. Hook first, offer clear, one call to action, every time.</p>
 <div class="cards">
-<a class="card" href="content.html?id=lums"><div class="thumb">🎓<span>▶ 6 VIDEOS • GALLERY</span></div><div class="body"><span class="client-tag">LUMS</span><h3>LUMS Content</h3><p>Gallery of 6 content pieces • Box embedded • Each with its file name, tap Play to watch.</p><span class="open-link">Open Gallery →</span></div></a>
-<a class="card" href="content.html?id=agrilift"><div class="thumb">🌾<span>▶ AI REEL • PLAYS ON PAGE</span></div><div class="body"><span class="client-tag">AGRILIFT • AI CONTENT</span><h3>AI Reel: Agrilift</h3><p>AI content for Agrilift • Agriculture, made simple and visual • Box link embedded.</p><span class="open-link">Open Details → Play Reel</span></div></a>
+<div class="card"><span class="client-tag">01 • HOOK</span><h3>Hook In 3 Seconds</h3><p>First line, first frame, first 3 seconds. If the hook does not stop the scroll, the rest does not matter. Aqtiv launch: 1st bottle free, said plainly, in the first line.</p></div>
+<div class="card"><span class="client-tag">02 • OFFER</span><h3>Offer Before Design</h3><p>Design follows the offer, not the other way round. What do they get, what do they pay, what do they do next. Planned before Canva, before CapCut.</p></div>
+<div class="card"><span class="client-tag">03 • PROOF</span><h3>Proof In The Post</h3><p>Real photos, real videos, real numbers. LUMS gallery, Agrilift AI Reel, Aqtiv launch posts, all on the Content and Clients pages, not stock.</p></div>
+<div class="card"><span class="client-tag">04 • FOLLOW-UP</span><h3>Reply Fast, Then Sell</h3><p>Comments and DMs answered the same day, with the price, the area, and the next step. Content brings the message, the reply closes it.</p></div>
+</div>
+<p style="margin-top:18px"><a class="open-link" href="content.html">See the content that worked →</a></p>
+</section>
+
+<section id="budget">
+<p class="sec-label">AD BUDGET</p>
+<h2>How The Budget <span>Is Split</span></h2>
+<p class="sec-sub">No fixed split for every business. This is the starting split I use, then I move money to the winner after the first test. Tell me your monthly budget and I put your real numbers in here.</p>
+<div class="card">
+<div class="budget-row"><span>Meta Ads • Testing + Winners</span><span>50%</span></div>
+<div class="budget-bar"><i style="width:50%"></i></div>
+<div class="budget-row"><span>Google Ads • Ready To Buy Search</span><span>30%</span></div>
+<div class="budget-bar"><i class="gold" style="width:30%"></i></div>
+<div class="budget-row"><span>Content • Reels, Design, AI</span><span>20%</span></div>
+<div class="budget-bar"><i class="teal2" style="width:20%"></i></div>
+<p style="color:#94a3b8;font-size:13px;line-height:1.7">Rule: test small, keep the winner, kill the loser fast. No ad runs for a week without a check. Spend follows sales, not likes.</p>
 </div>
 </section>
 
-<section id="ad-budget">
-<p class="sec-label">02 • AD BUDGET</p>
-<h2>Ad <span>Budget</span></h2>
-<p class="sec-sub">How I split a budget, so every rupee has a job. Edit the 3 numbers in the code, in the <b>budgetData</b> list at the bottom of this page, and the bars + total update. These are example splits, tell me your real monthly budget and I put the real numbers in.</p>
-<div class="budget-box" id="budgetBox"></div>
-<p style="color:#94a3b8;font-size:13px;line-height:1.6;margin-top:14px">Rule I use: 50% to the offer that already works, 30% to testing new audiences / creatives, 20% to content that builds trust, so ads do not die when one ad dies.</p>
-</section>
-
-<section id="featured">
-<p class="sec-label">03 • FEATURED CAMPAIGN</p>
-<h2>Featured <span>Campaign</span></h2>
-<p class="sec-sub">The campaign that shows the full plan: content + event + offer, in one place.</p>
-<div class="featured">
-<div class="featured-top">
-<span class="client-tag">AQTIV WATER • LAHORE</span>
-<h3>Aqtiv Launch &amp; Re-launch: Drink Aqtiv, Stay Active</h3>
-<p>New water brand, launching in Lahore. One clear offer, one clear event, one clear action. Content first, event second, trial third, so people do not just see the ad, they taste the product.</p>
-<span class="offer">🎁 GET YOUR 1ST BOTTLE FREE</span>
+<section id="campaign">
+<p class="sec-label">FEATURED CAMPAIGN</p>
+<h2>Aqtiv Water, <span>Launch + Re-Launch</span></h2>
+<p class="sec-sub">The campaign that is also the case example below. Same offer, same audience, same result, shown twice so you can see the plan and the proof in one place.</p>
+<div class="cards">
+<div class="card"><span class="client-tag">OFFER</span><h3>1st Bottle Free</h3><p>Simple, clear, no fine print in the hook. First bottle free, to try Aqtiv, in Karachi. That offer did the work, the design just carried it.</p></div>
+<div class="card"><span class="client-tag">AUDIENCE</span><h3>Karachi, Local First</h3><p>Local areas, local interests, people who buy water every day. No broad Pakistan targeting, no wasted spend outside delivery areas.</p></div>
+<div class="card"><span class="client-tag">CONTENT</span><h3>Launch Posts + Reels</h3><p>Launch content, re-launch content, and follow-up posts, all with the same offer and the same CTA. See the full folder on the Clients page.</p></div>
 </div>
-<div class="featured-grid">
-<div><b>OFFER</b><p>1st bottle free. Something refreshing, coming soon, now here. Easy to remember, easy to share.</p></div>
-<div><b>EVENT</b><p>Launch event at Mega Arena. Re-launch event, 24 August 2025, QuickOffice, Upper Mall Road, 1:00 PM - 06:00 PM.</p></div>
-<div><b>CONTENT</b><p>Launch static, re-launch carousel, event posts, same message everywhere: Drink Aqtiv, Stay Active.</p></div>
-</div>
-</div>
-<p style="margin-top:16px"><a class="btn btn-data" href="clients.html">📁 See Aqtiv Folder →</a> <a class="btn btn-mark" href="content.html">🎬 See Content →</a></p>
 </section>
 
 <section id="case">
-<p class="sec-label">04 • CASE EXAMPLE</p>
-<h2>Case <span>Example</span></h2>
-<p class="sec-sub">One client, start to result, no hiding the starting point.</p>
-<div class="case-box">
-<p class="client-tag">AQTIV WATER • SOCIAL MEDIA MANAGEMENT</p>
-<div class="case-num" style="margin-top:12px">21 <small>→</small> 360</div>
-<p><b style="color:#fff">Followers, from launch to re-launch.</b> From 21 followers to 360 followers, with launch content, re-launch offer carousel, event posts, and consistent posting. Same brand, same message, every post: Drink Aqtiv, Stay Active.</p>
-<div class="case-stats">
-<div><b>21 → 360</b><span>Followers</span></div>
-<div><b>1st Bottle Free</b><span>Offer that drove trial</span></div>
-<div><b>2 Events</b><span>Launch + Re-launch</span></div>
+<p class="sec-label">CASE EXAMPLE</p>
+<h2>Aqtiv Water, <span>The Result</span></h2>
+<p class="sec-sub">Real client, real numbers, from the Clients page folder. No sample, no mock-up.</p>
+<div class="cards">
+<div class="card"><div class="big-stat">21 → 360 <small>FOLLOWERS</small></div><p>From launch to re-launch, followers grew from 21 to 360. Growth from the offer and the content, not from bought followers.</p></div>
+<div class="card"><div class="big-stat">1st Bottle <small>FREE</small></div><p>The offer that started it. Launch + re-launch, same offer, same message, repeated until Karachi knew it.</p></div>
+<div class="card"><div class="big-stat">11 <small>REAL CLIENTS</small></div><p>Aqtiv is 1 of 11. Pakistan, UAE, Caribbean, Djibouti, Cabo Verde, UK, US. Full folders on the Clients page.</p></div>
 </div>
-<p style="margin-top:20px;color:#94a3b8;font-size:13px;line-height:1.7">Want the full breakdown for your business? Tell me your starting followers, your offer, and your budget, I plan the same structure: hook, offer, event / CTA, content calendar. Agrilift AI Reel result: tell me the views / enquiries for that reel, and I add a second case box here, same format.</p>
-</div>
+<p style="margin-top:18px"><a class="btn btn-data" href="clients.html">📁 Open Aqtiv Folder →</a> <a class="btn btn-mark" href="content.html">🎬 See Content →</a></p>
 </section>
 
-<div class="cta">
-<p style="color:#cbd5e1;line-height:1.7;max-width:640px;margin:0 auto 18px">Want marketing like this? Send your brief, I plan the content, the budget split, and the campaign, in that order.</p>
-<p><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a> <a class="btn btn-mark" href="content.html">🎬 See Content →</a></p>
-</div>
-<footer><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p><a href="index.html" style="color:#5eead4;font-weight:700">Back to Home →</a></p></footer>
+<section id="contact">
+<p class="sec-label">CONTACT</p>
+<h2>Start With <span>A Brief</span></h2>
+<p class="sec-sub">Send 3 lines: your business, your offer, your goal. I reply with the plan: content, budget, and timeline.</p>
+<p><a class="btn btn-data" href="https://wa.me/92XXXXXXXXXX">WhatsApp Me</a> <a class="btn btn-mark" href="index.html">🏠 Back To Home →</a></p>
+<p style="color:#94a3b8;font-size:13px;line-height:1.7;margin-top:14px">Karachi, Pakistan • Replace the WhatsApp number, search for 92XXXXXXXXXX, with your real number, in all 3 files, index, marketing, and content, so every button goes to the same number.</p>
+</section>
+
+<footer><div class="logo">Marketlitics</div><p style="margin:12px 0">Karachi, Pakistan • © 2026</p><p><a href="index.html" style="color:#5eead4;font-weight:700">Home →</a> &nbsp;•&nbsp; <a href="content.html" style="color:#5eead4;font-weight:700">Content →</a> &nbsp;•&nbsp; <a href="clients.html" style="color:#5eead4;font-weight:700">Clients →</a></p></footer>
 <script>
 var canvas=document.getElementById('bgCanvas'),ctx=canvas.getContext('2d'),pts=[];
 function resize(){canvas.width=innerWidth;canvas.height=innerHeight;pts=[];var n=innerWidth<640?32:60;for(var i=0;i<n;i++){pts.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*2+1.2})}}
@@ -188,27 +169,25 @@ resize();addEventListener('resize',resize);
 addEventListener('mousemove',function(e){var g=document.getElementById('glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
 function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;for(var j=i+1;j<pts.length;j++){var q=pts[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<120){ctx.strokeStyle='rgba(45,212,191,'+(0.28-dd/450)+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}ctx.fillStyle='rgba(94,234,212,.85)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}requestAnimationFrame(draw)}
 draw();
-function toggleMenu(open){
-  document.getElementById('sideMenu').classList.toggle('open',open);
-  document.getElementById('overlay').classList.toggle('show',open);
-  document.body.style.overflow=open?'hidden':'';
-}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')toggleMenu(false)});
-/* AD BUDGET: edit amount and pct here only, bars + total update automatically. Amounts are example splits, replace with your real budget. */
-var budgetData=[
-{label:'Meta Ads • Offer + Retargeting',amount:50000,pct:50,cls:''},
-{label:'Google Ads • Search + Demand',amount:30000,pct:30,cls:'gold'},
-{label:'Content • Reels + Design',amount:20000,pct:20,cls:'teal2'}
-];
-(function(){
-  var total=budgetData.reduce(function(s,b){return s+b.amount},0);
-  var html='';
-  budgetData.forEach(function(b){
-    html+='<div class="budget-row"><label><span>'+b.label+'</span><span>Rs '+b.amount.toLocaleString()+' • '+b.pct+'%</span></label><div class="bar"><i class="'+b.cls+'" style="width:'+b.pct+'%"></i></div></div>';
+document.addEventListener('DOMContentLoaded',function(){
+  var observerOptions={root:null,rootMargin:'-20% 0px -60% 0px',threshold:0};
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var id=entry.target.getAttribute('id');
+        var activeLink=document.querySelector('.sidebar a[href="#'+id+'"]');
+        if(activeLink){
+          document.querySelectorAll('.sidebar a').forEach(function(link){link.classList.remove('active')});
+          activeLink.classList.add('active');
+        }
+      }
+    });
+  },observerOptions);
+  ['top','best-content','budget','campaign','case','contact'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el){observer.observe(el)}
   });
-  html+='<div class="budget-total"><span>Total Monthly Budget</span><span>Rs '+total.toLocaleString()+'</span></div>';
-  document.getElementById('budgetBox').innerHTML=html;
-})();
+});
 </script>
 </body>
 </html>
