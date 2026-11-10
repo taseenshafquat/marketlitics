@@ -118,9 +118,9 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 </div>
 
 <section id="viewer">
-<p class="sec-label">RESULTS SLIDER • PNG • CREATIVE / RESULTS SEPARATE FOLDERS • CENTRE • CAMPAIGNS ON THE RIGHT • ZOOM ON THE IMAGE</p>
+<p class="sec-label">RESULTS SLIDER • META JPG • CREATIVE / RESULTS SEPARATE FOLDERS • CENTRE • CAMPAIGNS ON THE RIGHT • ZOOM ON THE IMAGE</p>
 <h2>Tap A Campaign, <span>Slide Its Proof</span></h2>
-<p class="sec-sub">Centre: PNG images, slide by slide, creative from its own folder, results from their own folder. Right: tap a campaign, centre goes back to its first slide, zoom resets to 100%. Below the centre: description for the campaign you tapped.</p>
+<p class="sec-sub">Centre: images, slide by slide, creative from its own folder, results from their own folder. Right: tap a campaign, centre goes back to its first slide, zoom resets to 100%. Below the centre: description for the campaign you tapped.</p>
 <div class="viewer-wrap">
 <div class="viewer-main">
 <div class="centre-slider">
@@ -148,7 +148,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <aside class="campaign-list">
 <h3>CAMPAIGNS • TAP ONE</h3>
 <button class="campaign-item active" id="campaign-1" onclick="selectCampaign(0)"><b>01 • YouTube Demand Gen</b><span>Follower / Awareness • 198 subs • PKR 1,965 • 4 slides • Creative folder + Results folder</span></button>
-<button class="campaign-item" id="campaign-2" onclick="selectCampaign(1)"><b>02 • Meta Traffic, Karachi O Clock</b><span>Home-based catering • 139 link clicks • Rs563.14 • 7 slides • Results folder</span></button>
+<button class="campaign-item" id="campaign-2" onclick="selectCampaign(1)"><b>02 • Meta Traffic, Karachi O Clock</b><span>Home-based catering • 139 link clicks • Rs563.14 • 7 slides • JPG • Results folder</span></button>
 <button class="campaign-item" id="campaign-3" onclick="selectCampaign(2)"><b>03 • EDIT: Campaign 3</b><span>EDIT: Client • EDIT: Result • Images not uploaded yet</span></button>
 <button class="campaign-item" id="campaign-4" onclick="selectCampaign(3)"><b>04 • EDIT: Campaign 4</b><span>EDIT: Client • EDIT: Result • Images not uploaded yet</span></button>
 </aside>
@@ -171,12 +171,12 @@ resize();addEventListener('resize',resize);
 addEventListener('mousemove',function(e){var g=document.getElementById('glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
 function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;for(var j=i+1;j<pts.length;j++){var q=pts[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<120){ctx.strokeStyle='rgba(45,212,191,'+(0.28-dd/450)+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}ctx.fillStyle='rgba(94,234,212,.85)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}requestAnimationFrame(draw)}
 draw();
-/* PNG image names here only, with folders. Creative folder first, results folder after. Campaign 2: all in meta/results folder. Keep spelling exactly as your files. */
+/* Meta files are JPG, exact names from the user. YouTube files are PNG, with JPG fallback. Keep spelling exactly as your files. */
 var campaigns=[
 {tag:"01 • YOUTUBE / GOOGLE • DEMAND GEN • AGE 18+",title:"YouTube / Google Video Ad, Follower / Awareness Campaign",result:"Total: PKR 1,965 cost • 15,366 impressions • 228 clicks • 198 subscribers • PKR 10 per subscriber • 16.53% conv. rate.",text:"Demand Gen / Audience Growth ad, goal: audience growth. Locations: Canada, Belgium, Germany, United Kingdom, Italy, Netherlands, United States, plus Mexico, Australia, New Zealand, UAE, Pakistan, Sweden, Norway, Switzerland, Bangladesh and Turkiye across the promos. Image 1: Need Vocalist, Rs325, 286 impressions, 16 subscribers; Wait for This Drop, Rs394, 1,821 impressions, 26 subscribers. Image 2: Letting Go, Hogland Ft Kiddo, Rs694, 10,961 impressions, 601 views, 124 subscribers. Image 3: How to Remix Hogland and Kiddo, Rs442, 2,114 impressions, 70 views, 32 subscribers. Total: 15,366 impressions, 228 clicks, 1.48% CTR, PKR 9 avg. CPC, PKR 1,965 cost, 198 conversions, PKR 10 cost per conversion.",stats:[["198","SUBSCRIBERS"],["15,366","IMPRESSIONS"],["PKR 1,965","TOTAL COST"],["PKR 10","PER SUBSCRIBER"]],images:["assets/paid/youtube/creative/Creatives.png","assets/paid/youtube/results/Youtube_DemandGenCampaig_1.png","assets/paid/youtube/results/Youtube_DemandGenCampaig_2.png","assets/paid/youtube/results/Youtube_DemandGenCampaig_3.png"],labels:["CREATIVE","RESULTS IMAGE 1","RESULTS IMAGE 2","RESULTS IMAGE 3"],buttons:["Creative","Page 1","Page 2","Page 3"],short:"YOUTUBE DEMAND GEN"},
-{tag:"02 • META • TRAFFIC • KARACHI O CLOCK • AGE 18-50 • KARACHI",title:"Meta Traffic Campaign, Karachi O Clock, Home-Based Catering",result:"Total: Rs563.14 spent • 139 link clicks • 4,354 impressions • 3,827 reach • Rs4.05 per link click • 6.20% CTR (all) • Rs129.34 CPM • 1 messaging contact.",text:"Karachi O Clock, home-based meals and catering for family gatherings, corporate events, weddings. Silver, Gold, Platinum packages. Audience: Karachi, 18 to 50, PKR 50,000+ per month, Clifton, DHA, PECHS, Bahria Town, Gulshan, event planners, HR, managers, CEO/MD, foodies. Saved audience, manual placements, Reels, Story, Newsfeed, Video, Threads, Instagram, Facebook, WhatsApp. Headline: One of a Kind Home-Based Catering for your every event. Primary text: Taking customized orders for your corporate event, family gathering, small events and parties. CTA: Order Now / Book Now, WhatsApp / Messenger. Planned budget PKR 2,000-3,000 per week, ran Aug 16, 3 PM to Aug 24, 3 PM. First day: 28 views, 28 reach, Rs11.33 spent. Last day: 4,390 views, 139 link clicks. Typed KPI line on page 5 says CTR 3.19, the Ads Manager screenshot on the same page says CTR (all) 6.20% and CPC Rs4.05, the screenshot number is used in the stats above.",stats:[["139","LINK CLICKS"],["4,354","IMPRESSIONS"],["Rs563.14","SPENT"],["Rs4.05","PER CLICK"]],images:["assets/paid/meta/results/Meta_Ads_1.png","assets/paid/meta/results/Meta_Ads_2.png","assets/paid/meta/results/Meta_Ads_3.png","assets/paid/meta/results/Meta_Ads_4.png","assets/paid/meta/results/Meta_Ads_5.png","assets/paid/meta/results/Meta_Ads_6.png","assets/paid/meta/results/Meta_Ads_7.png"],labels:["TITLE PAGE","CONTENTS","BUSINESS + AUDIENCE","SETUP + AD CONCEPT","KPI SCREENSHOTS","OPTIMIZATION + FIRST / LAST DAY","FINAL TABLE"],buttons:["Page 1","Page 2","Page 3","Page 4","Page 5","Page 6","Page 7"],short:"META TRAFFIC • KARACHI O CLOCK"},
-{tag:"03 • EDIT: META / GOOGLE • EDIT: CLIENT",title:"EDIT: Campaign name 3",result:"EDIT: Spend, leads / sales, and result, only the real number.",text:"EDIT: What was tested, what won, what was killed, and why. Replace this description with the real story from this campaign, in 2 to 3 lines. Upload its creative PNG to its creative folder, and its results PNGs to its results folder, and put their full folder paths in the images: line for this campaign.",stats:[["EDIT","SPEND"],["EDIT","RESULT"],["EDIT","LEADS / SALES"],["EDIT","COST PER RESULT"]],images:["","","",""],labels:["IMAGE 1","IMAGE 2","IMAGE 3","IMAGE 4"],buttons:["Page 1","Page 2","Page 3","Page 4"],short:"CAMPAIGN 3"},
-{tag:"04 • EDIT: META / GOOGLE • EDIT: CLIENT",title:"EDIT: Campaign name 4",result:"EDIT: Spend, leads / sales, and result, only the real number.",text:"EDIT: What was tested, what won, what was killed, and why. Replace this description with the real story from this campaign, in 2 to 3 lines. Upload its creative PNG to its creative folder, and its results PNGs to its results folder, and put their full folder paths in the images: line for this campaign.",stats:[["EDIT","SPEND"],["EDIT","RESULT"],["EDIT","LEADS / SALES"],["EDIT","COST PER RESULT"]],images:["","","",""],labels:["IMAGE 1","IMAGE 2","IMAGE 3","IMAGE 4"],buttons:["Page 1","Page 2","Page 3","Page 4"],short:"CAMPAIGN 4"}
+{tag:"02 • META • TRAFFIC • KARACHI O CLOCK • AGE 18-50 • KARACHI",title:"Meta Traffic Campaign, Karachi O Clock, Home-Based Catering",result:"Total: Rs563.14 spent • 139 link clicks • 4,354 impressions • 3,827 reach • Rs4.05 per link click • 6.20% CTR (all) • Rs129.34 CPM • 1 messaging contact.",text:"Karachi O Clock, home-based meals and catering for family gatherings, corporate events, weddings. Silver, Gold, Platinum packages. Audience: Karachi, 18 to 50, PKR 50,000+ per month, Clifton, DHA, PECHS, Bahria Town, Gulshan, event planners, HR, managers, CEO/MD, foodies. Saved audience, manual placements, Reels, Story, Newsfeed, Video, Threads, Instagram, Facebook, WhatsApp. Headline: One of a Kind Home-Based Catering for your every event. Primary text: Taking customized orders for your corporate event, family gathering, small events and parties. CTA: Order Now / Book Now, WhatsApp / Messenger. Planned budget PKR 2,000-3,000 per week, ran Aug 16, 3 PM to Aug 24, 3 PM. First day: 28 views, 28 reach, Rs11.33 spent. Last day: 4,390 views, 139 link clicks. Typed KPI line on page 5 says CTR 3.19, the Ads Manager screenshot on the same page says CTR (all) 6.20% and CPC Rs4.05, the screenshot number is used in the stats above.",stats:[["139","LINK CLICKS"],["4,354","IMPRESSIONS"],["Rs563.14","SPENT"],["Rs4.05","PER CLICK"]],images:["assets/paid/meta/results/Meta_Ads_1.jpg","assets/paid/meta/results/Meta_Ads_2.jpg","assets/paid/meta/results/Meta_Ads_3.jpg","assets/paid/meta/results/Meta_Ads_4.jpg","assets/paid/meta/results/Meta_Ads_5.jpg","assets/paid/meta/results/Meta_Ads_6.jpg","assets/paid/meta/results/Meta_Ads_7.jpg"],labels:["TITLE PAGE","CONTENTS","BUSINESS + AUDIENCE","SETUP + AD CONCEPT","KPI SCREENSHOTS","OPTIMIZATION + FIRST / LAST DAY","FINAL TABLE"],buttons:["Page 1","Page 2","Page 3","Page 4","Page 5","Page 6","Page 7"],short:"META TRAFFIC • KARACHI O CLOCK"},
+{tag:"03 • EDIT: META / GOOGLE • EDIT: CLIENT",title:"EDIT: Campaign name 3",result:"EDIT: Spend, leads / sales, and result, only the real number.",text:"EDIT: What was tested, what won, what was killed, and why. Replace this description with the real story from this campaign, in 2 to 3 lines. Upload its creative image to its creative folder, and its results images to its results folder, and put their full folder paths in the images: line for this campaign.",stats:[["EDIT","SPEND"],["EDIT","RESULT"],["EDIT","LEADS / SALES"],["EDIT","COST PER RESULT"]],images:["","","",""],labels:["IMAGE 1","IMAGE 2","IMAGE 3","IMAGE 4"],buttons:["Page 1","Page 2","Page 3","Page 4"],short:"CAMPAIGN 3"},
+{tag:"04 • EDIT: META / GOOGLE • EDIT: CLIENT",title:"EDIT: Campaign name 4",result:"EDIT: Spend, leads / sales, and result, only the real number.",text:"EDIT: What was tested, what won, what was killed, and why. Replace this description with the real story from this campaign, in 2 to 3 lines. Upload its creative image to its creative folder, and its results images to its results folder, and put their full folder paths in the images: line for this campaign.",stats:[["EDIT","SPEND"],["EDIT","RESULT"],["EDIT","LEADS / SALES"],["EDIT","COST PER RESULT"]],images:["","","",""],labels:["IMAGE 1","IMAGE 2","IMAGE 3","IMAGE 4"],buttons:["Page 1","Page 2","Page 3","Page 4"],short:"CAMPAIGN 4"}
 ];
 var currentCampaign=0,centreIndex=0;
 var zoomLevel=100;
@@ -191,17 +191,33 @@ function zoomIn(ev){var i=zoomSteps.indexOf(zoomLevel);if(i<zoomSteps.length-1){
 function zoomOut(ev){var i=zoomSteps.indexOf(zoomLevel);if(i>0){setZoom(zoomSteps[i-1],ev)}}
 function resetZoom(ev){setZoom(100,ev)}
 function toggleZoom(ev){if(ev){ev.preventDefault()}setZoom(zoomLevel===100?200:100,null)}
+function fallbackList(src){
+  var base=src.split('/').pop();
+  var folderPng=src.replace('.jpg','.png');
+  var folderJpg=src.replace('.png','.jpg');
+  var list=[src];
+  if(folderPng!==src)list.push(folderPng);
+  if(folderJpg!==src)list.push(folderJpg);
+  if(base!==src)list.push(base);
+  var rootPng=base.replace('.jpg','.png');
+  if(rootPng!==base)list.push(rootPng);
+  var seen={};return list.filter(function(x){if(seen[x])return false;seen[x]=true;return true});
+}
 function buildTrack(c){
   var track=document.getElementById('centreTrack');track.innerHTML="";
   c.images.forEach(function(src,idx){
     var slide=document.createElement('div');slide.className="centre-slide";
     if(src){
       var img=document.createElement('img');img.src=src;img.alt=c.title+" slide "+(idx+1);
+      img.dataset.tryIndex="0";img.dataset.tryList=JSON.stringify(fallbackList(src));
       img.addEventListener('click',toggleZoom);
-      img.addEventListener('error',function(){if(!img.dataset.tried){img.dataset.tried='1';img.src=src.replace('.png','.jpg')}});
+      img.addEventListener('error',function(){
+        var list=JSON.parse(img.dataset.tryList);var next=parseInt(img.dataset.tryIndex,10)+1;img.dataset.tryIndex=String(next);
+        if(next<list.length){img.src=list[next]} else {img.style.display='none';slide.innerHTML='<div class="slide-empty">Image not found: '+src+'<br><br>Check GitHub: is this file in assets/paid/meta/results/ or at the root, and is it .jpg or .png, exact spelling?</div>'}
+      });
       slide.appendChild(img);
     } else {
-      var empty=document.createElement('div');empty.className="slide-empty";empty.textContent="No image uploaded for this campaign yet. Add a PNG to its creative or results folder and put its full folder path in the images: line for this campaign.";
+      var empty=document.createElement('div');empty.className="slide-empty";empty.textContent="No image uploaded for this campaign yet. Add an image to its creative or results folder and put its full folder path in the images: line for this campaign.";
       slide.appendChild(empty);
     }
     track.appendChild(slide);
@@ -217,7 +233,7 @@ function showCentre(){
   var currentImg=c.images[centreIndex]||c.images[0]||"";
   document.getElementById('openImgBtn').href=currentImg;
   document.getElementById('pdfCount').textContent=(centreIndex+1)+" OF "+total+" • "+c.labels[centreIndex]+" • "+c.short+" • FILE: "+currentImg+" • ZOOM: "+zoomLevel+"%";
-  document.getElementById('pdfNote').textContent=currentImg ? "Zoom: tap + on the image, top right, to read the small text. Tap Open This Image In Full Screen for the full size PNG: "+currentImg+"." : "No image uploaded for this campaign yet.";
+  document.getElementById('pdfNote').textContent=currentImg ? "Zoom: tap + on the image, top right, to read the small text. Tap Open This Image In Full Screen for the full size file: "+currentImg+"." : "No image uploaded for this campaign yet.";
   document.getElementById('descTag').textContent=c.tag;
   document.getElementById('descTitle').textContent=c.title;
   document.getElementById('descResult').textContent=c.result;
