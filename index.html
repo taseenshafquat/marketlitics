@@ -30,14 +30,14 @@ a{color:inherit;text-decoration:none}
 .side-menu.open{transform:translateX(0)}
 .side-menu h3{color:#5eead4;font-size:12px;letter-spacing:3px;margin:14px 0 12px}
 .side-menu .menu-logo{font-family:Georgia,serif;font-size:24px;color:#5eead4}
-.side-menu a.menu-link{display:block;padding:14px 14px;border-radius:12px;color:#fff;font-weight:700;font-size:15px;border:1px solid transparent;margin-bottom:6px}
+.side-menu a.menu-link{display:block;padding:14px 14px;border-radius:12px;color:#fff;font-weight:700;font-size:15px;border:1px solid transparent;margin-bottom:6px;transition:background .2s,color .2s}
 .side-menu a.menu-link:hover{background:#071826;border-color:#164e5e;color:#5eead4}
 .side-menu a.menu-link span{display:block;font-size:12px;color:#94a3b8;font-weight:400;margin-top:3px}
-.side-menu a.menu-link.active{background:#0e3a42;border-color:#2dd4bf;color:#5eead4;box-shadow:0 0 0 1px #2dd4bf inset}
-.side-menu a.menu-link.active::before{content:"● ";color:#2dd4bf;font-size:10px}
-.side-menu a.menu-link.active span{color:#cbd5e1}
+.side-menu a.menu-link.active{background:#2dd4bf;border-color:#2dd4bf;color:#06202a;box-shadow:0 8px 25px rgba(45,212,191,.45)}
+.side-menu a.menu-link.active::before{content:"● ";color:#06202a;font-size:11px}
+.side-menu a.menu-link.active span{color:#06202a}
 .menu-close{float:right;background:transparent;border:1px solid #5eead4;color:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:700}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1150;opacity:0;pointer-events:none;transition:.3s}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1150;opacity:0;pointer-events:none;transition:.3s}
 .overlay.show{opacity:1;pointer-events:auto}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:140px 20px 60px;position:relative;overflow:hidden;text-align:center}
 h1{font-family:Georgia,serif;font-size:clamp(64px,14vw,150px);font-weight:400;letter-spacing:6px;color:#fef3c7;line-height:1;text-shadow:0 0 40px rgba(45,212,191,.25)}
@@ -299,24 +299,32 @@ draw();
 function toggleMenu(open){
   document.getElementById('sideMenu').classList.toggle('open',open);
   document.getElementById('overlay').classList.toggle('show',open);
-  document.body.style.overflow=open?'hidden':'';
+  /* NO overflow lock: page must keep scrolling while the menu is open, or the highlight can never move */
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')toggleMenu(false)});
-/* SCROLL HIGHLIGHT: highlight the menu item for the section currently on screen */
-var menuLinks=document.querySelectorAll('.side-menu a.menu-link[data-section]');
-var spySections=['top','profiles','skills','work','map','certs','contact'];
-function updateMenuHighlight(){
-  var pos=scrollY+160, current='top';
-  spySections.forEach(function(id){
-    var el=document.getElementById(id);
-    if(el && el.getBoundingClientRect().top + scrollY <= pos){ current=id; }
+/* SCROLL HIGHLIGHT, IntersectionObserver: the section in the middle of the screen wins */
+function setActiveMenu(id){
+  document.querySelectorAll('.side-menu a.menu-link[data-section]').forEach(function(l){
+    var on=l.dataset.section===id;
+    l.classList.toggle('active',on);
+    if(on && document.getElementById('sideMenu').classList.contains('open')){
+      try{ l.scrollIntoView({block:'nearest'}); }catch(e){}
+    }
   });
-  /* Clients preview sits between Work and Map, keep Work highlighted there, do not jump to Map early */
-  menuLinks.forEach(function(l){ l.classList.toggle('active', l.dataset.section===current); });
 }
-addEventListener('scroll',updateMenuHighlight,{passive:true});
-addEventListener('resize',updateMenuHighlight);
-updateMenuHighlight();
+var spy=new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if(en.isIntersecting){ setActiveMenu(en.target.id); }
+  });
+},{rootMargin:'-40% 0px -55% 0px',threshold:0});
+['top','profiles','skills','work','map','certs','contact'].forEach(function(id){
+  var el=document.getElementById(id); if(el) spy.observe(el);
+});
+/* Fallback for the very bottom: Contact must win when you reach the footer */
+addEventListener('scroll',function(){
+  if((innerHeight+scrollY) >= document.body.scrollHeight-80){ setActiveMenu('contact'); }
+},{passive:true});
+setActiveMenu('top');
 var skillIndex=0, skillTimer=null;
 var skillSlides=document.querySelectorAll('#skillTrack .slide');
 function perView(){return innerWidth<=760?1:(innerWidth<=960?2:3)}
