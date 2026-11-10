@@ -97,8 +97,8 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <li><a href="#budget">💰 Ad Budget<span>How the budget is split</span></a></li>
 <li><a href="#paid">🎯 Paid Media Campaigns<span>Top campaigns, with results</span></a></li>
 <li><a href="#campaign">🎯 Featured Campaign<span>The offer, the audience, the result</span></a></li>
-<li><a href="#social-media">📱 Social Media Management<span>Aqtiv Social Media Campaign</span></a></li>
-<li><a href="#case">📁 Case Examples<span>UK AI Reception, Wear Your Slant</span></a></li>
+<li><a href="#social-media">📱 Social Media Management<span>Aqtiv, Agrilift, IIB, Sarah AI, Berlitz</span></a></li>
+<li><a href="#case">📁 Case Examples<span>On its own page, team &amp; academic</span></a></li>
 <li><a href="#contact">💬 Contact<span>WhatsApp + brief</span></a></li>
 </ul>
 </nav>
@@ -107,7 +107,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <p class="domains">MARKETING • MARKETLITICS</p>
 <h1>Marketing<br>That Shows<br>Proof</h1>
 <p class="sub">Not promises, not vanity numbers. The content that worked, the budget that was spent, the campaign that ran, and the case with the real result. Karachi, Pakistan. Aqtiv, Berlitz, Agrilift, LUMS, and 7 more real clients.</p>
-<div class="hero-btns"><a href="marketing-paid.html">Paid Marketing</a><a href="marketing-content.html">Content</a><a href="marketing-social.html">Social Media</a></div>
+<div class="hero-btns"><a href="marketing-paid.html">Paid Marketing</a><a href="marketing-content.html">Content</a><a href="marketing-social.html">Social Media</a><a href="case-examples.html">Case Examples</a></div>
 </div>
 <section id="best-content">
 <p class="sec-label">BEST CONTENT</p>
@@ -162,21 +162,32 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <div class="card"><span class="client-tag">CONTENT</span><h3>Launch Posts + Reels</h3><p>Launch content, re-launch content, and follow-up posts, all with the same offer and the same CTA. See the full folder on the Clients page.</p></div>
 </div>
 </section>
+
 <section id="social-media">
 <p class="sec-label">SOCIAL MEDIA MANAGEMENT</p>
 <h2>Social Media, <span>Managed Day To Day</span></h2>
 <p class="sec-sub">Content calendar, posting, replies, and growth, for real clients. One campaign, shown in full, not a list of names.</p>
-<div class="cards">
-<div class="card"><span class="client-tag">PAKISTAN • LAUNCH • SOCIAL MEDIA CAMPAIGN</span><h3>Aqtiv Water, Social Media Campaign</h3><p>Social Media Campaign: content calendar, launch posts, re-launch posts, replies, and follow-up, all with the same offer. Launch + re-launch, 1st bottle free, in Karachi. Followers grew from 21 to 360, from the offer and the content, not from bought followers. See the full folder on the Clients page, and the full campaign on the Social Media subpage.</p><a class="open-link" href="clients.html">Open Aqtiv Folder →</a><a class="open-link" href="marketing-social.html">Open the Social Media Campaign →</a></div>
+<div class="slider-wrap">
+<p class="slider-title">CLIENT SLIDER • TAP ‹ › OR LET IT SLIDE • TAP A SLIDE TO OPEN ITS FOLDER</p>
+<button class="slider-btn slider-prev" onclick="moveSocial(-1)" aria-label="Previous client">‹</button>
+<button class="slider-btn slider-next" onclick="moveSocial(1)" aria-label="Next client">›</button>
+<div class="slider-viewport"><div class="slider-track" id="socialTrack">
+<div class="slide"><div class="slide-box"><span class="client-tag">PAKISTAN • LAUNCH • SOCIAL MEDIA CAMPAIGN</span><h3>Aqtiv Water, Social Media Campaign</h3><p>Social Media Campaign: content calendar, launch posts, re-launch posts, replies, and follow-up, all with the same offer. Launch + re-launch, 1st bottle free, in Karachi. Followers grew from 21 to 360, from the offer and the content, not from bought followers. See the full folder on the Clients page, and the full campaign on the Social Media subpage.</p><a class="open-link" href="clients.html#aqtiv">Open Aqtiv Folder →</a><a class="open-link" href="marketing-social.html">Open the Social Media Campaign →</a></div></div>
+<div class="slide"><a class="slide-box" href="clients.html#agrilift"><span class="client-tag">02 • AGRILIFT</span><h3>Agrilift</h3><p>Calendar, posting, and replies, with the Agrilift AI Reel. EDIT: 1 line, what was posted, and the result, followers / leads, only the real number.</p><span class="open-link">Open Agrilift Folder →</span></a></div>
+<div class="slide"><a class="slide-box" href="clients.html#iib"><span class="client-tag">03 • IIB</span><h3>IIB</h3><p>EDIT: What IIB is, in 1 line. EDIT: Calendar, posting, and replies, what was posted, and the result, only the real number.</p><span class="open-link">Open IIB Folder →</span></a></div>
+<div class="slide"><a class="slide-box" href="clients.html#sarah-ai"><span class="client-tag">04 • SARAH AI</span><h3>Sarah AI</h3><p>EDIT: What Sarah AI is, in 1 line, e.g. AI receptionist / AI answering. EDIT: Calendar, posting, and replies, what was posted, and the result, only the real number.</p><span class="open-link">Open Sarah AI Folder →</span></a></div>
+<div class="slide"><a class="slide-box" href="clients.html#berlitz"><span class="client-tag">05 • BERLITZ</span><h3>Berlitz</h3><p>EDIT: What Berlitz is, in 1 line, e.g. language / learning. EDIT: Calendar, posting, and replies, what was posted, and the result, followers / leads / bookings, only the real number.</p><span class="open-link">Open Berlitz Folder →</span></a></div>
+</div></div>
+<div class="slider-dots" id="socialDots"></div>
 </div>
 </section>
+
 <section id="case">
-<p class="sec-label">CASE EXAMPLES</p>
-<h2>UK AI Reception, <span>Wear Your Slant</span></h2>
-<p class="sec-sub">Real work, by client, not samples. Fill only the EDIT lines, I have not invented results for the two new cases.</p>
+<p class="sec-label">CASE EXAMPLES • SEPARATE PAGE</p>
+<h2>UK AI Reception, <span>Wear Your Slant, On Their Own Page</span></h2>
+<p class="sec-sub">These are team / assisted and academic work, not direct solo client work, so they no longer sit here as if I ran them alone. They live on their own page, with my real role stated on each card.</p>
 <div class="cards">
-<div class="card"><span class="client-tag">UK • AI</span><h3>UK AI Reception</h3><p>EDIT: What is it, in 1 line, e.g. AI receptionist / AI answering for a UK business. EDIT: What I did, content, social, or ads. EDIT: Result, calls booked / leads / reply rate.</p><a class="open-link" href="clients.html">See Clients Page →</a></div>
-<div class="card"><span class="client-tag">CONTENT • BRAND</span><h3>Wear Your Slant</h3><p>EDIT: What is it, in 1 line, e.g. apparel / brand, what slant means for this brand. EDIT: What I did, content, social, or ads. EDIT: Result, followers / sales / content that worked. EDIT: Link to the post / reel / folder.</p><a class="open-link" href="content.html">See Content Page →</a></div>
+<div class="card"><span class="client-tag">TEAM / ASSISTED • ACADEMIC</span><h3>Case Examples, Stated Honestly</h3><p>UK AI Reception and Wear Your Slant, plus academic projects, each with My Role, what I did, and what I did not do. Add a new case there, never here.</p><a class="open-link" href="case-examples.html">Open Case Examples Page →</a></div>
 </div>
 </section>
 <section id="contact">
@@ -219,6 +230,12 @@ function showPaid(i){paidIndex=Math.max(0,Math.min(i,paidSlides.length-1));docum
 function movePaid(dir){showPaid(paidIndex+dir);restartPaidTimer()}
 function restartPaidTimer(){clearInterval(paidTimer);paidTimer=setInterval(function(){showPaid(paidIndex>=paidSlides.length-1?0:paidIndex+1)},4000)}
 (function(){var dots=document.getElementById('paidDots');for(var i=0;i<paidSlides.length;i++){var b=document.createElement('button');b.setAttribute('aria-label','Go to campaign '+(i+1));(function(idx){b.addEventListener('click',function(){showPaid(idx);restartPaidTimer()})})(i);dots.appendChild(b)}showPaid(0);restartPaidTimer();var vp=document.querySelector('#paid .slider-viewport');if(vp){vp.addEventListener('mouseenter',function(){clearInterval(paidTimer)});vp.addEventListener('mouseleave',restartPaidTimer)}})();
+var socialIndex=0,socialTimer=null;
+var socialSlides=document.querySelectorAll('#socialTrack .slide');
+function showSocial(i){socialIndex=Math.max(0,Math.min(i,socialSlides.length-1));document.getElementById('socialTrack').style.transform='translateX(-'+(socialIndex*100)+'%)';document.querySelectorAll('#socialDots button').forEach(function(d,di){d.classList.toggle('active',di===socialIndex)})}
+function moveSocial(dir){showSocial(socialIndex+dir);restartSocialTimer()}
+function restartSocialTimer(){clearInterval(socialTimer);socialTimer=setInterval(function(){showSocial(socialIndex>=socialSlides.length-1?0:socialIndex+1)},4000)}
+(function(){var dots=document.getElementById('socialDots');for(var i=0;i<socialSlides.length;i++){var b=document.createElement('button');b.setAttribute('aria-label','Go to client '+(i+1));(function(idx){b.addEventListener('click',function(){showSocial(idx);restartSocialTimer()})})(i);dots.appendChild(b)}showSocial(0);restartSocialTimer();var vp=document.querySelector('#social-media .slider-viewport');if(vp){vp.addEventListener('mouseenter',function(){clearInterval(socialTimer)});vp.addEventListener('mouseleave',restartSocialTimer)}})();
 </script>
 </body>
 </html>
