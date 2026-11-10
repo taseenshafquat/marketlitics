@@ -17,17 +17,18 @@ a{color:inherit;text-decoration:none}
 .orb3{width:220px;height:220px;background:#fef3c7;bottom:-60px;left:35%;opacity:.22;animation-delay:-9s}
 @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(50px,35px) scale(1.15)}}
 #glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.22),transparent 65%);z-index:0;pointer-events:none;transform:translate(-50%,-50%);left:50%;top:40%}
-.sidebar{width:250px;height:100vh;position:fixed;top:0;left:0;z-index:1200;background:#0b2a35;border-right:1px solid #164e5e;padding:24px 14px;text-align:left;overflow-y:auto}
+.sidebar{width:250px;height:100vh;position:fixed;top:0;left:0;z-index:1200;background:transparent;border:0;padding:24px 14px;text-align:left;overflow-y:auto}
 .sidebar h2{font-family:Georgia,serif;font-size:24px;color:#5eead4;font-weight:400;padding-left:8px}
 .sidebar .side-sub{color:#94a3b8;font-size:13px;line-height:1.6;padding-left:8px;margin-top:8px}
 .sidebar h3{color:#5eead4;font-size:12px;letter-spacing:3px;margin:20px 0 12px 8px;font-weight:800}
 .sidebar ul{list-style:none}
 .sidebar li{margin-bottom:4px}
-.sidebar a{display:block;padding:11px 10px;color:#94a3b8;text-decoration:none;border-radius:8px;transition:all .2s ease;font-weight:700;font-size:14px;line-height:1.4}
+.sidebar a{display:block;padding:11px 10px;color:#94a3b8;text-decoration:none;background:transparent;border:0;border-radius:0;transition:color .2s ease;font-weight:700;font-size:14px;line-height:1.4}
 .sidebar a span{display:block;font-size:11px;color:#64748b;font-weight:400;margin-top:2px}
-.sidebar a:hover{background:#071826;color:#5eead4}
-.sidebar a.active{background:#2dd4bf;color:#06202a;font-weight:800}
-.sidebar a.active span{color:#06202a}
+.sidebar a:hover{background:transparent;color:#5eead4}
+.sidebar a.active{background:transparent;border:0;border-radius:0;color:#5eead4;font-weight:800}
+.sidebar a.active::before{content:"● ";color:#2dd4bf;font-size:10px}
+.sidebar a.active span{color:#94a3b8}
 .top,.hero,section,footer{position:relative;z-index:2}
 .top{position:fixed;top:0;left:250px;right:0;min-height:58px;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(7,24,38,.88);backdrop-filter:blur(10px);z-index:999}
 .logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px;white-space:nowrap;line-height:1}
@@ -297,13 +298,19 @@ document.addEventListener('DOMContentLoaded',function(){
     entries.forEach(function(entry){
       if(entry.isIntersecting){
         var id=entry.target.getAttribute('id');
-        document.querySelectorAll('.sidebar a').forEach(function(link){link.classList.remove('active')});
         var activeLink=document.querySelector('.sidebar a[href="#'+id+'"]');
-        if(activeLink){activeLink.classList.add('active')}
+        if(activeLink){
+          document.querySelectorAll('.sidebar a').forEach(function(link){link.classList.remove('active')});
+          activeLink.classList.add('active');
+        }
       }
     });
   },observerOptions);
-  document.querySelectorAll('section, .hero').forEach(function(section){observer.observe(section)});
+  /* ONLY sections that have a word in the sidebar. clients-preview is NOT here, on purpose. */
+  ['top','profiles','skills','work','map','certs','contact'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el){observer.observe(el)}
+  });
 });
 var skillIndex=0, skillTimer=null;
 var skillSlides=document.querySelectorAll('#skillTrack .slide');
