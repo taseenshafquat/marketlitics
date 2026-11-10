@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Spy Sidebar Example</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* 1. Sidebar Styling */
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      border-right: 1px solid #e0e0e0;
+      padding: 2rem 1rem;
+    }
+
+    .sidebar h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      padding-left: 0.5rem;
+      color: #666;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #555;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .sidebar a:hover {
+      background: #f0f0f0;
+      color: #000;
+    }
+
+    /* The Highlight Class */
+    .sidebar a.active {
+      background: #0066cc;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* 2. Main Content Area */
+    .content {
+      flex: 1;
+      padding: 2rem 4rem;
+      max-width: 800px;
+    }
+
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid #eee;
+      min-height: 80vh; /* Gives sections enough height to scroll through */
+    }
+
+    section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #111;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Left Sidebar Navigation -->
+  <nav class="sidebar">
+    <h2>Documentation</h2>
+    <ul>
+      <li><a href="#introduction" class="active">Introduction</a></li>
+      <li><a href="#getting-started">Getting Started</a></li>
+      <li><a href="#configuration">Configuration</a></li>
+      <li><a href="#deployment">Deployment</a></li>
+    </ul>
+  </nav>
+
+  <!-- Right Content Sections -->
+  <main class="content">
+    <section id="introduction">
+      <h1>Introduction</h1>
+      <p>Welcome to the guide. Scroll down to see the left sidebar automatically track and highlight the active section. This pattern is widely used in technical documentation, dashboards, and long-form landing pages.</p>
+    </section>
+
+    <section id="getting-started">
+      <h1>Getting Started</h1>
+      <p>To get started, make sure your sidebar link <code>href</code> matches the <code>id</code> of your target content sections exactly. For example, <code>href="#getting-started"</code> maps perfectly to <code>id="getting-started"</code>.</p>
+    </section>
+
+    <section id="configuration">
+      <h1>Configuration</h1>
+      <p>Adjust the threshold parameters in the JavaScript configuration to tweak exactly when the highlight switches over. A root margin gives you a reliable invisible "trigger line" across the screen.</p>
+    </section>
+
+    <section id="deployment">
+      <h1>Deployment</h1>
+      <p>Once configuration is locked in, push your static file live. Using modern IntersectionObservers ensures that your scroll behavior remains fast, fluid, and memory-efficient even on low-end mobile devices.</p>
+    </section>
+  </main>
+
+  <!-- 3. Scroll Tracking Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        root: null, // Uses the viewport
+        rootMargin: '-20% 0px -60% 0px', // Triggers when section is in the upper-middle of screen
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // Check if the section has entered our trigger zone
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            
+            // Remove active class from all links
+            document.querySelectorAll('.sidebar a').forEach(link => {
+              link.classList.remove('active');
+            });
+            
+            // Add active class to the link matching the visible section ID
+            const activeLink = document.querySelector(`.sidebar a[href="#${id}"]`);
+            if (activeLink) {
+              activeLink.classList.add('active');
+            }
+          }
+        });
+      }, observerOptions);
+
+      // Tell the observer to watch all sections
+      document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>
