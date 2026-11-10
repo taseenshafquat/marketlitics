@@ -81,6 +81,15 @@ section h2 span{color:#5eead4}
 .slider-dots{text-align:center;margin-top:14px}
 .slider-dots button{width:9px;height:9px;border-radius:50%;border:0;background:#164e5e;margin:0 4px;cursor:pointer;padding:0}
 .slider-dots button.active{background:#2dd4bf;width:24px;border-radius:999px}
+.vol-slide{flex:0 0 100%;padding:0 8px;box-sizing:border-box}
+.vol-box{background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;overflow:hidden;text-align:left}
+.vol-photo{height:280px;background:#0e3a42;display:flex;align-items:center;justify-content:center;color:#5eead4;font-weight:800;font-size:14px;letter-spacing:1px;text-align:center;padding:20px;line-height:1.6;overflow:hidden}
+.vol-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.vol-body{padding:22px}
+.vol-months{color:#5eead4;font-size:12px;font-weight:800;letter-spacing:2px}
+.vol-body h3{font-family:Georgia,serif;font-size:24px;font-weight:400;color:#fef3c7;margin:8px 0 6px;line-height:1.3}
+.vol-body p{color:#94a3b8;font-size:13px;line-height:1.7}
+.vol-cert{display:inline-block;margin-top:14px;padding:9px 16px;border-radius:999px;background:#2dd4bf;color:#06202a;font-weight:700;font-size:13px}
 .prof-box{margin-top:26px;background:rgba(11,42,53,.92);border:1px solid #164e5e;border-radius:18px;padding:24px}
 .prof-box h3{font-family:Georgia,serif;font-size:22px;font-weight:400;color:#fef3c7;margin-bottom:6px}
 .prof-box p{color:#94a3b8;font-size:13px;line-height:1.6}
@@ -138,7 +147,7 @@ section h2 span{color:#5eead4}
 #certs{text-align:center}
 #certs .sub{color:#94a3b8;margin-bottom:24px}
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:center}
-@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px}.top nav{font-size:11px}.logo{font-size:18px}.slide{flex:0 0 100%}#map{height:340px}.domains{letter-spacing:2px;font-size:10px}.cert-grid{grid-template-columns:1fr}h1{font-size:clamp(42px,10vw,64px);letter-spacing:3px}.card{min-width:200px}}
+@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px}.top nav{font-size:11px}.logo{font-size:18px}.slide{flex:0 0 100%}#map{height:340px}.domains{letter-spacing:2px;font-size:10px}.cert-grid{grid-template-columns:1fr}h1{font-size:clamp(42px,10vw,64px);letter-spacing:3px}.card{min-width:200px}.vol-photo{height:200px}}
 @media(min-width:761px) and (max-width:960px){.slide{flex:0 0 50%}.cert-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
@@ -158,7 +167,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <li><a href="clients.html">Clients Page<span></span></a></li>
 <li><a href="#map">Map<span></span></a></li>
 <li><a href="#certs">Certifications<span></span></a></li>
-  <li><a href="#volter">Volunteering <span></span></a></li>
+<li><a href="#volunteering">Volunteering<span></span></a></li>
 <li><a href="#contact">Contact<span></span></a></li>
 </ul>
 </nav>
@@ -272,6 +281,31 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 
 <section id="certs"><h2>Certifications</h2><p class="sub">17 total • 13 completed, 4 in progress • Tap Show Certificate, opens PNG / PDF in a new tab</p><div class="cert-grid"><div class="cert"><span class="badge-done">COMPLETED</span><b>AI-Powered Full-Stack Development</b><p>Latitude • Latitude Career Consultancy • 7 Live Sessions • 22 October – 1 November 2026 • Certificate No. AIFS-2026-001 • Instructor: Abdul Rehan • Organiser: Nadia Shams</p><div class="btn-spacer"></div><p><a class="show-cert" href="Certificate_Taseen_Shafquat.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED</span><b>Chaajao Digital Marketing (Performance Marketing)</b><p>Chaajao • Instructor: Usama Khan • Jul 2026 - Oct 2026</p><details><summary>View Curriculum, 5 parts ▸</summary><ul><li><b>Marketing Foundations:</b> Four pillars of marketing, market research &amp; competitive analysis, creating communication strategy</li><li><b>Funnel Building + Execution:</b> Full-funnel breakdown: sales &amp; retention, mapping customer journey, funnel-based targeting</li><li><b>Facebook Ads Mastery:</b> Ads Manager setup, campaign structure &amp; video ad strategy, media buying analysis sheet</li><li><b>Influencer &amp; Persona Systems:</b> Create buyer personas, build &amp; track influencer campaigns, right audience identification</li><li><b>Real Campaign Case Studies:</b> Analyze winning campaigns, high-converting campaigns</li></ul></details></div><div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>Data Analytics &amp; Business Intelligence</b><p>DigiSkills • Dec 2025 - Mar 2026 • ID: YUM3YUUMK</p><div class="btn-spacer"></div><p><a class="show-cert" href="DSTP_Certificate_YUM3YUUMK.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>Artificial Intelligence Using Python</b><p>DigiSkills • Apr 2026 - Jul 2026 • ID: DFHJDWMK5</p><div class="btn-spacer"></div><p><a class="show-cert" href="DSTP_Certificate_DFHJDWMK5.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>Digital Marketing</b><p>DigiSkills • Apr 2026 - Jul 2026 • ID: Y46FSVQMK</p><div class="btn-spacer"></div><p><a class="show-cert" href="DSTP_Certificate_Y46FSVQMK.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED</span><b>E-Commerce Management</b><p>DigiSkills • Apr 2026 - Jul 2026 • ID: YETHEHTMK</p><div class="btn-spacer"></div><p><a class="show-cert" href="DSTP_Certificate_YETHEHTMK.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED</span><b>Startup Strategies and Entrepreneurship</b><p>DigiSkills • Dec 2025 - Mar 2026 • ID: GUUS8B7MK</p><div class="btn-spacer"></div><p><a class="show-cert" href="DSTP_Certificate_GUUS8B7MK.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED • ON LINKEDIN</span><b>SEO</b><p>DigiSkills • Jul 2026 - Oct 2026</p><div class="btn-spacer"></div><p><a class="show-cert" href="DSTP_Certificate_SEO.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED • HUBSPOT CERTIFIED</span><b>Digital Marketing Certified</b><p>HubSpot Academy • Valid: Oct 20, 2026 - Nov 18, 2028</p><div class="btn-spacer"></div><p><a class="show-cert" href="hubspot-digital-marketing.png" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED</span><b>Generative AI Mastermind</b><p>Outskill • Signed: Vaibhav Sisinty, Founder, Outskill</p><div class="btn-spacer"></div><p><a class="show-cert" href="outskill-generative-ai.png" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">PARTICIPATION</span><b>SEO &amp; Google Business Masterclass</b><p>Adil Siddiqui, in partnership with Latitude • Jun - Jul 2026</p><div class="btn-spacer"></div><p><a class="show-cert" href="Taseen_Participation_Certificate.pdf" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED</span><b>Digital Marketing and Personal Branding</b><p>IUCore • Jul 2025 - Sep 2025</p><div class="btn-spacer"></div><p><a class="show-cert" href="iucore-certificate.png" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-done">COMPLETED</span><b>Microsoft Excel, Beginner to Advanced</b><p>Youth Parliament • 2019</p><div class="btn-spacer"></div><p><a class="show-cert" href="youth-parliament-excel.png" target="_blank" rel="noopener">Show Certificate →</a></p></div><div class="cert"><span class="badge-progress">IN PROGRESS • AUG - NOV 2026</span><b>Certified Visualization Expert</b><p>KarachiDoTAI / NUST • Aug 2026 - Nov 2026</p></div><div class="cert"><span class="badge-progress">IN PROGRESS</span><b>Google Ads</b><p>Google • Starting Oct 2026</p></div><div class="cert"><span class="badge-progress">IN PROGRESS</span><b>Meta Blueprint, Digital Marketing Associate</b><p>Meta • Starting Oct 2026</p></div><div class="cert"><span class="badge-progress">IN PROGRESS</span><b>Google Analytics</b><p>Google • Starting Oct 2026</p></div></div></section>
 
+<section id="volunteering">
+<p class="sec-label">VOLUNTEERING</p>
+<h2>Volunteering, <span>From LinkedIn</span></h2>
+<p class="sec-sub">11 roles, newest first. Still image, then months, company and role, then what I did. Tap ‹ › or the dots, or let it slide.</p>
+<div class="slider-wrap">
+<p class="slider-title">VOLUNTEER SLIDER • TAP ‹ › OR LET IT SLIDE</p>
+<button class="slider-btn slider-prev" onclick="moveVol(-1)" aria-label="Previous volunteering">‹</button>
+<button class="slider-btn slider-next" onclick="moveVol(1)" aria-label="Next volunteering">›</button>
+<div class="slider-viewport"><div class="slider-track" id="volTrack">
+<div class="vol-slide"><div class="vol-box"><div class="vol-photo"><img src="volunteer-1.jpg" alt="Volunteer Staff, Iqra University" onerror="this.style.display='none';this.parentNode.innerHTML='ADD volunteer-1.jpg<br>IN GITHUB'"></div><div class="vol-body"><p class="vol-months">APR 2025 · 1 MO • EDUCATION</p><h3>Volunteer Staff — Iqra University (Official)</h3><p>1st International Conference on Business, Management and Emerging Technologies. A two-day conference on business and the scope of emerging technologies and economic conditions. Researchers and scholars shared their point of view from the UK, Bangladesh, Pakistan, Turkey, the USA, and more, with a panel discussion and paper presentations. I was responsible for overseeing all activities and community management.</p></div></div></div>
+<div class="vol-slide"><div class="vol-box"><div class="vol-photo"><img src="volunteer-2.jpg" alt="Senior Volunteer, The Citizens Foundation" onerror="this.style.display='none';this.parentNode.innerHTML='ADD volunteer-2.jpg<br>IN GITHUB'"></div><div class="vol-body"><p class="vol-months">JUN 2024 · 1 MO • EDUCATION</p><h3>Senior Volunteer — The Citizens Foundation</h3><p>Responsible for various tasks including coordination with the supervisor team and school to ensure a smooth Summer Camp. Attended to any problems that occurred and solved them immediately. Material allocation, briefing volunteers on their daily tasks for the day, creating budget sheets for closing ceremony goodie bags, and running community management.</p></div></div></div>
+<div class="vol-slide"><div class="vol-box"><div class="vol-photo"><img src="volunteer-3.jpg" alt="Volunteer, HUM News" onerror="this.style.display='none';this.parentNode.innerHTML='ADD volunteer-3.jpg<br>IN GITHUB'"></div><div class="vol-body"><p class="vol-months">MAY 2024 · 1 MO • ARTS AND CULTURE</p><h3>Volunteer — HUM News</h3><p>A collaboration between Pakistan Film Festival, HUM TV, Karachi Film School, Art Council and IAC (Institute for Art &amp; Culture) presents PIFF Workshop, Unlock Your Filmmaking Potential. A workshop on filmmaking with guests like Luisa Iskin, a profound creative producer in Hollywood, Sadia Ashraf, Andrew Fiero, and James McMillan, cinematographer for Marvel. I was involved in a day workshop, with tasks like community management and any other tasks that may be assigned.</p></div></div></div>
+<div class="vol-slide"><div class="vol-box"><div class="vol-photo"><img src="volunteer-4.jpg" alt="Brand Ambassador, HUM News" onerror="this.style.display='none';this.parentNode.innerHTML='ADD volunteer-4.jpg<br>IN GITHUB'"></div><div class="vol-body"><p class="vol-months">APR 2024 · 1 MO • ARTS AND CULTURE</p><h3>Brand Ambassador — HUM News</h3><p>Pakistan Media Summit 2024, a collaboration between HUM TV, NAPA and Pakistan International Film Festival (PIFF). Conducted marketing and created brand awareness about Pakistan Media Summit 2024, and a collaboration between PIFF, Habib University and Karachi Film Society about an engaging workshop held on 16th and 17th April 2024 at Habib University. Regular posting on Instagram, Facebook and LinkedIn, and direct messaging and collaborating with social media influencers to create hype for the event.</p></div></div></div>
+<div class="vol-slide"><div class="vol-box"><div class="vol-photo"><img src="volunteer-5.jpg" alt="Student Volunteer, The Citizens Foundation" onerror="this.style.display='none';this.parentNode.innerHTML='ADD volunteer-5.jpg<br>IN GITHUB'"></div><div class="vol-body"><p class="vol-months">NOV 2023 - DEC 2023 · 2 MOS • CHILDREN</p><h3>Student Volunteer — The Citizens Foundation</h3><p>I participated in Cycle 41 of Rahbar 2023 and mentored children of Class 8.</p><a class="vol-cert" href="TCF Rahbar 1.pdf" target="_blank" rel="noopener">Certificate: TCF Rahbar 1 →</a></div></div></div>
+<div class="vol-slide"><div class="vol-box"><div class="vol-photo"><img src="volunteer-6.jpg" alt="Facilitator, Iqra University" onerror="this.style.display='none';this.parentNode.innerHTML='ADD volunteer-6.jpg<br>IN GITHUB'"></div><div class="vol-body"><p class="vol-months">JAN 2023 · 1 MO • EDUCATION</p><h3>Facilitator — Iqra University (Official)</h3><p>Facilitator at Iqra University, Job Fair 2023.</p><a class="vol-cert" href="Job fair 2023.pdf" target="_blank" rel="noopener">Certificate: Job Fair 2023 →</a></div></div></div>
+<div class="vol-slide"><div class="vol-box"><div class="vol-photo"><img src="volunteer-7.jpg" alt="Volunteer, The Citizens Foundation" onerror="this.style.display='none';this.parentNode.innerHTML='ADD volunteer-7.jpg<br>IN GITHUB'"></div><div class="vol-body"><p class="vol-months">SEP 2022 - OCT 2022 · 2 MOS • CHILDREN</p><h3>Volunteer — The Citizens Foundation</h3><p>I participated in the 2022 Rahbar Cycle 38. I was responsible for mentoring children of Class 8 for a month.</p><a class="vol-cert" href="TCF Rahbar 2.pdf" target="_blank" rel="noopener">Certificate: TCF Rahbar 2 →</a></div></div></div>
+<div class="vol-slide"><div class="vol-box"><div class="vol-photo"><img src="volunteer-8.jpg" alt="Volunteer, Robin Hood Army" onerror="this.style.display='none';this.parentNode.innerHTML='ADD volunteer-8.jpg<br>IN GITHUB'"></div><div class="vol-body"><p class="vol-months">OCT 2019 - DEC 2019 · 3 MOS • SOCIAL SERVICES</p><h3>Volunteer — Robin Hood Army</h3><p>I was responsible for collecting leftover food and handing it out in underprivileged and poverty areas.</p></div></div></div>
+<div class="vol-slide"><div class="vol-box"><div class="vol-photo"><img src="volunteer-9.jpg" alt="Student Volunteer, Special Olympics" onerror="this.style.display='none';this.parentNode.innerHTML='ADD volunteer-9.jpg<br>IN GITHUB'"></div><div class="vol-body"><p class="vol-months">FEB 2019 · 1 MO • SOCIAL SERVICES</p><h3>Student Volunteer — Special Olympics</h3><p>I was responsible for handing out bands during the marathon of Larkson 4th SOP Race held on 17 Feb 2019.</p><a class="vol-cert" href="Olympics Marathon 2019.pdf" target="_blank" rel="noopener">Certificate: Olympics Marathon 2019 →</a></div></div></div>
+<div class="vol-slide"><div class="vol-box"><div class="vol-photo"><img src="volunteer-10.jpg" alt="Exam Invigilator, Street To School" onerror="this.style.display='none';this.parentNode.innerHTML='ADD volunteer-10.jpg<br>IN GITHUB'"></div><div class="vol-body"><p class="vol-months">JAN 2019 - MAR 2019 · 3 MOS • EDUCATION</p><h3>Exam Invigilator — Street To School-STS</h3><p>I was responsible for exam invigilation during their final exam season.</p></div></div></div>
+<div class="vol-slide"><div class="vol-box"><div class="vol-photo"><img src="volunteer-11.jpg" alt="Exam Invigilator, Street To School" onerror="this.style.display='none';this.parentNode.innerHTML='ADD volunteer-11.jpg<br>IN GITHUB'"></div><div class="vol-body"><p class="vol-months">OCT 2018 - DEC 2018 · 3 MOS • EDUCATION</p><h3>Exam Invigilator — Street To School-STS</h3><p>I was responsible for invigilation and data entry of marks on spreadsheets during the school mid-term season.</p><a class="vol-cert" href="NVP STS.pdf" target="_blank" rel="noopener">Certificate: NVP STS →</a></div></div></div>
+</div></div>
+<div class="slider-dots" id="volDots"></div>
+</div>
+</section>
+
 <section id="contact">
 <p class="sec-label">CONTACT</p>
 <h2>Start With <span>A Brief</span></h2>
@@ -303,7 +337,7 @@ document.addEventListener('DOMContentLoaded',function(){
       }
     });
   },observerOptions);
-  ['top','profiles','skills','work','map','certs','contact'].forEach(function(id){
+  ['top','profiles','skills','work','map','certs','volunteering','contact'].forEach(function(id){
     var el=document.getElementById(id);
     if(el){observer.observe(el)}
   });
@@ -329,6 +363,22 @@ function restartSkillTimer(){clearInterval(skillTimer);skillTimer=setInterval(fu
   var vp=document.querySelector('.slider-viewport');
   vp.addEventListener('mouseenter',function(){clearInterval(skillTimer)});
   vp.addEventListener('mouseleave',restartSkillTimer);
+})();
+var volIndex=0, volTimer=null;
+var volSlides=document.querySelectorAll('#volTrack .vol-slide');
+function showVol(i){
+  volIndex=Math.max(0,Math.min(i,volSlides.length-1));
+  document.getElementById('volTrack').style.transform='translateX(-'+(volIndex*100)+'%)';
+  document.querySelectorAll('#volDots button').forEach(function(d,di){d.classList.toggle('active',di===volIndex)});
+}
+function moveVol(dir){showVol(volIndex+dir);restartVolTimer()}
+function restartVolTimer(){clearInterval(volTimer);volTimer=setInterval(function(){showVol(volIndex>=volSlides.length-1?0:volIndex+1)},4000)}
+(function(){
+  var dots=document.getElementById('volDots');
+  for(var i=0;i<volSlides.length;i++){var b=document.createElement('button');b.setAttribute('aria-label','Go to volunteering '+(i+1));(function(idx){b.addEventListener('click',function(){showVol(idx);restartVolTimer()})})(i);dots.appendChild(b)}
+  showVol(0);restartVolTimer();
+  var vp=document.querySelector('#volunteering .slider-viewport');
+  if(vp){vp.addEventListener('mouseenter',function(){clearInterval(volTimer)});vp.addEventListener('mouseleave',restartVolTimer)}
 })();
 var skillBars=[
 {label:'Power BI',pct:90,cls:''},
