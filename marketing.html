@@ -60,6 +60,9 @@ a.card-link{flex:1;min-width:240px;display:block}
 .case-btn-row{text-align:center;margin-top:22px}
 .case-btn-row a{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:800;font-size:14px;border:2px solid #5eead4;color:#fff}
 .case-btn-row a:hover{background:rgba(45,212,191,.15)}
+.slide-btn{display:inline-block;padding:11px 20px;border-radius:999px;font-weight:800;font-size:13px;border:2px solid #5eead4;color:#fff;margin-top:14px}
+.slide-img{display:block;background:#000;border:1px solid #164e5e;border-radius:14px;overflow:hidden;margin:12px 0 4px}
+.slide-img img{width:100%;height:auto;max-height:300px;object-fit:contain;display:block}
 .budget-row{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:14px;margin-bottom:7px}
 .budget-row span:last-child{color:#5eead4}
 .budget-bar{height:12px;background:#071826;border:1px solid #164e5e;border-radius:999px;overflow:hidden;margin-bottom:16px}
@@ -84,7 +87,7 @@ a.card-link{flex:1;min-width:240px;display:block}
 .btn-data{background:#2dd4bf;color:#06202a}
 .btn-mark{background:transparent;color:#fff}
 footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:center}
-@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px;grid-template-columns:1fr auto}.top-logo{font-size:18px}.logo{font-size:18px}.domains{letter-spacing:2px;font-size:10px}h1{font-size:clamp(42px,10vw,64px);letter-spacing:3px}.card{min-width:200px}.hero-btns a{padding:11px 18px;font-size:13px}.case-btn-row a{padding:11px 18px;font-size:13px}}
+@media(max-width:760px){body{padding-left:230px}.sidebar{width:230px;padding:20px 12px}.sidebar a{font-size:13px}.top{left:230px;padding:10px 12px;grid-template-columns:1fr auto}.top-logo{font-size:18px}.logo{font-size:18px}.domains{letter-spacing:2px;font-size:10px}h1{font-size:clamp(42px,10vw,64px);letter-spacing:3px}.card{min-width:200px}.hero-btns a{padding:11px 18px;font-size:13px}.case-btn-row a{padding:11px 18px;font-size:13px}.slide-img img{max-height:240px}}
 </style>
 </head>
 <body>
@@ -140,18 +143,19 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 </div>
 </section>
 <section id="paid">
-<p class="sec-label">PAID MEDIA CAMPAIGNS • WITH RESULTS</p>
+<p class="sec-label">PAID MEDIA CAMPAIGNS • WITH RESULTS • IMAGE ON THIS PAGE, PDF ON THE NEXT PAGE</p>
 <h2>Top Paid Campaigns, <span>Tap To Open</span></h2>
-<p class="sec-sub">Top 4, on a slider. Tap a slide and it opens Paid Marketing Campaigns, the Paid Media &amp; SEO subpage, with the full campaign. Slide 1 is real, slides 2 to 4 are EDIT lines, fill in your real spend and result.</p>
+<p class="sec-sub">Slide 1 is the YouTube Demand Gen campaign, with the creative image on the card. Tap the image, the card, or the button on the card, and it opens the Paid Marketing page, where the PDF proof is in the centre. Slides 2 to 5 are Aqtiv and EDIT lines, fill in real spend and result only.</p>
 <div class="slider-wrap">
-<p class="slider-title">PAID SLIDER • TAP ‹ › OR LET IT SLIDE • TAP A SLIDE TO OPEN</p>
+<p class="slider-title">PAID SLIDER • TAP ‹ › OR LET IT SLIDE • TAP A SLIDE TO OPEN ITS PDF PAGE</p>
 <button class="slider-btn slider-prev" onclick="movePaid(-1)" aria-label="Previous campaign">‹</button>
 <button class="slider-btn slider-next" onclick="movePaid(1)" aria-label="Next campaign">›</button>
 <div class="slider-viewport"><div class="slider-track" id="paidTrack">
-<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-1"><span class="client-tag">01 • META + GOOGLE • AQTIV WATER</span><h3>Aqtiv Water, Launch + Re-Launch</h3><p>Result: 21 to 360 followers. Offer: 1st bottle free, Karachi, local targeting. Tap to open the full Paid Media campaign.</p><span class="open-link">Open Paid Marketing Campaigns →</span></a></div>
-<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-2"><span class="client-tag">02 • EDIT: META / GOOGLE • EDIT: CLIENT</span><h3>EDIT: Campaign name 2</h3><p>EDIT: Spend, leads / sales, and result. Replace this line with the real numbers from this campaign.</p><span class="open-link">Open Paid Marketing Campaigns →</span></a></div>
-<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-3"><span class="client-tag">03 • EDIT: META / GOOGLE • EDIT: CLIENT</span><h3>EDIT: Campaign name 3</h3><p>EDIT: Spend, leads / sales, and result. Replace this line with the real numbers from this campaign.</p><span class="open-link">Open Paid Marketing Campaigns →</span></a></div>
-<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-4"><span class="client-tag">04 • EDIT: META / GOOGLE • EDIT: CLIENT</span><h3>EDIT: Campaign name 4</h3><p>EDIT: Spend, leads / sales, and result. Replace this line with the real numbers from this campaign. Add a 5th slide here if you have a 5th top campaign.</p><span class="open-link">Open Paid Marketing Campaigns →</span></a></div>
+<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-1"><span class="client-tag">01 • YOUTUBE / GOOGLE • DEMAND GEN • AGE 18+</span><span class="slide-img"><img src="Creatives.png" alt="YouTube Demand Gen creatives, Hogland and Kiddo, Letting Go, Wait for This Drop, Need Vocalist"></span><h3>YouTube / Google Video Ad, Follower / Awareness</h3><p>Result: 198 subscribers, 15,366 impressions, PKR 1,965 cost, PKR 10 per subscriber. Creative above, PDF proof on the next page.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
+<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-2"><span class="client-tag">02 • META + GOOGLE • AQTIV WATER</span><h3>Aqtiv Water, Launch + Re-Launch</h3><p>Result: 21 to 360 followers. Offer: 1st bottle free, Karachi, local targeting. EDIT: Add the Aqtiv creative image here, same as Slide 1, when you send it. Tap to open its PDF page.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
+<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-3"><span class="client-tag">03 • EDIT: META / GOOGLE • EDIT: CLIENT</span><h3>EDIT: Campaign name 3</h3><p>EDIT: Spend, leads / sales, and result. Replace this line with the real numbers from this campaign. EDIT: Add its creative image on this card, and its PDF on the Paid page.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
+<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-4"><span class="client-tag">04 • EDIT: META / GOOGLE • EDIT: CLIENT</span><h3>EDIT: Campaign name 4</h3><p>EDIT: Spend, leads / sales, and result. Replace this line with the real numbers from this campaign. EDIT: Add its creative image on this card, and its PDF on the Paid page.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
+<div class="slide"><a class="slide-box" href="marketing-paid.html#campaign-4"><span class="client-tag">05 • EDIT: META / GOOGLE • EDIT: CLIENT</span><h3>EDIT: Campaign name 5</h3><p>EDIT: Spend, leads / sales, and result. Add a 6th slide here if you have a 6th top campaign, copy this slide block.</p><span class="slide-btn">Open Paid Marketing Campaign →</span></a></div>
 </div></div>
 <div class="slider-dots" id="paidDots"></div>
 </div>
