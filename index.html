@@ -30,7 +30,7 @@ a{color:inherit;text-decoration:none}
 .sidebar a.active::before{content:"● ";color:#2dd4bf;font-size:10px}
 .sidebar a.active span{color:#94a3b8}
 .top,.hero,section,footer{position:relative;z-index:2}
-.top{position:fixed;top:0;left:250px;right:0;min-height:58px;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(7,24,38,.88);backdrop-filter:blur(10px);z-index:999}
+.top{position:fixed;top:0;left:250px;right:0;min-height:58px;padding:10px 20px;display:flex;justify-content:flex-end;align-items:center;gap:12px;background:rgba(7,24,38,.88);backdrop-filter:blur(10px);z-index:999}
 .logo{font-family:Georgia,serif;font-size:22px;color:#5eead4;letter-spacing:1px;white-space:nowrap;line-height:1}
 .top nav{font-size:14px;display:flex;align-items:center;gap:4px;overflow-x:auto;white-space:nowrap;line-height:1}
 .top nav a{margin:0 8px;opacity:.85;display:inline-block;padding:8px 2px}
@@ -163,7 +163,7 @@ footer{padding:50px 20px;border-top:1px solid #164e5e;color:#94a3b8;text-align:c
 <li><a href="#contact">💬 Contact<span>WhatsApp + brief</span></a></li>
 </ul>
 </nav>
-<header class="top"><div class="logo"><a href="index.html">Marketlitics</a></div><nav><a class="marketing-link" href="marketing.html">Marketing</a><a class="content-link" href="content.html">Content</a><a class="clients-link" href="clients.html">Clients</a></nav></header>
+<header class="top"><nav><a class="marketing-link" href="marketing.html">Marketing</a><a class="content-link" href="content.html">Content</a><a class="clients-link" href="clients.html">Clients</a></nav></header>
 <div class="hero" id="top">
 <h1 aria-label="TASEEN MARKETLITICS"><span>T</span><span>A</span><span>S</span><span>E</span><span>E</span><span>N</span><br><span style="font-size:.62em">M</span><span style="font-size:.62em">A</span><span style="font-size:.62em">R</span><span style="font-size:.62em">K</span><span style="font-size:.62em">E</span><span style="font-size:.62em">T</span><span style="font-size:.62em">L</span><span style="font-size:.62em">I</span><span style="font-size:.62em">T</span><span style="font-size:.62em">I</span><span style="font-size:.62em">C</span><span style="font-size:.62em">S</span></h1>
 <p class="domains">DATA ANALYST • DIGITAL MARKETER • CONTENT CREATOR</p>
@@ -306,7 +306,6 @@ document.addEventListener('DOMContentLoaded',function(){
       }
     });
   },observerOptions);
-  /* ONLY sections that have a word in the sidebar. clients-preview is NOT here, on purpose. */
   ['top','profiles','skills','work','map','certs','contact'].forEach(function(id){
     var el=document.getElementById(id);
     if(el){observer.observe(el)}
